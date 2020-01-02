@@ -1,0 +1,27 @@
+{
+  "name": "@rn-uidocs",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": {
+    "nohoist": [
+      "*",
+      "*/**"
+    ]
+  },
+  "scripts": {
+    "ng": "ng",
+    "ngh": "ngh",
+    "start": "ng serve",
+    "build": "ng build",
+    "clean": "rimraf dist",
+    "landing": "cp -r src/landing/ dist/",
+    "build:prod": "npm run build -- docs --prod --aot --base-href '/react-native-ui/docs/'",
+    "gh-pages": "npm run ngh -- --dir ./dist"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "author": "",
+  "license": "ISC"
+}

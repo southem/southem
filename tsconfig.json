@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/tsc-out",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@ui/*": [
+        "./packages/*"
+      ],
+      "@pg/*": [
+        "./packages/playground/src/*"
+      ]
+    }
+  },
+  "include": [
+    "./packages",
+    "./packages/**/package.json"
+  ],
+  "exclude": [
+    "./template/javascript",
+    "./template/typescript",
+    "./packages/playground",
+    "./**/*.spec.ts",
+    "./**/*.spec.tsx",
+    "./**/*.snap"
+  ]
+}

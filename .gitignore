@@ -1,0 +1,27 @@
+# osx
+.DS_Store
+
+# intellij
+.idea
+local.properties
+
+# node.js
+node_modules/
+npm-debug.log
+
+# docs
+docs/docs.json
+docs/src/input.json
+docs/src/playground.json
+docs/src/examples.json
+docs/src/assets/playground-build/
+docs/src/assets/examples-build/
+
+# env
+src/playground/env/index.js
+
+#config
+config/
+
+.expo
+dist
