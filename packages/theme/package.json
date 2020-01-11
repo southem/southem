@@ -1,0 +1,33 @@
+{
+  "name": "@southem/theme",
+  "description": "React Native theme  - Style your components in one place.",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Southem <contact@southem.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/southem/southem#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/southem/southem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/southem/southem/issues"
+  },
+  "keywords": [
+    "react-native",
+    "southem",
+    "ui-kit",
+    "theme"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "hoist-non-react-statics": "^3.2.1",
+    "lodash.merge": "^4.6.1",
+    "fecha": "3.0.3"
+  },
+  "peerDependencies": {
+    "react-native-svg": "^9.4.0"
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "name": "@rn-uidocs",
-  "version": "1.0.0",
+  "name": "@southem/docs",
+  "version": "0.0.1",
   "private": true,
   "workspaces": {
     "nohoist": [

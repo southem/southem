@@ -1,5 +1,5 @@
 {
-  "name": "@southem",
+  "name": "southem",
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
@@ -17,7 +17,7 @@
   },
   "scripts": {
     "playground": "yarn --cwd src/playground",
-    "build": "tsc && tscpaths -p ./tsconfig.json -s ./packages/components -o ./dist/tsc-out/components",
+    "build": "tsc && tscpaths -p ./tsconfig.json -s ./packages/theme -o ./dist/tsc-out/theme",
     "clean": "rimraf ./dist",
     "lint": "tslint -c ./tslint.json ./packages/**/*.{ts,tsx}",
     "test": "jest",
