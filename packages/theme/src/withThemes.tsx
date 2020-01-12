@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* tslint:disable */
 'use strict';
 import React, { Component, forwardRef } from 'react';
 import { StyleSheet } from 'react-native';

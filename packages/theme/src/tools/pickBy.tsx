@@ -1,3 +1,4 @@
+/* tslint:disable */
 const pickBy = (object, predicate) => {
   const result = Object.assign(
     {},

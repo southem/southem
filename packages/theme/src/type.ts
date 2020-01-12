@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { StyleSheet as RNStyleSheet } from 'react-native';
 
 export enum Interaction {

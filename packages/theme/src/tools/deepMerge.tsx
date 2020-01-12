@@ -1,3 +1,4 @@
+/* tslint:disable */
 const isObject = item => (item && typeof item === 'object' && !Array.isArray(item));
 
 const deepMerge = (object, ...sources) => {

@@ -1,4 +1,4 @@
-// @ts-ignore
+/* tslint:disable */
 import deepMerge from './tools/deepMerge';
 import mergeComponentAndThemes from './tools/mergeComponentAndThemes';
 import resolveIncludes from './tools/resolveIncludes';

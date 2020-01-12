@@ -1,3 +1,4 @@
+/* tslint:disable */
 import ShorthandsNormalizerFactory, {
   SIDES,
   HORIZONTAL,

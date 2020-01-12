@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* tslint:disable */
 'use strict';
 import React, { Component, Children } from 'react';
 import PropTypes from 'prop-types';

@@ -1,6 +1,6 @@
 {
-  "name": "@southem/theme",
-  "description": "React Native theme  - Style your components in one place.",
+  "name": "@southem/animation",
+  "description": "Southem Animation Library",
   "version": "0.0.1",
   "main": "index.js",
   "author": "Southem <contact@southem.com>",
@@ -16,18 +16,28 @@
   "keywords": [
     "react-native",
     "southem",
-    "ui-kit",
-    "theme"
+    "animation"
   ],
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "hoist-non-react-statics": "^3.2.1",
-    "lodash": "^4.6.1",
-    "fecha": "3.0.3"
+    "lodash": "^4.6.1"
   },
   "peerDependencies": {
-    "react-native-svg": "^9.4.0"
+    "@southem/theme": "^0.0.1",
+    "react": "~16.9.0",
+    "react-native": "~0.61.4",
+    "react-native-svg": "^9.4.0",
+    "prop-types": "^15.7.2"
+  },
+  "rnpm": {
+    "assets": [
+      "assets/fonts"
+    ],
+    "commands": {
+      "postlink": "node ./node_modules/@southem/ui/scripts/link.js"
+    }
   }
 }
