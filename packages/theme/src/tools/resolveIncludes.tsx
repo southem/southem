@@ -58,7 +58,7 @@ function includeSymbolMergeHandler(objVal, srcVal) {
  * @param target - styles object containing
  * @param base - additional style object from which target may include style
  */
-export default function resolveIncludes(target, base = {}) {
+export function resolveIncludes(target, base = {}) {
   /**
    * Include process steps:
    * 1. Iterate through target object, check if property is object and if it has [INCLUDE]

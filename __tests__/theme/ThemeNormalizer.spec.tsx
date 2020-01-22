@@ -1,10 +1,10 @@
-import StyleNormalizer from '../src/normalizer/StyleNormalizer';
 import {
   SIDES,
   CORNERS,
   HORIZONTAL,
   VERTICAL,
-} from '../src/normalizer/ShorthandsNormalizerFactory';
+  StyleNormalizer,
+} from '@southem/theme';
 
 describe('StyleNormalizer', () => {
   describe('shorthand normalizers creation', () => {

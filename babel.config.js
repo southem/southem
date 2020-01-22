@@ -1,22 +1,24 @@
 const path = require('path');
 
 /**
- * UI Kitten modules aliases (needed for Jest resolver)
+ * UI Southem modules aliases (needed for Jest resolver)
  */
+const ROOT_PATH = './';
+
 const moduleAliases = {
-    '@ui-kitten/components': path.resolve(__dirname, './src/components'),
-    '@ui-kitten/eva-icons': path.resolve(__dirname, './src/eva-icons'),
-    '@ui-kitten/moment': path.resolve(__dirname, './src/moment'),
-    '@ui-kitten/date-fns': path.resolve(__dirname, './src/date-fns'),
+    '@ui-kitten/components': path.resolve(ROOT_PATH, './src/components'),
+    '@ui-kitten/eva-icons': path.resolve(ROOT_PATH, './src/eva-icons'),
+    '@ui-kitten/moment': path.resolve(ROOT_PATH, './src/moment'),
+    '@ui-kitten/date-fns': path.resolve(ROOT_PATH, './src/date-fns'),
 };
 
 const moduleInternalAliases = {
-    '@kitten/theme': path.resolve(__dirname, './src/components/theme'),
-    '@kitten/ui': path.resolve(__dirname, './src/components/ui'),
+    '@southem/theme': path.resolve(ROOT_PATH, 'packages/theme'),
+    '@southem/ui': path.resolve(ROOT_PATH, 'packages/ui'),
 };
 
 const moduleResolverConfig = {
-    root: path.resolve('./'),
+    root: path.resolve(ROOT_PATH),
     alias: {
         ...moduleAliases,
         ...moduleInternalAliases,

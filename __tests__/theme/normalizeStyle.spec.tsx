@@ -1,9 +1,10 @@
-import ShorthandsNormalizerFactory, {
+import {
   CORNERS,
   SIDES,
   HORIZONTAL,
   VERTICAL,
-} from '../src/normalizer/ShorthandsNormalizerFactory';
+  ShorthandsNormalizerFactory,
+} from '@southem/theme';
 
 // We can not guarantee order when shorthands are mixed
 // with single values or other shorthands

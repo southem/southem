@@ -7,7 +7,7 @@ import renderer from 'react-test-renderer';
 import Theme, {
   ThemeProvider,
   withThemes,
-} from '../index';
+} from '@southem/theme';
 
 const defaultTheme = {
   'ui.View': {

@@ -1,5 +1,8 @@
 // @ts-ignore
-import resolveIncludes, { INCLUDE } from '../src/tools/resolveIncludes';
+import {
+  INCLUDE,
+  resolveIncludes,
+} from '@southem/theme';
 
 describe('resolveIncludes', () => {
   describe('resolve only target ', () => {
@@ -37,7 +40,7 @@ describe('resolveIncludes', () => {
         },
         secondInclude: {
           [INCLUDE]: ['secondIncludeNumber'],
-          color: 'red',
+          color: '_red',
         },
         includingStyle: {
           [INCLUDE]: ['firstInclude', 'secondInclude'],
@@ -54,12 +57,12 @@ describe('resolveIncludes', () => {
           number: 2,
         },
         secondInclude: {
-          color: 'red',
+          color: '_red',
           number: 3,
         },
         includingStyle: {
           number: 3,
-          color: 'red',
+          color: '_red',
         },
         firstIncludeNumber: {
           number: 2,

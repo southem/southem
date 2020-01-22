@@ -1,7 +1,7 @@
 /* tslint:disable */
 import deepMerge from './tools/deepMerge';
 import mergeComponentAndThemes from './tools/mergeComponentAndThemes';
-import resolveIncludes from './tools/resolveIncludes';
+import { resolveIncludes } from './tools/resolveIncludes';
 import normalizeTheme from './normalizer/normalizeTheme';
 import defaultTheme from './resources/default';
 

@@ -1,5 +1,5 @@
 /* tslint:disable */
-export * from './src/tools/device';
+export * from './src/tools';
 export * from './src/common';
 export * from './src/resources';
 // export * from './ui';

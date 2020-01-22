@@ -1,5 +1,5 @@
 // @ts-ignore
-import Theme, { themes } from '../src/Theme';
+import Theme, { themes } from '@southem/theme';
 
 describe('Theme', () => {
   it('register default theme', () => {

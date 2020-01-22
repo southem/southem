@@ -25,8 +25,7 @@ export const BOTTOM_LEFT = 'BottomLeft';
 // This creators provide standard normalizer used in most cases.
 // When style property has any of this shorthands, use this creators
 // to create shorthand normalizer.
-
-class ShorthandsNormalizerFactory {
+class ShorthandsNormalizer {
   createNormalizersMap;
 
   constructor() {
@@ -80,4 +79,4 @@ class ShorthandsNormalizerFactory {
   }
 }
 
-export default new ShorthandsNormalizerFactory();
+export const ShorthandsNormalizerFactory = new ShorthandsNormalizer();

@@ -1,4 +1,10 @@
 /* tslint:disable */
 
 // Please sort by name
-export default {};
+import _common from './common';
+import _components from './components';
+
+export default {
+  ..._common,
+  ..._components,
+};

@@ -12,8 +12,17 @@
     "declaration": true,
     "skipLibCheck": true,
     "paths": {
-      "@ui/*": [
-        "./packages/*"
+      "@southem/ui/*": [
+        "./packages/ui",
+        "./packages/ui/src/*"
+      ],
+      "@southem/theme/*": [
+        "./packages/theme",
+        "./packages/theme/src/*"
+      ],
+      "@southem/animation/*": [
+        "./packages/animation",
+        "./packages/animation/src/*"
       ],
       "@pg/*": [
         "./packages/playground/src/*"

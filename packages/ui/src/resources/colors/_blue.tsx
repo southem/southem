@@ -1,0 +1,19 @@
+// Blue colors
+export const powderblue = 'rgb(176,224,230)';
+export const lightblue = 'rgb(173,216,230)';
+export const lightskyblue = 'rgb(135,206,250)';
+export const skyblue = 'rgb(135,206,235)';
+export const deepskyblue = 'rgb(0,191,255)';
+export const lightsteelblue = 'rgb(176,196,222)';
+export const dodgerblue = 'rgb(30,144,255)';
+export const cornflowerblue = 'rgb(100,149,237)';
+export const steelblue = 'rgb(70,130,180)';
+export const royalblue = 'rgb(65,105,225)';
+export const blue = 'rgb(0,0,255)';
+export const mediumblue = 'rgb(0,0,205)';
+export const darkblue = 'rgb(0,0,139)';
+export const navy = 'rgb(0,0,128)';
+export const midnightblue = 'rgb(25,25,112)';
+export const mediumslateblue = 'rgb(123,104,238)';
+export const slateblue = 'rgb(106,90,205)';
+export const darkslateblue = 'rgb(72,61,139)';

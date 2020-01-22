@@ -22,7 +22,7 @@ import { DriverShape } from '../drivers/DriverShape';
  *
  * ...
  * Above code will create scroll dependent fade in animation over Image component
- * from scroll position 100, to scroll position 150 where image is fully transparent at
+ * from scroll position 100, to scroll position 150 where image is fully _transparent at
  * scroll position 100, and opaque at scroll position 150
  */
 export class FadeIn extends Component {

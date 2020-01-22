@@ -23,7 +23,7 @@ import { DriverShape } from '../drivers/DriverShape';
  * ...
  * Above code will create scroll dependent fade out animation over Image component
  * from scroll 100, to scroll 150 where image is opaque at scroll 100,
- * and fully transparent at scroll 150
+ * and fully _transparent at scroll 150
  */
 export class FadeOut extends Component {
   static propTypes = {

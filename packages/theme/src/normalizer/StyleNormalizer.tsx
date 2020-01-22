@@ -1,8 +1,9 @@
 /* tslint:disable */
-import ShorthandsNormalizerFactory, {
+import {
   SIDES,
   HORIZONTAL,
   VERTICAL,
+  ShorthandsNormalizerFactory,
 } from './ShorthandsNormalizerFactory';
 
 /**
