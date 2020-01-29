@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@text: matches snapshot * appearance * category h1 and text 1`] = `
+<Text
+  animationOptions={Object {}}
+  onLayout={[Function]}
+  style={
+    Object {
+      "color": "rgba(0, 0, 0, 0.5)",
+      "fontFamily": "Fira Sans",
+      "fontSize": 50,
+      "fontWeight": "700",
+    }
+  }
+>
+  TEXT
+</Text>
+`;
+
+exports[`@text: matches snapshot * appearance * custom text (styled) 1`] = `
+<Text
+  animationOptions={Object {}}
+  onLayout={[Function]}
+  style={
+    Object {
+      "color": "red",
+      "fontFamily": "Fira Sans",
+      "fontSize": 30,
+      "fontWeight": "400",
+    }
+  }
+>
+  TEXT
+</Text>
+`;
+
+exports[`@text: matches snapshot * appearance * empty 1`] = `
+<@theme(Animated(Text))
+  animationOptions={Object {}}
+  forwardedRef={null}
+/>
+`;
+
+exports[`@text: matches snapshot * appearance * text * category h1 and font size of 50 1`] = `
+<Text
+  animationOptions={Object {}}
+  onLayout={[Function]}
+  style={
+    Object {
+      "color": "rgba(0, 0, 0, 0.5)",
+      "fontFamily": "Fira Sans",
+      "fontSize": 50,
+      "fontWeight": "700",
+    }
+  }
+>
+  TEXT
+</Text>
+`;
+
+exports[`@text: matches snapshot * appearance * text 1`] = `
+<@theme(Animated(Text))
+  animationOptions={Object {}}
+  forwardedRef={null}
+>
+  TEXT
+</@theme(Animated(Text))>
+`;
+
+exports[`@text: matches snapshot * interaction * stateless 1`] = `
+<@theme(Animated(Text))
+  animationOptions={Object {}}
+  forwardedRef={null}
+/>
+`;

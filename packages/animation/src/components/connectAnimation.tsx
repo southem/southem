@@ -188,7 +188,7 @@ export function connectAnimation(WrappedComponent, animations = {}, options = de
       };
     }
 
-    componentWillReceiveProps(nextProps, nextContext) {
+    UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
       if (this.shouldRebuildStyle(nextProps, nextContext)) {
         this.resolveStyle(nextProps, this.getDriver(nextProps, nextContext));
       }

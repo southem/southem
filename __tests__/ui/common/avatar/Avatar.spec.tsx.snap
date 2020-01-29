@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@avatar: matches snapshot * appearance * default 1`] = `
+<@theme(Avatar)
+  forwardedRef={null}
+  shape="round"
+  size="medium"
+  source={
+    Object {
+      "uri": "https://akveo.github.io/eva-icons/fill/png/128/star.png",
+    }
+  }
+/>
+`;

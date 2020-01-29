@@ -4,12 +4,15 @@ import React, { Component, Children } from 'react';
 import PropTypes from 'prop-types';
 import Theme from './Theme';
 
-interface ThemeProviderProps {
+interface ComponentProps {
   children: any;
   theme: String;
 }
 
-class ThemeProvider extends Component<ThemeProviderProps> {
+export type ThemeProviderProps = ComponentProps;
+export type ThemeProviderElement = React.ReactElement<ThemeProviderProps>;
+
+export class ThemeProvider extends Component<ThemeProviderProps> {
   static propTypes = {
     children: PropTypes.element.isRequired,
     theme: PropTypes.string,
@@ -34,5 +37,3 @@ class ThemeProvider extends Component<ThemeProviderProps> {
     return Children.toArray(this.props.children);
   }
 }
-
-export default ThemeProvider;

@@ -5,6 +5,7 @@ import {
   Platform,
   StatusBar,
   I18nManager,
+  PixelRatio,
 } from 'react-native';
 import { get } from 'lodash';
 
@@ -23,6 +24,9 @@ const xDimensionsMatch = (
 const xrDimensionsMatch = (
   (height === IPHONE_XR_LONG_SIDE) || (width === IPHONE_XR_LONG_SIDE)
 );
+
+export const DEVICE = { width, height };
+export const PIXELRATIO = PixelRatio.get();
 
 export function platform(os): boolean {
   return OS === os;

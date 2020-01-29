@@ -9,7 +9,7 @@ import {
   shallow,
 } from 'react-native-testing-library';
 import renderer, { ReactTestInstance } from 'react-test-renderer';
-import Theme, { ThemeProvider } from '@southem/theme';
+import Theme, { ThemeProvider, ThemeProviderProps } from '@southem/theme';
 import {
   darkTheme,
   ActivityProps,

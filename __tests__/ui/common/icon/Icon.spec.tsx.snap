@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@icon: matches snapshot * appearance * custom style (styled) 1`] = `
+<ForwardRef(WrappingElement)
+  color="black"
+  size={24}
+  style={
+    Object {
+      "fontSize": 32,
+      "lineHeight": 34,
+    }
+  }
+/>
+`;
+
+exports[`@icon: matches snapshot * appearance * empty 1`] = `
+<ForwardRef(WrappingElement)
+  color="black"
+  size={24}
+/>
+`;
+
+exports[`@icon: matches snapshot * appearance * with type 1`] = `
+<ForwardRef(WrappingElement)
+  color="red"
+  name="access-alarm"
+  size={24}
+/>
+`;
+
+exports[`@icon: matches snapshot * interaction * stateless 1`] = `
+<ForwardRef(WrappingElement)
+  color="black"
+  name="wifi"
+  size={24}
+/>
+`;

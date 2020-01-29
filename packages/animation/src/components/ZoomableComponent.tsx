@@ -95,7 +95,7 @@ export default function makeZoomable(ComponentToBeDecorated) {
       };
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
       this._panResponder = PanResponder.create({
         onStartShouldSetPanResponder: () => true,
         onStartShouldSetPanResponderCapture: () => true,

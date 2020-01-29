@@ -1,3 +1,4 @@
+// tslint:disable
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactNative, { Animated, View, Dimensions } from 'react-native';
@@ -30,7 +31,7 @@ import { measure } from '../components/measure';
  * where image will be scrolled 2 times faster than Title
  */
 class Parallax extends Component {
-  static propTypes = {
+  public static propTypes = {
     /**
      * An instance of animation driver, usually ScrollDriver
      */
@@ -62,7 +63,7 @@ class Parallax extends Component {
     style: PropTypes.object,
   }
 
-  static defaultProps = {
+  public static defaultProps = {
     insideScroll: true,
     header: false,
   }
@@ -73,24 +74,24 @@ class Parallax extends Component {
     this.calculateTranslation = this.calculateTranslation.bind(this);
   }
 
-  calculateTranslation(scrollOffset) {
+  public calculateTranslation(scrollOffset) {
     const { pageY } = this.state.layout;
     const { driver } = this.props;
     const scrollHeight = driver.layout.height;
     this.translation.setValue(scrollOffset.value - (pageY - scrollHeight / 2));
   }
 
-  componentWillMount() {
+  public UNSAFE_componentWillMount() {
     const { driver } = this.props;
     this.animationListener = driver.value.addListener(this.calculateTranslation);
   }
 
-  componentWillUnmount() {
+  public componentWillUnmount() {
     const { driver } = this.props;
     driver.value.removeListener(this.animationListener);
   }
 
-  render() {
+  public render() {
     const {
       scrollSpeed,
       children,
@@ -116,14 +117,14 @@ class Parallax extends Component {
               }),
             },
           ],
-        }]}
-      >
+        }]}>
         {children}
       </Animated.View>
     );
   }
 }
 
+// @ts-ignore
 const measuredParralax = measure(Parallax);
 
 export {
