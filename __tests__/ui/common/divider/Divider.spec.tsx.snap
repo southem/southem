@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@divider: matches snapshot * appearance * custom text (styled) 1`] = `
+<View
+  animationOptions={Object {}}
+  onLayout={[Function]}
+  orientation="horizontal"
+  style={
+    Object {
+      "alignItems": "center",
+      "color": "red",
+      "fontSize": 30,
+      "justifyContent": "center",
+    }
+  }
+>
+  <ForwardRef(WrappingElement)
+    style={null}
+  />
+  <ForwardRef(WrappingElement)
+    style={null}
+  >
+    TEXT
+  </ForwardRef(WrappingElement)>
+  <ForwardRef(WrappingElement)
+    style={null}
+  />
+</View>
+`;
+
+exports[`@divider: matches snapshot * appearance * empty 1`] = `
+<@theme(Animated(Divider))
+  animationOptions={Object {}}
+  forwardedRef={null}
+/>
+`;
+
+exports[`@divider: matches snapshot * appearance * text * align items center and justify content of 50 1`] = `
+<View
+  animationOptions={Object {}}
+  onLayout={[Function]}
+  orientation="horizontal"
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+    }
+  }
+>
+  <ForwardRef(WrappingElement)
+    style={null}
+  />
+  <ForwardRef(WrappingElement)
+    style={null}
+  >
+    TEXT
+  </ForwardRef(WrappingElement)>
+  <ForwardRef(WrappingElement)
+    style={null}
+  />
+</View>
+`;
+
+exports[`@divider: matches snapshot * appearance * text * align items center and justify content of center 1`] = `
+<View
+  animationOptions={Object {}}
+  onLayout={[Function]}
+  orientation="horizontal"
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+    }
+  }
+>
+  <ForwardRef(WrappingElement)
+    style={null}
+  />
+  <ForwardRef(WrappingElement)
+    style={null}
+  >
+    TEXT
+  </ForwardRef(WrappingElement)>
+  <ForwardRef(WrappingElement)
+    style={null}
+  />
+</View>
+`;
+
+exports[`@divider: matches snapshot * appearance * text 1`] = `
+<@theme(Animated(Divider))
+  animationOptions={Object {}}
+  forwardedRef={null}
+>
+  TEXT
+</@theme(Animated(Divider))>
+`;
+
+exports[`@divider: matches snapshot * interaction * stateless 1`] = `
+<@theme(Animated(Divider))
+  animationOptions={Object {}}
+  forwardedRef={null}
+/>
+`;

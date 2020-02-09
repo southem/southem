@@ -42,6 +42,15 @@ exports[`@button: matches snapshot * appearance * icon and text 1`] = `
 </@theme(Animated(Button))>
 `;
 
+exports[`@button: matches snapshot * appearance * icon and title 1`] = `
+<@theme(Animated(Button))
+  animationOptions={Object {}}
+  forwardedRef={null}
+  icon={[Function]}
+  title="BUTTON"
+/>
+`;
+
 exports[`@button: matches snapshot * appearance * text 1`] = `
 <@theme(Animated(Button))
   animationOptions={Object {}}

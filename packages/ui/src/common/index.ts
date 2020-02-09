@@ -11,14 +11,16 @@ export {
 } from './avatar';
 
 export {
-  Text,
-  Title,
-  Heading,
-  Subtitle,
-  Caption,
-  TextProps,
-  TextElement,
-} from './text';
+  Button,
+  ButtonProps,
+  ButtonElement,
+} from './button';
+
+export {
+  Divider,
+  DividerProps,
+  DividerElement,
+} from './divider';
 
 export {
   Icon,
@@ -27,10 +29,14 @@ export {
 } from './icon';
 
 export {
-  Button,
-  ButtonProps,
-  ButtonElement,
-} from './button';
+  Text,
+  Title,
+  Heading,
+  Subtitle,
+  Caption,
+  TextProps,
+  TextElement,
+} from './text';
 
 export {
   View,

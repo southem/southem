@@ -51,7 +51,7 @@ export interface ButtonProps extends TouchableOpacityProps {
   status?: StatusTrait;
   size?: SizeTrait;
   fluid?: boolean;
-  children?: string;
+  children?: any;
   type?: TypeTrait;
   title?: string;
   titleStyle?: StyleProp<TextStyle>;

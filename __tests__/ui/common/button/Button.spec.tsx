@@ -48,7 +48,7 @@ describe('@button: matches snapshot', () => {
 
   describe('* appearance', () => {
 
-    const iconSource: ImageSourcePropType = {uri: 'https://akveo.github.io/eva-icons/fill/png/128/star.png'};
+    const iconSource: ImageSourcePropType = {uri: 'https://i.imgur.com/0y8Ftya.jpg'};
 
     const icon = (style): React.ReactElement<ImageProps> => {
       return (
@@ -84,6 +84,17 @@ describe('@button: matches snapshot', () => {
         children: text,
       });
       const {output} = shallow(component.getByType(Button));
+
+      expect(output).toMatchSnapshot();
+    });
+
+    it('* icon and title', () => {
+      // @ts-ignore
+      const component: RenderAPI = renderComponent({
+        icon,
+        title: text,
+      });
+      const { output } = shallow(component.getByType(Button));
 
       expect(output).toMatchSnapshot();
     });

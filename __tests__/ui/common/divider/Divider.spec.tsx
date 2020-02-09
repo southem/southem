@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Text as RNText,
+  View,
   StyleSheet,
 } from 'react-native';
 import {
@@ -12,33 +12,32 @@ import { ReactTestInstance } from 'react-test-renderer';
 import Theme, { ThemeProvider } from '@southem/theme';
 import {
   darkTheme,
-  Text,
-  TextProps,
-  typography,
+  Divider,
+  DividerProps,
 } from '@southem/ui';
 
 Theme.registerDefaultTheme(darkTheme);
 
-const Mock = (props?: TextProps): React.ReactElement<{}> => {
+const Mock = (props?: DividerProps): React.ReactElement<{}> => {
   return (
     <ThemeProvider
       theme={'default'}>
-      <Text {...props} />
+      <Divider {...props} />
     </ThemeProvider>
   );
 };
 
-const renderComponent = (props?: TextProps): RenderAPI => {
+const renderComponent = (props?: DividerProps): RenderAPI => {
   return render(
     <Mock {...props} />,
   );
 };
 
-describe('@text: matches snapshot', () => {
+describe('@divider: matches snapshot', () => {
   describe('* interaction', () => {
     it('* stateless', () => {
       const component: RenderAPI = renderComponent();
-      const { output } = shallow(component.getByType(Text));
+      const { output } = shallow(component.getByType(Divider));
 
       expect(output).toMatchSnapshot();
     });
@@ -49,47 +48,48 @@ describe('@text: matches snapshot', () => {
 
     it('* empty', () => {
       const component: RenderAPI = renderComponent();
-      const { output } = shallow(component.getByType(Text));
+      const { output } = shallow(component.getByType(Divider));
 
       expect(output).toMatchSnapshot();
     });
 
     it('* text', () => {
       const component: RenderAPI = renderComponent({ children: text });
-      const { output } = shallow(component.getByType(Text));
+      const { output } = shallow(component.getByType(Divider));
 
       expect(output).toMatchSnapshot();
     });
 
-    it('* text * category h1 and font size of 50', () => {
+    it('* text * align items center and justify content of center', () => {
       const component: RenderAPI = renderComponent({
-        category: 'h1',
         children: text,
       });
-      const componentText: ReactTestInstance = component.getByType(RNText);
+      const componentDivider: ReactTestInstance = component.getByType(View);
 
-      const styles  = StyleSheet.flatten(componentText.props.style);
-      const { output } = shallow(componentText);
+      const styles  = StyleSheet.flatten(componentDivider.props.style);
+      const { output } = shallow(componentDivider);
 
-      expect(styles.fontFamily).toEqual(typography.regular.fontFamily);
-      expect(styles.fontSize).toBe(50);
+      expect(styles.alignItems).toEqual('center');
+      expect(styles.justifyContent).toBe('center');
       expect(output).toMatchSnapshot();
     });
 
     it('* custom text (styled)', () => {
       const component: RenderAPI = renderComponent({
         children: text,
+        // @ts-ignore
         style: [{ color: 'red' }, { fontSize: 30 }],
       });
-      const componentText: ReactTestInstance = component.getByType(RNText);
+      const componentDivider: ReactTestInstance = component.getByType(View);
 
-      const styles  = StyleSheet.flatten(componentText.props.style);
-      const { output } = shallow(componentText);
+      const styles  = StyleSheet.flatten(componentDivider.props.style);
+      const { output } = shallow(componentDivider);
 
       expect(styles).toEqual({
-        ...typography.regular,
+        alignItems: 'center',
         color: 'red',
         fontSize: 30,
+        justifyContent: 'center',
       });
 
       expect(output).toMatchSnapshot();

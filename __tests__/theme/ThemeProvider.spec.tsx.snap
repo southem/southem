@@ -12,7 +12,7 @@ exports[`renders correctly 1`] = `
     style={
       Object {
         "alignItems": "stretch",
-        "_fontWeight": "500",
+        "fontWeight": "500",
         "marginBottom": 2,
         "marginLeft": 2,
         "marginRight": 2,
