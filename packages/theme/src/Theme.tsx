@@ -5,7 +5,13 @@ import { resolveIncludes } from './tools/resolveIncludes';
 import normalizeTheme from './normalizer/normalizeTheme';
 import defaultTheme from './resources/default';
 
-const themes = {};
+interface Themes {
+  default: object;
+  light: object;
+  dark: object;
+};
+
+const themes: Themes = {};
 
 // Privates, ideally those should be symbols
 const THEME_STYLES = '@southem.theme';

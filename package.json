@@ -16,7 +16,7 @@
     ]
   },
   "scripts": {
-    "playground": "yarn --cwd src/playground",
+    "showcases": "yarn --cwd showcases/showcases",
     "build": "tsc && tscpaths -p ./tsconfig.json -s ./packages/theme -o ./dist/tsc-out/theme",
     "clean": "rimraf ./dist",
     "lint": "tslint -c ./tslint.json ./packages/**/*.{ts,tsx}",

@@ -1,0 +1,25 @@
+{
+  "name": "@southem/typescript",
+  "description": "React Native template project with UI Southem",
+  "version": "0.0.1",
+  "author": "Southem <contact@southem.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/southem/southem#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/southem/southem.git"
+  },
+  "keywords": [
+    "react-native",
+    "southem",
+    "template",
+    "boilerplate"
+  ],
+  "files": [
+    "template",
+    "template.config.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

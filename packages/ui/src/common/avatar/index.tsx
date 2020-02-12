@@ -9,12 +9,10 @@ import {
 import PropTypes from 'prop-types';
 import { withThemes } from '@southem/theme';
 
-interface ComponentProps {
+export interface AvatarProps extends ImageProps {
   shape?: string;
   size?: string;
 }
-
-export type AvatarProps = ImageProps & ComponentProps;
 export type AvatarElement = React.ReactElement<AvatarProps>;
 /**
  * Styled Image component.

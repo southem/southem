@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { ListItem } from '../list/list-item';
 
-interface ComponentProps {
+export interface CardHeaderProps extends ViewProps {
   title: string;
   description?: string;
   titleStyle?: StyleProp<TextStyle>;
@@ -17,7 +17,6 @@ interface ComponentProps {
   accentStyle?: StyleProp<ViewStyle>;
 }
 
-export type CardHeaderProps = ViewProps & ComponentProps;
 export type CardHeaderElement = React.ReactElement<CardHeaderProps>;
 
 /**
