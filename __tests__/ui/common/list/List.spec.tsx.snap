@@ -1,0 +1,2461 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@list-item: template matches snapshot * description 1`] = `
+<View>
+  <CellRenderer
+    cellKey="0"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={0}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+  />
+  <CellRenderer
+    cellKey="1"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={1}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="0"
+  />
+  <CellRenderer
+    cellKey="2"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={2}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="1"
+  />
+  <CellRenderer
+    cellKey="3"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={3}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="2"
+  />
+  <CellRenderer
+    cellKey="4"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={4}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="3"
+  />
+  <CellRenderer
+    cellKey="5"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={5}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="4"
+  />
+  <CellRenderer
+    cellKey="6"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={6}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="5"
+  />
+  <CellRenderer
+    cellKey="7"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={7}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="6"
+  />
+</View>
+`;
+
+exports[`@list-item: template matches snapshot * text styles 1`] = `
+<View>
+  <CellRenderer
+    cellKey="0"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={0}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+  />
+  <CellRenderer
+    cellKey="1"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={1}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="0"
+  />
+  <CellRenderer
+    cellKey="2"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={2}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="1"
+  />
+  <CellRenderer
+    cellKey="3"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={3}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="2"
+  />
+  <CellRenderer
+    cellKey="4"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={4}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="3"
+  />
+  <CellRenderer
+    cellKey="5"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={5}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="4"
+  />
+  <CellRenderer
+    cellKey="6"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={6}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="5"
+  />
+  <CellRenderer
+    cellKey="7"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={7}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="6"
+  />
+</View>
+`;
+
+exports[`@list-item: template matches snapshot * title 1`] = `
+<View>
+  <CellRenderer
+    cellKey="0"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={0}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+  />
+  <CellRenderer
+    cellKey="1"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={1}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="0"
+  />
+  <CellRenderer
+    cellKey="2"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={2}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="1"
+  />
+  <CellRenderer
+    cellKey="3"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={3}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="2"
+  />
+  <CellRenderer
+    cellKey="4"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={4}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="3"
+  />
+  <CellRenderer
+    cellKey="5"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={5}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="4"
+  />
+  <CellRenderer
+    cellKey="6"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={6}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="5"
+  />
+  <CellRenderer
+    cellKey="7"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={7}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="6"
+  />
+</View>
+`;
+
+exports[`@list-item: template matches snapshot * with accessory 1`] = `
+<View>
+  <CellRenderer
+    cellKey="0"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={0}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+  />
+  <CellRenderer
+    cellKey="1"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={1}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="0"
+  />
+  <CellRenderer
+    cellKey="2"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={2}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="1"
+  />
+  <CellRenderer
+    cellKey="3"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={3}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="2"
+  />
+  <CellRenderer
+    cellKey="4"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={4}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="3"
+  />
+  <CellRenderer
+    cellKey="5"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={5}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="4"
+  />
+  <CellRenderer
+    cellKey="6"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={6}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="5"
+  />
+  <CellRenderer
+    cellKey="7"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={7}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="6"
+  />
+</View>
+`;
+
+exports[`@list-item: template matches snapshot * with icon 1`] = `
+<View>
+  <CellRenderer
+    cellKey="0"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={0}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+  />
+  <CellRenderer
+    cellKey="1"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={1}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="0"
+  />
+  <CellRenderer
+    cellKey="2"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={2}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="1"
+  />
+  <CellRenderer
+    cellKey="3"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={3}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="2"
+  />
+  <CellRenderer
+    cellKey="4"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={4}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="3"
+  />
+  <CellRenderer
+    cellKey="5"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={5}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="4"
+  />
+  <CellRenderer
+    cellKey="6"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={6}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="5"
+  />
+  <CellRenderer
+    cellKey="7"
+    fillRateHelper={
+      FillRateHelper {
+        "_anyBlankStartTime": null,
+        "_enabled": false,
+        "_getFrameMetrics": [Function],
+        "_info": Info {
+          "any_blank_count": 0,
+          "any_blank_ms": 0,
+          "any_blank_speed_sum": 0,
+          "mostly_blank_count": 0,
+          "mostly_blank_ms": 0,
+          "pixels_blank": 0,
+          "pixels_sampled": 0,
+          "pixels_scrolled": 0,
+          "sample_count": 0,
+          "total_time_spent": 0,
+        },
+        "_mostlyBlankStartTime": null,
+        "_samplesStartTime": null,
+      }
+    }
+    horizontal={false}
+    index={7}
+    inversionStyle={null}
+    onLayout={[Function]}
+    onUnmount={[Function]}
+    onUpdateSeparators={[Function]}
+    parentProps={
+      Object {
+        "data": Array [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ],
+        "disableVirtualization": false,
+        "getItem": [Function],
+        "getItemCount": [Function],
+        "horizontal": false,
+        "initialNumToRender": 10,
+        "keyExtractor": [Function],
+        "maxToRenderPerBatch": 10,
+        "numColumns": 1,
+        "onEndReachedThreshold": 2,
+        "removeClippedSubviews": false,
+        "renderItem": [Function],
+        "scrollEventThrottle": 50,
+        "style": Object {},
+        "updateCellsBatchingPeriod": 50,
+        "viewabilityConfigCallbackPairs": Array [],
+        "windowSize": 21,
+      }
+    }
+    prevCellKey="6"
+  />
+</View>
+`;

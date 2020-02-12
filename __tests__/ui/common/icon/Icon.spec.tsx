@@ -12,7 +12,10 @@ import {
   fireEvent,
   RenderAPI,
 } from 'react-native-testing-library';
-import Theme, {ThemeProvider} from '@southem/theme';
+import Theme, {
+  ThemeProvider,
+  ThemeProviderProps,
+} from '@southem/theme';
 import {
   darkTheme,
   Icon,
@@ -21,7 +24,7 @@ import {
 
 Theme.registerDefaultTheme(darkTheme);
 
-const Mock = (props?: IconProps): React.ReactElement<{}> => {
+const Mock = (props?: IconProps): React.ReactElement<ThemeProviderProps> => {
   return (
     <ThemeProvider
       theme={'default'}>

@@ -152,7 +152,7 @@ const renderText = (component, defaultProps, style) =>
  * ```
  */
 class ButtonComponent extends PureComponent<ButtonProps> {
-  public static displayName = 'Button';
+  public static displayName: string = 'Button';
   public static defaultProps = {
     title: undefined,
     titleStyle: undefined,
