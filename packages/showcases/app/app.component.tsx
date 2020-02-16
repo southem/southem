@@ -4,12 +4,12 @@ import {
   ThemeProviderProps,
 } from '@southem/theme';
 import { themes } from './themes';
-import { AppNavigator } from '../navigation/app.navigator';
+import { AppNavigator } from '@southem/showcases/navigation/app.navigator';
 import {
   AppTheme,
   ThemeContext,
   ThemeContextType,
-} from '../services/theme.service';
+} from '@southem/showcases/services/theme.service';
 
 export default (): React.ReactElement => {
 

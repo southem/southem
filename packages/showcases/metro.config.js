@@ -1,26 +1,23 @@
 const path = require('path');
-const env = require('./env');
 
 const frameworkModules = [
-  path.resolve(__dirname, '../ui'),
   path.resolve(__dirname, '../animation'),
+  path.resolve(__dirname, '../html'),
   path.resolve(__dirname, '../theme'),
+  path.resolve(__dirname, '../ui'),
 ];
 
 const moduleDependencies = [
   // @southem/ui
-  path.resolve(env.EVA_PATH, 'eva'),
-  path.resolve(env.EVA_PATH, 'processor'),
   path.resolve(__dirname, '../../node_modules/hoist-non-react-statics'),
-  path.resolve(__dirname, '../../node_modules/lodash.merge'),
+  path.resolve(__dirname, '../../node_modules/lodash'),
   path.resolve(__dirname, '../../node_modules/fecha'),
 
   // @southem/icons
-  path.resolve(__dirname, '../../node_modules/react-native-eva-icons'),
   path.resolve(__dirname, '../../node_modules/react-native-svg'),
 
   // @southem/moment
-  path.resolve(__dirname, '../../node_modules/moment'),
+  // path.resolve(__dirname, '../../node_modules/moment'),
 
   // external
   path.resolve(__dirname, '../../node_modules/react-is'),

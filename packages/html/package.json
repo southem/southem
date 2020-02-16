@@ -1,0 +1,44 @@
+{
+  "name": "@southem/html",
+  "description": "Customizable set of components for React Native applications",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Southem <contact@southem.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/southem/southem#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/southem/southem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/southem/southem/issues"
+  },
+  "keywords": [
+    "react-native",
+    "southem",
+    "kit",
+    "ui",
+    "html"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "lodash": "^4.6.1",
+    "color": "^3.1.2",
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-render-html": "^4.2.0",
+    "htmlparser2": "^4.0.0"
+  },
+  "peerDependencies": {
+    "@southem/animation": "^0.0.1",
+    "@southem/theme": "^0.0.1",
+    "@southem/ui": "^0.0.1",
+    "react-native-svg": "^9.4.0"
+  },
+  "rnpm": {
+    "commands": {
+      "postlink": "node ./node_modules/@southem/ui/scripts/link.js"
+    }
+  }
+}

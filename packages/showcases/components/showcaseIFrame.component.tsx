@@ -20,7 +20,7 @@ import {
   AppTheme,
   ThemeContext,
   ThemeContextType,
-} from '../services/theme.service';
+} from '@southem/showcases/services/theme.service';
 
 export const ColorPaletteIcon = (style: ImageStyle): IconElement => (
   <Icon {...style} name='color-palette-outline'/>
