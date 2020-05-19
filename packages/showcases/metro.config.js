@@ -13,13 +13,9 @@ const moduleDependencies = [
   path.resolve(__dirname, '../../node_modules/lodash'),
   path.resolve(__dirname, '../../node_modules/fecha'),
 
-  // @southem/icons
-  path.resolve(__dirname, '../../node_modules/react-native-svg'),
-
-  // @southem/moment
-  // path.resolve(__dirname, '../../node_modules/moment'),
-
   // external
+  // path.resolve(__dirname, '../../node_modules/moment'),
+  path.resolve(__dirname, '../../node_modules/react-native-svg'),
   path.resolve(__dirname, '../../node_modules/react-is'),
   path.resolve(__dirname, '../../node_modules/source-map'),
 ];

@@ -28,15 +28,18 @@ import {
   parseHtml,
 } from './services';
 
-import Inline, { InlineSettings } from './elements/Inline';
-import Virtual from './elements/Virtual';
-import Block from './elements/Block';
-import Text from './elements/Text';
+import {
+  A,
+  Br,
+  Img,
+  Text,
+  Video,
+  Block,
+  Inline,
+  Virtual,
+  InlineSettings,
+} from './elements';
 import { Ul, Ol, Li, Bullet, Number } from './elements/list';
-import Img from './elements/Img';
-import A from './elements/A';
-import Br from './elements/Br';
-import Video from './elements/Video';
 
 export interface HtmlProps extends ViewProps {
   body: string;

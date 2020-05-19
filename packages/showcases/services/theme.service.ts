@@ -13,6 +13,7 @@ export interface ThemeContextType {
 
 export const ThemeContext = React.createContext<ThemeContextType>({
   theme: AppTheme.light,
+  // @ts-ignore
   setTheme: (theme: AppTheme) => {},
   isDarkMode: () => false,
 });

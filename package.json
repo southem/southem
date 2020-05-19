@@ -43,6 +43,7 @@
     "doc-prsr": "^2.2.3",
     "gulp": "^4.0.2",
     "gulp-typedoc": "^2.2.3",
+    "hoist-non-react-statics": "^3.3.2",
     "husky": "^1.1.2",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",

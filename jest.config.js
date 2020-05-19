@@ -9,7 +9,7 @@ module.exports = {
         'js',
     ],
     modulePathIgnorePatterns: [
-        '<rootDir>/src/playground/',
+        '<rootDir>/packages/showcases/',
         '<rootDir>/template/javascript/',
         '<rootDir>/template/typescript/',
     ],

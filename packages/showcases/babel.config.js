@@ -26,6 +26,7 @@ const presets = [
 
 const plugins = [
   ['module-resolver', moduleResolverConfig],
+  ['@babel/plugin-proposal-decorators', { 'legacy': true }],
 ];
 
 module.exports = function (api) {

@@ -11,6 +11,7 @@ interface Themes {
   dark: object;
 };
 
+// @ts-ignore
 const themes: Themes = {};
 
 // Privates, ideally those should be symbols

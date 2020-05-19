@@ -25,7 +25,7 @@
         "./packages/animation/src/*"
       ],
       "@pg/*": [
-        "./packages/playground/src/*"
+        "./packages/showcases/*"
       ]
     }
   },
@@ -36,7 +36,7 @@
   "exclude": [
     "./template/javascript",
     "./template/typescript",
-    "./packages/playground",
+    "./packages/showcases",
     "./**/*.spec.ts",
     "./**/*.spec.tsx",
     "./**/*.snap"

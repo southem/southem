@@ -48,6 +48,12 @@ export {
 } from './image';
 
 export {
+  Layout,
+  LayoutProps,
+  LayoutElement,
+} from './layout';
+
+export {
   List,
   ListProps,
   ListElement,

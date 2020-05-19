@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  react-native:
+    build: .
+    image: southem/expo-cli
+    container_name: react-native
+    volumes:
+      - ./:/var/react-native-app
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      #- /dev/bus/usb:/dev/bus/usb # Linux
+      #- /home/$USER/.android:/home/node/.android # Linux
+      - /Users/$USER/.android:/home/node/.android # Mac OS
+    working_dir: /var/react-native-app
+    ports:
+      - 8081:8081
+      - 19000:19000
+      - 19001:19001
+      - 19002:19002
+      - 19006:19006 # browser
+    environment:
+      REACT_NATIVE_PACKAGER_HOSTNAME: 192.168.1.90
+      EXPO_DEVTOOLS_LISTEN_ADDRESS: 0.0.0.0
+
+# docker build -t southem/expo-cli .

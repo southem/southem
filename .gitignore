@@ -17,9 +17,6 @@ docs/src/examples.json
 docs/src/assets/playground-build/
 docs/src/assets/examples-build/
 
-# env
-src/playground/env/index.js
-
 #config
 config/
 
