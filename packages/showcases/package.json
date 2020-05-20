@@ -2,44 +2,44 @@
   "name": "@southem/showcases",
   "version": "0.0.1",
   "private": true,
-  "main": "node_modules/expo/AppEntry.js",
-  "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "web:build": "expo build:web --no-pwa",
-    "eject": "expo eject"
-  },
   "workspaces": {
     "nohoist": [
       "*",
       "*/**"
     ]
   },
+  "scripts": {
+    "prod": "yarn env -- prod && expo start -c",
+    "start": "yarn run env -- dev && expo start -c",
+    "build": "expo build:web",
+    "clean": "rimraf ./web-build",
+    "env": "node ./env/set-env.js"
+  },
   "dependencies": {
+    "@react-navigation/web": "^1.0.0-alpha.9",
     "awesome-debounce-promise": "^2.1.0",
-    "expo": "~36.0.0",
-    "react": "~16.9.0",
-    "react-dom": "~16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
-    "react-native-gesture-handler": "~1.5.0",
-    "react-native-reanimated": "~1.4.0",
-    "react-native-screens": "2.0.0-alpha.12",
-    "react-native-svg": "~9.13.3",
-    "react-native-web": "~0.11.7",
-    "react-navigation": "^4.1.1",
-    "react-navigation-drawer": "^2.3.4",
-    "react-navigation-stack": "^2.1.1",
-    "react-navigation-tabs": "^2.7.0"
+    "expo": "^37.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-reanimated": "^1.8.0",
+    "react-native-safe-area-context": "^1.0.2",
+    "react-native-screens": "^2.7.0",
+    "react-native-svg": "^12.1.0",
+    "react-native-web": "^0.12.2",
+    "react-navigation": "^4.3.9",
+    "react-navigation-drawer": "^2.4.13",
+    "react-navigation-stack": "^2.5.1",
+    "react-navigation-tabs": "^2.8.13"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.8.3",
-    "@expo/webpack-config": "^0.11.1",
-    "@types/react": "~16.9.0",
-    "@types/react-native": "~0.60.23",
-    "babel-preset-expo": "~8.0.0",
-    "typescript": "~3.6.3"
+    "@expo/webpack-config": "^0.12.9",
+    "@types/react": "^16.9.35",
+    "@types/react-native": "^0.62.10",
+    "babel-preset-expo": "^8.1.0",
+    "typescript": "^3.9.3"
   }
 }

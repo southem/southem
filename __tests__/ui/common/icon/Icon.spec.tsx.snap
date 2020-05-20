@@ -1,5 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`@icon: component checks * should apply container style 1`] = `
+<ForwardRef(WrappingElement)
+  color="black"
+  containerStyle={
+    Object {
+      "backgroundColor": "blue",
+    }
+  }
+  name="3d-rotation"
+  size={24}
+/>
+`;
+
+exports[`@icon: component checks * should apply custom disabled styles 1`] = `
+<ForwardRef(WrappingElement)
+  color="black"
+  disabled={true}
+  disabledStyle={
+    Object {
+      "backgroundColor": "pink",
+    }
+  }
+  name="3d-rotation"
+  onPress={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  size={24}
+/>
+`;
+
+exports[`@icon: component checks * should apply default disabled styles 1`] = `
+<ForwardRef(WrappingElement)
+  color="black"
+  disabled={true}
+  name="3d-rotation"
+  size={24}
+/>
+`;
+
+exports[`@icon: component checks * should render with icon type 1`] = `
+<ForwardRef(WrappingElement)
+  color="red"
+  iconStyle={
+    Object {
+      "backgroundColor": "peru",
+    }
+  }
+  name="ac-unit"
+  reverse={true}
+  size={24}
+/>
+`;
+
+exports[`@icon: component checks * should render without issues 1`] = `
+<ForwardRef(WrappingElement)
+  color="black"
+  name="wifi"
+  size={24}
+/>
+`;
+
+exports[`@icon: component checks should apply reverse styles 1`] = `
+<ForwardRef(WrappingElement)
+  color="black"
+  name="3d-rotation"
+  reverse={true}
+  size={24}
+/>
+`;
+
 exports[`@icon: matches snapshot * appearance * custom style (styled) 1`] = `
 <ForwardRef(WrappingElement)
   color="black"

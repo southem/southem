@@ -4,7 +4,7 @@
     "slug": "ui-southem-showcases",
     "description": "UI Southem Documentation Showcases",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
+    "sdkVersion": "37.0.0",
     "platforms": [
       "ios",
       "android",

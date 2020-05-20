@@ -2,7 +2,6 @@
   "name": "@southem/animation",
   "description": "Southem Animation Library",
   "version": "0.0.1",
-  "main": "index.js",
   "author": "Southem <contact@southem.com>",
   "license": "MIT",
   "homepage": "https://github.com/southem/southem#readme",
@@ -22,14 +21,14 @@
     "access": "public"
   },
   "dependencies": {
-    "hoist-non-react-statics": "^3.2.1",
-    "lodash": "^4.6.1"
+    "hoist-non-react-statics": "^3.3.2",
+    "lodash": "^4.17.15"
   },
   "peerDependencies": {
-    "@southem/theme": "^0.0.1",
-    "react": "~16.9.0",
-    "react-native": "~0.61.4",
-    "react-native-svg": "^9.4.0",
+    "@southem/theme": "0.0.1",
+    "react": "^16.13.1",
+    "react-native": "^0.62.2",
+    "react-native-svg": "^12.1.0",
     "prop-types": "^15.7.2"
   },
   "rnpm": {

@@ -4,12 +4,15 @@ import {
   ThemeProviderProps,
 } from '@southem/theme';
 import { themes } from './themes';
+import { enableScreens } from 'react-native-screens';
 import { AppNavigator } from '@southem/showcases/navigation/app.navigator';
 import {
   AppTheme,
   ThemeContext,
   ThemeContextType,
 } from '@southem/showcases/services/theme.service';
+
+enableScreens();
 
 export default (): React.ReactElement => {
 
@@ -19,10 +22,9 @@ export default (): React.ReactElement => {
     return theme === AppTheme.dark;
   };
 
+  // @ts-ignore
   const applicationProviderConfig: ThemeProviderProps = {
     theme: themes[theme],
-    // @ts-ignore
-    customMapping: customMapping,
   };
 
   const themeContextProviderConfig: ThemeContextType = {

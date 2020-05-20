@@ -21,7 +21,7 @@ const HeartIcon = (style: ImageStyle): React.ReactElement<ImageProps> => (
 export const AppNavigator = (): React.ReactElement => (
   <Layout style={styles.container}>
     <Text style={styles.text} category='h1'>
-      Welcome to UI Kitten 😻
+      Welcome to UI SouTheme 😻
     </Text>
     <Text style={styles.text} category='s1'>
       Start with editing App.js to configure your App

@@ -1,10 +1,7 @@
 import React from 'react';
 import {
-  Text,
-  Image,
-  ImageProps,
-  TouchableOpacity,
-  ImageSourcePropType,
+  Text as RNText,
+  StyleSheet,
 } from 'react-native';
 import {
   render,
@@ -21,10 +18,11 @@ import {
   Icon,
   IconProps,
 } from '@southem/ui';
+import {ReactTestInstance} from 'react-test-renderer';
 
 Theme.registerDefaultTheme(darkTheme);
 
-const Mock = (props?: IconProps): React.ReactElement<ThemeProviderProps> => {
+const IconMock = (props?: IconProps): React.ReactElement<ThemeProviderProps> => {
   return (
     <ThemeProvider
       theme={'default'}>
@@ -35,12 +33,111 @@ const Mock = (props?: IconProps): React.ReactElement<ThemeProviderProps> => {
 
 const renderComponent = (props?: IconProps): RenderAPI => {
   return render(
-    <Mock {...props} />,
+    <IconMock {...props} />,
   );
 };
 
-describe('@icon: matches snapshot', () => {
+describe('@icon: component checks', () => {
+  it('* should render without issues', () => {
+    const renderedComponent: RenderAPI = renderComponent({
+      name: 'wifi',
+    });
+    const { output } = shallow(renderedComponent.getByType(Icon));
 
+    expect(output).toBeTruthy();
+    expect(output).toMatchSnapshot();
+  });
+  it('* should render with icon type', () => {
+    const renderedComponent: RenderAPI = renderComponent({
+      name: 'ac-unit',
+      type: 'octicon',
+      reverse: true,
+      color: 'red',
+      iconStyle: {
+        backgroundColor: 'peru',
+      },
+    });
+    const { output } = shallow(renderedComponent.getByType(Icon));
+    const componentIcon: ReactTestInstance = renderedComponent.getByType(RNText);
+    const styles  = StyleSheet.flatten(componentIcon.props.iconStyle);
+
+    expect(styles.backgroundColor).toBe('peru');
+    expect(output).toBeTruthy();
+    expect(output).toMatchSnapshot();
+  });
+  it('* should apply default disabled styles', () => {
+    const component: RenderAPI = renderComponent({
+      name: '3d-rotation',
+      type: 'octicon',
+      disabled: true,
+    });
+
+    const { output } = shallow(component.getByType(Icon));
+    const { props }: ReactTestInstance = component.getByType(RNText);
+
+    expect(props.disabled).toBe(true);
+    expect(output).toBeTruthy();
+    expect(output).toMatchSnapshot();
+  });
+  it('* should apply custom disabled styles', () => {
+    const onPress = jest.fn();
+    const component: RenderAPI = renderComponent({
+      onPress,
+      name: '3d-rotation',
+      type: 'octicon',
+      disabled: true,
+      disabledStyle: {
+        backgroundColor: 'pink',
+      },
+    });
+
+    const { output } = shallow(component.getByType(Icon));
+    const { props }: ReactTestInstance = component.getByType(RNText);
+    const styles  = StyleSheet.flatten(props.disabledStyle);
+
+    fireEvent.press(component.getByType(Icon));
+
+    expect(styles.backgroundColor).toBe('pink');
+    expect(props.disabled).toBe(true);
+    expect(output).toBeTruthy();
+    expect(onPress).toBeCalled();
+    expect(output).toMatchSnapshot();
+  });
+  it('* should apply container style', () => {
+    const component: RenderAPI = renderComponent({
+      name: '3d-rotation',
+      type: 'octicon',
+      containerStyle: {
+        backgroundColor: 'blue',
+      },
+    });
+
+    const { output } = shallow(component.getByType(Icon));
+    const { props }: ReactTestInstance = component.getByType(RNText);
+    const styles  = StyleSheet.flatten(props.containerStyle);
+
+    expect(styles.backgroundColor).toBe('blue');
+    expect(props.disabled).toBe(undefined);
+    expect(output).toBeTruthy();
+    expect(output).toMatchSnapshot();
+  });
+  it('should apply reverse styles', () => {
+    const component: RenderAPI = renderComponent({
+      name: '3d-rotation',
+      type: 'octicon',
+      reverse: true,
+    });
+
+    const { output } = shallow(component.getByType(Icon));
+    const { props }: ReactTestInstance = component.getByType(RNText);
+
+    expect(props.reverse).toBe(true);
+    expect(props.disabled).toBe(undefined);
+    expect(output).toBeTruthy();
+    expect(output).toMatchSnapshot();
+  });
+});
+describe('@icon: matches snapshot', () => {
   describe('* interaction', () => {
     it('* stateless', () => {
       const component: RenderAPI = renderComponent({
@@ -51,7 +148,6 @@ describe('@icon: matches snapshot', () => {
       expect(output).toMatchSnapshot();
     });
   });
-
   describe('* appearance', () => {
     it('* empty', () => {
       const component: RenderAPI = renderComponent();
@@ -59,7 +155,6 @@ describe('@icon: matches snapshot', () => {
 
       expect(output).toMatchSnapshot();
     });
-
     it('* with type', () => {
       const component: RenderAPI = renderComponent({
         name: 'access-alarm',
@@ -70,7 +165,6 @@ describe('@icon: matches snapshot', () => {
 
       expect(output).toMatchSnapshot();
     });
-
     it('* custom style (styled)', () => {
       const component: RenderAPI = renderComponent({
         size: 24,
@@ -84,100 +178,4 @@ describe('@icon: matches snapshot', () => {
       expect(output).toMatchSnapshot();
     });
   });
-
 });
-
-/**
-describe('@icon: component checks', () => {
-  it('should render without issues', () => {
-    const component = shallow(<Icon name='wifi'/>);
-
-    expect(component.length).toBe(1);
-    expect(toJson(component)).toMatchSnapshot();
-  });
-
-  it('should render with icon type', () => {
-    const component = shallow(
-      <Icon
-        name='alert'
-        type='octicon'
-        reverse
-        color='red'
-        iconStyle={{backgroundColor: 'peru'}}
-      />,
-    );
-
-    expect(component.length).toBe(1);
-    expect(toJson(component)).toMatchSnapshot();
-  });
-
-  it('should have onPress event', () => {
-    const onPress = jest.fn();
-    const component = shallow(<Icon onPress={onPress} name='wifi'/>);
-    const touchable = component.childAt(0);
-
-    touchable.simulate('press');
-    expect(onPress).toHaveBeenCalledTimes(1);
-  });
-
-  it('should apply default disabled styles', () => {
-    const onPress = jest.fn();
-    const component = shallow(<Icon onPress={onPress} name='wifi' disabled/>);
-
-    expect(toJson(component)).toMatchSnapshot();
-  });
-
-  it('should apply custom disabled styles', () => {
-    const onPress = jest.fn();
-    const component = shallow(
-      <Icon
-        onPress={onPress}
-        name='wifi'
-        disabled
-        disabledStyle={{backgroundColor: 'pink'}}
-      />,
-    );
-
-    expect(toJson(component)).toMatchSnapshot();
-  });
-
-  it('should apply container style', () => {
-    const component = shallow(
-      <Icon name='wifi' containerStyle={{backgroundColor: 'blue'}}/>,
-    );
-
-    expect(toJson(component)).toMatchSnapshot();
-  });
-
-  it('should apply reverse styles', () => {
-    const component = shallow(<Icon name='wifi' reverse/>);
-
-    expect(toJson(component)).toMatchSnapshot();
-  });
-
-  it('should set underlayColor to color when styles when underlayColor absent', () => {
-    const component = shallow(<Icon name='wifi' underlayColor={null}/>);
-
-    expect(toJson(component)).toMatchSnapshot();
-  });
-
-  it('should apply raised styles', () => {
-    const component = shallow(<Icon name='wifi' raised/>);
-
-    expect(toJson(component)).toMatchSnapshot();
-  });
-
-  it('should apply values from theme', () => {
-    const component = create(
-      <ThemeProvider theme={'default'}>
-        <Icon/>
-      </ThemeProvider>,
-    );
-
-    expect(component.root.findByProps({testID: 'iconIcon'}).props.size).toBe(
-      26,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-});
-**/

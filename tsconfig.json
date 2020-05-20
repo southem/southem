@@ -34,8 +34,8 @@
     "./packages/**/package.json"
   ],
   "exclude": [
-    "./template/javascript",
-    "./template/typescript",
+    "./packages/template/javascript",
+    "./packages/template/typescript",
     "./packages/showcases",
     "./**/*.spec.ts",
     "./**/*.spec.tsx",

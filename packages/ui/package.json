@@ -2,7 +2,6 @@
   "name": "@southem/ui",
   "description": "Customizable set of components for React Native applications",
   "version": "0.0.1",
-  "main": "index.js",
   "author": "Southem <contact@southem.com>",
   "license": "MIT",
   "homepage": "https://github.com/southem/southem#readme",
@@ -23,14 +22,14 @@
     "access": "public"
   },
   "dependencies": {
-    "lodash": "^4.6.1",
+    "lodash": "^4.17.15",
     "color": "^3.1.2",
     "react-native-vector-icons": "^6.6.0"
   },
   "peerDependencies": {
-    "@southem/theme": "^0.0.1",
-    "@southem/animation": "^0.0.1",
-    "react-native-svg": "^9.4.0"
+    "@southem/theme": "0.0.1",
+    "@southem/animation": "0.0.1",
+    "react-native-svg": "^12.1.0"
   },
   "rnpm": {
     "assets": [

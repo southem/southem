@@ -1,6 +1,7 @@
 import React from 'react';
 
 export enum AppTheme {
+  default = 'default',
   light = 'light',
   dark = 'dark',
 }
