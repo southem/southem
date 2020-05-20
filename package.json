@@ -28,6 +28,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/runtime": "^7.9.6",
     "@types/gulp": "ts3.7",
     "@types/gulp-replace": "ts3.7",
     "@types/jest": "ts3.7",

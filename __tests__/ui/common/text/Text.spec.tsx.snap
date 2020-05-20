@@ -1,22 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`@text: matches snapshot * appearance * category h1 and text 1`] = `
-<Text
-  animationOptions={Object {}}
-  onLayout={[Function]}
-  style={
-    Object {
-      "color": "rgba(0, 0, 0, 0.5)",
-      "fontFamily": "Fira Sans",
-      "fontSize": 50,
-      "fontWeight": "700",
-    }
-  }
->
-  TEXT
-</Text>
-`;
-
 exports[`@text: matches snapshot * appearance * custom text (styled) 1`] = `
 <Text
   animationOptions={Object {}}
