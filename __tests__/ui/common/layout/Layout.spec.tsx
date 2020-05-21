@@ -1,14 +1,10 @@
 import React from 'react';
 import {
   Text,
-  StyleSheet,
 } from 'react-native';
 import {
   render,
-  shallow,
-  RenderAPI,
 } from 'react-native-testing-library';
-import { ReactTestInstance } from 'react-test-renderer';
 import Theme, { ThemeProvider } from '@southem/theme';
 import {
   darkTheme,

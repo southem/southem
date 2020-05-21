@@ -30,6 +30,15 @@ export {
 } from './card/cardHeader';
 
 export {
+  CheckBox,
+  CheckBoxProps,
+  CheckBoxElement,
+  CheckMark,
+  CheckMarkProps,
+  CheckMarkElement,
+} from './checkbox';
+
+export {
   Divider,
   DividerProps,
   DividerElement,
@@ -74,6 +83,10 @@ export {
   TextProps,
   TextElement,
 } from './text';
+
+export {
+  Touchable,
+} from './touchable';
 
 export {
   View,

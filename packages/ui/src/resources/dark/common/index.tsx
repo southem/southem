@@ -3,6 +3,7 @@ import _activityIndicator from './_activityIndicator';
 import _avatar from './_avatar';
 import _button from './_button';
 import _card from './_card';
+import _checkbox from './_checkbox';
 import _divider from './_divider';
 import _image from './_image';
 import _icon from './_icon';
@@ -16,6 +17,7 @@ export default {
   ..._avatar,
   ..._button,
   ..._card,
+  ..._checkbox,
   ..._divider,
   ..._image,
   ..._icon,

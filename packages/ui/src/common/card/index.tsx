@@ -60,7 +60,7 @@ const renderFooter = (component, defaultProps, style: StyleType) =>
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
   });
 
-let renderHeader = (component, defaultProps, style: StyleType) =>
+const renderHeader = (component, defaultProps, style: StyleType) =>
   renderNode(CardHeader, component, {
     ...defaultProps,
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
@@ -102,8 +102,8 @@ class CardComponent extends PureComponent<CardProps> {
     headerProps: {
       accent: null,
       title: null,
-      description: null
-    }
+      description: null,
+    },
   };
 
   private renderDivider = (): DividerElement => {
@@ -123,9 +123,9 @@ class CardComponent extends PureComponent<CardProps> {
   };
 
   private renderFooter = (style: StyleType): FooterProp => {
-    const Footer: FooterProp = this.props.footer();
+    const footer: FooterProp = this.props.footer();
 
-    return renderFooter(Footer, {}, [style, Footer.props.style]);
+    return renderFooter(footer, {}, [style, footer.props.style]);
   };
 
   render() {

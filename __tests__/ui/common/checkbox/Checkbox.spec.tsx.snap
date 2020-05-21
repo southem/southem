@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@checkbox: component checks * should render text 1`] = `
+<Text
+  allowFontScaling={false}
+  animationOptions={Object {}}
+  containerStyle={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+    }
+  }
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "color": "rgba(0, 0, 0, 0.5)",
+        "fontSize": 24,
+      },
+      Object {},
+      Object {
+        "fontFamily": "Material Icons",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  ?
+</Text>
+`;
+
+exports[`@checkbox: component checks * should render text as component 1`] = `
+<Text
+  allowFontScaling={false}
+  animationOptions={Object {}}
+  containerStyle={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+    }
+  }
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "color": "rgba(0, 0, 0, 0.5)",
+        "fontSize": 24,
+      },
+      Object {},
+      Object {
+        "fontFamily": "Material Icons",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  ?
+</Text>
+`;
