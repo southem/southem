@@ -1,9 +1,10 @@
-/* tslint:disable */
+/* @tslint:disable */
 import ReactNative, {UIManager} from 'react-native';
 
 const findNodeHandle = ReactNative.findNodeHandle;
 
 export const measure = Component => {
+    // @ts-ignore
     class measuredComponent extends Component {
         constructor(props, context) {
             super(props, context);

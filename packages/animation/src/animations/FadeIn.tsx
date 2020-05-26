@@ -40,9 +40,10 @@ export class FadeIn extends Component {
      * children would fade in
      */
     inputRange: PropTypes.array,
-  }
+  };
 
   public render() {
+    // @ts-ignore
     const { driver, children, inputRange = [0, 1], style } = this.props;
 
     return (

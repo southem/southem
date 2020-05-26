@@ -41,9 +41,10 @@ export class FadeOut extends Component {
      */
     inputRange: PropTypes.array,
     style: PropTypes.object,
-  }
+  };
 
   render() {
+    // @ts-ignore
     const { driver, children, inputRange = [0, 1], style } = this.props;
 
     return (

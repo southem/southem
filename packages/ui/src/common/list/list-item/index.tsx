@@ -100,7 +100,7 @@ class ListItemComponent extends React.Component<ListItemProps> {
     // @ts-ignore: will be not executed if `icon` prop is provided
     const { index, icon } = this.props;
 
-    const iconElement: IconElement = icon(style, index);
+    const iconElement: IconElement = (typeof icon === 'function') ? icon(style, index): icon;
 
     return renderNode(Icon, iconElement, {
       key: 0,

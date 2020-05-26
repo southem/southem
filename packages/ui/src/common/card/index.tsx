@@ -14,7 +14,10 @@ import {
   platform,
   renderNode,
 } from '@southem/ui';
-import {StyleType, withThemes} from '@southem/theme';
+import {
+  StyleType,
+  withThemes,
+} from '@southem/theme';
 import { connectAnimation } from '@southem/animation';
 import {
   Divider,

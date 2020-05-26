@@ -8,10 +8,11 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { withThemes } from '@southem/theme';
+import { SizeType, ShapeType } from '@southem/ui';
 
 export interface AvatarProps extends ImageProps {
-  shape?: string;
-  size?: string;
+  shape?: ShapeType;
+  size?: SizeType;
 }
 export type AvatarElement = React.ReactElement<AvatarProps>;
 /**

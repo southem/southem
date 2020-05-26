@@ -1,4 +1,4 @@
-import { View as RNView, } from 'react-native';
+import { View as RNView } from 'react-native';
 import { connectAnimation } from '../components/connectAnimation';
 import { animations } from './animations';
 
