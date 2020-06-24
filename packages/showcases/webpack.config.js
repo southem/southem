@@ -10,7 +10,7 @@ const playgroundExtraModules = {
 };
 
 const babelLoaderRules = {
-  test: /\.(js|ts|tsx)$/,
+  test: /\.(js|jsx|ts|tsx)$/,
   loader: 'babel-loader',
   exclude: /node_modules/,
 };
@@ -24,7 +24,7 @@ module.exports = async function (env, argv) {
   ];
 
   config.module.rules.push({
-    test: /\.(js|ts|tsx)$/,
+    test: /\.(js|jsx|ts|tsx)$/,
     loader: 'babel-loader',
     exclude: /node_modules/,
   });

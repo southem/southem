@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   ImageProps,
-  ImageStyle,
   StyleSheet,
 } from 'react-native';
 import {
@@ -11,8 +10,8 @@ import {
   Icon,
 } from '@southem/ui';
 
-const HeartIcon = (style: ImageStyle): React.ReactElement<ImageProps> => (
-  <Icon {...style} name='heart'/>
+const HeartIcon = (style: ImageProps): React.ReactElement<ImageProps> => (
+  <Icon {...style} name='favorite'/>
 );
 
 /*
@@ -21,7 +20,7 @@ const HeartIcon = (style: ImageStyle): React.ReactElement<ImageProps> => (
 export const AppNavigator = (): React.ReactElement => (
   <Layout style={styles.container}>
     <Text style={styles.text} category='h1'>
-      Welcome to UI SouTheme 😻
+      Welcome to UI SouTheme
     </Text>
     <Text style={styles.text} category='s1'>
       Start with editing App.js to configure your App

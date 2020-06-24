@@ -1,18 +1,14 @@
 import React from 'react';
-import {
-  ThemeProvider,
-  ThemeProviderProps,
-} from '@southem/theme';
-import { themes } from './themes';
 import { enableScreens } from 'react-native-screens';
+import { darkTheme } from '@southem/ui';
+import Theme, { ThemeProvider, ThemeProviderProps } from '@southem/theme';
 import { AppNavigator } from '@southem/showcases/navigation/app.navigator';
-import {
-  AppTheme,
-  ThemeContext,
-  ThemeContextType,
-} from '@southem/showcases/services/theme.service';
+import { AppTheme, ThemeContext, ThemeContextType } from '@southem/showcases/services/theme.service';
+import { themes } from './themes';
 
 enableScreens();
+
+Theme.registerDefaultTheme(darkTheme);
 
 export default (): React.ReactElement => {
 

@@ -28,6 +28,7 @@
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
+    "react-native": "^0.62.2",
     "react-native-svg": "^12.1.0",
     "prop-types": "^15.7.2"
   }

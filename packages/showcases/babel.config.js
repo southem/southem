@@ -7,9 +7,9 @@ const moduleInternalAliases = {
 const frameworkModules = {
   '@southem/animation': path.resolve(__dirname, '../animation'),
   '@southem/html': path.resolve(__dirname, '../html'),
+  '@southem/icons': path.resolve(__dirname, '../icons'),
   '@southem/theme': path.resolve(__dirname, '../theme'),
   '@southem/ui': path.resolve(__dirname, '../ui'),
-  '@southem/icons': path.resolve(__dirname, '../icons'),
 };
 
 const moduleResolverConfig = {
@@ -21,15 +21,16 @@ const moduleResolverConfig = {
 };
 
 const presets = [
+  'module:metro-react-native-babel-preset',
   'babel-preset-expo',
 ];
 
 const plugins = [
-  ['module-resolver', moduleResolverConfig],
   ['@babel/plugin-proposal-decorators', { 'legacy': true }],
+  ['module-resolver', moduleResolverConfig],
 ];
 
 module.exports = function (api) {
   api.cache(true);
-  return { presets, plugins };
+  return { presets, retainLines: true, plugins };
 };

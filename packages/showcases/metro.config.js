@@ -22,16 +22,33 @@ const moduleDependencies = [
 
 const playgroundExtraModules = {
   '@babel/runtime': path.resolve(__dirname, './node_modules/@babel/runtime'),
-  'react': path.resolve(__dirname, './node_modules/react'),
-  'react-native': path.resolve(__dirname, './node_modules/react-native'),
+  '@expo/vector-icons': path.resolve(__dirname, './node_modules/@expo/vector-icons'),
+  'color': path.resolve(__dirname, './node_modules/color'),
   'css-tree': path.resolve(__dirname, './node_modules/css-tree'),
   'css-select': path.resolve(__dirname, './node_modules/css-select'),
+  'react': path.resolve(__dirname, './node_modules/react'),
+  'react-native': path.resolve(__dirname, './node_modules/react-native'),
+  'prop-types': path.resolve(__dirname, './node_modules/prop-types'),
 };
 
 module.exports = {
   projectRoot: path.resolve(__dirname),
+  transformer: {
+    getTransformOptions: async() => ({
+      transform: {
+        experimentalImportSupport: false,
+        inlineRequires: false,
+      },
+    }),
+  },
   resolver: {
+    sourceExts: ['js', 'jsx', 'ts', 'tsx'],
     extraNodeModules: playgroundExtraModules,
+    /**
+    extraNodeModules: new Proxy(playgroundExtraModules, {
+      get: (target, name) => path.join(__dirname, `node_modules/${name}`),
+    }),
+    **/
   },
   watchFolders: [
     ...frameworkModules,

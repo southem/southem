@@ -4,7 +4,6 @@
     "slug": "ui-southem-showcases",
     "description": "UI Southem Documentation Showcases",
     "privacy": "public",
-    "sdkVersion": "37.0.0",
     "platforms": [
       "ios",
       "android",
@@ -12,14 +11,11 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
-    },
-    "androidStatusBar": {
-      "barStyle": "light-content"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -28,7 +24,24 @@
       "assets/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.southem.showcases-ui"
+    },
+    "android": {
+      "versionCode": 38,
+      "package": "com.southem.showcases.ui",
+      "config": {
+        "googleSignIn": {
+          "apiKey": "AIzaSSyADCLdzTBaRTkSurzEMtWGr",
+          "certificateHash": "E3C2F31E0D060B49616998"
+        }
+      },
+      "permissions": [
+        "WAKE_LOCK"
+      ]
+    },
+    "androidStatusBar": {
+      "barStyle": "light-content"
     },
     "entryPoint": "node_modules/expo/AppEntry.js"
   }
