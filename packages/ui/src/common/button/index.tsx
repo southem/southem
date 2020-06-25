@@ -52,7 +52,7 @@ export interface ButtonProps extends TouchableOpacityProps {
   size?: SizeTrait;
   fluid?: boolean;
   children?: any;
-  type?: TypeTrait;
+  appearance?: TypeTrait;
   title?: string;
   titleStyle?: StyleProp<TextStyle>;
   titleProps?: StyleProp<TextProps>;
@@ -102,7 +102,7 @@ const renderText = (component, defaultProps, style) =>
  *
  * @property {(style: StyleType) => React.ReactElement<ImageProps>} icon - Determines icon of the component.
  *
- * @property {string} type - Determines the appearance of the component.
+ * @property {string} appearance - Determines the appearance of the component.
  * Can be `filled` | `outline` | `ghost`.
  * Default is `filled`.
  *
@@ -160,7 +160,7 @@ class ButtonComponent extends PureComponent<ButtonProps> {
     disabled: false,
     loading: false,
     size: 'medium',
-    type: 'filled',
+    appearance: 'filled',
     fluid: false,
     circular: false,
     onPress: () => console.log('Please attach a method to this component'),
@@ -192,7 +192,7 @@ class ButtonComponent extends PureComponent<ButtonProps> {
       style,
       containerStyle,
       onPress,
-      type,
+      appearance,
       loading,
       loadingStyle,
       loadingProps,

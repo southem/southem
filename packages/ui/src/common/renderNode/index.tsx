@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 
-const renderNode = (Component, content, defaultProps) => {
+export const renderNode = (Component, content, defaultProps) => {
   if (content == null || content === false) {
     return null;
   }
@@ -21,5 +21,3 @@ const renderNode = (Component, content, defaultProps) => {
 
   return <Component {...defaultProps} {...content} />;
 };
-
-export default renderNode;

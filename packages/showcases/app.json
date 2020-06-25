@@ -6,14 +6,16 @@
     "privacy": "public",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
     "version": "1.0.0",
+    "sdkVersion": "36.0.0",
+    "githubUrl": "https://github.com/southem/southem",
     "orientation": "portrait",
-    "icon": "assets/images/icon.png",
+    "userInterfaceStyle": "automatic",
+    "icon": "src/assets/images/icon.png",
     "splash": {
-      "image": "assets/images/splash.png",
+      "image": "src/assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -21,15 +23,20 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "assets/*"
+      "src/assets/images/*",
+      "src/assets/fonts",
+      "src/layouts/**/assets/*"
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.southem.showcases-ui"
+      "bundleIdentifier": "ui.southem.showcases",
+      "appStoreUrl": "https://itunes.apple.com/us/app/ui-southem-showcases/id1246173236",
+      "buildNumber": "3"
     },
     "android": {
-      "versionCode": 38,
-      "package": "com.southem.showcases.ui",
+      "versionCode": 3,
+      "package": "ui.southem.showcases",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=ui.southem.showcases",
       "config": {
         "googleSignIn": {
           "apiKey": "AIzaSSyADCLdzTBaRTkSurzEMtWGr",
@@ -41,7 +48,8 @@
       ]
     },
     "androidStatusBar": {
-      "barStyle": "light-content"
+      "barStyle": "light-content",
+      "backgroundColor": "#F7F9FC"
     },
     "entryPoint": "node_modules/expo/AppEntry.js"
   }

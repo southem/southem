@@ -8,7 +8,7 @@ export default {
     borderRadius: 3,
     borderColor: palette.default,
     backgroundColor: palette.default,
-    paddingVertical: 3,
+    padding: 8,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -17,7 +17,7 @@ export default {
       color: white,
     },
     Icon: {
-      padding: 0,
+      paddingHorizontal: 3,
       size: 18,
       minWidth: 18,
       minHeight: 18,
@@ -27,13 +27,13 @@ export default {
     },
     Text: {
       alignItems: 'stretch',
-      fontSize: fontSizeButton,
+      fontSize: 14, // fontSizeButton,
       fontWeight: '500',
       color: white,
       margin: 2,
     },
   },
-  'Button[type=filled]': {
+  'Button[appearance=filled]': {
     borderColor: palette.default,
     backgroundColor: palette.default,
     ActivityIndicator: {
@@ -51,7 +51,7 @@ export default {
       margin: 2,
     },
   },
-  'Button[type=outline]': {
+  'Button[appearance=outline]': {
     borderWidth: 2,
     backgroundColor: transparent,
     ActivityIndicator: {
@@ -64,7 +64,7 @@ export default {
       color: palette.default,
     },
   },
-  'Button[type=ghost]': {
+  'Button[appearance=ghost]': {
     borderColor: transparent,
     backgroundColor: transparent,
     ActivityIndicator: {

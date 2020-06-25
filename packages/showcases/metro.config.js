@@ -15,7 +15,8 @@ const moduleDependencies = [
   path.resolve(__dirname, '../../node_modules/fecha'),
 
   // external
-  // path.resolve(__dirname, '../../node_modules/moment'),
+  path.resolve(__dirname, '../../node_modules/moment'),
+  path.resolve(__dirname, '../../node_modules/react-native-background-timer'),
   path.resolve(__dirname, '../../node_modules/react-native-svg'),
   path.resolve(__dirname, '../../node_modules/react-is'),
   path.resolve(__dirname, '../../node_modules/source-map'),

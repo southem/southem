@@ -94,5 +94,6 @@ export {
   ViewElementProps,
 } from './view';
 
-export { default as renderNode } from './renderNode';
+export * from './nodeType';
+export * from './renderNode';
 export * from './typings';

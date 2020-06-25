@@ -1,5 +1,5 @@
 /* eslint-disable */
-export default (src, ...args) => {
+export const blacklist = (src, ...args) => {
     const copy = {};
     const ignore = Array.from(args);
 
