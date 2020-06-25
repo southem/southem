@@ -6,8 +6,8 @@ import {
 import {
   Text,
   TextProps,
-} from '@kitten/ui';
-import { textStyle } from '@src/components/common';
+} from '@southem/ui';
+import { textStyle } from '../../../../components/common';
 
 const { width } = Dimensions.get('window');
 

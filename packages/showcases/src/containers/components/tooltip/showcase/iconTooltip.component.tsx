@@ -1,7 +1,7 @@
 import React from 'react';
-import { TooltipProps } from '@kitten/ui';
+import { TooltipProps } from '@southem/ui';
 import { TooltipShowcase } from './tooltipShowcase.component';
-import { StarIconFill } from '@src/assets/icons';
+import { StarIconFill } from '../../../../assets/icons';
 
 type TooltipElement = React.ReactElement<TooltipProps>;
 

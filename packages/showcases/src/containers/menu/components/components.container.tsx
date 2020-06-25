@@ -28,6 +28,7 @@ export class ComponentsContainer extends React.Component<NavigationStackScreenPr
   public render(): React.ReactNode {
     return (
       <Components
+        // @ts-ignore
         data={this.state.data}
         onItemSelect={this.onItemSelect}
       />

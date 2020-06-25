@@ -3,14 +3,10 @@ import {
   View,
   FlexStyle,
   ViewProps,
+  StyleSheet,
 } from 'react-native';
-import {
-  ThemedComponentProps,
-  ThemeType,
-  withStyles,
-} from '@kitten/theme';
-import { Text } from '@kitten/ui';
-import { textStyle } from '@src/components/common';
+import { Text } from '@southem/ui';
+import { textStyle } from '../../../components/common';
 
 interface ComponentProps {
   title: string;
@@ -20,14 +16,12 @@ interface ComponentProps {
 type ChildrenProp = ShowcaseSectionItem | ShowcaseSectionItem[];
 type ShowcaseSectionItem = React.ReactElement<any>;
 
-export type ShowcaseSectionProps = ThemedComponentProps & ViewProps & ComponentProps;
+export type ShowcaseSectionProps = ViewProps & ComponentProps;
 
-class ShowcaseSectionComponent extends React.Component<ShowcaseSectionProps> {
+export class ShowcaseSection extends React.Component<ShowcaseSectionProps> {
 
   private renderItem = (item: ShowcaseSectionItem): ShowcaseSectionItem => {
-    const { themedStyle } = this.props;
-
-    const additionalStyle: FlexStyle = themedStyle.item;
+    const additionalStyle: FlexStyle = styles.item;
 
     return React.cloneElement(item, {
       style: [item.props.style, additionalStyle],
@@ -39,14 +33,14 @@ class ShowcaseSectionComponent extends React.Component<ShowcaseSectionProps> {
   };
 
   public render(): React.ReactNode {
-    const { style, themedStyle, title, children, ...restProps } = this.props;
+    const { style, title, children, ...restProps } = this.props;
 
     return (
       <View
-        style={[themedStyle.container, style]}
+        style={[styles.container, style]}
         {...restProps}>
         <Text
-          style={themedStyle.titleLabel}
+          style={styles.titleLabel}
           category='h6'>
           {title}
         </Text>
@@ -56,7 +50,7 @@ class ShowcaseSectionComponent extends React.Component<ShowcaseSectionProps> {
   }
 }
 
-export const ShowcaseSection = withStyles(ShowcaseSectionComponent, (theme: ThemeType) => ({
+const styles = StyleSheet.create({
   container: {},
   titleLabel: {
     marginVertical: 8,
@@ -65,4 +59,4 @@ export const ShowcaseSection = withStyles(ShowcaseSectionComponent, (theme: Them
   item: {
     marginVertical: 8,
   },
-}));
+});

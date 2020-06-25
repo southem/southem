@@ -1,11 +1,11 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
 import {
   Button,
   Modal,
-} from '@kitten/ui';
+} from '@southem/ui';
 import { ModalContent } from './modalContent.component';
-import { StyleSheet } from 'react-native';
-import { profile1 } from '@src/core/data/profile';
+import { profile1 } from '../../../../core/data/profile';
 
 interface ModalShowcaseState {
   visible: boolean;

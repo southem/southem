@@ -2,52 +2,51 @@ import React from 'react';
 import {
   View,
   ViewProps,
+  StyleSheet,
+  StyleProp,
 } from 'react-native';
 import {
   StyleType,
-  ThemedComponentProps,
-  ThemeType,
-  withStyles,
-} from '@kitten/theme';
+} from '@southem/theme';
 import {
   ListItem,
   ListItemProps,
   Text,
-} from '@kitten/ui';
+} from '@southem/ui';
 
 interface ComponentProps {
   title: string;
+  disabled: boolean;
+  style: StyleProp<StyleType>;
 }
 
-export type ThemeCardComponentProps = ThemedComponentProps & ListItemProps & ComponentProps;
+export type ThemeCardComponentProps = ListItemProps & ComponentProps;
 
-export class ThemeCardComponent extends React.Component<ThemeCardComponentProps> {
+export class ThemeCard extends React.Component<ThemeCardComponentProps> {
 
   private getCardStatus = (): string => {
     return this.props.disabled ? 'ACTIVE' : '';
   };
 
   private renderColors = (style: StyleType, index: number): React.ReactElement<ViewProps> => {
-    const { themedStyle } = this.props;
-
     return (
       <View
         key={index}
-        style={[themedStyle.colorItem, style]}
+        style={[styles.colorItem, style]}
       />
     );
   };
 
   public render(): React.ReactNode {
-    const { themedStyle, style, title, ...restProps } = this.props;
+    const { style, title, ...restProps } = this.props;
 
     const colors: StyleType[] = [
-      themedStyle.colorItem1,
-      themedStyle.colorItem2,
-      themedStyle.colorItem3,
-      themedStyle.colorItem4,
-      themedStyle.colorItem5,
-      themedStyle.colorItem6,
+      styles.colorItem1,
+      styles.colorItem2,
+      styles.colorItem3,
+      styles.colorItem4,
+      styles.colorItem5,
+      styles.colorItem6,
     ];
 
     const cardStatus: string = this.getCardStatus();
@@ -55,10 +54,10 @@ export class ThemeCardComponent extends React.Component<ThemeCardComponentProps>
     return (
       <ListItem
         {...restProps}
-        style={[themedStyle.container, style]}>
-        <View style={themedStyle.headerContainer}>
+        style={[styles.container, style]}>
+        <View style={styles.headerContainer}>
           <Text
-            style={themedStyle.titleLabel}
+            style={styles.titleLabel}
             category='h6'>
             {title}
           </Text>
@@ -66,7 +65,7 @@ export class ThemeCardComponent extends React.Component<ThemeCardComponentProps>
             {cardStatus}
           </Text>
         </View>
-        <View style={themedStyle.colorContainer}>
+        <View style={styles.colorContainer}>
           {colors.map(this.renderColors)}
         </View>
       </ListItem>
@@ -74,7 +73,7 @@ export class ThemeCardComponent extends React.Component<ThemeCardComponentProps>
   }
 }
 
-export const ThemeCard = withStyles(ThemeCardComponent, (theme: ThemeType) => ({
+const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     alignItems: 'flex-start',
@@ -100,21 +99,21 @@ export const ThemeCard = withStyles(ThemeCardComponent, (theme: ThemeType) => ({
     marginHorizontal: 2,
   },
   colorItem1: {
-    backgroundColor: theme['background-basic-color-2'],
+    backgroundColor: 'blue',
   },
   colorItem2: {
-    backgroundColor: theme['background-basic-color-3'],
+    backgroundColor: 'yellow',
   },
   colorItem3: {
-    backgroundColor: theme['background-alternative-color-2'],
+    backgroundColor: 'red',
   },
   colorItem4: {
-    backgroundColor: theme['background-alternative-color-1'],
+    backgroundColor: 'white',
   },
   colorItem5: {
-    backgroundColor: theme['text-basic-color'],
+    backgroundColor: 'black',
   },
   colorItem6: {
-    backgroundColor: theme['color-primary-default'],
+    backgroundColor: 'blue',
   },
-}));
+});

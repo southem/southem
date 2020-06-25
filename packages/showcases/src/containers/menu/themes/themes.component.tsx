@@ -1,18 +1,13 @@
 import React from 'react';
-import { ListRenderItemInfo } from 'react-native';
+import { ListRenderItemInfo, StyleSheet } from 'react-native';
 import {
   List,
   ListItemProps,
-} from '@kitten/ui';
-import {
-  ThemedComponentProps,
-  ThemeProvider,
-  ThemeType,
-  withStyles,
-} from '@kitten/theme';
+} from '@southem/ui';
+import { ThemeProvider } from '@southem/theme';
 import { ThemeCard } from './themeCard.component';
 import { Theme } from './type';
-import { fireAnalyticsEvent } from '@src/core/utils/analytics';
+import { fireAnalyticsEvent } from '../../../utils/analytics';
 
 interface ComponentProps {
   data: Theme[];
@@ -20,9 +15,9 @@ interface ComponentProps {
   onToggleTheme: (name: string) => void;
 }
 
-type ThemesProps = ThemedComponentProps & ComponentProps;
+type ThemesProps = ComponentProps;
 
-class ThemesComponent extends React.Component<ThemesProps> {
+export class Themes extends React.Component<ThemesProps> {
 
   private onThemeChangeAnalyticsEventError = (error: any): void => {
     console.warn('Analytics error: ', error.message);
@@ -48,9 +43,11 @@ class ThemesComponent extends React.Component<ThemesProps> {
     const isDisabled: boolean = this.props.currentTheme === info.item.name;
 
     return (
-      <ThemeProvider theme={info.item.theme}>
+      <ThemeProvider
+        // @ts-ignore
+        theme={info.item.theme}>
         <ThemeCard
-          style={this.props.themedStyle.item}
+          style={styles.item}
           title={info.item.name}
           disabled={isDisabled}
           onPress={() => {
@@ -62,12 +59,12 @@ class ThemesComponent extends React.Component<ThemesProps> {
   };
 
   public render(): React.ReactNode {
-    const { themedStyle, data } = this.props;
+    const { data } = this.props;
 
     return (
       <List
-        style={themedStyle.container}
-        contentContainerStyle={themedStyle.contentContainer}
+        style={styles.container}
+        contentContainerStyle={styles.contentContainer}
         data={data}
         renderItem={this.renderItem}
       />
@@ -75,16 +72,16 @@ class ThemesComponent extends React.Component<ThemesProps> {
   }
 }
 
-export const Themes = withStyles(ThemesComponent, (theme: ThemeType) => ({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
   contentContainer: {
     paddingVertical: 12,
     paddingHorizontal: 24,
-    backgroundColor: theme['background-basic-color-2'],
+    backgroundColor: 'yellow',
   },
   item: {
     marginVertical: 8,
   },
-}));
+});

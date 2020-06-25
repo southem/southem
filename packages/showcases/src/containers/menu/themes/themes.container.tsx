@@ -1,10 +1,10 @@
 import React from 'react';
+import { themes } from '@southem/theme';
 import { Themes } from './themes.component';
 import {
   ThemeContextType,
   ThemeContext,
   ThemeKey,
-  themes,
 } from '../../../services/theme.service';
 import { Theme } from './type';
 
@@ -16,6 +16,7 @@ export class ThemesContainer extends React.Component {
 
   private data: Theme[] = [];
 
+  // @ts-ignore
   constructor(props) {
     super(props);
     this.data = Object.keys(themes)
@@ -30,7 +31,11 @@ export class ThemesContainer extends React.Component {
   };
 
   private toThemeObject = (theme: ThemeKey): Theme => {
-    return { name: theme, theme: themes[theme] };
+    return {
+      name: theme,
+      // @ts-ignore
+      theme: themes[theme],
+    };
   };
 
   private renderContent = (context: ThemeContextType): React.ReactElement<any> => {
@@ -38,6 +43,7 @@ export class ThemesContainer extends React.Component {
       <Themes
         data={this.data}
         currentTheme={context.theme}
+        // @ts-ignore
         onToggleTheme={context.setTheme}
       />
     );

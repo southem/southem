@@ -35,170 +35,186 @@ import {
   ComponentsIconTopNavigationDark,
   ComponentsIconModal,
   ComponentsIconModalDark,
-} from '@src/assets/icons';
+} from '../../../assets/icons';
 import {
   ThemeKey,
   ThemeService,
-} from '@src/core/themes';
+} from '../../../services/theme.service';
 import { ComponentsContainerData } from './type';
 
 export const routes: ComponentsContainerData[] = [
   {
+    // @ts-ignore
     title: 'Button',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconButton(style),
-        'Eva Dark': ComponentsIconButtonDark(style),
+        light: ComponentsIconButton(style),
+        dark: ComponentsIconButtonDark(style),
       }, theme);
     },
     route: 'Button',
   },
   {
+    // @ts-ignore
     title: 'Button Group',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconButtonGroup(style),
-        'Eva Dark': ComponentsIconButtonGroupDark(style),
+        light: ComponentsIconButtonGroup(style),
+        dark: ComponentsIconButtonGroupDark(style),
       }, theme);
     },
     route: 'Button Group',
   },
   {
+    // @ts-ignore
     title: 'Checkbox',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconCheckBox(style),
-        'Eva Dark': ComponentsIconCheckBoxDark(style),
+        light: ComponentsIconCheckBox(style),
+        dark: ComponentsIconCheckBoxDark(style),
       }, theme);
     },
     route: 'CheckBox',
   },
   {
+    // @ts-ignore
     title: 'Toggle',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconToggle(style),
-        'Eva Dark': ComponentsIconToggleDark(style),
+        light: ComponentsIconToggle(style),
+        dark: ComponentsIconToggleDark(style),
       }, theme);
     },
     route: 'Toggle',
   },
   {
+    // @ts-ignore
     title: 'Radio',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconRadio(style),
-        'Eva Dark': ComponentsIconRadioDark(style),
+        light: ComponentsIconRadio(style),
+        dark: ComponentsIconRadioDark(style),
       }, theme);
     },
     route: 'Radio',
   },
   {
+    // @ts-ignore
     title: 'Input',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconInput(style),
-        'Eva Dark': ComponentsIconInputDark(style),
+        light: ComponentsIconInput(style),
+        dark: ComponentsIconInputDark(style),
       }, theme);
     },
     route: 'Input',
   },
   {
+    // @ts-ignore
     title: 'Text',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconText(style),
-        'Eva Dark': ComponentsIconTextDark(style),
+        light: ComponentsIconText(style),
+        dark: ComponentsIconTextDark(style),
       }, theme);
     },
     route: 'Text',
   },
   {
+    // @ts-ignore
     title: 'Avatar',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconAvatar(style),
-        'Eva Dark': ComponentsIconAvatarDark(style),
+        light: ComponentsIconAvatar(style),
+        dark: ComponentsIconAvatarDark(style),
       }, theme);
     },
     route: 'Avatar',
   },
   {
+    // @ts-ignore
     title: 'Popover',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconPopover(style),
-        'Eva Dark': ComponentsIconPopoverDark(style),
+        light: ComponentsIconPopover(style),
+        dark: ComponentsIconPopoverDark(style),
       }, theme);
     },
     route: 'Popover',
   },
   {
+    // @ts-ignore
     title: 'Tooltip',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconTooltip(style),
-        'Eva Dark': ComponentsIconTooltipDark(style),
+        light: ComponentsIconTooltip(style),
+        dark: ComponentsIconTooltipDark(style),
       }, theme);
     },
     route: 'Tooltip',
   },
   {
+    // @ts-ignore
     title: 'Overflow Menu',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconOverflowMenu(style),
-        'Eva Dark': ComponentsIconOverflowMenuDark(style),
+        light: ComponentsIconOverflowMenu(style),
+        dark: ComponentsIconOverflowMenuDark(style),
       }, theme);
     },
     route: 'Overflow Menu',
   },
   {
+    // @ts-ignore
     title: 'Tab View',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconTabView(style),
-        'Eva Dark': ComponentsIconTabViewDark(style),
+        light: ComponentsIconTabView(style),
+        dark: ComponentsIconTabViewDark(style),
       }, theme);
     },
     route: 'Tab View',
   },
   {
+    // @ts-ignore
     title: 'List',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconList(style),
-        'Eva Dark': ComponentsIconListDark(style),
+        light: ComponentsIconList(style),
+        dark: ComponentsIconListDark(style),
       }, theme);
     },
     route: 'List',
   },
   {
+    // @ts-ignore
     title: 'Top Navigation',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconTopNavigation(style),
-        'Eva Dark': ComponentsIconTopNavigationDark(style),
+        light: ComponentsIconTopNavigation(style),
+        dark: ComponentsIconTopNavigationDark(style),
       }, theme);
     },
     route: 'Top Navigation',
   },
   {
+    // @ts-ignore
     title: 'Bottom Navigation',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconBottomNavigation(style),
-        'Eva Dark': ComponentsIconBottomNavigationDark(style),
+        light: ComponentsIconBottomNavigation(style),
+        dark: ComponentsIconBottomNavigationDark(style),
       }, theme);
     },
     route: 'Bottom Navigation',
   },
   {
+    // @ts-ignore
     title: 'Modal',
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        'Eva Light': ComponentsIconModal(style),
-        'Eva Dark': ComponentsIconModalDark(style),
+        light: ComponentsIconModal(style),
+        dark: ComponentsIconModalDark(style),
       }, theme);
     },
     route: 'Modal',

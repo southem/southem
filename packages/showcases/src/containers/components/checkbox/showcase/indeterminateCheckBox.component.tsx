@@ -2,7 +2,7 @@ import React from 'react';
 import {
   CheckBox,
   CheckBoxProps,
-} from '@kitten/ui';
+} from '@southem/ui';
 
 interface CheckBoxShowcaseComponentState {
   checked: boolean;
@@ -17,7 +17,9 @@ class CheckBoxShowcaseComponent extends React.Component<CheckBoxProps, CheckBoxS
   };
 
   public state: CheckBoxShowcaseComponentState = {
+    // @ts-ignore
     checked: this.props.checked,
+    // @ts-ignore
     indeterminate: this.props.indeterminate,
   };
 

@@ -1,10 +1,6 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
 import { NavigationStackScreenProps } from 'react-navigation-stack';
-import {
-  StyledComponentProps,
-  ThemeType,
-  withStyles,
-} from '@kitten/theme';
 import { Showcase } from '../common/showcase.component';
 import { ShowcaseSection } from '../common/showcaseSection.component';
 import { ShowcaseItem } from '../common/showcaseItem.component';
@@ -16,15 +12,11 @@ import {
   BackdropCloseModal,
 } from './showcase';
 
-type ComponentProps = NavigationStackScreenProps & StyledComponentProps;
-
-class ModalContainerComponent extends React.Component<ComponentProps> {
+export class ModalContainer extends React.Component<NavigationStackScreenProps> {
 
   public render(): React.ReactNode {
-    const { themedStyle } = this.props;
-
     return (
-      <Showcase style={themedStyle.container}>
+      <Showcase style={styles.container}>
         <ShowcaseSection title='Default'>
           <ShowcaseItem title='Default'>
             <DefaultModal/>
@@ -51,8 +43,8 @@ class ModalContainerComponent extends React.Component<ComponentProps> {
   }
 }
 
-export const ModalContainer = withStyles(ModalContainerComponent, (theme: ThemeType) => ({
+const styles = StyleSheet.create({
   container: {
-    backgroundColor: theme['background-basic-color-2'],
+    backgroundColor: '',
   },
-}));
+});

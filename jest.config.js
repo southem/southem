@@ -9,6 +9,9 @@ module.exports = {
     'js',
     'jsx'
   ],
+  setupFiles: [
+    '<rootDir>/jest/setup.js'
+  ],
   modulePathIgnorePatterns: [
     '<rootDir>/packages/showcases/',
     '<rootDir>/template/javascript/',

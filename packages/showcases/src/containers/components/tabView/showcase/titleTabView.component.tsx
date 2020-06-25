@@ -4,7 +4,7 @@ import {
   TabView,
   TabViewProps,
   Text,
-} from '@kitten/ui';
+} from '@southem/ui';
 
 type TabViewElement = React.ReactElement<TabViewProps>;
 

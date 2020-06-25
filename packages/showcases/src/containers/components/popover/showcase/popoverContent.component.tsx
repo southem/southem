@@ -12,7 +12,7 @@ import {
   Button,
   Text,
   Avatar,
-} from '@kitten/ui';
+} from '@southem/ui';
 import { textStyle } from '@src/components/common';
 import { Profile } from '@src/core/model';
 

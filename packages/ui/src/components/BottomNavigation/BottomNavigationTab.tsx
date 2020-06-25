@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint */
 import React, {Component} from 'react';
 import {
   StyleSheet,
@@ -15,20 +15,24 @@ import {
   Icon,
   TextProps,
 } from '../../common';
+import { StyleType } from '@southem/theme';
 
 type TitleElement = React.ReactElement<TextProps>;
 type IconElement = React.ReactElement<ImageProps>;
 type IconProp = () => IconElement;
+type TitleProp = (style: StyleType) => React.ReactElement;
 
 interface ComponentProps {
-  title?: string;
+  title?: string | TitleProp;
   titleStyle?: StyleProp<TextStyle>;
-  icon?: IconProp;
+  icon?: IconProp | IconElement ;
   selected?: boolean;
   onSelect?: (selected: boolean) => void;
+  appearance?: 'default' | string;
 }
 
 export type BottomNavigationTabProps = TouchableOpacityProps & ComponentProps;
+export type BottomNavigationTabElement = React.ReactElement<BottomNavigationTabProps>;
 
 /**
  * BottomNavigationTab component is a part of the BottomNavigation component.
@@ -62,7 +66,8 @@ export class BottomNavigationTab extends Component<BottomNavigationTabProps> {
   };
 
   private renderIconElement = (style): IconElement => {
-    const iconElement: IconElement = this.props.icon();
+    const { icon } = this.props;
+    const iconElement: IconElement = (typeof icon === 'function') ? icon() : icon;
 
     return renderNode(Icon, iconElement, {
       key: 1,
@@ -71,9 +76,15 @@ export class BottomNavigationTab extends Component<BottomNavigationTabProps> {
   };
 
   private renderTitleElement = (style): TitleElement => {
-    const {title} = this.props;
+    const { title, titleStyle } = this.props;
+    // @ts-ignore
+    const titleElement: React.ReactElement = (typeof title === 'function') ? title(style) : title;
 
-    return (<Text key={2} style={style}>{title}</Text>);
+    return renderNode(Text, titleElement, {
+      key: 2,
+      // @ts-ignore
+      style: [style, titleStyle],
+    });
   };
 
   private renderComponentChildren = (): React.ReactNodeArray => {
@@ -81,6 +92,7 @@ export class BottomNavigationTab extends Component<BottomNavigationTabProps> {
 
     return [
       icon && this.renderIconElement(styles.icon),
+      // @ts-ignore
       isValidString(title) && this.renderTitleElement(styles.text),
     ];
   };

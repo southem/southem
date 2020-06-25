@@ -2,14 +2,10 @@ import React from 'react';
 import {
   View,
   ViewProps,
+  StyleSheet,
 } from 'react-native';
-import {
-  ThemedComponentProps,
-  ThemeType,
-  withStyles,
-} from '@kitten/theme';
-import { Text } from '@kitten/ui';
-import { textStyle } from '@src/components/common';
+import { Text } from '@southem/ui';
+import { textStyle } from '../../../components/common';
 
 interface ComponentProps {
   title: string;
@@ -18,19 +14,19 @@ interface ComponentProps {
 
 type ChildrenProp = React.ReactElement<any>;
 
-export type ShowcaseItemProps = ThemedComponentProps & ViewProps & ComponentProps;
+export type ShowcaseItemProps = ViewProps & ComponentProps;
 
-class ShowcaseItemComponent extends React.Component<ShowcaseItemProps> {
+export class ShowcaseItem extends React.Component<ShowcaseItemProps> {
 
   public render(): React.ReactNode {
-    const { style, themedStyle, title, children, ...restProps } = this.props;
+    const { style, title, children, ...restProps } = this.props;
 
     return (
       <View
-        style={[themedStyle.container, style]}
+        style={[styles.container, style]}
         {...restProps}>
         <Text
-          style={themedStyle.titleLabel}
+          style={styles.titleLabel}
           appearance='hint'
           category='s2'>
           {title}
@@ -41,7 +37,7 @@ class ShowcaseItemComponent extends React.Component<ShowcaseItemProps> {
   }
 }
 
-export const ShowcaseItem = withStyles(ShowcaseItemComponent, (theme: ThemeType) => ({
+const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -51,4 +47,4 @@ export const ShowcaseItem = withStyles(ShowcaseItemComponent, (theme: ThemeType)
     minWidth: 128,
     ...textStyle.subtitle,
   },
-}));
+});

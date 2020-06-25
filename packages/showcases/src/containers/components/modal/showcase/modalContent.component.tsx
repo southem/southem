@@ -2,28 +2,24 @@ import React from 'react';
 import {
   View,
   ViewProps,
+  StyleSheet,
 } from 'react-native';
-import {
-  ThemedComponentProps,
-  ThemeType,
-  withStyles,
-} from '@kitten/theme';
 import {
   Button,
   Text,
   Avatar,
-} from '@kitten/ui';
-import { textStyle } from '@src/components/common';
-import { Profile } from '@src/core/model';
+} from '@southem/ui';
+import { textStyle } from '../../../../components/common';
+import { Profile } from '../../../../core/model';
 
 interface ComponentProps {
   profile: Profile;
   onFollowPress: () => void;
 }
 
-export type ModalContentProps = ThemedComponentProps & ViewProps & ComponentProps;
+export type ModalContentProps = ViewProps & ComponentProps;
 
-class ModalContentComponent extends React.Component<ModalContentProps> {
+export class ModalContent extends React.Component<ModalContentProps> {
 
   private onFollowPress = () => {
     this.props.onFollowPress();
@@ -32,7 +28,6 @@ class ModalContentComponent extends React.Component<ModalContentProps> {
   public render(): React.ReactNode {
     const {
       style,
-      themedStyle,
       profile,
       ...restProps
     } = this.props;
@@ -40,17 +35,17 @@ class ModalContentComponent extends React.Component<ModalContentProps> {
 
     return (
       <View
-        style={[themedStyle.container, style]}
+        style={[styles.container, style]}
         {...restProps}>
-        <View style={themedStyle.topContainer}>
+        <View style={styles.topContainer}>
           <Avatar
-            style={themedStyle.avatar}
+            style={styles.avatar}
             source={profile.photo.imageSource}
           />
           <View>
             <Text
               category='s2'
-              style={themedStyle.nameLabel}>
+              style={styles.nameLabel}>
               {name}
             </Text>
             <Text
@@ -61,7 +56,7 @@ class ModalContentComponent extends React.Component<ModalContentProps> {
           </View>
         </View>
         <Button
-          style={themedStyle.button}
+          style={styles.button}
           appearance='outline'
           size='tiny'
           onPress={this.onFollowPress}>
@@ -72,7 +67,7 @@ class ModalContentComponent extends React.Component<ModalContentProps> {
   }
 }
 
-export const ModalContent = withStyles(ModalContentComponent, (theme: ThemeType) => ({
+const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 12,
     paddingVertical: 12,
@@ -91,4 +86,4 @@ export const ModalContent = withStyles(ModalContentComponent, (theme: ThemeType)
   avatar: {
     marginRight: 12,
   },
-}));
+});

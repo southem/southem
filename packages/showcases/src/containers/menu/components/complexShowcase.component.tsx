@@ -2,31 +2,23 @@ import React from 'react';
 import {
   ImageProps,
   ViewProps,
+  StyleSheet,
 } from 'react-native';
-import {
-  withStyles,
-  ThemeType,
-  ThemedComponentProps,
-} from '@kitten/theme';
-import { StarIconFill } from '@src/assets/icons';
+import { StarIconFill } from '../../../assets/icons';
 
-type ComplexComponentShowcaseProps = ThemedComponentProps & ViewProps;
-
-class ComplexComponentShowcaseComponent extends React.Component<ComplexComponentShowcaseProps> {
+class ThemedComplexComponentShowcase extends React.Component<ViewProps> {
   public render(): React.ReactElement<ImageProps> {
-    const { themedStyle } = this.props;
-
-    return StarIconFill(themedStyle.icon);
+    return StarIconFill(styles.icon);
   }
 }
 
-const ThemedComplexComponentShowcase = withStyles(ComplexComponentShowcaseComponent, (theme: ThemeType) => ({
+const styles = StyleSheet.create({
   icon: {
     width: 32,
     height: 32,
-    tintColor: theme['color-primary-default'],
+    tintColor: 'blue',
   },
-}));
+});
 
 export const ComplexComponentShowcase = () => {
   return (

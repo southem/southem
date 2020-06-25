@@ -25,9 +25,18 @@ export class BottomNavigationIcon extends React.Component<{}, State> {
         appearance='noIndicator'
         selectedIndex={this.state.selectedIndex}
         onSelect={this.onTabSelect}>
-        <BottomNavigationTab icon={StarIconFill}/>
-        <BottomNavigationTab icon={StarIconFill}/>
-        <BottomNavigationTab icon={StarIconFill}/>
+        <BottomNavigationTab
+          // @ts-ignore
+          icon={StarIconFill}
+        />
+        <BottomNavigationTab
+          // @ts-ignore
+          icon={StarIconFill}
+        />
+        <BottomNavigationTab
+          // @ts-ignore
+          icon={StarIconFill}
+        />
       </BottomNavigation>
     );
   }

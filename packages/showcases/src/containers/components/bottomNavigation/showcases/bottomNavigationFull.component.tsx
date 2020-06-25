@@ -26,14 +26,17 @@ export class BottomNavigationFull extends React.Component<{}, State> {
         onSelect={this.onTabSelect}>
         <BottomNavigationTab
           title='Screen 1'
+          // @ts-ignore
           icon={StarIconFill}
         />
         <BottomNavigationTab
           title='Screen 2'
+          // @ts-ignore
           icon={StarIconFill}
         />
         <BottomNavigationTab
           title='Screen 3'
+          // @ts-ignore
           icon={StarIconFill}
         />
       </BottomNavigation>

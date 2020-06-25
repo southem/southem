@@ -23,6 +23,7 @@ interface ComponentProps {
   selectedIndex?: number;
   indicatorStyle?: StyleProp<ViewStyle>;
   onSelect?: (index: number) => void;
+  appearance?: 'default' | 'noIndicator' | string;
 }
 
 export type BottomNavigationProps = ViewProps & ComponentProps;
@@ -165,26 +166,20 @@ export class BottomNavigation extends Component<BottomNavigationProps> {
     }
   };
 
-  private getComponentStyle = source => {
+  private getComponentStyle = () => {
     const {style, indicatorStyle} = this.props;
-    // const { indicatorHeight, indicatorBackgroundColor, ...containerParameters } = source;
-    // tslint:disable-next-line:no-console
-    console.log(source, 'getComponentStyle');
 
     return {
       container: {
-        // ...containerParameters,
         ...styles.container,
         ...StyleSheet.flatten(style),
       },
       indicator: {
-        // height: indicatorHeight,
-        // backgroundColor: indicatorBackgroundColor,
         ...styles.indicator,
         ...StyleSheet.flatten(indicatorStyle),
       },
     };
-  };
+  }
 
   private renderIndicatorElement = (positions: number, style): IndicatorElement => {
     return (
@@ -223,8 +218,8 @@ export class BottomNavigation extends Component<BottomNavigationProps> {
 
   render(): React.ReactNode {
     // @ts-ignore
-    const {style, themedStyle, children, ...derivedProps} = this.props;
-    const {container, ...componentStyles} = this.getComponentStyle(themedStyle);
+    const {style, children, ...derivedProps} = this.props;
+    const {container, ...componentStyles} = this.getComponentStyle();
 
     const [indicatorElement, ...tabElements] = this.renderComponentChildren(children, componentStyles);
 

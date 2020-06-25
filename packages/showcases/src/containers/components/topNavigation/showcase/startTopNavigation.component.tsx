@@ -4,12 +4,12 @@ import {
   TopNavigationProps,
   TopNavigationAction,
   TopNavigationActionProps,
-} from '@kitten/ui';
+} from '@southem/ui';
 import {
   StarIconFill,
   ArrowIosBackFill,
   MoreVerticalIconFill,
-} from '@src/assets/icons';
+} from '../../../../assets/icons';
 
 type TopNavigationElement = React.ReactElement<TopNavigationProps>;
 type TopNavigationActionElement = React.ReactElement<TopNavigationActionProps>;
@@ -29,13 +29,21 @@ export const StartTopNavigation = (props?: TopNavigationProps): TopNavigationEle
 
 const renderLeftControl = (): TopNavigationActionElement => {
   return (
-    <TopNavigationAction icon={ArrowIosBackFill}/>
+    <TopNavigationAction
+      // @ts-ignore
+      icon={ArrowIosBackFill}/>
   );
 };
 
 const renderRightControls = (): TopNavigationActionElement[] => {
   return ([
-    <TopNavigationAction icon={StarIconFill}/>,
-    <TopNavigationAction icon={MoreVerticalIconFill}/>,
+    <TopNavigationAction
+      // @ts-ignore
+      icon={StarIconFill}
+    />,
+    <TopNavigationAction
+      // @ts-ignore
+      icon={MoreVerticalIconFill}
+    />,
   ]);
 };

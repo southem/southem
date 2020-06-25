@@ -1,10 +1,6 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
 import { NavigationStackScreenProps } from 'react-navigation-stack';
-import {
-  StyledComponentProps,
-  ThemeType,
-  withStyles,
-} from '@kitten/theme';
 import { Showcase } from '../common/showcase.component';
 import { ShowcaseSection } from '../common/showcaseSection.component';
 import { ShowcaseItem } from '../common/showcaseItem.component';
@@ -23,56 +19,54 @@ import {
   TopStartPopover,
 } from './showcase';
 
-type ComponentProps = NavigationStackScreenProps & StyledComponentProps;
+type ComponentProps = NavigationStackScreenProps;
 
-class PopoverContainerComponent extends React.Component<ComponentProps> {
+export class PopoverContainer extends React.Component<ComponentProps> {
 
   public render(): React.ReactNode {
-    const { themedStyle } = this.props;
-
     return (
-      <Showcase style={themedStyle.container}>
+      <Showcase style={styles.container}>
         <ShowcaseSection title='Top'>
-          <ShowcaseItem style={themedStyle.topItem} title='Top'>
+          <ShowcaseItem style={styles.topItem} title='Top'>
             <TopPopover/>
           </ShowcaseItem>
-          <ShowcaseItem style={themedStyle.topItem} title='Top Start'>
+          <ShowcaseItem style={styles.topItem} title='Top Start'>
             <TopStartPopover/>
           </ShowcaseItem>
-          <ShowcaseItem style={themedStyle.topItem} title='Top End'>
+          <ShowcaseItem style={styles.topItem} title='Top End'>
             <TopEndPopover/>
           </ShowcaseItem>
         </ShowcaseSection>
         <ShowcaseSection title='Right'>
-          <ShowcaseItem style={themedStyle.rightItem} title='Right'>
+          <ShowcaseItem style={styles.rightItem} title='Right'>
             <RightPopover/>
           </ShowcaseItem>
-          <ShowcaseItem style={themedStyle.rightItem} title='Right Start'>
+          <ShowcaseItem style={styles.rightItem} title='Right Start'>
             <RightStartPopover/>
           </ShowcaseItem>
-          <ShowcaseItem style={themedStyle.rightItem} title='Right End'>
+          <ShowcaseItem style={styles.rightItem} title='Right End'>
             <RightEndPopover/>
           </ShowcaseItem>
         </ShowcaseSection>
         <ShowcaseSection title='Left'>
-          <ShowcaseItem style={themedStyle.leftItem} title='Left'>
+          <ShowcaseItem style={styles.leftItem} title='Left'>
             <LeftPopover/>
           </ShowcaseItem>
-          <ShowcaseItem style={themedStyle.leftItem} title='Left Start'>
+          <ShowcaseItem style={styles.leftItem} title='Left Start'>
             <LeftStartPopover/>
           </ShowcaseItem>
-          <ShowcaseItem style={themedStyle.leftItem} title='Left End'>
+          <ShowcaseItem style={styles.leftItem} title='Left End'>
             <LeftEndPopover/>
           </ShowcaseItem>
         </ShowcaseSection>
         <ShowcaseSection title='Bottom'>
-          <ShowcaseItem style={themedStyle.bottomItem} title='Bottom'>
+          <ShowcaseItem style={styles.bottomItem} title='Bottom'>
             <BottomPopover/>
           </ShowcaseItem>
-          <ShowcaseItem style={themedStyle.bottomItem} title='Bottom Start'>
+          <ShowcaseItem style={styles.bottomItem} title='Bottom Start'>
             <BottomStartPopover/>
           </ShowcaseItem>
-          <ShowcaseItem style={themedStyle.bottomItem} title='Bottom End'>
+          <ShowcaseItem style={styles.bottomItem} title='Bottom End'>
             <BottomEndPopover/>
           </ShowcaseItem>
         </ShowcaseSection>
@@ -81,9 +75,9 @@ class PopoverContainerComponent extends React.Component<ComponentProps> {
   }
 }
 
-export const PopoverContainer = withStyles(PopoverContainerComponent, (theme: ThemeType) => ({
+const styles = StyleSheet.create({
   container: {
-    backgroundColor: theme['background-basic-color-2'],
+    backgroundColor: '',
   },
   bottomItem: {
     justifyContent: 'flex-start',
@@ -95,4 +89,4 @@ export const PopoverContainer = withStyles(PopoverContainerComponent, (theme: Th
   topItem: {
     justifyContent: 'flex-start',
   },
-}));
+});

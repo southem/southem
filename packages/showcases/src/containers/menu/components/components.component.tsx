@@ -1,35 +1,30 @@
 import React from 'react';
-import { View } from 'react-native';
-import {
-  withStyles,
-  ThemeType,
-  ThemedComponentProps,
-} from '@kitten/theme';
+import { View, StyleSheet } from 'react-native';
 import {
   ComponentsList,
   ComponentsListItemData,
-} from '@src/components/menu';
+} from '../../../components/menu';
 
 interface ComponentProps {
   data: ComponentsListItemData[];
   onItemSelect: (index: number) => void;
 }
 
-type Props = ThemedComponentProps & ComponentProps;
+type Props = ComponentProps;
 
-class ComponentsComponent extends React.Component<Props> {
+export class Components extends React.Component<Props> {
 
   private onItemPress = (index: number) => {
     this.props.onItemSelect(index);
   };
 
   public render(): React.ReactNode {
-    const { themedStyle, data } = this.props;
+    const { data } = this.props;
 
     return (
-      <View style={themedStyle.container}>
+      <View style={styles.container}>
         <ComponentsList
-          contentContainerStyle={themedStyle.contentContainer}
+          contentContainerStyle={styles.contentContainer}
           data={data}
           onItemPress={this.onItemPress}
         />
@@ -38,13 +33,13 @@ class ComponentsComponent extends React.Component<Props> {
   }
 }
 
-export const Components = withStyles(ComponentsComponent, (theme: ThemeType) => ({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: theme['background-basic-color-2'],
+    backgroundColor: 'white',
   },
   contentContainer: {
     paddingHorizontal: 16,
     paddingVertical: 16,
   },
-}));
+});

@@ -2,8 +2,8 @@ import React from 'react';
 import {
   Button,
   ButtonProps,
-} from '@kitten/ui';
-import { StarIconFill } from '@src/assets/icons';
+} from '@southem/ui';
+import { StarIconFill } from '../../../../assets/icons';
 
 type ButtonElement = React.ReactElement<ButtonProps>;
 
@@ -13,6 +13,7 @@ export const RightIconButton = (props?: ButtonProps): ButtonElement => {
     <Button
       icon={StarIconFill}
       {...props}
+      // @ts-ignore
       style={[props.style, { flexDirection: 'row-reverse' }]}>
       BUTTON
     </Button>
