@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import {
   Layout,
   Toggle,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const ToggleStatesShowcase = () => {
 

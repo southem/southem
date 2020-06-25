@@ -4,7 +4,7 @@ import AwesomeDebouncePromise from 'awesome-debounce-promise';
 import {
   Autocomplete,
   Layout,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const requestData = () => fetch(`https://facebook.github.io/react-native/movies.json`);
 const requestDataWithDebounce = AwesomeDebouncePromise(requestData, 400);

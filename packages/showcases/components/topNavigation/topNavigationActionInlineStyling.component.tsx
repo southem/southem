@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import {
   Icon,
   TopNavigationAction,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const EditIcon = (style) => (
   <Icon {...style} name='edit'/>

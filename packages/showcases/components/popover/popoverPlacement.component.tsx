@@ -9,7 +9,7 @@ import {
   Popover,
   Select,
   Text,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const PLACEMENTS = [
   { text: 'top' },

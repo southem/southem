@@ -5,7 +5,7 @@ import {
   Radio,
   RadioGroup,
   Text,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const RadioGroupSimpleUsageShowcase = () => {
 

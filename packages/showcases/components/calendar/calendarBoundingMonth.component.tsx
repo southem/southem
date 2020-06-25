@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar } from '@ui-kitten/components';
+import { Calendar } from '@southem/ui';
 
 export const CalendarBoundingMonthShowcase = () => {
 

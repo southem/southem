@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Text } from '@ui-kitten/components';
+import { Text } from '@southem/ui';
 
 export const TextInlineStylingShowcase = () => (
   <Text style={styles.text}>Sample Text</Text>

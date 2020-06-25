@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from '@ui-kitten/components';
+import { Text } from '@southem/ui';
 
 export const TextSimpleUsageShowcase = () => (
   <Text>Sample Text</Text>

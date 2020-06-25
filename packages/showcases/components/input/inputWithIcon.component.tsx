@@ -7,7 +7,7 @@ import React from 'react';
 import {
   Icon,
   Input,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const InputWithIconShowcase = () => {
 

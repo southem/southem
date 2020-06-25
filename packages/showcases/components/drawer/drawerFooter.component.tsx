@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-navigation';
 import {
   Drawer,
   DrawerHeaderFooter,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const drawerData = [
   { title: 'Dashboard' },

@@ -6,7 +6,7 @@ import {
 import {
   Calendar,
   Text,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const DayCell = ({ date }, style) => (
   <View

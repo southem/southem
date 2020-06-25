@@ -2,7 +2,7 @@ import React from 'react';
 import {
   CheckBox,
   ListItem,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const ListItemWithAccessoryShowcase = () => {
 

@@ -5,7 +5,7 @@ import {
   Layout,
   Modal,
   Text,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const ModalSimpleUsageShowcase = () => {
 

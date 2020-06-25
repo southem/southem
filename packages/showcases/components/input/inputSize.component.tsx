@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import {
   Input,
   Layout,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const useInputChanges = (initialValue = '') => {
   const [value, setValue] = React.useState(initialValue);

@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import {
   Button,
   Tooltip,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const TooltipInlineStylingShowcase = () => {
 

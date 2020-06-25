@@ -4,7 +4,7 @@ import {
   Button,
   Layout,
   OverflowMenu,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const data = [
   { title: 'Menu Item 1' },

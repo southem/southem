@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import {
   Layout,
   Select,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const useSelectChanges = (initialSelection = null) => {
   const [selectedOption, setSelectedOption] = React.useState(initialSelection);

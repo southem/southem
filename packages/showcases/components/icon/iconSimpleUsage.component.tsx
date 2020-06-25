@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { Icon } from '@ui-kitten/components';
+import { Icon } from '@southem/ui';
 
 export const IconSimpleUsageShowcase = () => (
   <Icon name='star' width={32} height={32} fill='#3366FF'/>

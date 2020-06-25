@@ -8,7 +8,7 @@ import {
   Card,
   CardHeader,
   Text,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const Header = () => (
   <CardHeader

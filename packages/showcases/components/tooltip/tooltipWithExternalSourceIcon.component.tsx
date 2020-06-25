@@ -3,7 +3,7 @@ import { Image } from 'react-native';
 import {
   Button,
   Tooltip,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const InfoIcon = (style) => (
   <Image

@@ -8,7 +8,7 @@ import {
   Button,
   Icon,
   Tooltip,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const InfoIcon = (style) => (
   <Icon {...style} name='info'/>

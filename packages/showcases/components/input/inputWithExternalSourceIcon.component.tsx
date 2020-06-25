@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Input } from '@ui-kitten/components';
+import { Input } from '@southem/ui';
 import { Image } from 'react-native';
 
 export const InputWithExternalSourceIconShowcase = () => {

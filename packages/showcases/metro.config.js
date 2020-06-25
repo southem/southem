@@ -2,6 +2,7 @@ const path = require('path');
 
 const frameworkModules = [
   path.resolve(__dirname, '../animation'),
+  path.resolve(__dirname, '../fonts'),
   path.resolve(__dirname, '../html'),
   path.resolve(__dirname, '../theme'),
   path.resolve(__dirname, '../ui'),
@@ -23,6 +24,7 @@ const moduleDependencies = [
 const playgroundExtraModules = {
   '@babel/runtime': path.resolve(__dirname, './node_modules/@babel/runtime'),
   '@expo/vector-icons': path.resolve(__dirname, './node_modules/@expo/vector-icons'),
+  'expo-font': path.resolve(__dirname, './node_modules/expo-font'),
   'color': path.resolve(__dirname, './node_modules/color'),
   'css-tree': path.resolve(__dirname, './node_modules/css-tree'),
   'css-select': path.resolve(__dirname, './node_modules/css-select'),

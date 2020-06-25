@@ -8,7 +8,7 @@ import {
   Layout,
   Select,
   Tooltip,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const PLACEMENTS = [
   { text: 'top' },

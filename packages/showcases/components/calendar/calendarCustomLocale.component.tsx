@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Calendar,
   NativeDateService,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const i18n = {
   dayNames: {

@@ -12,7 +12,7 @@ import {
   Icon,
   List,
   ListItem,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const data = new Array(8).fill({
   title: 'Title for Item',

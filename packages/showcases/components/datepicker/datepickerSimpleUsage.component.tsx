@@ -4,7 +4,7 @@ import {
   Datepicker,
   Layout,
   Text,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const DatepickerSimpleUsageShowcase = () => {
 

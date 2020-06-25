@@ -6,7 +6,7 @@ import {
 import {
   Layout,
   Toggle,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const useToggleChanges = (initialCheck = false) => {
   const [checked, setChecked] = React.useState(initialCheck);

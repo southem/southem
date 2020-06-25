@@ -13,10 +13,9 @@ import {
   OverflowMenu,
   OverflowMenuItemType,
   Text,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 import { themes } from '../app/themes';
 import {
-  AppMapping,
   AppTheme,
   ThemeContext,
   ThemeContextType,
@@ -46,15 +45,9 @@ export const ShowcaseIFrame = (Component: React.ComponentType, showcaseId: strin
   };
 
   const onThemeSelect = (index: number): void => {
-    const [mapping, theme] = themesMenu[index].title.split(' ');
+    const [theme] = themesMenu[index].title.split(' ');
 
     setMenuVisible(false);
-
-    if (mapping !== themeContext.mapping) {
-      themeContext.setMapping(mapping as AppMapping);
-      themeContext.setTheme(theme as AppTheme);
-      return;
-    }
 
     if (theme !== themeContext.theme) {
       themeContext.setTheme(theme as AppTheme);
@@ -95,7 +88,7 @@ export const ShowcaseIFrame = (Component: React.ComponentType, showcaseId: strin
             size='small'
             icon={ColorPaletteIcon}
             onPress={onThemesButtonPress}>
-            {`${themeContext.mapping} ${themeContext.theme}`}
+            {`${themeContext.theme}`}
           </Button>
         </OverflowMenu>
       </View>

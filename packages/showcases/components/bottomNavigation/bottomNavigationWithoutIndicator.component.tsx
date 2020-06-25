@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BottomNavigation,
   BottomNavigationTab,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const BottomNavigationWithoutIndicatorShowcase = () => {
 

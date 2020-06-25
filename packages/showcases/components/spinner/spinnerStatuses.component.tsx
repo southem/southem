@@ -6,7 +6,7 @@ import {
 import {
   Layout,
   Spinner,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const SpinnerStatusesShowcase = () => (
   <Layout style={styles.container}>

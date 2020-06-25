@@ -9,7 +9,7 @@ import {
   Button,
   Icon,
   Layout,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const StarIcon = (style) => (
   <Icon {...style} name='star'/>

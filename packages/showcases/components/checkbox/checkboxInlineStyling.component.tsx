@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { CheckBox } from '@ui-kitten/components';
+import { CheckBox } from '@southem/ui';
 
 export const CheckboxInlineStylingShowcase = () => {
 

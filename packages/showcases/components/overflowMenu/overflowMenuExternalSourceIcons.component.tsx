@@ -7,7 +7,7 @@ import {
   Button,
   Layout,
   OverflowMenu,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const RemoteStarIcon = (style) => (
   <Image

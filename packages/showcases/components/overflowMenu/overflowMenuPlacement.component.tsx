@@ -8,7 +8,7 @@ import {
   Layout,
   OverflowMenu,
   Select,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const PLACEMENTS = [
   { text: 'top' },

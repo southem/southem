@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { DrawerHeaderFooter } from '@ui-kitten/components';
+import { DrawerHeaderFooter } from '@southem/ui';
 
 export const DrawerHeaderFooterInlineStylingShowcase = () => (
   <DrawerHeaderFooter

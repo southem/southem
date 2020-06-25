@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import {
   Button,
   Layout,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const ButtonAppearancesShowcase = () => (
   <Layout style={styles.container}>

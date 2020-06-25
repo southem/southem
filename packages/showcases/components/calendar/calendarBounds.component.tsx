@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar } from '@ui-kitten/components';
+import { Calendar } from '@southem/ui';
 
 const now = new Date();
 const minDate = new Date(now.getFullYear(), now.getMonth(), 15);

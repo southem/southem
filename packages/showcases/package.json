@@ -11,15 +11,18 @@
   "scripts": {
     "prod": "yarn env -- prod && expo start -c",
     "start": "yarn run env -- dev && expo start -c",
-    "build": "expo build:web",
+    "build": "expo build",
+    "build:android": "expo build:android",
+    "build:ios": "expo build:ios",
+    "build:web": "expo build:web",
     "clean": "rimraf ./web-build",
     "env": "node ./env/set-env.js"
   },
   "dependencies": {
+    "@expo/vector-icons": "^10.2.0",
     "@react-navigation/web": "^1.0.0-alpha.9",
     "awesome-debounce-promise": "^2.1.0",
     "expo": "^37.0.0",
-    "@expo/vector-icons": "^10.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.0.tar.gz",

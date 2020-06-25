@@ -6,7 +6,7 @@ import {
 import {
   Layout,
   Radio,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const useRadioChanges = (initialCheck = false) => {
   const [checked, setChecked] = React.useState(initialCheck);

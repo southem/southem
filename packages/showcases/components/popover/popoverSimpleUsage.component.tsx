@@ -5,7 +5,7 @@ import {
   Layout,
   Popover,
   Text,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const PopoverContent = () => (
   <Layout style={styles.popoverContent}>

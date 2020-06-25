@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import {
   Layout,
   Spinner,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const SpinnerSizesShowcase = () => (
   <Layout style={styles.container}>

@@ -4,7 +4,7 @@ import {
   Datepicker,
   Layout,
   NativeDateService,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const dateService = new NativeDateService('en', { format: 'DD.MM.YYYY' });
 

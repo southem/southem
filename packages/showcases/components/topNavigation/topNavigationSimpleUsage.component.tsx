@@ -8,7 +8,7 @@ import {
   Icon,
   TopNavigation,
   TopNavigationAction,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const BackIcon = (style) => (
   <Icon {...style} name='arrow-back'/>

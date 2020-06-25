@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import {
   Autocomplete,
   Layout,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const DATA = [
   {

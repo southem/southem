@@ -7,7 +7,7 @@ import React from 'react';
 import {
   Button,
   Icon,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const IconAnimationShowcase = () => {
 

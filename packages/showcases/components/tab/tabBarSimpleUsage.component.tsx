@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Tab,
   TabBar,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const TabBarSimpleUsageShowcase = () => {
 

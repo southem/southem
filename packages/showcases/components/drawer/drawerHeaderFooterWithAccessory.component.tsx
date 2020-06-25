@@ -8,7 +8,7 @@ import {
   Button,
   DrawerHeaderFooter,
   Icon,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const LogoutIcon = (style) => (
   <Icon {...style} name='log-out'/>

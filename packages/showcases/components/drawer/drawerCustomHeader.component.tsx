@@ -4,7 +4,7 @@ import {
   Drawer,
   Layout,
   Text,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const drawerData = [
   { title: 'Dashboard' },

@@ -7,7 +7,7 @@ import React from 'react';
 import {
   Icon,
   Tab,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const PersonIcon = (style) => (
   <Icon {...style} name='person-outline'/>

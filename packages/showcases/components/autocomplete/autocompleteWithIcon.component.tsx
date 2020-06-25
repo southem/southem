@@ -9,7 +9,7 @@ import {
   Autocomplete,
   Icon,
   Layout,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const CloseIcon = (style) => (
   <Icon {...style} name='close'/>

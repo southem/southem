@@ -3,7 +3,7 @@ import {
   Layout,
   Text,
   withStyles,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const ThemedComponent = ({ themedStyle, theme }) => (
   <Layout style={themedStyle.container}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { ListItem } from '@ui-kitten/components';
+import { ListItem } from '@southem/ui';
 
 export const ListItemInlineStylingShowcase = () => (
   <ListItem

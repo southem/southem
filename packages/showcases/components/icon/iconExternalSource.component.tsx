@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { Button } from '@ui-kitten/components';
+import { Button } from '@southem/ui';
 
 const RemoteBulbIcon = (style) => (
   <Image

@@ -9,7 +9,7 @@ import {
   Layout,
   Tab,
   TabBar,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const PersonIcon = (style) => (
   <Icon {...style} name='person-outline'/>

@@ -2,7 +2,7 @@ import React from 'react';
 import {
   List,
   ListItem,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const data = new Array(8).fill({
   title: 'Item',

@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import {
   Avatar,
   Layout,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const AvatarSizeShowcase = () => (
   <Layout style={styles.container}>

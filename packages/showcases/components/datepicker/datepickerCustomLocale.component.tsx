@@ -4,7 +4,7 @@ import {
   Datepicker,
   Layout,
   NativeDateService,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const i18n = {
   dayNames: {

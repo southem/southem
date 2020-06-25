@@ -27,7 +27,7 @@
   "peerDependencies": {
     "@southem/theme": "0.0.1",
     "react": "^16.13.1",
-    "react-native": "^0.62.2",
+    "react-native": "^0.61.4",
     "react-native-svg": "^12.1.0",
     "prop-types": "^15.7.2"
   },

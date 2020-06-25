@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { DrawerHeaderFooter } from '@ui-kitten/components';
+import { DrawerHeaderFooter } from '@southem/ui';
 
 const ProfileIcon = (style) => (
   <Image style={style} source={{ uri: 'https://akveo.github.io/eva-icons/fill/png/128/person.png' }}/>

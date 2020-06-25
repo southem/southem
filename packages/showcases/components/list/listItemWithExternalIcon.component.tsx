@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { ListItem } from '@ui-kitten/components';
+import { ListItem } from '@southem/ui';
 
 const RemoteStarIcon = (style) => (
   <Image

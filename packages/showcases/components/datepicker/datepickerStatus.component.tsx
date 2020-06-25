@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import {
   Datepicker,
   Layout,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const useDatepickerChanges = (initialDate = null) => {
   const [date, setDate] = React.useState(initialDate);

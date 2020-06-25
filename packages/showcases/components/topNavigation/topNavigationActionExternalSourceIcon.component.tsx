@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { TopNavigationAction } from '@ui-kitten/components';
+import { TopNavigationAction } from '@southem/ui';
 
 const BackIcon = (style) => (
   <Image

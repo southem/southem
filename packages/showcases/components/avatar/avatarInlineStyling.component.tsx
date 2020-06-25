@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Avatar } from '@ui-kitten/components';
+import { Avatar } from '@southem/ui';
 
 export const AvatarInlineStylingShowcase = () => (
   <Avatar

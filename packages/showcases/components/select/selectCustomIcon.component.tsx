@@ -9,7 +9,7 @@ import {
   Icon,
   Layout,
   Select,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const data = [
   { text: 'Option 1' },

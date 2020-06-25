@@ -5,7 +5,7 @@ import {
   ButtonGroup,
   Layout,
   Text,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const ButtonGroupSimpleUsageShowcase = () => {
 

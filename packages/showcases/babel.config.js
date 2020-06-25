@@ -2,10 +2,12 @@ const path = require('path');
 
 const moduleInternalAliases = {
   '@expo/vector-icons': path.resolve(__dirname, './node_modules/@expo/vector-icons'),
+  'expo-font': path.resolve(__dirname, './node_modules/expo-font'),
 };
 
 const frameworkModules = {
   '@southem/animation': path.resolve(__dirname, '../animation'),
+  '@southem/fonts': path.resolve(__dirname, '../fonts'),
   '@southem/html': path.resolve(__dirname, '../html'),
   '@southem/icons': path.resolve(__dirname, '../icons'),
   '@southem/theme': path.resolve(__dirname, '../theme'),

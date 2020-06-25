@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu } from '@ui-kitten/components';
+import { Menu } from '@southem/ui';
 
 const data = [
   { title: 'Item 1' },

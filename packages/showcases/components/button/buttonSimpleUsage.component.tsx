@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@ui-kitten/components';
+import { Button } from '@southem/ui';
 
 export const ButtonSimpleUsageShowcase = () => {
 

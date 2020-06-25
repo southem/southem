@@ -22,7 +22,7 @@ export const AppNavigator = (): React.ReactElement => (
     <Text style={styles.text} category='h1'>
       Welcome to UI SouTheme
     </Text>
-    <Text style={styles.text} category='s1'>
+    <Text style={styles.text} category='p1'>
       Start with editing App.js to configure your App
     </Text>
     <Text style={styles.text} appearance='hint'>

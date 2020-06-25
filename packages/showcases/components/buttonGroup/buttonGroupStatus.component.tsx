@@ -7,7 +7,7 @@ import {
   Button,
   ButtonGroup,
   Layout,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const ButtonGroupStatusShowcase = () => (
   <Layout style={styles.container}>

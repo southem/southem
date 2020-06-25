@@ -1,6 +1,6 @@
 import React from 'react';
 import { Keyboard, Platform, StyleSheet } from 'react-native';
-import { Autocomplete, Layout } from '@ui-kitten/components';
+import { Autocomplete, Layout } from '@southem/ui';
 
 const DATA = [
   { title: 'Star Wars' },

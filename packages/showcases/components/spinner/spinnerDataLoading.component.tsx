@@ -7,7 +7,7 @@ import {
   List,
   ListItem,
   Spinner,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const DATA = new Array(8).fill({
   title: 'Title for Item',

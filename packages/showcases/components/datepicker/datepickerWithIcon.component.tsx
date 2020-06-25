@@ -9,7 +9,7 @@ import {
   Datepicker,
   Icon,
   Layout,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const CalendarIcon = (style) => (
   <Icon {...style} name='calendar'/>

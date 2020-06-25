@@ -5,7 +5,7 @@ import {
   CardHeader,
   Layout,
   Text,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 const Header = () => (
   <CardHeader title='Maldives'/>
