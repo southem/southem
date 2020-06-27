@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@button: matches snapshot * appearance * empty 1`] = `
+<@theme(Animated(Button))
+  animationOptions={Object {}}
+  forwardedRef={null}
+/>
+`;
+
+exports[`@button: matches snapshot * appearance * icon 1`] = `
+<@theme(Animated(Button))
+  accessoryLeft={[Function]}
+  animationOptions={Object {}}
+  forwardedRef={null}
+/>
+`;
+
+exports[`@button: matches snapshot * appearance * icon and text (styled) 1`] = `
+<@theme(Animated(Button))
+  accessoryLeft={[Function]}
+  animationOptions={Object {}}
+  forwardedRef={null}
+  size="big"
+  titleStyle={
+    Object {
+      "fontSize": 32,
+      "lineHeight": 34,
+    }
+  }
+>
+  BUTTON
+</@theme(Animated(Button))>
+`;
+
+exports[`@button: matches snapshot * appearance * icon and text 1`] = `
+<@theme(Animated(Button))
+  accessoryLeft={[Function]}
+  animationOptions={Object {}}
+  forwardedRef={null}
+>
+  BUTTON
+</@theme(Animated(Button))>
+`;
+
+exports[`@button: matches snapshot * appearance * icon and title 1`] = `
+<@theme(Animated(Button))
+  accessoryLeft={[Function]}
+  animationOptions={Object {}}
+  forwardedRef={null}
+  title="BUTTON"
+/>
+`;
+
+exports[`@button: matches snapshot * appearance * text 1`] = `
+<@theme(Animated(Button))
+  animationOptions={Object {}}
+  forwardedRef={null}
+>
+  BUTTON
+</@theme(Animated(Button))>
+`;
+
+exports[`@button: matches snapshot * interaction * stateless 1`] = `
+<@theme(Animated(Button))
+  animationOptions={Object {}}
+  forwardedRef={null}
+/>
+`;

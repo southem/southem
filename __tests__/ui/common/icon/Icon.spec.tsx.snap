@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@icon: component checks * should apply container style 1`] = `
+<@theme(Icon)
+  color="black"
+  containerStyle={
+    Object {
+      "backgroundColor": "blue",
+    }
+  }
+  forwardedRef={null}
+  name="3d-rotation"
+  size={24}
+  type="octicon"
+/>
+`;
+
+exports[`@icon: component checks * should apply custom disabled styles 1`] = `
+<@theme(Icon)
+  color="black"
+  disabled={true}
+  disabledStyle={
+    Object {
+      "backgroundColor": "pink",
+    }
+  }
+  forwardedRef={null}
+  name="3d-rotation"
+  onPress={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  size={24}
+  type="octicon"
+/>
+`;
+
+exports[`@icon: component checks * should apply default disabled styles 1`] = `
+<@theme(Icon)
+  color="black"
+  disabled={true}
+  forwardedRef={null}
+  name="3d-rotation"
+  size={24}
+  type="octicon"
+/>
+`;
+
+exports[`@icon: component checks * should render with icon type 1`] = `
+<@theme(Icon)
+  color="red"
+  forwardedRef={null}
+  iconStyle={
+    Object {
+      "backgroundColor": "peru",
+    }
+  }
+  name="ac-unit"
+  reverse={true}
+  size={24}
+  type="octicon"
+/>
+`;
+
+exports[`@icon: component checks * should render without issues 1`] = `
+<@theme(Icon)
+  color="black"
+  forwardedRef={null}
+  name="wifi"
+  size={24}
+  type="material"
+/>
+`;
+
+exports[`@icon: component checks should apply reverse styles 1`] = `
+<@theme(Icon)
+  color="black"
+  forwardedRef={null}
+  name="3d-rotation"
+  reverse={true}
+  size={24}
+  type="octicon"
+/>
+`;
+
+exports[`@icon: matches snapshot * appearance * custom style (styled) 1`] = `
+<@theme(Icon)
+  color="black"
+  forwardedRef={null}
+  size={24}
+  style={
+    Object {
+      "fontSize": 32,
+      "lineHeight": 34,
+    }
+  }
+  type="material"
+/>
+`;
+
+exports[`@icon: matches snapshot * appearance * empty 1`] = `
+<@theme(Icon)
+  color="black"
+  forwardedRef={null}
+  size={24}
+  type="material"
+/>
+`;
+
+exports[`@icon: matches snapshot * appearance * with type 1`] = `
+<@theme(Icon)
+  color="red"
+  forwardedRef={null}
+  name="access-alarm"
+  size={24}
+  type="octicon"
+/>
+`;
+
+exports[`@icon: matches snapshot * interaction * stateless 1`] = `
+<@theme(Icon)
+  color="black"
+  forwardedRef={null}
+  name="wifi"
+  size={24}
+  type="material"
+/>
+`;

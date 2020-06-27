@@ -22,3 +22,6 @@ config/
 
 .expo
 dist
+
+# Jest
+*.snap
