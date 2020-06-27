@@ -1,19 +1,25 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import {
-  ImageProps,
   Text as RNText,
   TextProps as RNTextProps,
+  TextStyle,
+  StyleProp,
 } from 'react-native';
-import PropTypes from 'prop-types';
 import { withThemes } from '@southem/theme';
 import { connectAnimation } from '@southem/animation';
+import {
+  StatusType,
+  TextCategoryType,
+} from '../../devsupport';
 
+type ChildElement = React.ReactText | TextElement;
 
-type ChildElement = string | TextElement;
 interface ComponentProps extends RNTextProps {
-  category?: string;
-  status?: string;
+  style?: StyleProp<TextStyle>;
+  category?: TextCategoryType;
+  status?: StatusType;
+  appearance?: 'default' | 'alternative' | 'hint' | string;
   children?: ChildElement | ChildElement[];
 }
 
@@ -57,14 +63,6 @@ export type TextElement = React.ReactElement<TextProps>;
  */
 export class TextComponent extends React.Component<TextProps> {
   public static displayName = 'Text';
-
-  public static propTypes = {
-    // @ts-ignore
-    ...RNText.propTypes,
-    category: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 's1', 's2', 'p1', 'p2', 'c1', 'c2', 'label']),
-    status: PropTypes.oneOf(['primary', 'success', 'warning', 'danger']),
-    appearance: PropTypes.oneOf(['default', 'alternative', 'hint']),
-  };
 
   public static defaultProps = {
     // @ts-ignore

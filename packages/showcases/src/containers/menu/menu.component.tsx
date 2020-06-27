@@ -34,14 +34,17 @@ export class Menu extends React.Component<Props> {
           onSelect={this.onTabSelect}>
           <BottomNavigationTab
             title='Layouts'
+            // @ts-ignore
             icon={LayoutIconOutline}
           />
           <BottomNavigationTab
             title='Components'
+            // @ts-ignore
             icon={StarIconOutline}
           />
           <BottomNavigationTab
             title='Themes'
+            // @ts-ignore
             icon={ColorPaletteIconOutline}
           />
         </BottomNavigation>

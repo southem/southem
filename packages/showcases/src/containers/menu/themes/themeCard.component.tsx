@@ -9,9 +9,9 @@ import {
   StyleType,
 } from '@southem/theme';
 import {
-  ListItem,
-  ListItemProps,
   Text,
+  Card,
+  CardProps,
 } from '@southem/ui';
 
 interface ComponentProps {
@@ -20,13 +20,9 @@ interface ComponentProps {
   style: StyleProp<StyleType>;
 }
 
-export type ThemeCardComponentProps = ListItemProps & ComponentProps;
+export type ThemeCardComponentProps = CardProps & ComponentProps;
 
 export class ThemeCard extends React.Component<ThemeCardComponentProps> {
-
-  private getCardStatus = (): string => {
-    return this.props.disabled ? 'ACTIVE' : '';
-  };
 
   private renderColors = (style: StyleType, index: number): React.ReactElement<ViewProps> => {
     return (
@@ -36,6 +32,19 @@ export class ThemeCard extends React.Component<ThemeCardComponentProps> {
       />
     );
   };
+
+  private renderHeader = (): React.ReactElement<ViewProps> => (
+    <View style={styles.header}>
+      <Text category='h6'>
+        {this.props.title}
+      </Text>
+      <Text
+        appearance='hint'
+        category='c1'>
+        {this.props.disabled && 'ACTIVE'}
+      </Text>
+    </View>
+  );
 
   public render(): React.ReactNode {
     const { style, title, ...restProps } = this.props;
@@ -49,53 +58,35 @@ export class ThemeCard extends React.Component<ThemeCardComponentProps> {
       styles.colorItem6,
     ];
 
-    const cardStatus: string = this.getCardStatus();
-
     return (
-      <ListItem
+      <Card
         {...restProps}
-        style={[styles.container, style]}>
-        <View style={styles.headerContainer}>
-          <Text
-            style={styles.titleLabel}
-            category='h6'>
-            {title}
-          </Text>
-          <Text category='label'>
-            {cardStatus}
-          </Text>
-        </View>
+        header={this.renderHeader}>
         <View style={styles.colorContainer}>
           {colors.map(this.renderColors)}
         </View>
-      </ListItem>
+      </Card>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    borderRadius: 8,
-    overflow: 'hidden',
-  },
-  headerContainer: {
+  header: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
   },
   colorContainer: {
     marginTop: 24,
     flexDirection: 'row',
     alignItems: 'center',
   },
-  titleLabel: {
-    flex: 1,
-  },
   colorItem: {
     width: 40,
     height: 40,
-    borderRadius: 6,
+    borderRadius: 4,
     marginHorizontal: 2,
   },
   colorItem1: {

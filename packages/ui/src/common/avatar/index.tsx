@@ -1,20 +1,19 @@
-/* eslint-disable */
-import React, { Component, ReactElement } from 'react';
+// tslint:disable
+import React, { Component } from 'react';
 import {
   Image,
   ImageProps,
-  ImageStyle,
-  StyleSheet,
 } from 'react-native';
-import PropTypes from 'prop-types';
 import { withThemes } from '@southem/theme';
-import { SizeType, ShapeType } from '@southem/ui';
+import { SizeType, ShapeType } from '../../devsupport';
 
 export interface AvatarProps extends ImageProps {
   shape?: ShapeType;
   size?: SizeType;
 }
+
 export type AvatarElement = React.ReactElement<AvatarProps>;
+
 /**
  * Styled Image component.
  *
@@ -47,10 +46,6 @@ export type AvatarElement = React.ReactElement<AvatarProps>;
  */
 export class AvatarComponent extends React.Component<AvatarProps> {
   public static displayName = 'Avatar';
-  public static propTypes = {
-    shape: PropTypes.oneOf(['round', 'rounded', 'square']),
-    size: PropTypes.oneOf(['mini', 'small', 'medium', 'large', 'big']),
-  };
   public static defaultProps = {
     shape: 'round',
     size: 'medium',
@@ -65,4 +60,6 @@ export class AvatarComponent extends React.Component<AvatarProps> {
   }
 }
 
-export const Avatar = withThemes('Avatar')(AvatarComponent);
+// @ts-ignore
+// tslint:disable-next-line:max-line-length
+export const Avatar = withThemes<AvatarProps>('Avatar')(AvatarComponent);

@@ -1,24 +1,18 @@
 import React, { PureComponent } from 'react';
 import {
   StyleSheet,
-  View,
   StyleProp,
   TextStyle,
   ViewStyle,
   TouchableOpacity,
   TouchableOpacityProps,
-  AccessibilityProps,
 } from 'react-native';
-import {
-  Icon,
-  platform,
-  renderNode,
-} from '@southem/ui';
 import {
   StyleType,
   withThemes,
 } from '@southem/theme';
 import { connectAnimation } from '@southem/animation';
+import { renderNode } from '../../devsupport';
 import {
   Divider,
   DividerElement,
@@ -147,8 +141,10 @@ class CardComponent extends PureComponent<CardProps> {
         activeOpacity={1.0}
         style={style}
         {...attributes}>
-        // @ts-ignore
-        {header && this.renderHeader(headerProps, headerStyle)}
+        {
+          // @ts-ignore
+          header && this.renderHeader(headerProps, headerStyle)
+        }
         {header && this.renderDivider()}
         {children && renderNode(
           Body,
@@ -156,8 +152,10 @@ class CardComponent extends PureComponent<CardProps> {
           StyleSheet.flatten([]),
         )}
         {footer && this.renderDivider()}
-        // @ts-ignore
-        {footer && this.renderFooter(footerStyle)}
+        {
+          // @ts-ignore
+          footer && this.renderFooter(footerStyle)
+        }
       </TouchableOpacity>
     );
   }

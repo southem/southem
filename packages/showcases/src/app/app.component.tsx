@@ -23,7 +23,6 @@ import {
   FiraSans_Black,
   FiraSans_Black_Italic,
 } from '@southem/fonts';
-import { RootNavigator } from '../core/navigation/routes';
 import {
   getCurrentStateName,
   RouteState,
@@ -41,8 +40,9 @@ import {
   SplashImage,
   LoadingAnimationProps,
 } from '../components';
-import {themes} from './themes';
+import { themes } from './themes';
 import { AppLoading, LoadFontsTask, Task } from './app-loading.component';
+import { RootNavigator } from '../core/navigation/routes';
 
 enableScreens();
 
@@ -83,9 +83,9 @@ const loadingTasks: Task[] = [
 // @ts-ignore
 const App = (props): React.ReactElement => {
 
-  const [theme, setTheme] = React.useState<AppTheme>(AppTheme.light);
+  const [theme, setTheme] = React.useState<AppTheme>(AppTheme.Dark);
   const isDarkMode = (): boolean => {
-    return theme === AppTheme.dark;
+    return theme === AppTheme.Dark;
   };
   // @ts-ignore
   const applicationProviderConfig: ThemeProviderProps = {
@@ -117,7 +117,10 @@ const App = (props): React.ReactElement => {
         <ThemeContext.Provider value={themeContextProviderConfig}>
           <SafeAreaProvider>
             <StatusBar/>
-            <RootNavigator onNavigationStateChange={onNavigationStateChange}/>
+            <RootNavigator
+              // @ts-ignore
+              onNavigationStateChange={onNavigationStateChange}
+            />
           </SafeAreaProvider>
         </ThemeContext.Provider>
       </ThemeProvider>

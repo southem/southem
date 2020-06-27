@@ -9,29 +9,12 @@ import {
   TouchableOpacityProps,
   ViewStyle,
 } from 'react-native';
-import {
-  StyleType,
-  withThemes,
-} from '@southem/theme';
-import {
-  View,
-  ViewElementProps,
-} from '../../view';
-import {
-  Text,
-  TextProps,
-  TextElement,
-} from '../../text';
-import {
-  Icon,
-  IconProps,
-  IconElement,
-} from '../../icon';
-
-import {
-  renderNode,
-  isValidString
-} from '@southem/ui';
+import { StyleType, withThemes } from '@southem/theme';
+import { View, ViewElementProps } from '../../view';
+import { Text, TextElement } from '../../text';
+import { Icon, IconElement } from '../../icon';
+import { renderNode } from '../../../devsupport';
+import { isValidString } from '../../../tools';
 
 type IconProp = (style: StyleType, index: number) => IconElement;
 type AccessoryProp = (style: StyleType, index: number) => React.ReactElement;

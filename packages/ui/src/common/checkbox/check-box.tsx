@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import {
-  ViewProps,
   ViewStyle,
   TextStyle,
   StyleProp,
@@ -13,27 +12,16 @@ import {
 } from 'react-native';
 import { withThemes } from '@southem/theme';
 import { isValidString } from '../../tools';
+import { StatusType, renderNode } from '../../devsupport';
+import { View } from '../view';
+import { Text, TextProps } from '../text';
+import { IconElement } from '../icon';
 import {
   CheckMark,
   CheckMarkElement,
   CheckMarkProps,
 } from './check-mark';
-import {
-  View,
-  Text,
-  TextProps,
-  IconElement,
-  renderNode,
-} from '@southem/ui';
 import { Touchable as RNTouchableOpacity } from '../touchable';
-
-type StatusTrait =
-  | 'primary'
-  | 'success'
-  | 'info'
-  | 'warning'
-  | 'danger'
-  | 'white';
 
 // @ts-ignore
 const { propTypes: RNTextProps } = RNText;
@@ -49,7 +37,7 @@ export interface CheckBoxProps extends TouchableOpacityProps {
   checked?: boolean;
   disabled?: boolean;
   indeterminate?: boolean;
-  status?: StatusTrait;
+  status?: StatusType;
   onChange?: (checked: boolean, indeterminate: boolean) => void;
 }
 
@@ -163,7 +151,7 @@ class CheckBoxComponent extends PureComponent<CheckBoxProps> {
   };
 
   private renderTextElement = (): TextElement => {
-    let { text, children, textStyle } = this.props;
+    const { text, children, textStyle } = this.props;
 
     // @ts-ignore
     return renderNode(Text, children || text, {

@@ -9,7 +9,7 @@ interface Themes {
   default: object;
   light: object;
   dark: object;
-};
+}
 
 // @ts-ignore
 const themes: Themes = {};

@@ -8,8 +8,8 @@ import {
 } from '@southem/ui';
 import { textStyle } from '../../common';
 import {
+  AppTheme,
   ThemeContext,
-  ThemeKey,
 } from '../../../services/theme.service';
 import { ComponentsListItemData } from './type';
 
@@ -22,7 +22,7 @@ export type ComponentsListItemProps = ListItemProps & ComponentProps;
 
 export class ComponentsListItem extends React.Component<ComponentsListItemProps> {
 
-  private renderShowcaseElement = (style: StyleType, theme: ThemeKey): React.ReactElement<ImageProps> => {
+  private renderShowcaseElement = (style: StyleType, theme: AppTheme): React.ReactElement<ImageProps> => {
     const showcaseElement: React.ReactElement<ImageProps> = this.props.data.icon(style, theme);
 
     return React.cloneElement(showcaseElement, {
@@ -35,11 +35,11 @@ export class ComponentsListItem extends React.Component<ComponentsListItemProps>
 
     return (
       // @ts-ignore
-      <ThemeContext.Consumer>{({ currentTheme }) => (
+      <ThemeContext.Consumer>{({ theme }) => (
         <ListItem
           {...restProps}
           style={[styles.container, style]}>
-          {this.renderShowcaseElement(styles.icon, currentTheme)}
+          {this.renderShowcaseElement(styles.icon, theme)}
           <Text
             style={textStyle.subtitle}
             category='s2'>

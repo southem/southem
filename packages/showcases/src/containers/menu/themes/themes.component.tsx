@@ -1,6 +1,7 @@
 import React from 'react';
 import { ListRenderItemInfo, StyleSheet } from 'react-native';
 import {
+  View,
   List,
   ListItemProps,
 } from '@southem/ui';
@@ -58,6 +59,16 @@ export class Themes extends React.Component<ThemesProps> {
     );
   };
 
+  private renderFooter = (): React.ReactElement => (
+    // Toggle
+    <View
+      style={styles.evaToggle}
+      text='Eva Design System'
+      // checked={evaToggleChecked}
+      // onChange={onEvaToggleCheckedChange}
+    />
+  );
+
   public render(): React.ReactNode {
     const { data } = this.props;
 
@@ -67,6 +78,7 @@ export class Themes extends React.Component<ThemesProps> {
         contentContainerStyle={styles.contentContainer}
         data={data}
         renderItem={this.renderItem}
+        ListFooterComponent={this.renderFooter}
       />
     );
   }
@@ -75,13 +87,19 @@ export class Themes extends React.Component<ThemesProps> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 12,
   },
   contentContainer: {
     paddingVertical: 12,
     paddingHorizontal: 24,
-    backgroundColor: 'yellow',
+    backgroundColor: 'white',
   },
   item: {
-    marginVertical: 8,
+    margin: 8,
+  },
+  evaToggle: {
+    margin: 8,
+    alignSelf: 'flex-end',
+    flexDirection: 'row-reverse',
   },
 });

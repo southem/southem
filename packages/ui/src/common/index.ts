@@ -57,6 +57,12 @@ export {
 } from './image';
 
 export {
+  Input,
+  InputProps,
+  InputElement,
+} from './input';
+
+export {
   Layout,
   LayoutProps,
   LayoutElement,
@@ -93,7 +99,3 @@ export {
   ViewElement,
   ViewElementProps,
 } from './view';
-
-export * from './nodeType';
-export * from './renderNode';
-export * from './typings';

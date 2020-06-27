@@ -44,177 +44,177 @@ import { ComponentsContainerData } from './type';
 
 export const routes: ComponentsContainerData[] = [
   {
-    // @ts-ignore
     title: 'Button',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconButton(style),
-        dark: ComponentsIconButtonDark(style),
+        Light: ComponentsIconButton(style),
+        Dark: ComponentsIconButtonDark(style),
       }, theme);
     },
     route: 'Button',
   },
   {
-    // @ts-ignore
     title: 'Button Group',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconButtonGroup(style),
-        dark: ComponentsIconButtonGroupDark(style),
+        Light: ComponentsIconButtonGroup(style),
+        Dark: ComponentsIconButtonGroupDark(style),
       }, theme);
     },
-    route: 'Button Group',
+    route: 'ButtonGroup',
   },
   {
-    // @ts-ignore
     title: 'Checkbox',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconCheckBox(style),
-        dark: ComponentsIconCheckBoxDark(style),
+        Light: ComponentsIconCheckBox(style),
+        Dark: ComponentsIconCheckBoxDark(style),
       }, theme);
     },
     route: 'CheckBox',
   },
   {
-    // @ts-ignore
     title: 'Toggle',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconToggle(style),
-        dark: ComponentsIconToggleDark(style),
+        Light: ComponentsIconToggle(style),
+        Dark: ComponentsIconToggleDark(style),
       }, theme);
     },
     route: 'Toggle',
   },
   {
-    // @ts-ignore
     title: 'Radio',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconRadio(style),
-        dark: ComponentsIconRadioDark(style),
+        Light: ComponentsIconRadio(style),
+        Dark: ComponentsIconRadioDark(style),
       }, theme);
     },
     route: 'Radio',
   },
   {
-    // @ts-ignore
     title: 'Input',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconInput(style),
-        dark: ComponentsIconInputDark(style),
+        Light: ComponentsIconInput(style),
+        Dark: ComponentsIconInputDark(style),
       }, theme);
     },
     route: 'Input',
   },
   {
-    // @ts-ignore
     title: 'Text',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconText(style),
-        dark: ComponentsIconTextDark(style),
+        Light: ComponentsIconText(style),
+        Dark: ComponentsIconTextDark(style),
       }, theme);
     },
     route: 'Text',
   },
   {
-    // @ts-ignore
     title: 'Avatar',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconAvatar(style),
-        dark: ComponentsIconAvatarDark(style),
+        Light: ComponentsIconAvatar(style),
+        Dark: ComponentsIconAvatarDark(style),
       }, theme);
     },
     route: 'Avatar',
   },
   {
-    // @ts-ignore
     title: 'Popover',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconPopover(style),
-        dark: ComponentsIconPopoverDark(style),
+        Light: ComponentsIconPopover(style),
+        Dark: ComponentsIconPopoverDark(style),
       }, theme);
     },
     route: 'Popover',
   },
   {
-    // @ts-ignore
     title: 'Tooltip',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconTooltip(style),
-        dark: ComponentsIconTooltipDark(style),
+        Light: ComponentsIconTooltip(style),
+        Dark: ComponentsIconTooltipDark(style),
       }, theme);
     },
     route: 'Tooltip',
   },
   {
-    // @ts-ignore
     title: 'Overflow Menu',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconOverflowMenu(style),
-        dark: ComponentsIconOverflowMenuDark(style),
+        Light: ComponentsIconOverflowMenu(style),
+        Dark: ComponentsIconOverflowMenuDark(style),
       }, theme);
     },
-    route: 'Overflow Menu',
+    route: 'OverflowMenu',
   },
   {
-    // @ts-ignore
     title: 'Tab View',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconTabView(style),
-        dark: ComponentsIconTabViewDark(style),
+        Light: ComponentsIconTabView(style),
+        Dark: ComponentsIconTabViewDark(style),
       }, theme);
     },
-    route: 'Tab View',
+    route: 'TabView',
   },
   {
-    // @ts-ignore
     title: 'List',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconList(style),
-        dark: ComponentsIconListDark(style),
+        Light: ComponentsIconList(style),
+        Dark: ComponentsIconListDark(style),
       }, theme);
     },
     route: 'List',
   },
   {
-    // @ts-ignore
     title: 'Top Navigation',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconTopNavigation(style),
-        dark: ComponentsIconTopNavigationDark(style),
+        Light: ComponentsIconTopNavigation(style),
+        Dark: ComponentsIconTopNavigationDark(style),
       }, theme);
     },
-    route: 'Top Navigation',
+    route: 'TopNavigation',
   },
   {
-    // @ts-ignore
     title: 'Bottom Navigation',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconBottomNavigation(style),
-        dark: ComponentsIconBottomNavigationDark(style),
+        Light: ComponentsIconBottomNavigation(style),
+        Dark: ComponentsIconBottomNavigationDark(style),
       }, theme);
     },
-    route: 'Bottom Navigation',
+    route: 'BottomNavigation',
   },
   {
-    // @ts-ignore
     title: 'Modal',
+    // @ts-ignore
     icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
       return ThemeService.select({
-        light: ComponentsIconModal(style),
-        dark: ComponentsIconModalDark(style),
+        Light: ComponentsIconModal(style),
+        Dark: ComponentsIconModalDark(style),
       }, theme);
     },
     route: 'Modal',

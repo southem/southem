@@ -6,3 +6,5 @@ export * from './menu';
 // export * from './messaging';
 // export * from './social';
 // export * from './trainings';
+export * from './splash/splash-image.component';
+export * from './statusBar/status-bar.component';

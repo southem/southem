@@ -6,8 +6,9 @@ import {
     TouchableOpacity,
     TouchableOpacityProps,
 } from 'react-native';
-import { renderNode, Icon } from '../../common';
 import { withThemes } from '@southem/theme';
+import { Icon } from '../../common';
+import { renderNode } from '../../devsupport';
 
 type IconElement = React.ReactElement<ImageProps>;
 type IconProp = () => IconElement;

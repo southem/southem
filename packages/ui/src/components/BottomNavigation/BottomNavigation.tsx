@@ -7,26 +7,35 @@ import {
   ViewProps,
   ViewStyle,
 } from 'react-native';
-
+import {
+  Overwrite,
+  ChildrenWithProps,
+  StyledComponentProps,
+} from '../../devsupport';
 import {
   TabIndicator,
   TabIndicatorProps,
 } from '../TabIndicator';
-import {BottomNavigationTabProps} from './BottomNavigationTab';
+import {
+  BottomNavigationTabProps,
+} from './BottomNavigationTab';
 
 type TabElement = React.ReactElement<BottomNavigationTabProps>;
 type IndicatorElement = React.ReactElement<TabIndicatorProps>;
 type ChildrenProp = TabElement | TabElement[];
 
-interface ComponentProps {
-  children: ChildrenProp;
-  selectedIndex?: number;
-  indicatorStyle?: StyleProp<ViewStyle>;
-  onSelect?: (index: number) => void;
+type BottomNavigationStyledProps = Overwrite<StyledComponentProps, {
   appearance?: 'default' | 'noIndicator' | string;
+}>;
+
+export interface BottomNavigationProps extends ViewProps, BottomNavigationStyledProps {
+  children: ChildrenWithProps<BottomNavigationTabProps>;
+  selectedIndex?: number;
+  onSelect?: (index: number) => void;
+  indicatorStyle?: StyleProp<ViewStyle>;
 }
 
-export type BottomNavigationProps = ViewProps & ComponentProps;
+export type BottomNavigationElement = React.ReactElement<BottomNavigationProps>;
 
 const styles = StyleSheet.create({
   container: {

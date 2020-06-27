@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React from 'react';
 import {
-  Text as RNText,
   View,
   StyleProp,
   StyleSheet,
@@ -10,7 +9,8 @@ import {
   ViewProps,
 } from 'react-native';
 import {withThemes} from '@southem/theme';
-import {renderNode, nodeType, Title, Subtitle} from '../../common';
+import {renderNode, nodeType} from '../../devsupport';
+import {Title, Subtitle} from '../../common';
 import PropTypes from 'prop-types';
 import {TopNavigationAction, TopNavigationActionProps} from './TopNavigationAction';
 

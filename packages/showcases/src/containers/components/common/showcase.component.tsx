@@ -65,7 +65,7 @@ export class Showcase extends React.Component<ShowcaseProps> {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '',
+    backgroundColor: 'white',
   },
   item: {
     paddingHorizontal: 24,
@@ -73,6 +73,6 @@ const styles = StyleSheet.create({
   },
   itemBorder: {
     borderBottomWidth: 1,
-    borderBottomColor: '',
+    borderBottomColor: 'rgb(169,169,169)',
   },
 });

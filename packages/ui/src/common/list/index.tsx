@@ -7,18 +7,10 @@ import {
   FlatListProps,
   ListRenderItemInfo,
 } from 'react-native';
-import {
-  throttle,
-  isEmpty,
-} from 'lodash';
-import {
-  platform,
-  renderNode,
-} from '@southem/ui';
-import {
-  StyleType,
-  withThemes,
-} from '@southem/theme';
+import { throttle, isEmpty } from 'lodash';
+import { StyleType, withThemes } from '@southem/theme';
+import { platform } from '../../tools';
+import { renderNode } from '../../devsupport';
 import {
   ListItemProps,
   ListItem,

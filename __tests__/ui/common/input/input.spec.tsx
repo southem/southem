@@ -1,0 +1,194 @@
+import React from 'react';
+import {
+  Image,
+  ImageProps,
+  Text,
+  TextInput,
+} from 'react-native';
+import {
+  fireEvent,
+  render,
+  RenderAPI,
+} from 'react-native-testing-library';
+import Theme, { ThemeProvider } from '@southem/theme';
+import {
+  darkTheme,
+  Input,
+  InputProps,
+} from '@southem/ui';
+
+Theme.registerDefaultTheme(darkTheme);
+
+const TestInput = React.forwardRef((props: InputProps, ref: React.Ref<Input>) => (
+  <ThemeProvider
+    theme={'default'}>
+    <Input ref={ref} {...props} />
+  </ThemeProvider>
+));
+
+describe('@input: component checks', () => {
+
+  it('should be able to call focus via ref', () => {
+    const componentRef: React.RefObject<Input> = React.createRef();
+    render(
+      <TestInput ref={componentRef}/>,
+    );
+
+    expect(componentRef.current.focus).toBeTruthy();
+  });
+
+  it('should be able to call blur via ref', () => {
+    const componentRef: React.RefObject<Input> = React.createRef();
+    render(
+      <TestInput ref={componentRef}/>,
+    );
+
+    expect(componentRef.current.blur).toBeTruthy();
+  });
+
+  it('should be able to call isFocused via ref', () => {
+    const componentRef: React.RefObject<Input> = React.createRef();
+    render(
+      <TestInput ref={componentRef}/>,
+    );
+
+    expect(componentRef.current.isFocused).toBeTruthy();
+  });
+
+  it('should be able to call clear via ref', () => {
+    const componentRef: React.RefObject<Input> = React.createRef();
+    render(
+      <TestInput ref={componentRef}/>,
+    );
+
+    expect(componentRef.current.clear).toBeTruthy();
+  });
+
+  it('should set TextInput editable to false by passing disabled prop', () => {
+    const component = render(
+      <TestInput disabled={true}/>,
+    );
+
+    const textInput = component.queryByType(TextInput);
+    expect(textInput.props.editable).toEqual(false);
+  });
+
+  it('should render placeholder', () => {
+    const component = render(
+      <TestInput placeholder='I love Babel'/>,
+    );
+
+    expect(component.queryByPlaceholder('I love Babel')).toBeTruthy();
+  });
+
+  it('should render text passed to label prop', () => {
+    const component = render(
+      <TestInput label='I love Babel'/>,
+    );
+
+    expect(component.queryByText('I love Babel')).toBeTruthy();
+  });
+
+  it('should render component passed to label prop', () => {
+    const component = render(
+      <TestInput label={props => <Text {...props}>I love Babel</Text>}/>,
+    );
+
+    expect(component.queryByText('I love Babel')).toBeTruthy();
+  });
+
+  it('should render text passed to caption prop', () => {
+    const component = render(
+      <TestInput caption='I love Babel'/>,
+    );
+
+    expect(component.queryByText('I love Babel')).toBeTruthy();
+  });
+
+  it('should render component passed to caption prop', () => {
+    const component = render(
+      <TestInput caption={props => <Text {...props}>I love Babel</Text>}/>,
+    );
+
+    expect(component.queryByText('I love Babel')).toBeTruthy();
+  });
+
+  it('should render component passed to captionIcon prop', () => {
+    const CaptionIcon = (props): React.ReactElement<ImageProps> => (
+      <Image
+        {...props}
+        source={{ uri: 'https://i.imgur.com/0y8Ftya.jpg' }}
+      />
+    );
+
+    const component = render(
+      <TestInput caption={CaptionIcon}/>,
+    );
+
+    const captionIcon = component.queryByType(Image);
+
+    expect(captionIcon).toBeTruthy();
+    expect(captionIcon.props.source.uri).toEqual('https://i.imgur.com/0y8Ftya.jpg');
+  });
+
+  it('should render components passed to accessoryLeft or accessoryRight props', () => {
+    const AccessoryLeft = (props): React.ReactElement<ImageProps> => (
+      <Image
+        {...props}
+        source={{ uri: 'https://i.imgur.com/0y8Ftya.jpg' }}
+      />
+    );
+
+    const AccessoryRight = (props): React.ReactElement<ImageProps> => (
+      <Image
+        {...props}
+        source={{ uri: 'https://akveo.github.io/eva-icons/fill/png/128/home.png' }}
+      />
+    );
+
+    const component = render(
+      <TestInput
+        accessoryLeft={AccessoryLeft}
+        accessoryRight={AccessoryRight}
+      />,
+    );
+
+    const [accessoryLeft, accessoryRight] = component.queryAllByType(Image);
+
+    expect(accessoryLeft).toBeTruthy();
+    expect(accessoryRight).toBeTruthy();
+
+    expect(accessoryLeft.props.source.uri).toEqual('https://i.imgur.com/0y8Ftya.jpg');
+    expect(accessoryRight.props.source.uri).toEqual('https://akveo.github.io/eva-icons/fill/png/128/home.png');
+  });
+
+  it('should request text change', () => {
+    const onChangeText = jest.fn();
+    const component = render(
+      <TestInput onChangeText={onChangeText}/>,
+    );
+
+    fireEvent.changeText(component.queryByType(TextInput), 'I love Babel');
+    expect(onChangeText).toBeCalledWith('I love Babel');
+  });
+
+  it('should call onFocus', () => {
+    const onFocus = jest.fn();
+    const component = render(
+      <TestInput onFocus={onFocus}/>,
+    );
+
+    fireEvent(component.queryByType(TextInput), 'focus');
+    expect(onFocus).toBeCalled();
+  });
+
+  it('should call onBlur', () => {
+    const onBlur = jest.fn();
+    const component = render(
+      <TestInput onBlur={onBlur}/>,
+    );
+
+    fireEvent(component.queryByType(TextInput), 'blur');
+    expect(onBlur).toBeCalled();
+  });
+});

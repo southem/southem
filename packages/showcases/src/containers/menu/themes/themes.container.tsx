@@ -11,7 +11,7 @@ import { Theme } from './type';
 export class ThemesContainer extends React.Component {
 
   private EXCLUDE_THEMES: ThemeKey[] = [
-    'dark',
+    'Dark',
   ];
 
   private data: Theme[] = [];

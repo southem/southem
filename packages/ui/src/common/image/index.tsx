@@ -10,9 +10,9 @@ import {
   isObject,
   isNumber,
 } from 'lodash';
-import { isAndroid} from '@southem/ui';
 import { withThemes } from '@southem/theme';
 import { connectAnimation } from '@southem/animation';
+import { isAndroid } from '../../tools';
 
 // A valid source is either an object with an uri key or a number (from a `require` call)
 const isValidSource = (source: ImageLoadEventData) => isNumber(source) || (isObject(source) && source.uri);
@@ -81,10 +81,9 @@ class ImageComponent extends PureComponent<ImageProps, StateImage> {
   }
 
   onLoad = () => {
-    Animated.timing(this.state.opacity, {
-      toValue: 1,
-      duration: 250,
-    }).start();
+    // @ts-ignore
+    Animated.timing(this.state.opacity, { toValue: 1, duration: 250 })
+      .start();
 
     if (this.props.onLoad) {
       // @ts-ignore

@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import moment from 'moment';
-import Timer from 'react-native-background-timer';
+import { Timer } from '../../tools';
 import { Text } from '../../common';
 import { shallowEqual, blacklist } from '../../tools';
 

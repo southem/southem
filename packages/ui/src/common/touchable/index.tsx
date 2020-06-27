@@ -1,9 +1,10 @@
-/* eslint-disable */
+/* tslint:disable */
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import {
   View,
   Platform,
+  ViewStyle,
+  StyleProp,
   TouchableOpacity,
   TouchableOpacityProps,
   TouchableNativeFeedback,
@@ -12,10 +13,13 @@ import {
 // Dont set theming in this component
 import {isAndroid} from '../../tools';
 
+// tslint:disable-next-line:no-empty-interface
 export interface TouchableProps extends TouchableOpacityProps {
+  style: StyleProp<ViewStyle>;
+  children: React.ReactElement;
 }
 
-export type CheckMarkElement = React.ReactElement<TouchableProps>;
+export type TouchableElement = React.ReactElement<TouchableProps>;
 
 let TouchableComponent;
 
@@ -40,24 +44,9 @@ export class Touchable extends Component<TouchableProps> {
   static Ripple = TouchableComponent.Ripple;
   static canUseNativeForeground = TouchableComponent.canUseNativeForeground;
 
-  static propTypes = {
-    children: PropTypes.any,
-    style: PropTypes.object,
-  };
-
   render() {
-    let {
-      children,
-      // @ts-ignore
-      style,
-      // @ts-ignore
-      foreground,
-      // @ts-ignore
-      background,
-      // @ts-ignore
-      useForeground,
-      ...attributes
-    } = this.props;
+    // @ts-ignore
+    let { children, style, foreground, background, useForeground, ...attributes } = this.props;
 
     // Even though it works for TouchableWithoutFeedback and
     // TouchableNativeFeedback with this component, we want

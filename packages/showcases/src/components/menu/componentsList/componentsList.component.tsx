@@ -37,6 +37,7 @@ export class ComponentsList extends React.Component<ComponentsListProps> {
   private renderItem = (info: ListItemElementInfo): ListItemElement => {
     return (
       <ComponentsListItem
+        key={`list-${info.index}`}
         style={styles.item}
         activeOpacity={0.75}
         data={info.item}

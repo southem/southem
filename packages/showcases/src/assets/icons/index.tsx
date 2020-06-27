@@ -370,7 +370,7 @@ export const ComponentsIconModalDark = (style: StyleProp<ImageStyle>): AssetIcon
 
 export const ArrowHeadDownIconFill = (style: ImageStyle): IconElement<ImageProps> => {
   return (
-    <Icon {...style} name='arrowhead-down'/>
+    <Icon {...style} type='material-community' name='arrowhead-down'/>
   );
 };
 
@@ -382,7 +382,7 @@ export const ArrowHeadUpIconFill = (style: ImageStyle): IconElement<ImageProps> 
 
 export const ArrowIosBackFill = (style: ImageStyle): IconElement<ImageProps> => {
   return (
-    <Icon {...style} name='arrow-ios-back'/>
+    <Icon {...style} name='arrow-back'/>
   );
 };
 
@@ -430,7 +430,7 @@ export const EyeOffIconFill = (style: ImageStyle): IconElement<ImageProps> => {
 
 export const ColorPaletteIconOutline = (style: ImageStyle): IconElement<ImageProps> => {
   return (
-    <Icon {...style} name='color-palette-outline'/>
+    <Icon {...style} name='color-lens'/>
   );
 };
 
@@ -454,7 +454,7 @@ export const HeartIconFill = (style: ImageStyle): IconElement<ImageProps> => {
 
 export const LayoutIconOutline = (style: ImageStyle): IconElement<ImageProps> => {
   return (
-    <Icon {...style} name='layout-outline'/>
+    <Icon {...style} name='view-compact'/>
   );
 };
 
@@ -478,7 +478,7 @@ export const MessageCircleIconOutline = (style: ImageStyle): IconElement<ImagePr
 
 export const MoreHorizontalIconFill = (style: ImageStyle): IconElement<ImageProps> => {
   return (
-    <Icon {...style} name='more-horizontal'/>
+    <Icon {...style} name='more-horiz'/>
   );
 };
 
@@ -538,31 +538,31 @@ export const StarIconFill = (style: ImageStyle): IconElement<ImageProps> => {
 
 export const StarIconOutline = (style: ImageStyle): IconElement<ImageProps> => {
   return (
-    <Icon {...style} name='star-outline'/>
+    <Icon {...style} name='star-border'/>
   );
 };
 
 export const FlashIconOutline = (style: ImageStyle): IconElement<ImageProps> => {
   return (
-    <Icon {...style} name='flash-outline'/>
+    <Icon {...style} type='material-community' name='flash-outline'/>
   );
 };
 
 export const DoneAllIconOutline = (style: ImageStyle): IconElement<ImageProps> => {
   return (
-    <Icon {...style} name='done-all-outline'/>
+    <Icon {...style} name='done-all'/>
   );
 };
 
 export const MoreVerticalIconFill = (style: ImageStyle): IconElement<ImageProps> => {
   return (
-    <Icon {...style} name='more-vertical'/>
+    <Icon {...style} name='more-vert'/>
   );
 };
 
 export const CreditCardIconFill = (style: ImageStyle): IconElement<ImageProps> => {
   return (
-    <Icon {...style} name='credit-card'/>
+    <Icon {...style} name='payment'/>
   );
 };
 

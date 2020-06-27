@@ -4,9 +4,6 @@ import {
   ListRenderItemInfo,
 } from 'react-native';
 import {
-  withThemes,
-} from '@southem/theme';
-import {
   List,
   ListProps,
 } from '@southem/ui';
@@ -31,7 +28,7 @@ export type LayoutsListProps = ComponentProps;
 type ListItemElement = React.ReactElement<LayoutsListItemProps>;
 type ListItemElementInfo = ListRenderItemInfo<LayoutsListItemData>;
 
-class LayoutsListComponent extends React.Component<LayoutsListProps> {
+export class LayoutsList extends React.Component<LayoutsListProps> {
 
   private onItemPress = (index: number) => {
     this.props.onItemPress(index);
@@ -69,5 +66,3 @@ const styles = {
     marginVertical: 8,
   },
 };
-
-export const LayoutsList = withThemes('LayoutsList')(LayoutsListComponent);

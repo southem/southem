@@ -18,7 +18,7 @@ const HeartIcon = (style: ImageProps): React.ReactElement<ImageProps> => (
  * Placeholder element. Replaced during the build process
  */
 // @ts-ignore
-export const AppNavigator = (props): React.ReactElement => (
+export const HomeNavigator = (props): React.ReactElement => (
   <Layout style={styles.container}>
     <Text style={styles.text} category='h1'>
       Welcome to UI SouTheme

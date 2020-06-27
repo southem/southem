@@ -1,4 +1,4 @@
-import { ComponentsListItemData } from '@src/components/menu';
+import { ComponentsListItemData } from '../../../components/menu';
 
 export type ComponentsData = ComponentsListItemData;
 

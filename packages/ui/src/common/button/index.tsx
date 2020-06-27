@@ -10,49 +10,35 @@ import {
   TouchableOpacityProps,
   GestureResponderEvent,
 } from 'react-native';
-import {
-  Text,
-  TextProps,
-  Icon,
-  IconProps,
-  renderNode,
-  ActivityIndicator,
-  ActivityProps,
-} from '@southem/ui';
 import { withThemes } from '@southem/theme';
-import {connectAnimation} from '@southem/animation';
+import { connectAnimation } from '@southem/animation';
+import {
+  ButtonType,
+  Overwrite,
+  RenderProp,
+  renderNode,
+  renderTextElement,
+  SizeType,
+  StatusType,
+  StyledComponentProps,
+} from '../../devsupport';
+import { TextProps } from '../text';
+import { Icon, IconProps } from '../icon';
+import { ActivityIndicator, ActivityProps } from '../activityIndicator';
 
-type StatusTrait =
-  | 'primary'
-  | 'success'
-  | 'info'
-  | 'warning'
-  | 'danger'
-  | 'white';
+type ButtonStyledProps = Overwrite<StyledComponentProps, {
+  appearance?: ButtonType;
+}>;
 
-type SizeTrait =
-  | 'mini'
-  | 'small'
-  | 'medium'
-  | 'large'
-  | 'big';
-
-type TypeTrait =
-  | 'filled'
-  | 'outline'
-  | 'ghost';
-
-
-export interface ButtonProps extends TouchableOpacityProps {
-  textStyle?: StyleProp<TextStyle>;
-  icon?: IconProps;
-  iconContainerStyle: StyleProp<ViewStyle>;
-  iconRight: boolean;
-  status?: StatusTrait;
-  size?: SizeTrait;
+// @ts-ignore
+export interface ButtonProps extends TouchableOpacityProps, ButtonStyledProps {
+  accessoryLeft?: RenderProp<Partial<IconProps>>;
+  accessoryRight?: RenderProp<Partial<IconProps>>;
+  accessoryStyle?: StyleProp<ViewStyle>;
+  status?: StatusType;
+  size?: SizeType;
   fluid?: boolean;
-  children?: any;
-  appearance?: TypeTrait;
+  children?: RenderProp<TextProps> | React.ReactText;
   title?: string;
   titleStyle?: StyleProp<TextStyle>;
   titleProps?: StyleProp<TextProps>;
@@ -61,8 +47,8 @@ export interface ButtonProps extends TouchableOpacityProps {
   disabledStyle?: StyleProp<ViewStyle>;
   disabledTitleStyle?: StyleProp<ViewStyle>;
   loading?: boolean;
-  loadingStyle: StyleProp<TextStyle>;
-  loadingProps: StyleProp<ActivityProps>;
+  loadingStyle?: StyleProp<TextStyle>;
+  loadingProps?: StyleProp<ActivityProps>;
   circular?: boolean;
   containerStyle?: StyleProp<TextStyle>;
   onPress?: () => void;
@@ -73,12 +59,6 @@ export type ButtonElement = React.ReactElement<ButtonProps>;
 const mapPropToStyles = [
   'activeOpacity',
 ];
-
-const renderText = (component, defaultProps, style) =>
-  renderNode(Text, component, {
-    ...defaultProps,
-    style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
-  });
 
 /**
  * Styled Button component.
@@ -100,7 +80,7 @@ const renderText = (component, defaultProps, style) =>
  *
  * @property {StyleProp<TextStyle>} titleStyle - Customizes title style.
  *
- * @property {(style: StyleType) => React.ReactElement<ImageProps>} icon - Determines icon of the component.
+ * @property {(style: StyleType) => React.ReactElement<ImageProps>} accessoryLeft - Determines accessoryLeft of the component.
  *
  * @property {string} appearance - Determines the appearance of the component.
  * Can be `filled` | `outline` | `ghost`.
@@ -156,7 +136,6 @@ class ButtonComponent extends PureComponent<ButtonProps> {
   public static defaultProps = {
     title: undefined,
     titleStyle: undefined,
-    iconRight: false,
     disabled: false,
     loading: false,
     size: 'medium',
@@ -191,28 +170,21 @@ class ButtonComponent extends PureComponent<ButtonProps> {
     let {
       style,
       containerStyle,
-      onPress,
-      appearance,
       loading,
       loadingStyle,
       loadingProps,
       title,
       titleProps,
       titleStyle,
-      icon,
-      iconContainerStyle,
-      iconRight,
+      accessoryLeft,
+      accessoryRight,
+      accessoryStyle,
       disabled,
       disabledStyle,
       disabledTitleStyle,
       children,
       ...attributes
     } = this.props;
-
-    if (typeof title === 'string' || typeof title !== 'undefined') {
-      children = title;
-      title = null;
-    }
 
     return (
       <TouchableOpacity
@@ -234,14 +206,12 @@ class ButtonComponent extends PureComponent<ButtonProps> {
           />
         )}
 
-        {!loading && icon && !iconRight && renderNode(Icon, icon, {
-          containerStyle: StyleSheet.flatten([
-            iconContainerStyle,
-          ]),
+        {!loading && accessoryLeft && renderNode(Icon, accessoryLeft, {
+          containerStyle: StyleSheet.flatten([accessoryStyle]),
         })}
 
-        {!loading && !!children && renderText(
-          children,
+        {!loading && !!(children || title) && renderTextElement(
+          children || title,
           titleProps,
           StyleSheet.flatten([
             titleStyle,
@@ -249,10 +219,8 @@ class ButtonComponent extends PureComponent<ButtonProps> {
           ]),
         )}
 
-        {!loading && icon && iconRight && renderNode(Icon, icon, {
-          containerStyle: StyleSheet.flatten([
-            iconContainerStyle,
-          ]),
+        {!loading && accessoryRight&& renderNode(Icon, accessoryRight, {
+          containerStyle: StyleSheet.flatten([accessoryStyle]),
         })}
       </TouchableOpacity>
     );
