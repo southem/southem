@@ -32,7 +32,7 @@
     "@nebular/bootstrap": "4.4.0",
     "@nebular/eva-icons": "4.4.0",
     "@nebular/theme": "4.4.0",
-    "bootstrap": "4.0.0",
+    "bootstrap": "4.5.0",
     "colors.js": "1.2.4",
     "core-js": "2.5.7",
     "eva-icons": "^1.1.1",
