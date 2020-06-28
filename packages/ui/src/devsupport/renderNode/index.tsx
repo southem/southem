@@ -6,7 +6,7 @@ import {
   Icon,
 } from '../../common';
 
-export const renderNode = (Component, content, defaultProps) => {
+export const renderNode = (Component, content, defaultProps): React.ReactElement => {
   if (content == null || content === false) {
     return null;
   }
@@ -27,13 +27,13 @@ export const renderNode = (Component, content, defaultProps) => {
   return <Component {...defaultProps} {...content} />;
 };
 
-export const renderTextElement = (component, defaultProps, style) =>
+export const renderTextElement = (component, defaultProps, style): React.ReactElement =>
   renderNode(Text, component, {
     ...defaultProps,
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
   });
 
-export const renderIconElement = (component, defaultProps, style) =>
+export const renderIconElement = (component, defaultProps, style): React.ReactElement =>
   renderNode(Icon, component, {
     ...defaultProps,
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),

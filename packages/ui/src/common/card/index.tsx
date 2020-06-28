@@ -3,7 +3,9 @@ import {
   StyleSheet,
   StyleProp,
   TextStyle,
+  View,
   ViewStyle,
+  ViewProps,
   TouchableOpacity,
   TouchableOpacityProps,
 } from 'react-native';
@@ -12,56 +14,61 @@ import {
   withThemes,
 } from '@southem/theme';
 import { connectAnimation } from '@southem/animation';
-import { renderNode } from '../../devsupport';
+import {
+  Overwrite,
+  renderNode,
+  RenderProp,
+  StatusType,
+  StyledComponentProps,
+} from '../../devsupport';
 import {
   Divider,
   DividerElement,
 } from '../divider';
 import {
-  CardHeader,
-  CardHeaderElement,
-} from './cardHeader';
-import {
   Body,
   Footer,
+  Header,
 } from './render';
 
-interface HeaderProps {
-  style: StyleProp<ViewStyle>;
-  accent: StyleProp<ViewStyle>;
-  title: StyleProp<TextStyle>;
-  description: StyleProp<TextStyle>;
-}
-
-type HeaderProp = React.ReactElement | CardHeaderElement;
 type FooterProp = React.ReactElement;
 export type CardFooterElement = FooterProp;
 
+type CardStyledProps = Overwrite<StyledComponentProps, {
+  appearance?: 'filled' | 'outline' | string;
+}>;
+
 export interface CardProps extends TouchableOpacityProps {
-  appearance?: string;
-  status?: string;
+  status?: StatusType;
   rounded?: boolean;
   children: React.ReactNode;
-  header?: () => HeaderProp;
+  accent?: RenderProp<ViewProps>;
+  header?: RenderProp<ViewProps>;
   headerStyle?: StyleProp<ViewStyle>;
-  headerProps?: StyleProp<HeaderProps>;
-  footer?: () => FooterProp;
+  footer?: RenderProp<FooterProp>;
   footerStyle?: StyleProp<ViewStyle>;
 }
 
 export type CardElement = React.ReactElement<CardProps>;
 
-const renderFooter = (component, defaultProps, style: StyleType) =>
+const renderFooter = (component, defaultProps, style: StyleType): React.ReactElement =>
   renderNode(Footer, component, {
     ...defaultProps,
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
   });
 
-const renderHeader = (component, defaultProps, style: StyleType) =>
-  renderNode(CardHeader, component, {
+const renderHeader = (component, defaultProps, style: StyleType): React.ReactElement =>
+  renderNode(Header, component, {
     ...defaultProps,
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
   });
+
+const renderStatusAccent = (component, defaultProps, style?: StyleType): React.ReactElement =>
+  renderNode(View, component, {
+    ...defaultProps,
+    style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
+  });
+
 
 /**
  * Styled `Card` component is a basic content container component.
@@ -96,41 +103,14 @@ class CardComponent extends PureComponent<CardProps> {
   static displayName = 'Card';
   static defaultProps = {
     rounded: true,
-    headerProps: {
-      accent: null,
-      title: null,
-      description: null,
-    },
-  };
-
-  private renderDivider = (): DividerElement => {
-    return (
-      <Divider />
-    );
-  };
-
-  private renderHeader = (headerProps: HeaderProps, style: StyleType): HeaderProp => {
-    const Header: HeaderProp = this.props.header();
-
-    return renderHeader(Header, {
-      accentStyle: headerProps.accent,
-      titleStyle: headerProps.title,
-      descriptionStyle: headerProps.description,
-    }, [headerProps.style, style, Header.props.style]);
-  };
-
-  private renderFooter = (style: StyleType): FooterProp => {
-    const footer: FooterProp = this.props.footer();
-
-    return renderFooter(footer, {}, [style, footer.props.style]);
   };
 
   render() {
     const {
       style,
       header,
+      accent,
       headerStyle,
-      headerProps,
       children,
       footer,
       footerStyle,
@@ -139,23 +119,14 @@ class CardComponent extends PureComponent<CardProps> {
     return (
       <TouchableOpacity
         activeOpacity={1.0}
-        style={style}
+        style={[styles.container, style]}
         {...attributes}>
-        {
-          // @ts-ignore
-          header && this.renderHeader(headerProps, headerStyle)
-        }
-        {header && this.renderDivider()}
-        {children && renderNode(
-          Body,
-          children,
-          StyleSheet.flatten([]),
-        )}
-        {footer && this.renderDivider()}
-        {
-          // @ts-ignore
-          footer && this.renderFooter(footerStyle)
-        }
+        {accent && renderStatusAccent(accent, {})}
+        {header && renderHeader(header, {}, StyleSheet.flatten([styles.transparent, headerStyle]))}
+        {header && <Divider/>}
+        {children && renderNode(Body, children, StyleSheet.flatten([]))}
+        {footer && <Divider/>}
+        {footer && renderFooter(footer, {}, StyleSheet.flatten([footerStyle]))}
       </TouchableOpacity>
     );
   }
@@ -163,3 +134,12 @@ class CardComponent extends PureComponent<CardProps> {
 
 const AnimatedCard = connectAnimation(CardComponent);
 export const Card = withThemes('Card')(AnimatedCard);
+
+const styles = StyleSheet.create({
+  container: {
+    overflow: 'hidden',
+  },
+  transparent: {
+    backgroundColor: 'transparent',
+  },
+});
