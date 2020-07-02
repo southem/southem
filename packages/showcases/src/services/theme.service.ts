@@ -29,20 +29,3 @@ export const ThemeContext = React.createContext<ThemeContextType>({
   setTheme: (theme: AppTheme) => {},
   isDarkMode: () => false,
 });
-
-export class ThemeService {
-
-  public static select = <T>(config: { [key in ThemeKey | 'Default']?: T },
-                             currentTheme: ThemeKey): T | null => {
-
-    if (config[currentTheme]) {
-      // @ts-ignore
-      return config[currentTheme];
-    } else if (config.Default) {
-      return config.Default;
-    } else {
-      return null;
-    }
-  };
-
-}

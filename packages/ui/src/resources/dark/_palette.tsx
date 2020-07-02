@@ -2,7 +2,7 @@
 import Color from 'color';
 import {
   red,
-  dodgerblue,
+  cornflowerblue,
   black,
   limegreen,
   darkturquoise,
@@ -12,14 +12,14 @@ import {
 
 export default {
   default: Color(black).alpha(.5).toString(),
-  primary: Color(dodgerblue).toString(),
+  primary: Color(cornflowerblue).toString(),
   secondary: Color(darkviolet).toString(),
   info: Color(darkturquoise).toString(),
   success: Color(limegreen).toString(),
   warning: Color(orange).toString(),
   danger: Color(red).toString(),
-  textHint: 'rgba(0, 0, 0, 0.38)',
-  textDisabled: 'rgba(0, 0, 0, 0.38)',
+  textHint: Color(black).alpha(.38).toString(),
+  textDisabled: Color(black).alpha(.38).toString(),
   backgroundColor: Color(black).alpha(.12).toString(),
   borderColor: Color(black).alpha(.12).toString(),
   disabledColor: Color(black).alpha(.38).toString(),

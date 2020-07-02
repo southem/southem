@@ -7,6 +7,13 @@ exports[`@list-item: component checks * template matches snapshot * description 
 />
 `;
 
+exports[`@list-item: component checks * template matches snapshot * description should render text passed to description prop 1`] = `
+<@theme(ListItem)
+  description="I love Babel"
+  forwardedRef={null}
+/>
+`;
+
 exports[`@list-item: component checks * template matches snapshot * text styles 1`] = `
 <@theme(ListItem)
   description="Description"
@@ -17,7 +24,7 @@ exports[`@list-item: component checks * template matches snapshot * text styles 
     }
   }
   forwardedRef={null}
-  title="Title"
+  title="I love Babel"
   titleStyle={
     Object {
       "fontSize": 22,
@@ -30,7 +37,14 @@ exports[`@list-item: component checks * template matches snapshot * text styles 
 exports[`@list-item: component checks * template matches snapshot * title 1`] = `
 <@theme(ListItem)
   forwardedRef={null}
-  title="Title"
+  title="I love Babel"
+/>
+`;
+
+exports[`@list-item: component checks * template matches snapshot * title should render text passed to title prop 1`] = `
+<@theme(ListItem)
+  forwardedRef={null}
+  title="I love Babel"
 />
 `;
 
@@ -39,7 +53,22 @@ exports[`@list-item: component checks * template matches snapshot * with accesso
   accessory={[Function]}
   description="Description"
   forwardedRef={null}
-  title="Title"
+  title="I love Babel"
+/>
+`;
+
+exports[`@list-item: component checks * template matches snapshot * with accessory should render components passed to accessoryLeft or accessoryRight props 1`] = `
+<Image
+  source={
+    Object {
+      "uri": "https://i.imgur.com/0y8Ftya.jpg",
+    }
+  }
+  style={
+    Object {
+      "style": Object {},
+    }
+  }
 />
 `;
 
@@ -48,6 +77,6 @@ exports[`@list-item: component checks * template matches snapshot * with icon 1`
   description="Description"
   forwardedRef={null}
   icon={[Function]}
-  title="Title"
+  title="I love Babel"
 />
 `;

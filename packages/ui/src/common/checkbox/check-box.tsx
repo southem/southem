@@ -5,26 +5,25 @@ import {
   StyleProp,
   StyleSheet,
   TargetedEvent,
-  Text as RNText,
   GestureResponderEvent,
   NativeSyntheticEvent,
   TouchableOpacityProps,
 } from 'react-native';
 import { withThemes } from '@southem/theme';
-import { isValidString } from '../../tools';
-import { StatusType, renderNode } from '../../devsupport';
+import {
+  StatusType,
+  renderNode,
+  renderTextElement,
+} from '../../devsupport';
 import { View } from '../view';
-import { Text, TextProps } from '../text';
-import { IconElement } from '../icon';
+import { TextProps } from '../text';
 import {
   CheckMark,
-  CheckMarkElement,
   CheckMarkProps,
 } from './check-mark';
 import { Touchable as RNTouchableOpacity } from '../touchable';
 
 // @ts-ignore
-const { propTypes: RNTextProps } = RNText;
 const mapPropToStyles = [
   'activeOpacity',
 ];
@@ -150,49 +149,25 @@ class CheckBoxComponent extends PureComponent<CheckBoxProps> {
     }
   };
 
-  private renderTextElement = (): TextElement => {
-    const { text, children, textStyle } = this.props;
-
-    // @ts-ignore
-    return renderNode(Text, children || text, {
-      style: StyleSheet.flatten(textStyle),
-    });
-  };
-
-  private renderSelectIconElement = (): IconElement => {
-    const { checked, status } = this.props;
-
-    return renderNode(CheckMark, true, {
-      checked,
-      status,
-    });
-
-  };
-
-  private renderComponentChildren = (): React.ReactNodeArray => {
-    const { text } = this.props;
-
-    return [
-      this.renderSelectIconElement(),
-      isValidString(text) && this.renderTextElement(),
-    ];
-  };
-
   render() {
     const {
-      style,
+      checked,
+      children,
       disabled,
       onChange,
+      text,
+      textStyle,
+      status,
+      style,
       ...attributes
     } = this.props;
-
-    const [iconElement, textElement] = this.renderComponentChildren();
 
     return (
       <RNTouchableOpacity
         {...{
           style,
           disabled,
+          ...attributes,
           activeOpacity: 1.0,
           onPress: this.onPress,
           onPressIn: this.onPressIn,
@@ -200,26 +175,27 @@ class CheckBoxComponent extends PureComponent<CheckBoxProps> {
         }}>
         <View style={styles.highlightContainer}>
           <View style={styles.highlight}/>
-          <RNTouchableOpacity
-            {...{
-              disabled,
-              activeOpacity: 1.0,
-              onPress: this.onPress,
-              onPressIn: this.onPressIn,
-              onPressOut: this.onPressOut,
-              ...attributes,
-              style: styles.selectContainer,
-            }}>
-            {iconElement}
-          </RNTouchableOpacity>
+          <View style={styles.selectContainer}>
+            {renderNode(CheckMark, true, {
+              checked,
+              status,
+            })}
+          </View>
         </View>
-        {textElement}
+        {
+          // @ts-ignore
+          renderTextElement(children || text, { style: StyleSheet.flatten(textStyle) })
+        }
       </RNTouchableOpacity>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   highlightContainer: {
     justifyContent: 'center',
     alignItems: 'center',

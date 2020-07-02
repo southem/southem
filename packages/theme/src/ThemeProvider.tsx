@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Theme from './Theme';
 
 interface ComponentProps {
-  children: any;
+  children: React.ReactNode;
   theme: String;
 }
 

@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
 import {
+  GestureResponderEvent,
   StyleSheet,
   StyleProp,
-  TextStyle,
+  TouchableOpacity,
+  TouchableOpacityProps,
   View,
   ViewStyle,
   ViewProps,
-  TouchableOpacity,
-  TouchableOpacityProps,
 } from 'react-native';
 import {
   StyleType,
@@ -21,10 +21,7 @@ import {
   StatusType,
   StyledComponentProps,
 } from '../../devsupport';
-import {
-  Divider,
-  DividerElement,
-} from '../divider';
+import { Divider } from '../divider';
 import {
   Body,
   Footer,

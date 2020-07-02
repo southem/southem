@@ -55,7 +55,7 @@ export class ZoomIn extends Component {
             children,
             inputRange = [0, 1],
             maxFactor = 1.5,
-            style
+            style,
         } = this.props;
 
         return (

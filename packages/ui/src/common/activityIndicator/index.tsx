@@ -29,6 +29,7 @@ export interface ActivityProps extends ActivityIndicatorProps {
 export type ActivityIndicatorElement = React.ReactElement<ActivityProps>;
 
 class ActivityIndicatorComponent extends PureComponent<ActivityProps>  {
+  public static displayName = 'ActivityIndicator';
   public render() {
     return (
       <RNActivityIndicator

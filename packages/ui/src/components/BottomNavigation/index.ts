@@ -1,6 +1,7 @@
 export {
   BottomNavigation,
   BottomNavigationProps,
+  BottomNavigationElement,
 } from './BottomNavigation';
 export {
   BottomNavigationTab,

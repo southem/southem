@@ -41,9 +41,9 @@ class Theme {
   /**
    * registerTheme
    * @param {String} themeName
-   * @param {Array} styleSheets
+   * @param {Array|Object} styleSheets
    */
-  static registerTheme(themeName, styleSheets = []): void {
+  static registerTheme(themeName, styleSheets: Array<Object>|Object): void {
     let mergedStyleSheets = styleSheets;
 
     if (Array.isArray(styleSheets)) {

@@ -5,8 +5,9 @@ import {
   Text,
   Icon,
 } from '../../common';
+import { StyleType, ChildrenProp } from '../../devsupport';
 
-export const renderNode = (Component, content, defaultProps): React.ReactElement => {
+export const renderNode = (Component, content, defaultProps?): React.ReactElement => {
   if (content == null || content === false) {
     return null;
   }
@@ -27,13 +28,13 @@ export const renderNode = (Component, content, defaultProps): React.ReactElement
   return <Component {...defaultProps} {...content} />;
 };
 
-export const renderTextElement = (component, defaultProps, style): React.ReactElement =>
+export const renderTextElement = (component, defaultProps?, style?: StyleType): React.ReactElement =>
   renderNode(Text, component, {
     ...defaultProps,
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
   });
 
-export const renderIconElement = (component, defaultProps, style): React.ReactElement =>
+export const renderIconElement = (component, defaultProps?, style?: StyleType): React.ReactElement =>
   renderNode(Icon, component, {
     ...defaultProps,
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),

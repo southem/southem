@@ -38,7 +38,8 @@ export default {
     fontSize: fontSizeCaption,
   },
   DividerLine: {
+    height: 1,
     backgroundColor: '#E5E5E5',
+    width: '100%',
   },
-
 };

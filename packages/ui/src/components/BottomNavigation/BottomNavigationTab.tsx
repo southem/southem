@@ -7,29 +7,32 @@ import {
   StyleProp,
   TextStyle,
 } from 'react-native';
+import {withThemes} from '@southem/theme';
 import {
   Touchable,
   TextProps,
 } from '../../common';
 import {
-  renderNode,
   renderIconElement,
-  renderTextElement, RenderProp,
+  renderTextElement,
+  RenderProp,
+  Overwrite,
+  StyledComponentProps,
 } from '../../devsupport';
 
-type IconElement = React.ReactElement<ImageProps>;
-type IconProp = () => IconElement;
+type BottomNavigationTabStyledProps = Overwrite<StyledComponentProps, {
+  appearance?: 'default' | string;
+}>;
 
-interface ComponentProps {
+// @ts-ignore
+export interface BottomNavigationTabProps extends TouchableOpacityProps, BottomNavigationTabStyledProps {
   title?: RenderProp<TextProps> | React.ReactText;
   titleStyle?: StyleProp<TextStyle>;
-  icon?: IconProp | IconElement ;
+  icon?: RenderProp<Partial<ImageProps>>;
   selected?: boolean;
   onSelect?: (selected: boolean) => void;
-  appearance?: 'default' | string;
 }
 
-export type BottomNavigationTabProps = TouchableOpacityProps & ComponentProps;
 export type BottomNavigationTabElement = React.ReactElement<BottomNavigationTabProps>;
 
 /**
@@ -54,6 +57,8 @@ export type BottomNavigationTabElement = React.ReactElement<BottomNavigationTabP
  * @property StyledComponentProps
  *
  */
+// @ts-ignore
+@withThemes('BottomNavigationTab')
 export class BottomNavigationTab extends Component<BottomNavigationTabProps> {
   static displayName = 'BottomNavigationTab';
 
@@ -67,21 +72,14 @@ export class BottomNavigationTab extends Component<BottomNavigationTabProps> {
     const {style, icon, title, titleStyle, ...derivedProps} = this.props;
 
     return (
+      // @ts-ignore
       <Touchable
         {...derivedProps}
         style={[style, styles.container]}
         activeOpacity={1.0}
         onPress={this.onPress}>
-        {
-          // @ts-ignore
-          renderIconElement(icon, { key: 1 })
-        }
-        {
-          // @ts-ignore
-          renderTextElement(title, {
-            key: 2,
-            style: titleStyle,
-          })}
+        {renderIconElement(icon, { key: 1 })}
+        {renderTextElement(title, { key: 2, style: titleStyle })}
       </Touchable>
     );
   }
@@ -92,6 +90,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  icon: {},
-  text: {},
 });

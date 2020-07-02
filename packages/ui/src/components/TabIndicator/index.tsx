@@ -9,13 +9,13 @@ import {
 } from 'react-native';
 import {withThemes} from '@southem/theme';
 
-interface ComponentProps {
+export interface TabIndicatorProps extends ViewProps {
   positions: number;
   selectedPosition?: number;
   animationDuration?: number;
 }
 
-export type TabIndicatorProps = ViewProps & ComponentProps;
+export type TabIndicatorElement = React.ReactElement<TabIndicatorProps>;
 
 // @ts-ignore
 @withThemes('TabIndicator')

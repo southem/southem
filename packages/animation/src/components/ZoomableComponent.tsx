@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import {
   View,
   PanResponder,
+  PanResponderInstance,
   LayoutAnimation,
 } from 'react-native';
 
@@ -69,7 +70,9 @@ export default function makeZoomable(ComponentToBeDecorated) {
       style: PropTypes.object,
       onPress: PropTypes.func,
       onZoom: PropTypes.func,
-    }
+    };
+
+    private panResponder: PanResponderInstance = undefined;
 
     constructor(props) {
       super(props);
@@ -96,7 +99,7 @@ export default function makeZoomable(ComponentToBeDecorated) {
     }
 
     UNSAFE_componentWillMount() {
-      this._panResponder = PanResponder.create({
+      this.panResponder = PanResponder.create({
         onStartShouldSetPanResponder: () => true,
         onStartShouldSetPanResponderCapture: () => true,
         onMoveShouldSetPanResponder: () => true,
@@ -239,7 +242,7 @@ export default function makeZoomable(ComponentToBeDecorated) {
         <View
           style={style}
           onLayout={this._onLayout}
-          {...this._panResponder.panHandlers}
+          {...this.panResponder.panHandlers}
         >
           <ComponentToBeDecorated
             style={[style, {

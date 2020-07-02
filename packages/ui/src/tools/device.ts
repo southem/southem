@@ -28,7 +28,7 @@ const xrDimensionsMatch = (
 export const DEVICE = { width, height };
 export const PIXELRATIO = PixelRatio.get();
 
-export function platform(os): boolean {
+export function platform(os: string): boolean {
   return OS === os;
 }
 
@@ -85,7 +85,7 @@ export function ifIphoneX(iphoneXStyle, regularStyle) {
   return regularStyle;
 }
 
-export function getStatusBarHeight(safe: boolean): number {
+export function getStatusBarHeight(safe?: boolean): number {
   return Platform.select({
     ios: ifIphoneX(safe ? 44 : 30, 30),
     android: StatusBar.currentHeight,
@@ -105,7 +105,13 @@ export function getBottomSpace() {
  * @return {settings} Returns device specific (or 'default') settings
  */
 
-export function select(settings) {
+interface Settings {
+  iPhoneX?: Object
+  iPhoneXR?: Object
+  default?: Object,
+}
+
+export function select(settings: Settings) {
   if (settings.iPhoneX && isIphoneX) {
     return settings.iPhoneX;
   }

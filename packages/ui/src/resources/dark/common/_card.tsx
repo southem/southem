@@ -14,20 +14,6 @@ export default {
     shadowColor: black,
     shadowRadius: 4,
     elevation: 4,
-    overflow: 'hidden',
-    justifyContent: 'space-between',
-
-    Body: {
-      backgroundColor: 'transparent',
-      paddingVertical: 5,
-      paddingHorizontal: 5,
-    },
-
-    Footer: {
-      backgroundColor: 'transparent',
-      paddingVertical: 5,
-      paddingHorizontal: 5,
-    },
   },
   'Card[rounded=true]': {
     borderRadius: 2,

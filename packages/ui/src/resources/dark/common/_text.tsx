@@ -1,10 +1,12 @@
 import { typography } from '../../typography';
+import { fontSizeBody } from '../../spacing';
 import palette from '../_palette';
 
 export default {
   Text: {
     color: palette.default,
     ...typography.regular,
+    fontSize: fontSizeBody,
   },
   'Text[category=h1]': {
     ...typography.h1,

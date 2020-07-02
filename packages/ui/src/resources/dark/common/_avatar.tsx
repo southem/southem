@@ -1,41 +1,42 @@
-import palette from '../_palette';
-
-const defaultSize = 40;
+import { avatarSize } from '../../spacing';
 
 export default {
   Avatar: {
-    width: defaultSize,
-    height: defaultSize,
+    width: avatarSize,
+    height: avatarSize,
     borderWidth: 1,
-    borderRadius: defaultSize / 2,
+    borderRadius: avatarSize / 2,
     borderColor: '#dedede',
   },
   'Avatar[size=mini]': {
-    width: defaultSize - 20,
-    height: defaultSize - 20,
-    borderRadius: (defaultSize - 20) / 2,
+    width: avatarSize - 20,
+    height: avatarSize - 20,
+    borderRadius: (avatarSize - 20) / 2,
   },
   'Avatar[size=small]': {
-    width: defaultSize - 10,
-    height: defaultSize - 10,
-    borderRadius: (defaultSize - 10) / 2,
+    width: avatarSize - 10,
+    height: avatarSize - 10,
+    borderRadius: (avatarSize - 10) / 2,
   },
   'Avatar[size=medium]': {
-    width: defaultSize,
-    height: defaultSize,
-    borderRadius: defaultSize / 2,
+    width: avatarSize,
+    height: avatarSize,
+    borderRadius: avatarSize / 2,
   },
   'Avatar[size=large]': {
-    width: defaultSize + 10,
-    height: defaultSize + 10,
-    borderRadius: (defaultSize + 10) / 2,
+    width: avatarSize + 10,
+    height: avatarSize + 10,
+    borderRadius: (avatarSize + 10) / 2,
   },
   'Avatar[size=big]': {
-    width: defaultSize + 20,
-    height: defaultSize + 20,
-    borderRadius: (defaultSize + 20) / 2,
+    width: avatarSize + 20,
+    height: avatarSize + 20,
+    borderRadius: (avatarSize + 20) / 2,
   },
   'Avatar[shape=square]': {
     borderRadius: 0,
+  },
+  'Avatar[shape=rounded]': {
+    borderRadius: (avatarSize * 2) / 2,
   },
 };

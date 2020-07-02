@@ -1,33 +1,28 @@
 import React from 'react';
 import {enableScreens} from 'react-native-screens';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {darkTheme} from '@southem/ui';
+import {darkTheme, lightTheme} from '@southem/ui';
 import Theme, {ThemeProvider, ThemeProviderProps} from '@southem/theme';
 import {
   FiraSans_Thin,
   FiraSans_Thin_Italic,
-  FiraSans_ExtraLight,
-  FiraSans_ExtraLight_Italic,
+  FiraSans_Extra_Light,
+  FiraSans_Extra_Light_Italic,
   FiraSans_Light,
   FiraSans_Light_Italic,
   FiraSans_Regular,
   FiraSans_Italic,
   FiraSans_Medium,
   FiraSans_Medium_Italic,
-  FiraSans_SemiBold,
-  FiraSans_SemiBold_Italic,
-  // FiraSans_Bold,
-  // FiraSans_Bold_Italic,
-  FiraSans_ExtraBold,
-  FiraSans_ExtraBold_Italic,
+  FiraSans_Semi_Bold,
+  FiraSans_Semi_Bold_Italic,
+  FiraSans_Bold,
+  FiraSans_Bold_Italic,
+  FiraSans_Extra_Bold,
+  FiraSans_Extra_Bold_Italic,
   FiraSans_Black,
   FiraSans_Black_Italic,
 } from '@southem/fonts';
-import {
-  getCurrentStateName,
-  RouteState,
-} from '../core/navigation';
-import { trackScreenTransition } from '../utils/analytics';
 import { AppStorage } from '../services/app-storage.service';
 import {
   Theme as TypeTheme,
@@ -40,16 +35,17 @@ import {
   SplashImage,
   LoadingAnimationProps,
 } from '../components';
-import { themes } from './themes';
 import { AppLoading, LoadFontsTask, Task } from './app-loading.component';
-import { RootNavigator } from '../core/navigation/routes';
+import { AppNavigator } from '../navigation/app.navigator';
 
 enableScreens();
 
-Theme.registerDefaultTheme(darkTheme);
+Theme.registerTheme('dark', darkTheme);
+Theme.registerTheme('light', lightTheme);
+
 
 const defaultConfig: { theme: TypeTheme } = {
-  theme: 'light',
+  theme: 'dark',
 };
 
 const loadingTasks: Task[] = [
@@ -61,18 +57,18 @@ const loadingTasks: Task[] = [
     'Fira Sans Italic': FiraSans_Italic,
     'Fira Sans Thin': FiraSans_Thin,
     'Fira Sans Thin Italic': FiraSans_Thin_Italic,
-    'Fira Sans Extra Light': FiraSans_ExtraLight,
-    'Fira Sans ExtraLight Italic': FiraSans_ExtraLight_Italic,
+    'Fira Sans Extra Light': FiraSans_Extra_Light,
+    'Fira Sans Extra Light Italic': FiraSans_Extra_Light_Italic,
     'Fira Sans Light': FiraSans_Light,
     'Fira Sans Light Italic': FiraSans_Light_Italic,
     'Fira Sans Medium': FiraSans_Medium,
     'Fira Sans Medium Italic': FiraSans_Medium_Italic,
-    'Fira Sans Semi Bold': FiraSans_SemiBold,
-    'Fira Sans Semi Bold Italic': FiraSans_SemiBold_Italic,
-    // 'Fira Sans Bold': FiraSans_Bold,
-    // 'Fira Sans Bold Italic': FiraSans_Bold_Italic,
-    'Fira Sans Extra Bold': FiraSans_ExtraBold,
-    'Fira Sans ExtraBold Italic': FiraSans_ExtraBold_Italic,
+    'Fira Sans Semi Bold': FiraSans_Semi_Bold,
+    'Fira Sans Semi Bold Italic': FiraSans_Semi_Bold_Italic,
+    'Fira Sans Bold': FiraSans_Bold,
+    'Fira Sans Bold Italic': FiraSans_Bold_Italic,
+    'Fira Sans Extra Bold': FiraSans_Extra_Bold,
+    'Fira Sans Extra Bold Italic': FiraSans_Extra_Bold_Italic,
     'Fira Sans Black': FiraSans_Black,
     'Fira Sans Black Italic': FiraSans_Black_Italic,
   }),
@@ -89,41 +85,25 @@ const App = (props): React.ReactElement => {
   };
   // @ts-ignore
   const applicationProviderConfig: ThemeProviderProps = {
-    theme: themes[theme],
+    theme,
   };
+
   const themeContextProviderConfig: ThemeContextType = {
-    theme: theme,
+    theme,
     setTheme: setTheme,
     isDarkMode: isDarkMode,
   };
 
-  const onTransitionTrackError = (error: any): void => {
-    console.warn('Analytics error: ', error.message);
-  };
-
-  const onNavigationStateChange = (prevState: RouteState, currentState: RouteState) => {
-    const prevStateName: string = getCurrentStateName(prevState);
-    const currentStateName: string = getCurrentStateName(currentState);
-
-    if (prevStateName !== currentStateName) {
-      trackScreenTransition(currentStateName)
-        .catch(onTransitionTrackError);
-    }
-  };
-
   return (
     <React.Fragment>
-      <ThemeProvider {...applicationProviderConfig}>
-        <ThemeContext.Provider value={themeContextProviderConfig}>
+      <ThemeContext.Provider value={themeContextProviderConfig}>
+        <ThemeProvider {...applicationProviderConfig}>
           <SafeAreaProvider>
-            <StatusBar/>
-            <RootNavigator
-              // @ts-ignore
-              onNavigationStateChange={onNavigationStateChange}
-            />
+            <StatusBar />
+            <AppNavigator />
           </SafeAreaProvider>
-        </ThemeContext.Provider>
-      </ThemeProvider>
+        </ThemeProvider>
+      </ThemeContext.Provider>
     </React.Fragment>
   );
 };

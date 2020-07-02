@@ -3,6 +3,7 @@ import {
   Image,
   ImageProps,
   ImageSourcePropType,
+  Text,
   TouchableOpacity,
 } from 'react-native';
 import {
@@ -27,11 +28,9 @@ import {
 
 Theme.registerDefaultTheme(darkTheme);
 
-const data: any[] = Array(8);
-
 describe('@list-item: component checks', () => {
   // @ts-ignore
-  const ListMock = (props?: ListProps): React.ReactElement<ThemeProviderProps> => {
+  const TestList = (props?: ListProps): React.ReactElement<ThemeProviderProps> => {
     return (
       <ThemeProvider
         theme={'default'}>
@@ -39,7 +38,7 @@ describe('@list-item: component checks', () => {
       </ThemeProvider>
     );
   };
-  const ListItemMock = (props?: ListItemProps): React.ReactElement<ListItemProps> => {
+  const TestListItem = (props?: ListItemProps): React.ReactElement<ListItemProps> => {
     return (
       <ThemeProvider
         theme={'default'}>
@@ -48,6 +47,116 @@ describe('@list-item: component checks', () => {
     );
   };
 
+  describe('* template matches snapshot', () => {
+
+    const iconSource: ImageSourcePropType = { uri: 'https://i.imgur.com/0y8Ftya.jpg' };
+
+    describe('* title', () => {
+      it('should render text passed to title prop', () => {
+        const component: RenderAPI = render(
+          <TestListItem title='I love Babel'/>,
+        );
+
+        const items: ReactTestInstance[] = component.getAllByType(ListItem);
+        const { output } = shallow(items[0]);
+
+        expect(items).toBeTruthy();
+        expect(output).toMatchSnapshot();
+      });
+      it('should render component passed to title prop', () => {
+        const component = render(
+          <TestListItem title={props => <Text {...props}>I love Babel</Text>}/>,
+        );
+
+        expect(component.queryByText('I love Babel')).toBeTruthy();
+      });
+    });
+
+    describe('* description', () => {
+      it('should render text passed to description prop', () => {
+        const component: RenderAPI = render(
+          <TestListItem description='I love Babel'/>,
+        );
+
+        const items: ReactTestInstance[] = component.getAllByType(ListItem);
+        const { output } = shallow(items[0]);
+
+        expect(items).toBeTruthy();
+        expect(output).toMatchSnapshot();
+      });
+      it('should render component passed to description prop', () => {
+        const component = render(
+          <TestListItem description={props => <Text {...props}>I love Babel</Text>}/>,
+        );
+
+        expect(component.queryByText('I love Babel')).toBeTruthy();
+      });
+    });
+
+    describe('* with accessory', () => {
+      const AccessoryLeft = (style: StyleType): React.ReactElement<ImageProps> => {
+        return (
+          <Image
+            style={style}
+            source={iconSource}
+          />
+        );
+      };
+      const AccessoryRight = (style: StyleType): React.ReactElement<ImageProps> => {
+        return (
+          <Image
+            style={style}
+            source={iconSource}
+          />
+        );
+      };
+
+      it('should render components passed to accessoryLeft or accessoryRight props', () => {
+        const component: RenderAPI = render(
+          <TestListItem
+            // @ts-ignore
+            title='I love Babel'
+            description='Description'
+            accessoryLeft={AccessoryLeft}
+            accessoryRight={AccessoryRight}
+          />,
+        );
+
+        const [accessoryLeft, accessoryRight]: ReactTestInstance[] = component.queryAllByType(Image);
+        const { output } = shallow(accessoryLeft);
+
+        expect(accessoryLeft).toBeTruthy();
+        expect(accessoryRight).toBeTruthy();
+
+        expect(accessoryLeft.props.source.uri).toEqual('https://i.imgur.com/0y8Ftya.jpg');
+        expect(accessoryRight.props.source.uri).toEqual('https://i.imgur.com/0y8Ftya.jpg');
+        expect(output).toMatchSnapshot();
+      });
+    });
+
+    it('* text styles', () => {
+      const component: RenderAPI = render(
+        <TestListItem
+          // @ts-ignore
+          title='I love Babel'
+          titleStyle={{
+            fontSize: 22,
+            lineHeight: 24,
+          }}
+          description='Description'
+          descriptionStyle={{
+            color: 'blue',
+            letterSpacing: 6,
+          }}
+        />,
+      );
+
+      const items: ReactTestInstance[] = component.getAllByType(ListItem);
+      const { output } = shallow(items[0]);
+
+      expect(output).toMatchSnapshot();
+    });
+  });
   describe('* emits events with correct args', () => {
     const pressIndex: number = 0;
 
@@ -55,22 +164,13 @@ describe('@list-item: component checks', () => {
     const onPressIn = jest.fn();
     const onPressOut = jest.fn();
 
-    const item = () => {
-      return (
-        <ListItemMock
-          // @ts-ignore
-          title='Title'
-          onPress={onPress}
-          onPressIn={onPressIn}
-          onPressOut={onPressOut}
-        />
-      );
-    };
-
     const component: RenderAPI = render(
-      <ListMock
-        data={data}
-        renderItem={item}
+      <TestListItem
+        // @ts-ignore
+        title='I love Babel'
+        onPress={onPress}
+        onPressIn={onPressIn}
+        onPressOut={onPressOut}
       />,
     );
 
@@ -99,158 +199,11 @@ describe('@list-item: component checks', () => {
       expect(onPressOut).toHaveBeenCalled();
     });
   });
-  describe('* template matches snapshot', () => {
-
-    const iconSource: ImageSourcePropType = { uri: 'https://i.imgur.com/0y8Ftya.jpg' };
-
-    it('* title', () => {
-      const item = () => {
-        return (
-          // @ts-ignore
-          <ListItemMock title='Title'/>
-        );
-      };
-
-      const component: RenderAPI = render(
-        <ListMock
-          data={data}
-          renderItem={item}
-        />,
-      );
-
-      const items: ReactTestInstance[] = component.getAllByType(ListItem);
-      const { output } = shallow(items[0]);
-
-      expect(output).toMatchSnapshot();
-    });
-
-    it('* description', () => {
-      const item = () => {
-        return (
-          // @ts-ignore
-          <ListItemMock description='Description'/>
-        );
-      };
-
-      const component: RenderAPI = render(
-        <ListMock
-          data={data}
-          renderItem={item}
-        />,
-      );
-
-      const items: ReactTestInstance[] = component.getAllByType(ListItem);
-      const { output } = shallow(items[0]);
-
-      expect(output).toMatchSnapshot();
-    });
-
-    it('* text styles', () => {
-      const item = () => {
-        return (
-          <ListItemMock
-            // @ts-ignore
-            title='Title'
-            titleStyle={{
-              fontSize: 22,
-              lineHeight: 24,
-            }}
-            description='Description'
-            descriptionStyle={{
-              color: 'blue',
-              letterSpacing: 6,
-            }}
-          />
-        );
-      };
-
-      const component: RenderAPI = render(
-        <ListMock
-          data={data}
-          renderItem={item}
-        />,
-      );
-
-      const items: ReactTestInstance[] = component.getAllByType(ListItem);
-      const { output } = shallow(items[0]);
-
-      expect(output).toMatchSnapshot();
-    });
-
-    it('* with icon', () => {
-      const item = () => {
-        return (
-          <ListItemMock
-            // @ts-ignore
-            title='Title'
-            description='Description'
-            icon={icon}
-          />
-        );
-      };
-
-      const icon = (style: StyleType): React.ReactElement<ImageProps> => {
-        return (
-          <Image
-            style={style}
-            source={iconSource}
-          />
-        );
-      };
-
-      const component: RenderAPI = render(
-        <ListMock
-          data={data}
-          renderItem={item}
-        />,
-      );
-
-      const items: ReactTestInstance[] = component.getAllByType(ListItem);
-      const { output } = shallow(items[0]);
-
-      expect(output).toMatchSnapshot();
-    });
-
-    it('* with accessory', () => {
-      const item = () => {
-        return (
-          <ListItemMock
-            // @ts-ignore
-            title='Title'
-            description='Description'
-            accessory={accessory}
-          />
-        );
-      };
-
-      const accessory = (style: StyleType): React.ReactElement<ImageProps> => {
-        return (
-          <Image
-            style={style}
-            source={iconSource}
-          />
-        );
-      };
-
-      const component: RenderAPI = render(
-        <ListMock
-          data={data}
-          renderItem={item}
-        />,
-      );
-
-      const items: ReactTestInstance[] = component.getAllByType(ListItem);
-      const { output } = shallow(items[0]);
-
-      expect(output).toMatchSnapshot();
-    });
-
-  });
 });
 
 describe('@list: component checks', () => {
   // @ts-ignore
-  const ListMock = React.forwardRef((props: Partial<ListProps>, ref: React.Ref<List>) =>
+  const TestList = React.forwardRef((props: Partial<ListProps>, ref: React.Ref<List>) =>
     <ThemeProvider
       theme={'default'}>
       <List
@@ -261,29 +214,19 @@ describe('@list: component checks', () => {
       />
     </ThemeProvider>,
   );
-  it('* renders proper amount of data', () => {
-    const item = () => {
-      return (
-        // @ts-ignore
-        <ListItem title='Title'/>
-      );
-    };
-
+  it('* should render 2 list items', () => {
     const component: RenderAPI = render(
-      <ListMock
-        data={data}
-        renderItem={item}
-      />,
+      <TestList />,
     );
 
     const items: ReactTestInstance[] = component.getAllByType(ListItem);
 
-    expect(items.length).toEqual(8);
+    expect(items.length).toEqual(2);
   });
   it('* should call renderItem once per visible item', () => {
     const renderItem = jest.fn();
     render(
-      <ListMock
+      <TestList
         data={new Array(11)}
         renderItem={renderItem}
       />,
@@ -296,7 +239,7 @@ describe('@list: component checks', () => {
     const componentRef = React.createRef<List>();
 
     render(
-      <ListMock
+      <TestList
         // @ts-ignore
         ref={componentRef}
         data={new Array(11)}
@@ -306,27 +249,25 @@ describe('@list: component checks', () => {
     expect(componentRef.current.scrollToEnd).toBeTruthy();
     componentRef.current.scrollToEnd({});
   });
-
   it('* should be able to call scrollToIndex with ref', () => {
     // @ts-ignore
     const componentRef = React.createRef<List>();
 
     render(
       // @ts-ignore
-      <ListMock ref={componentRef}/>,
+      <TestList ref={componentRef}/>,
     );
 
     expect(componentRef.current.scrollToIndex).toBeTruthy();
     componentRef.current.scrollToIndex({ index: 0 });
   });
-
-  it('* should be able to call scrollToIndex with ref', () => {
+  it('* should be able to call scrollToOffset with ref', () => {
     // @ts-ignore
     const componentRef = React.createRef<List>();
 
     render(
       // @ts-ignore
-      <ListMock ref={componentRef}/>,
+      <TestList ref={componentRef}/>,
     );
 
     expect(componentRef.current.scrollToOffset).toBeTruthy();

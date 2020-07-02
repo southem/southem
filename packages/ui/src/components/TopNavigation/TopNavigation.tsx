@@ -5,35 +5,43 @@ import {
   StyleProp,
   StyleSheet,
   TextStyle,
-  TextProps,
   ViewProps,
 } from 'react-native';
 import {withThemes} from '@southem/theme';
-import {renderNode, nodeType} from '../../devsupport';
+import {
+  RenderProp,
+  renderNode,
+  Overwrite,
+  StyledComponentProps,
+} from '../../devsupport';
 import {Title, Subtitle} from '../../common';
-import PropTypes from 'prop-types';
 import {TopNavigationAction, TopNavigationActionProps} from './TopNavigationAction';
+import { TextProps, TextElement } from '../../common/text';
 
-type TextElement = React.ReactElement<TextProps>;
+type TopNavigationStyledProps = Overwrite<StyledComponentProps, {
+  appearance?: 'default' | 'control' | string;
+}>;
+
+type AlignmentProp = 'start' | 'center';
 type ActionElement = React.ReactElement<TopNavigationActionProps>;
 type ActionElementProp = ActionElement | ActionElement[];
 
-interface ComponentProps {
-  title?: string;
+export interface TopNavigationProps extends ViewProps, TopNavigationStyledProps {
+  title?: RenderProp<TextProps> | React.ReactText;
   titleStyle?: StyleProp<TextStyle>;
-  subtitle?: string;
+  subtitle?: RenderProp<TextProps> | React.ReactText;
   subtitleStyle?: StyleProp<TextStyle>;
-  alignment?: 'start' | 'center';
+  alignment?: AlignmentProp;
   leftControl?: ActionElement;
   rightControls?: ActionElementProp;
 }
 
-export type TopNavigationProps = ViewProps & ComponentProps;
+export type TopNavigationElement = React.ReactElement<TopNavigationProps>;
 
 const LeftControlContainer = withThemes('LeftControlContainer')(View);
 const RightControlsContainer = withThemes('RightControlsContainer')(View);
 const TitleContainer = withThemes('TitleContainer')(View);
-const renderAction = (content, defaultProps, style): ActionElement[] =>
+const renderAction = (content, defaultProps?, style?): ActionElement[] =>
   React.Children.map(content, (element: ActionElement, index: number): ActionElement =>
     renderNode(TopNavigationAction, element, {
       index,
@@ -41,12 +49,12 @@ const renderAction = (content, defaultProps, style): ActionElement[] =>
       style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
     }),
   );
-const renderText = (title, defaultProps, style): TextElement =>
+const renderText = (title, defaultProps?, style?): TextElement =>
   renderNode(Title, title, {
     ...defaultProps,
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
   });
-const renderSubText = (subtitle, defaultProps, style): TextElement =>
+const renderSubText = (subtitle, defaultProps?, style?): TextElement =>
   renderNode(Subtitle, subtitle, {
     ...defaultProps,
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
@@ -87,7 +95,7 @@ const renderSubText = (subtitle, defaultProps, style): TextElement =>
  *   TopNavigation,
  *   TopNavigationAction,
  *   TopNavigationActionProps,
- * } from '@ui/components';
+ * } from '@southem/ui';
  *
  * export const TopNavigationShowcase = (props?: TopNavigationProps): React.ReactElement<TopNavigationProps> => {
  *   return (
@@ -163,15 +171,6 @@ const renderSubText = (subtitle, defaultProps, style): TextElement =>
 // @ts-ignore
 export class TopNavigation extends React.Component<TopNavigationProps> {
   public static displayName: string = 'TopNavigation';
-  public static propTypes = {
-    title: PropTypes.string,
-    titleStyle: PropTypes.object,
-    subtitle: PropTypes.string,
-    subtitleStyle: PropTypes.object,
-    alignment: PropTypes.oneOf(['start', 'center']),
-    leftControl: nodeType,
-    rightControls: nodeType,
-  };
   public static defaultProps = {
     title: '',
     alignment: 'center',
@@ -192,26 +191,14 @@ export class TopNavigation extends React.Component<TopNavigationProps> {
     return (
       <View style={style} {...restProps}>
         <LeftControlContainer>
-          {
-            // @ts-ignore
-            renderAction(leftControl)
-          }
+          {renderAction(leftControl)}
         </LeftControlContainer>
         <TitleContainer>
-          {
-            // @ts-ignore
-            renderText(title, {style: titleStyle})
-          }
-          {
-            // @ts-ignore
-            renderSubText(subtitle, {style: subtitleStyle})
-          }
+          {renderText(title, {style: titleStyle})}
+          {renderSubText(subtitle, {style: subtitleStyle})}
         </TitleContainer>
         <RightControlsContainer>
-          {
-            // @ts-ignore
-            renderAction(rightControls)
-          }
+          {renderAction(rightControls)}
         </RightControlsContainer>
       </View>
     );

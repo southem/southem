@@ -1,6 +1,30 @@
 import { ReactElement } from 'react';
 import { StyleProp, ViewStyle } from 'react-native';
 
+export class IndexPath {
+
+  constructor(readonly row: number, readonly section?: number) {
+  }
+
+  get groupIndex(): IndexPath {
+    return this.section >= 0 && new IndexPath(this.row);
+  }
+
+  public toString(): string {
+    if (this.section >= 0) {
+      return `${this.section + 1}.${this.row + 1}`;
+    }
+    return (this.row + 1).toString();
+  }
+
+  public equals = (other: IndexPath): boolean => {
+    if (!other) {
+      return false;
+    }
+    return this.row === other.row && this.section === other.section;
+  };
+}
+
 export type StyleType = StyleProp<ViewStyle>;
 export type ChildrenProp<Element extends ReactElement = ReactElement> = Element | Element[];
 export type ChildrenWithProps<Props = {}> = ChildrenProp<ReactElement<Props>>;

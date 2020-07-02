@@ -1,2 +1,2 @@
 // Black
-export const black = 'rgb(0,0,0)';
+export const black = 'rgb(37,37,41)';

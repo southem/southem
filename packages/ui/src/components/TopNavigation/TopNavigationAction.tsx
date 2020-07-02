@@ -2,19 +2,15 @@
 import React, { Component } from 'react';
 import {
     GestureResponderEvent,
-    ImageProps,
     TouchableOpacity,
     TouchableOpacityProps,
 } from 'react-native';
 import { withThemes } from '@southem/theme';
-import { Icon } from '../../common';
-import { renderNode } from '../../devsupport';
-
-type IconElement = React.ReactElement<ImageProps>;
-type IconProp = () => IconElement;
+import {Icon, IconProps} from '../../common';
+import {renderNode, RenderProp} from '../../devsupport';
 
 interface ComponentProps extends TouchableOpacityProps {
-  icon: IconProp;
+  icon: RenderProp<Partial<IconProps>>;
   tintColor: string;
   iconHeight: number;
   iconWidth: number;

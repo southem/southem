@@ -89,7 +89,7 @@ describe('@checkbox: component checks', () => {
       checked: false,
       children: <Text>I love Babel</Text>,
     });
-    const { output } = shallow(component.getByType(Text));
+    const { output } = shallow(component.getByText('I love Babel'));
 
     expect(output).toBeTruthy();
     expect(output).toMatchSnapshot();
@@ -102,7 +102,7 @@ describe('@checkbox: component checks', () => {
       </CheckBoxMock>,
     );
 
-    const { output } = shallow(component.getByType(Text));
+    const { output } = shallow(component.getByText('I love Babel'));
 
     expect(output).toBeTruthy();
     expect(output).toMatchSnapshot();

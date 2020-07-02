@@ -14,7 +14,7 @@ import {
 
 Theme.registerDefaultTheme(darkTheme);
 
-const Mock = (props?: LayoutProps): React.ReactElement<{}> => {
+const TestLayout = (props?: LayoutProps): React.ReactElement<{}> => {
   return (
     <ThemeProvider
       theme={'default'}>
@@ -26,9 +26,9 @@ const Mock = (props?: LayoutProps): React.ReactElement<{}> => {
 describe('@layout: component checks', () => {
   it('should render component passed to children', () => {
     const component = render(
-      <Mock>
+      <TestLayout>
         <Text>I love Babel</Text>
-      </Mock>,
+      </TestLayout>,
     );
 
     expect(component.queryByText('I love Babel')).toBeTruthy();

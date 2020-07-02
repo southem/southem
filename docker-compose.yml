@@ -11,7 +11,9 @@ services:
       #- /dev/bus/usb:/dev/bus/usb # Linux
       #- /home/$USER/.android:/home/node/.android # Linux
       - /Users/$USER/.android:/home/node/.android # Mac OS
-      - /usr/bin/open:/usr/bin/open
+      - type: bind
+        source: /usr/bin/open
+        target: /tmp/open
     working_dir: /var/react-native-app
     ports:
       - 8081:8081
