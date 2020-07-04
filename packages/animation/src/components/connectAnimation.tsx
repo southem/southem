@@ -107,7 +107,9 @@ const defaultOptions = {
  */
 export function connectAnimation(WrappedComponent, animations = {}, options = defaultOptions) {
   function getComponentDisplayName() {
-    return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+    return WrappedComponent.displayName ||
+        WrappedComponent.name ||
+        (WrappedComponent.type && WrappedComponent.type.displayName) || 'Component';
   }
 
   const componentDisplayName = getComponentDisplayName();
@@ -125,7 +127,10 @@ export function connectAnimation(WrappedComponent, animations = {}, options = de
       /**
        * Component style (could contain animation functions)
        */
-      style: PropTypes.object,
+      style: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.array,
+      ]),
       /**
        * Animation name it should match `${animationName}Animation` function passed in
        * animations collection or component's style.
@@ -147,10 +152,12 @@ export function connectAnimation(WrappedComponent, animations = {}, options = de
        * and it should return style object
        */
       animation: PropTypes.func,
+      ...WrappedComponent.propTypes,
     };
 
     static defaultProps = {
       animationOptions: {},
+      ...WrappedComponent.defaultProps,
     };
 
     static contextTypes = {
@@ -163,6 +170,8 @@ export function connectAnimation(WrappedComponent, animations = {}, options = de
     };
 
     static displayName = `Animated(${componentDisplayName})`;
+    // @ts-ignore
+    private wrappedInstance: WrappedComponent;
 
     constructor(props, context) {
       super(props, context);

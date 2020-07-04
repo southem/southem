@@ -1,12 +1,11 @@
 import React from 'react';
-import { StyleService, useStyleSheet } from '@ui-kitten/components';
+import { StyleSheet } from 'react-native';
 import { CardShowcase } from './card-showcase.component';
 import { cardSettings, cardShowcase } from './type';
-import { ShowcaseContainer } from '../../../components/showcase-container.component';
+import { ShowcaseContainer } from '../../../components';
 
+// @ts-ignore
 export const CardScreen = ({ navigation }): React.ReactElement => {
-  const styles = useStyleSheet(themedStyle);
-
   return (
     <ShowcaseContainer
       style={styles.container}
@@ -18,8 +17,8 @@ export const CardScreen = ({ navigation }): React.ReactElement => {
   );
 };
 
-const themedStyle = StyleService.create({
+const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'background-basic-color-2',
+    backgroundColor: 'transparent',
   },
 });

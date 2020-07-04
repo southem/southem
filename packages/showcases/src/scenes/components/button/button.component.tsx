@@ -1,8 +1,9 @@
 import React from 'react';
-import { ButtonShowcase } from './button-showcase.component';
+import { ButtonShowcase } from './button-showcase';
 import { buttonSettings, buttonShowcase } from './type';
-import { ShowcaseContainer } from '../../../components/showcase-container.component';
+import { ShowcaseContainer } from '../../../components';
 
+// @ts-ignore
 export const ButtonScreen = ({ navigation }): React.ReactElement => (
   <ShowcaseContainer
     showcase={buttonShowcase}
@@ -11,4 +12,3 @@ export const ButtonScreen = ({ navigation }): React.ReactElement => (
     onBackPress={navigation.goBack}>
   </ShowcaseContainer>
 );
-

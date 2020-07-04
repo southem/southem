@@ -11,7 +11,6 @@ import {
   isNumber,
 } from 'lodash';
 import { withThemes } from '@southem/theme';
-import { connectAnimation } from '@southem/animation';
 import { isAndroid } from '../../tools';
 
 // A valid source is either an object with an uri key or a number (from a `require` call)
@@ -145,5 +144,4 @@ class ImageComponent extends PureComponent<ImageProps, StateImage> {
   }
 }
 
-const AnimatedImage = connectAnimation(ImageComponent);
-export const Image = withThemes('Image')(AnimatedImage);
+export const Image = withThemes('Image')(ImageComponent);

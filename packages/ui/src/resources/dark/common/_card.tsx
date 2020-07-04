@@ -1,22 +1,33 @@
 import { white, black } from '../../colors';
+import palette from '../_palette';
+// @ts-ignore
+import { getPlatformElevation } from '../../getPlatformElevation';
 
 export default {
   Card: {
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop: 10,
-    borderColor: white,
-    backgroundColor: white,
-    shadowOpacity: 0.18,
-    shadowOffset: {
-      width: 0, height: 1,
+    flex: 1,
+    overflow: 'hidden',
+
+    Header: {
+      backgroundColor: 'black',
     },
-    shadowColor: black,
-    shadowRadius: 4,
-    elevation: 4,
+    Body: {
+      flex: 1,
+      padding: 4,
+    },
+    Footer: {
+      flex: 1,
+    },
+  },
+  'Card[appearance=outline]': {
+    borderWidth: 2,
+    borderColor: palette.borderColor,
+    ...getPlatformElevation(4, 0.18, 4, {
+      width: 0, height: 1,
+    }),
   },
   'Card[rounded=true]': {
-    borderRadius: 2,
+    borderRadius: 8,
   },
   'Card[rounded=false]': {
     borderRadius: 0,

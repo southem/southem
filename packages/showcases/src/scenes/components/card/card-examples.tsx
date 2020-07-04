@@ -2,21 +2,21 @@ import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import {
   Button,
-  CardFooterElement,
-  CardHeader,
-  CardHeaderElement,
+  ListItem,
   Text,
   TextElement,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
-export const CardDefaultHeader = (): CardHeaderElement => (
-  <CardHeader
-    title='Title'
-    description='Description'
-  />
+export const CardDefaultHeader = () => (
+  <View style={styles.headerTextContainer}>
+    <ListItem
+      title='Title'
+      description='Description'
+    />
+  </View>
 );
 
-export const CardCustomHeader = (): CardHeaderElement => (
+export const CardCustomHeader = () => (
   <React.Fragment>
     <Image
       source={{ uri: 'https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704__340.jpg' }}
@@ -30,7 +30,7 @@ export const CardCustomHeader = (): CardHeaderElement => (
   </React.Fragment>
 );
 
-export const CardFooter = (): CardFooterElement => (
+export const CardFooter = () => (
   <View style={styles.footerContainer}>
     <Button
       style={styles.footerControl}
@@ -47,11 +47,13 @@ export const CardFooter = (): CardFooterElement => (
 );
 
 export const CardBody = (): TextElement => (
-  <Text>
-    A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
-    Originally, nebula was a name for any diffuse astronomical object, including galaxies beyond the
-    Milky Way.
-  </Text>
+  <View style={styles.headerTextContainer}>
+    <Text>
+      A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
+      Originally, nebula was a name for any diffuse astronomical object, including galaxies beyond the
+      Milky Way.
+    </Text>
+  </View>
 );
 
 const styles = StyleSheet.create({
@@ -62,12 +64,16 @@ const styles = StyleSheet.create({
   headerImage: {
     flex: 1,
     height: 192,
+    resizeMode: 'cover',
   },
   footerContainer: {
+    margin: 8,
     flexDirection: 'row',
     justifyContent: 'flex-end',
+    alignContent: 'center',
   },
   footerControl: {
-    marginHorizontal: 4,
+    width: '20%',
+    marginHorizontal: 12,
   },
 });

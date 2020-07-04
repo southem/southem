@@ -11,7 +11,6 @@ import {
   SizeType,
   StatusType,
   Overwrite,
-  StyleType,
   StyledComponentProps,
 } from '../../devsupport';
 import {
@@ -46,12 +45,12 @@ export type ButtonGroupElement = React.ReactElement<ButtonGroupProps>;
  * Defaults to *filled*.
  *
  * @property {string} status - Status of the component.
- * Can be `basic`, `primary`, `success`, `info`, `warning`, `danger` or `control`.
+ * Can be `basic`, `primary`, `success`, `info`, `warning`, `danger`.
  * Defaults to *primary*.
  * Use *control* status when needed to display within a contrast container.
  *
  * @property {string} size - Size of the component.
- * Can be `tiny`, `small`, `medium`, `large`, or `giant`.
+ * Can be `mini`, `small`, `medium`, `large`, or `big`.
  * Defaults to *medium*.
  *
  * @property {ViewProps} ...ViewProps - Any props applied to View component.

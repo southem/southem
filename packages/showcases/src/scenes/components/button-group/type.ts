@@ -10,10 +10,10 @@ const defaultButtonGroup: ComponentShowcaseItem = {
   props: {},
 };
 
-const giantButtonGroup: ComponentShowcaseItem = {
-  title: 'Giant',
+const bigButtonGroup: ComponentShowcaseItem = {
+  title: 'Big',
   props: {
-    size: 'giant',
+    size: 'big',
   },
 };
 
@@ -38,10 +38,10 @@ const smallButtonGroup: ComponentShowcaseItem = {
   },
 };
 
-const tinyButtonGroup: ComponentShowcaseItem = {
-  title: 'Tiny',
+const miniButtonGroup: ComponentShowcaseItem = {
+  title: 'Mini',
   props: {
-    size: 'tiny',
+    size: 'mini',
   },
 };
 
@@ -55,11 +55,11 @@ const defaultSection: ComponentShowcaseSection = {
 const sizeSection: ComponentShowcaseSection = {
   title: 'Size',
   items: [
-    giantButtonGroup,
+    bigButtonGroup,
     largeButtonGroup,
     mediumButtonGroup,
     smallButtonGroup,
-    tinyButtonGroup,
+    miniButtonGroup,
   ],
 };
 
@@ -99,10 +99,6 @@ export const buttonGroupSettings: ComponentShowcaseSetting[] = [
   {
     propertyName: 'status',
     value: 'danger',
-  },
-  {
-    propertyName: 'status',
-    value: 'control',
   },
   {
     propertyName: 'status',

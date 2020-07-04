@@ -6,6 +6,8 @@ import { Animated } from 'react-native';
  * common interface of all animation drivers.
  */
 export class DriverBase {
+  value: Animated.Value;
+
   constructor() {
     this.value = new Animated.Value(0);
   }

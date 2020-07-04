@@ -5,7 +5,7 @@ import {
   Text,
   Icon,
 } from '../../common';
-import { StyleType, ChildrenProp } from '../../devsupport';
+import { StyleType, ChildrenProp } from '../typings';
 
 export const renderNode = (Component, content, defaultProps?): React.ReactElement => {
   if (content == null || content === false) {

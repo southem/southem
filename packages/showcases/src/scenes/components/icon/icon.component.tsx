@@ -1,9 +1,10 @@
 import React from 'react';
-import { IconElement, IconProps } from '@ui-kitten/components';
+import { IconElement, IconProps } from '@southem/ui';
 import { IconShowcase } from './icon-showcase.component';
 import { iconSettings, iconShowcase } from './type';
-import { ShowcaseContainer } from '../../../components/showcase-container.component';
+import { ShowcaseContainer } from '../../../components';
 
+// @ts-ignore
 export const IconScreen = ({ navigation }): React.ReactElement => {
 
   const renderItem = (props: IconProps): IconElement => (

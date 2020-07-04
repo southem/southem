@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import {
-  GestureResponderEvent,
   StyleSheet,
   StyleProp,
   TouchableOpacity,
@@ -66,7 +65,6 @@ const renderStatusAccent = (component, defaultProps, style?: StyleType): React.R
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
   });
 
-
 /**
  * Styled `Card` component is a basic content container component.
  *
@@ -77,7 +75,7 @@ const renderStatusAccent = (component, defaultProps, style?: StyleType): React.R
  * Default is `outline`.
  *
  * @property {string} status - Determines the status of the component.
- * Can be `basic`, `primary`, `success`, `info`, `warning`, `danger` or `control`.
+ * Can be `basic`, `primary`, `success`, `info`, `warning`, `danger`.
  * Default is `basic`.
  *
  * @property {ReactNode} children - Determines text of the component.
@@ -97,12 +95,13 @@ const renderStatusAccent = (component, defaultProps, style?: StyleType): React.R
  * @overview-example CardStatuses
  */
 class CardComponent extends PureComponent<CardProps> {
-  static displayName = 'Card';
-  static defaultProps = {
+  public static displayName = 'Card';
+  public static defaultProps = {
     rounded: true,
+    appearance: 'outline',
   };
 
-  render() {
+  public render() {
     const {
       style,
       header,
@@ -115,13 +114,15 @@ class CardComponent extends PureComponent<CardProps> {
     } = this.props;
     return (
       <TouchableOpacity
-        activeOpacity={1.0}
+        activeOpacity={1}
         style={[styles.container, style]}
         {...attributes}>
         {accent && renderStatusAccent(accent, {})}
         {header && renderHeader(header, {}, StyleSheet.flatten([styles.transparent, headerStyle]))}
         {header && <Divider/>}
-        {children && renderNode(Body, children, StyleSheet.flatten([]))}
+        {children && renderNode(Body, children, {
+          style: StyleSheet.flatten([]),
+        })}
         {footer && <Divider/>}
         {footer && renderFooter(footer, {}, StyleSheet.flatten([footerStyle]))}
       </TouchableOpacity>
@@ -129,8 +130,11 @@ class CardComponent extends PureComponent<CardProps> {
   }
 }
 
+const mapPropToStyles = [
+  'activeOpacity',
+];
 const AnimatedCard = connectAnimation(CardComponent);
-export const Card = withThemes('Card')(AnimatedCard);
+export const Card = withThemes('Card', mapPropToStyles)(AnimatedCard);
 
 const styles = StyleSheet.create({
   container: {

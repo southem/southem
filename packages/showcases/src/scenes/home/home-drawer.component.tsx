@@ -4,26 +4,24 @@ import {
   Avatar,
   Divider,
   Drawer,
+  DrawerItem,
   DrawerElement,
-  DrawerHeaderElement,
   DrawerHeaderFooter,
-  DrawerHeaderFooterElement,
   Layout,
-  MenuItemType,
   Text,
 } from '@southem/ui';
 import { BookIcon, GithubIcon, SafeAreaLayout } from '../../components';
 import { WebBrowserService } from '../../services/web-browser.service';
 import { AppInfoService } from '../../services/app-info.service';
 
-const DATA: MenuItemType[] = [
+const DATA = [
   { title: 'Libraries', icon: GithubIcon },
   { title: 'Documentation', icon: BookIcon },
 ];
 
 // @ts-ignore
+// { navigation }
 export const HomeDrawer = ({ navigation }): DrawerElement => {
-
   const onItemSelect = (index: number): void => {
     switch (index) {
       case 0: {
@@ -39,25 +37,25 @@ export const HomeDrawer = ({ navigation }): DrawerElement => {
     }
   };
 
-  const renderHeader = (): DrawerHeaderElement => (
+  const renderHeader = () => (
     <Layout
       style={styles.header}
       level='2'>
       <View style={styles.profileContainer}>
         <Avatar
-          size='giant'
-          source={require('../../assets/images/image-app-icon.png')}
+          size='big'
+          source={require('../../assets/images/icon.png')}
         />
         <Text
           style={styles.profileName}
           category='h6'>
-          Kitten Tricks
+          Southem Tricks
         </Text>
       </View>
     </Layout>
   );
 
-  const renderFooter = (): DrawerHeaderFooterElement => (
+  const renderFooter = () => (
     <React.Fragment>
       <Divider/>
       <DrawerHeaderFooter
@@ -74,9 +72,13 @@ export const HomeDrawer = ({ navigation }): DrawerElement => {
       <Drawer
         header={renderHeader}
         footer={renderFooter}
-        data={DATA}
-        onSelect={onItemSelect}
-      />
+        // @ts-ignore
+        onSelect={onItemSelect}>
+        {
+          // @ts-ignore
+          DATA.map(({ title, icon }, index) => <DrawerItem key={index} title={title} accessoryLeft={icon}/>)
+        }
+      </Drawer>
     </SafeAreaLayout>
   );
 };

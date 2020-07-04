@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Button, Calendar, CalendarProps, Divider } from '@ui-kitten/components';
+import { Button, Calendar, CalendarProps, Divider } from '@southem/ui';
 
 interface AdditionalProps {
   withFooter?: boolean;

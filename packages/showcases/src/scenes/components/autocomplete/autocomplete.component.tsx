@@ -4,6 +4,7 @@ import { AutocompleteShowcase } from './autocomplete-showcase.component';
 import { autocompleteSettings, autocompleteShowcase, AutocompleteShowcaseOption } from './type';
 import { ShowcaseContainer } from '../../../components';
 
+// @ts-ignore
 export const AutocompleteScreen = ({ navigation }): React.ReactElement => {
 
   const renderItem = (props: AutocompleteProps<AutocompleteShowcaseOption>): AutocompleteElement => (

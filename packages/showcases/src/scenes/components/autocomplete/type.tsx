@@ -1,4 +1,3 @@
-import React from 'react';
 import { AutocompleteOption } from '@southem/ui';
 import { CustomOptionsAutocompleteItem } from './autocomplete-examples';
 import { StarIcon } from '../../../components/icons';

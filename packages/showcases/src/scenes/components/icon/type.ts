@@ -13,28 +13,28 @@ const defaultIcon: ComponentShowcaseItem = {
 const zoomIcon: ComponentShowcaseItem = {
   title: 'Zoom',
   props: {
-    animation: 'zoom',
+    // animationName: 'zoomIn',
   },
 };
 
 const pulseIcon: ComponentShowcaseItem = {
   title: 'Pulse',
   props: {
-    animation: 'pulse',
+    // animationName: 'pulse',
   },
 };
 
 const shakeIcon: ComponentShowcaseItem = {
   title: 'Shake',
   props: {
-    animation: 'shake',
+    // animationName: 'shake',
   },
 };
 
 const infiniteExample: ComponentShowcaseItem = {
   title: 'Infinite',
   props: {
-    animation: 'shake',
+    // animationName: 'shake',
     animationConfig: {
       cycles: -1,
     },
@@ -75,27 +75,19 @@ export const iconShowcase: ComponentShowcase = {
 
 export const iconSettings: ComponentShowcaseSetting[] = [
   {
-    propertyName: 'pack',
-    value: 'eva',
-  },
-  {
-    propertyName: 'pack',
-    value: 'ant',
-  },
-  {
-    propertyName: 'pack',
+    propertyName: 'type',
     value: 'feather',
   },
   {
-    propertyName: 'pack',
+    propertyName: 'type',
     value: 'font-awesome',
   },
   {
-    propertyName: 'pack',
+    propertyName: 'type',
     value: 'material',
   },
   {
-    propertyName: 'pack',
+    propertyName: 'type',
     value: 'material-community',
   },
 ];

@@ -31,7 +31,7 @@ export const CloseIcon = (style: ImageStyle): IconElement => (
 );
 
 export const GithubIcon = (style: ImageStyle): IconElement => (
-  <Icon {...style} name='github'/>
+  <Icon {...style} type={'entypo'} name='github'/>
 );
 
 export const GridIcon = (style: ImageStyle): IconElement => (

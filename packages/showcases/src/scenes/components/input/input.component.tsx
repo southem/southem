@@ -1,10 +1,11 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { InputElement, InputProps } from '@ui-kitten/components';
+import { InputElement, InputProps } from '@southem/ui';
 import { InputShowcase } from './input-showcase.component';
 import { inputSettings, inputShowcase } from './type';
-import { ShowcaseContainer } from '../../../components/showcase-container.component';
+import { ShowcaseContainer } from '../../../components';
 
+// @ts-ignore
 export const InputScreen = ({ navigation }): React.ReactElement => {
 
   const renderItem = (props: InputProps): InputElement => (

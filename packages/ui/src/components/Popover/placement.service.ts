@@ -3,7 +3,7 @@ import {
   PopoverPlacement,
   PopoverPlacements,
 } from './type';
-import { Frame } from '../../components';
+import { Frame } from '../Measure';
 
 const PLACEMENT_FAMILIES: string[] = [
   PopoverPlacements.BOTTOM.rawValue,

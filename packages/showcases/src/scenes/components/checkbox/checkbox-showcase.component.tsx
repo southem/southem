@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckBox, CheckBoxElement, CheckBoxProps } from '@ui-kitten/components';
+import { CheckBox, CheckBoxElement, CheckBoxProps } from '@southem/ui';
 
 export const CheckBoxShowcase = (props: CheckBoxProps): CheckBoxElement => {
 

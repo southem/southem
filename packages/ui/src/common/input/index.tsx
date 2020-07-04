@@ -113,11 +113,11 @@ export class Input extends React.Component<InputProps> {
     this.props.onBlur && this.props.onBlur(event);
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.shake && this.shake();
   }
 
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     if (this.props.isValid === false && newProps.isValid === true) {
       this.scaleIcon(1);
     } else if (this.props.isValid === false && newProps.isValid === false)  {
@@ -178,10 +178,7 @@ export class Input extends React.Component<InputProps> {
 
     return (
       <View style={StyleSheet.flatten([style, containerStyle])}>
-        {
-          // @ts-ignore
-          renderTextElement(label, { style: labelStyle, ...labelProps })
-        }
+        {renderTextElement(label, { style: labelStyle, ...labelProps })}
         <InputContainer
           style={StyleSheet.flatten([
             inputContainerStyle,
@@ -213,7 +210,7 @@ export class Input extends React.Component<InputProps> {
             name={'check-circle'}
             color={'#90D796'}
             size={20}
-            containerStyle={[{transform: [{scale: iconScale}]}]}
+            style={[{transform: [{scale: iconScale}]}]}
           />
           {accessoryRight && (
             <WrapIcon style={[accessoryRightContainerStyle]}>

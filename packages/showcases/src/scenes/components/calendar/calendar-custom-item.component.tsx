@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, ViewProps } from 'react-native';
-import { StyleType, Text } from '@ui-kitten/components';
+import { StyleType, Text } from '@southem/ui';
 
 export const CalendarCustomItem = ({ date }, style: StyleType): React.ReactElement<ViewProps> => {
 

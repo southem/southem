@@ -6,7 +6,7 @@ import {
   MeasureElement,
   MeasuringElement,
   Point,
-} from '../../components';
+} from '../Measure';
 import { ModalProps, ModalService } from '../Modal';
 import {
   PopoverView,

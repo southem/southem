@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   ComponentShowcase,
   ComponentShowcaseItem,
@@ -29,7 +28,7 @@ const iconInput: ComponentShowcaseItem = {
 const labelInput: ComponentShowcaseItem = {
   title: 'Label',
   props: {
-    label: 'Place your text',
+    label: 'Place your label',
   },
 };
 

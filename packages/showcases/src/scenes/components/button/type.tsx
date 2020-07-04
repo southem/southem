@@ -1,4 +1,3 @@
-import React from 'react';
 import { StarIcon } from '../../../components/icons';
 import {
   ComponentShowcase,
@@ -22,40 +21,37 @@ const disabledButton: ComponentShowcaseItem = {
 const leftIconButton: ComponentShowcaseItem = {
   title: 'Left Icon',
   props: {
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
   },
 };
 
 const rightIconButton: ComponentShowcaseItem = {
   title: 'Right Icon',
   props: {
-    icon: StarIcon,
-    style: {
-      flexDirection: 'row-reverse',
-    },
+    accessoryRight: StarIcon,
   },
 };
 
 const disabledIconButton: ComponentShowcaseItem = {
   title: 'Disabled',
   props: {
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
     disabled: true,
   },
 };
 
-const giantButton: ComponentShowcaseItem = {
-  title: 'Giant',
+const bigButton: ComponentShowcaseItem = {
+  title: 'Big',
   props: {
-    icon: StarIcon,
-    size: 'giant',
+    accessoryLeft: StarIcon,
+    size: 'big',
   },
 };
 
 const largeButton: ComponentShowcaseItem = {
   title: 'Large',
   props: {
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
     size: 'large',
   },
 };
@@ -63,7 +59,7 @@ const largeButton: ComponentShowcaseItem = {
 const mediumButton: ComponentShowcaseItem = {
   title: 'Medium',
   props: {
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
     size: 'medium',
   },
 };
@@ -71,16 +67,16 @@ const mediumButton: ComponentShowcaseItem = {
 const smallButton: ComponentShowcaseItem = {
   title: 'Small',
   props: {
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
     size: 'small',
   },
 };
 
-const tinyButton: ComponentShowcaseItem = {
-  title: 'Tiny',
+const miniButton: ComponentShowcaseItem = {
+  title: 'Mini',
   props: {
-    icon: StarIcon,
-    size: 'tiny',
+    accessoryLeft: StarIcon,
+    size: 'mini',
   },
 };
 const textSection: ComponentShowcaseSection = {
@@ -103,11 +99,11 @@ const iconSection: ComponentShowcaseSection = {
 const sizeSection: ComponentShowcaseSection = {
   title: 'Size',
   items: [
-    giantButton,
+    bigButton,
     largeButton,
     mediumButton,
     smallButton,
-    tinyButton,
+    miniButton,
   ],
 };
 
@@ -152,10 +148,6 @@ export const buttonSettings: ComponentShowcaseSetting[] = [
   {
     propertyName: 'status',
     value: 'danger',
-  },
-  {
-    propertyName: 'status',
-    value: 'control',
   },
   {
     propertyName: 'status',

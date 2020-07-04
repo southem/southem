@@ -25,6 +25,7 @@ class Icon extends PureComponent<IconProps> {
   public static displayName = 'Icon';
   public static defaultProps = {
     type: 'material',
+    size: 24,
   };
 
   public render() {

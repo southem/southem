@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { LayoutElement, LayoutProps } from '@ui-kitten/components';
+import { LayoutElement, LayoutProps } from '@southem/ui';
 import { LayoutShowcase } from './layout-showcase.component';
 import { layoutSettings, layoutShowcase } from './type';
-import { ShowcaseContainer } from '../../../components/showcase-container.component';
+import { ShowcaseContainer } from '../../../components';
 
 export const LayoutScreen = ({ navigation }): React.ReactElement => {
 

@@ -11,7 +11,7 @@ import {
 } from '../colors';
 
 export default {
-  default: Color(black).alpha(.5).toString(),
+  default: Color(black).toString(),
   primary: Color(cornflowerblue).toString(),
   secondary: Color(darkviolet).toString(),
   info: Color(darkturquoise).toString(),

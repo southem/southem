@@ -1,8 +1,9 @@
 import React from 'react';
 import { ButtonGroupShowcase } from './button-group-showcase.component';
 import { buttonGroupSettings, buttonGroupShowcase } from './type';
-import { ShowcaseContainer } from '../../../components/showcase-container.component';
+import { ShowcaseContainer } from '../../../components';
 
+// @ts-ignore
 export const ButtonGroupScreen = ({ navigation }): React.ReactElement => (
   <ShowcaseContainer
     showcase={buttonGroupShowcase}

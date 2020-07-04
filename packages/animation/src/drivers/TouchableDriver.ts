@@ -5,6 +5,11 @@ import {
 
 import {DriverBase} from './DriverBase';
 
+interface ITouchableViewProps {
+    onPressIn: Function;
+    onPressOut: Function;
+}
+
 /**
  * Returns the default animation callback to use.
  *
@@ -36,6 +41,8 @@ function defaultAnimation(value, toValue, animationOptions) {
  * <ZoomIn driver={driver}>
  */
 export class TouchableDriver extends DriverBase {
+    private touchableViewProps: ITouchableViewProps;
+    private animationOptions: Object;
 
     /**
      * @param {Object} options Animation options.

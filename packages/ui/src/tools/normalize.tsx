@@ -66,6 +66,15 @@ export const normalize = size => {
     return size * 1.4;
   } else { return size; }
 };
+
+ export const normalizeSize = (size) => {
+  const newSize = size * scale;
+  if (Platform.OS === 'ios') {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize));
+  }
+
+  return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2;
+};
 **/
 // based on iPhone 11's scale
 const scale = DEVICE.width / 360;

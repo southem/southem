@@ -126,6 +126,7 @@ export class MenuItem extends React.Component<MenuItemProps> {
     const { style, title, accessoryLeft, accessoryRight, children, ...touchableProps } = this.props;
 
     return (
+      // @ts-ignore
       <Touchable
         {...touchableProps}
         style={[styles.container, style]}

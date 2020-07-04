@@ -44,10 +44,10 @@ const withThemes = (componentName: string, mapPropToStyles = []) => (WrappedComp
 
   // @ts-ignore
   type WrappedProps = ThemedComponentProps<S> & P;
+  type WrappedElementInstance = React.ReactInstance;
   type WrappingProps = PrivateProps<WrappedElementInstance> & WrappedProps;
   type WrappingState = PrivateState<WrappedElementInstance>;
   type WrappingElement = React.ReactElement<WrappingProps>;
-  type WrappedElementInstance = React.ReactInstance;
 
   class Wrapper extends Component<WrappingProps, WrappingState> {
     static displayName = `@theme(${getDisplayName(WrappedComponent)})`;

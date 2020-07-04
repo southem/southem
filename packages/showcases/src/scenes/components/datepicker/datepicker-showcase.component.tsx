@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Datepicker, DatepickerElement, DatepickerProps } from '@ui-kitten/components';
+import { Datepicker, DatepickerElement, DatepickerProps } from '@southem/ui';
 
 type DatepickerShowcaseProps = Omit<DatepickerProps, 'onSelect'>;
 

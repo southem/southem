@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { CalendarViewModes, NativeDateService } from '@ui-kitten/components';
+import { CalendarViewModes, NativeDateService } from '@southem/ui';
 import { MomentDateService } from '@ui-kitten/moment';
 import { DateFnsService } from '@ui-kitten/date-fns';
 import { CalendarCustomItem } from './calendar-custom-item.component';

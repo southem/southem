@@ -1,9 +1,10 @@
 import React from 'react';
-import { CalendarElement, CalendarProps } from '@ui-kitten/components';
+import { CalendarElement, CalendarProps } from '@southem/ui';
 import { CalendarShowcase } from './calendar-showcase.component';
 import { calendarShowcase } from './type';
-import { ShowcaseContainer } from '../../../components/showcase-container.component';
+import { ShowcaseContainer } from '../../../components';
 
+// @ts-ignore
 export const CalendarScreen = ({ navigation }): React.ReactElement => {
 
   const renderItem = (props: CalendarProps): CalendarElement => (

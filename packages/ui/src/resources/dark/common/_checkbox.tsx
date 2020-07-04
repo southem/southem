@@ -52,6 +52,15 @@ export default {
     alignItems: 'center',
     justifyContent: 'center',
   },
+  'CheckMark[checked=true]': {
+    name: 'check-box',
+  },
+  'CheckMark[checked=false]': {
+    name: 'check-box-outline-blank',
+  },
+  'CheckMark[indeterminate=true]': {
+    name: 'indeterminate-check-box',
+  },
   'CheckMark[status=primary]': {
     color: palette.primary,
   },

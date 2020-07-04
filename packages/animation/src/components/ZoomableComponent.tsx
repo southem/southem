@@ -242,8 +242,7 @@ export default function makeZoomable(ComponentToBeDecorated) {
         <View
           style={style}
           onLayout={this._onLayout}
-          {...this.panResponder.panHandlers}
-        >
+          {...this.panResponder.panHandlers}>
           <ComponentToBeDecorated
             style={[style, {
               position: 'absolute',

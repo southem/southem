@@ -81,7 +81,7 @@ export type MenuElement = React.ReactElement<MenuProps>;
  *
  * @overview-example MenuAccessories
  * Items may contain inner views configured with `accessoryLeft` and `accessoryRight` properties.
- * Within Eva, item accessories are expected to be images or [svg icons](guides/icon-packages).
+ * Within Southem, item accessories are expected to be images or [svg icons](guides/icon-packages).
  *
  * @overview-example MenuGroups
  * And be grouped within `MenuGroup` component.
@@ -92,10 +92,10 @@ export type MenuElement = React.ReactElement<MenuProps>;
  * @overview-example MenuStyling
  * Menu and it's inner views can be styled by passing them as function components.
  * ```
- * import { MenuItem, Text } from '@ui-kitten/components';
+ * import { MenuItem, Text } from '@southem/ui';
  *
  * <MenuItem
- *   title={evaProps => <Text {...evaProps}>USERS</Text>}>
+ *   title={props => <Text {...evaProps}>USERS</Text>}>
  * </MenuItem>
  * ```
  *
@@ -110,6 +110,7 @@ export class Menu extends React.Component<MenuProps> {
   private service: MenuService = new MenuService();
 
   private get data(): any[] {
+    // @ts-ignore
     return React.Children.toArray(this.props.children || []);
   }
 

@@ -1,6 +1,8 @@
 import React from 'react';
-import { Card, CardElement, CardProps } from '@ui-kitten/components';
+import { Card, CardElement, CardProps } from '@southem/ui';
 
 export const CardShowcase = (props: CardProps): CardElement => (
-  <Card {...props}/>
+  <Card
+    {...props}
+  />
 );

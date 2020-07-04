@@ -11,7 +11,6 @@ import {
   GestureResponderEvent,
 } from 'react-native';
 import { withThemes } from '@southem/theme';
-import { connectAnimation } from '@southem/animation';
 import {
   ButtonType,
   Overwrite,
@@ -69,7 +68,7 @@ const mapPropToStyles = [
  * Default is `false`.
  *
  * @property {string} status - Determines the status of the component.
- * Can be `primary`, `success`, `info`, `warning`, `danger` or `white`.
+ * Can be `basic`, `primary`, `success`, `info`, `warning`, `danger`.
  *
  * @property {string} size - Determines the size of the component.
  * Can be `big`, `large`, `medium`, `small`, or `mini`.
@@ -227,5 +226,4 @@ class ButtonComponent extends PureComponent<ButtonProps> {
   }
 }
 
-const AnimatedButton = connectAnimation(ButtonComponent);
-export const Button = withThemes('Button', mapPropToStyles)(AnimatedButton);
+export const Button = withThemes('Button', mapPropToStyles)(ButtonComponent);

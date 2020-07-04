@@ -1,6 +1,9 @@
+import { normalize } from '../../../tools';
 import { black, transparent, white } from '../../colors';
 import { fontSizeButton } from '../../spacing';
 import palette from '../_palette';
+
+const sizeButton = normalize(42);
 
 export default {
   Button: {
@@ -8,10 +11,13 @@ export default {
     borderRadius: 3,
     borderColor: palette.default,
     backgroundColor: palette.default,
-    padding: 8,
+    paddingLeft: 6,
+    paddingRight: 6,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    width: '100%',
+    height: sizeButton,
     ActivityIndicator: {
       marginRight: 3,
       color: white,
@@ -27,7 +33,7 @@ export default {
     },
     Text: {
       alignItems: 'stretch',
-      fontSize: 14, // fontSizeButton,
+      fontSize: fontSizeButton,
       fontWeight: '500',
       color: white,
       margin: 2,
@@ -127,7 +133,7 @@ export default {
       color: white,
     },
   },
-  'Button[status=white]': {
+  'Button[status=basic]': {
     borderColor: white,
     backgroundColor: white,
     ActivityIndicator: {
@@ -147,47 +153,49 @@ export default {
     opacity: 0.4,
   },
   'Button[size=mini]': {
-    minWidth: 42 - 16,
-    height: 42 - 16,
+    padding: 1,
+    minWidth: sizeButton - 16,
+    height: sizeButton - 16,
     Text: {
-      fontSize: fontSizeButton - 2,
+      margin: 0,
+      fontSize: fontSizeButton - 4,
     },
   },
   'Button[size=small]': {
-    minWidth: 42 - 8,
-    height: 42 - 8,
+    minWidth: sizeButton - 8,
+    height: sizeButton - 8,
     Icon: {
       size: 16,
       minWidth: 16,
       minHeight: 16,
     },
     Text: {
-      fontSize: fontSizeButton - 1,
+      margin: 0,
+      fontSize: fontSizeButton - 2,
     },
   },
   'Button[size=medium]': {
-    minWidth: 42,
-    height: 42,
+    minWidth: sizeButton,
+    height: sizeButton,
     Text: {
       fontSize: fontSizeButton,
     },
   },
   'Button[size=large]': {
-    minWidth: 42 + 8,
-    height: 42 + 8,
+    minWidth: sizeButton + 8,
+    height: sizeButton + 8,
     Text: {
       fontSize: fontSizeButton + 1,
     },
   },
   'Button[size=big]': {
-    minWidth: 42 + 16,
-    height: 42 + 16,
+    minWidth: sizeButton + 16,
+    height: sizeButton + 16,
     Text: {
       fontSize: fontSizeButton + 2,
     },
   },
   'Button[fluid=true]': {
-    width: '100%',
     marginLeft: 0,
     marginRight: 0,
   },

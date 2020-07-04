@@ -40,7 +40,6 @@ export interface CheckBoxProps extends TouchableOpacityProps {
   onChange?: (checked: boolean, indeterminate: boolean) => void;
 }
 
-type TextElement = React.ReactElement<TextProps>;
 export type CheckBoxElement = React.ReactElement<CheckBoxProps>;
 
 /**
@@ -120,6 +119,7 @@ class CheckBoxComponent extends PureComponent<CheckBoxProps> {
     textStyle: undefined,
     disabled: false,
     checked: false,
+    indeterminate: false,
     onChange: (): void => {},
   };
 
@@ -159,10 +159,12 @@ class CheckBoxComponent extends PureComponent<CheckBoxProps> {
       textStyle,
       status,
       style,
+      indeterminate,
       ...attributes
     } = this.props;
 
     return (
+      // @ts-ignore
       <RNTouchableOpacity
         {...{
           style,
@@ -179,13 +181,11 @@ class CheckBoxComponent extends PureComponent<CheckBoxProps> {
             {renderNode(CheckMark, true, {
               checked,
               status,
+              indeterminate,
             })}
           </View>
         </View>
-        {
-          // @ts-ignore
-          renderTextElement(children || text, { style: StyleSheet.flatten(textStyle) })
-        }
+        {renderTextElement(children || text, { style: StyleSheet.flatten(textStyle) })}
       </RNTouchableOpacity>
     );
   }
