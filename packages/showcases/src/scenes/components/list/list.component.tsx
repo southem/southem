@@ -1,12 +1,12 @@
 import React from 'react';
-import { ListElement, ListProps, StyleService, useStyleSheet } from '@ui-kitten/components';
+import { StyleSheet } from 'react-native';
+import { ListElement, ListProps } from '@southem/ui';
 import { ListShowcase } from './list-showcase';
 import { listSettings, listShowcase } from './type';
-import { ShowcaseContainer } from '../../../components/showcase-container.component';
+import { ShowcaseContainer } from '../../../components';
 
+// @ts-ignore
 export const ListScreen = ({ navigation }): React.ReactElement => {
-
-  const styles = useStyleSheet(themedStyle);
 
   const renderItem = (props: ListProps): ListElement => (
     <ListShowcase {...props} style={[props.style, styles.component]}/>
@@ -23,9 +23,9 @@ export const ListScreen = ({ navigation }): React.ReactElement => {
   );
 };
 
-const themedStyle = StyleService.create({
+const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'background-basic-color-2',
+    backgroundColor: 'yellow',
   },
   component: {
     // ignore showcase container padding

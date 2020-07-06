@@ -5,7 +5,7 @@ import {
   CheckBox,
   Layout,
   OverflowMenu,
-  OverflowMenuItemType,
+  MenuItemProps,
 } from '@southem/ui';
 import { ColorPaletteIcon, SettingsIcon, TrashIcon } from '../icons';
 import { ComponentShowcaseSetting } from '../../model/showcase.model';
@@ -25,13 +25,13 @@ export const ShowcaseSettings = (props: ShowcaseSettingsProps): React.ReactEleme
   const [themesMenuVisible, setThemesMenuVisible] = React.useState<boolean>(false);
   const [settingsMenuVisible, setSettingsMenuVisible] = React.useState<boolean>(false);
 
-  const createSettingMenuItem = (setting: ComponentShowcaseSetting): OverflowMenuItemType => {
+  const createSettingMenuItem = (setting: ComponentShowcaseSetting): MenuItemProps => {
     return {
       title: setting.description || `${setting.propertyName}: ${setting.value}`,
     };
   };
 
-  const createThemeMenuItem = (title: string): OverflowMenuItemType => {
+  const createThemeMenuItem = (title: string): MenuItemProps => {
     return { title };
   };
 
@@ -54,11 +54,11 @@ export const ShowcaseSettings = (props: ShowcaseSettingsProps): React.ReactEleme
     setSettingsMenuVisible(false);
   };
 
-  const createThemesMenuItems = (): OverflowMenuItemType[] => {
+  const createThemesMenuItems = (): MenuItemProps[] => {
     return props.themes && props.themes.map(createThemeMenuItem);
   };
 
-  const createSettingsMenuItems = (): OverflowMenuItemType[] => {
+  const createSettingsMenuItems = (): MenuItemProps[] => {
     const settings = props.settings && props.settings.map(createSettingMenuItem);
     return settings || [];
   };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, MenuElement, MenuProps } from '@ui-kitten/components';
+import { Menu, MenuElement, MenuProps } from '@southem/ui';
 
 export const MenuShowcase = (props: MenuProps): MenuElement => {
 

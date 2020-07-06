@@ -5,11 +5,10 @@ import {
   ListItem,
   ListItemElement,
   ListItemProps,
-  StyleType,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 import { StarIcon } from '../../../components/icons';
 
-const AccessoryElement = (style: StyleType): React.ReactElement<CheckBoxProps> => {
+const AccessoryElement = (style): React.ReactElement<CheckBoxProps> => {
   const [checked, setChecked] = React.useState<boolean>(true);
 
   const onChange = (nextChecked: boolean): void => {

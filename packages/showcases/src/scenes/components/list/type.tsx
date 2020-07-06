@@ -1,6 +1,6 @@
 import React from 'react';
 import { ListRenderItemInfo } from 'react-native';
-import { ListItemElement } from '@ui-kitten/components';
+import { ListItemElement } from '@southem/ui';
 import {
   ListItemAccessoryShowcase,
   ListItemIconAccessoryShowcase,

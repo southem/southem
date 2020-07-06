@@ -1,5 +1,3 @@
-import React from 'react';
-import { MenuItemType } from '@ui-kitten/components';
 import { StarIcon } from '../../../components/icons';
 import {
   ComponentShowcase,
@@ -8,13 +6,13 @@ import {
   ComponentShowcaseSetting,
 } from '../../../model/showcase.model';
 
-const defaultMenuItems: MenuItemType[] = [
+const defaultMenuItems = [
   { title: 'Item 1' },
   { title: 'Item 2' },
   { title: 'Item 3' },
 ];
 
-const withIconMenuItems: MenuItemType[] = [
+const withIconMenuItems = [
   {
     title: 'Item 1',
     icon: StarIcon,
@@ -29,7 +27,7 @@ const withIconMenuItems: MenuItemType[] = [
   },
 ];
 
-const withDisabledItemMenuItems: MenuItemType[] = [
+const withDisabledItemMenuItems = [
   {
     title: 'Item 1',
     icon: StarIcon,
@@ -45,7 +43,7 @@ const withDisabledItemMenuItems: MenuItemType[] = [
   },
 ];
 
-const withGroupsMenuItems: MenuItemType[] = [
+const withGroupsMenuItems = [
   {
     title: 'Item 1',
     icon: StarIcon,

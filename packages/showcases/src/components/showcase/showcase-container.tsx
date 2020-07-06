@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Divider, TopNavigation, TopNavigationAction } from '@southem/ui';
 import { SafeAreaLayout, SafeAreaLayoutProps } from '../safe-area-layout';
 import { Showcase } from './showcase';
-// import { ShowcaseSettings } from './showcase-settings';
+import { ShowcaseSettings } from './showcase-settings';
 import { Theme, ThemeContext } from '../../services/theme.service';
 import { ComponentShowcase, ComponentShowcaseSetting } from '../../model/showcase.model';
 import { ArrowIosBackIcon } from '../icons';
@@ -49,18 +49,14 @@ export const ShowcaseContainer = (props: ShowcaseContainerProps): React.ReactEle
         leftControl={renderBackAction()}
       />
       <Divider/>
-      {
-        /**
-        <ShowcaseSettings
-          themes={themes}
-          settings={settings}
-          onSettingSelect={onSelectSetting}
-          // @ts-ignore
-          onThemeSelect={themeContext.theme}
-          onReset={onResetSettings}
-        />
-        **/
-      }
+      <ShowcaseSettings
+        themes={themes}
+        settings={settings}
+        onSettingSelect={onSelectSetting}
+        // @ts-ignore
+        onThemeSelect={themeContext.theme}
+        onReset={onResetSettings}
+      />
       <Divider/>
       {children}
       <Showcase

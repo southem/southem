@@ -5,6 +5,7 @@ import { LayoutShowcase } from './layout-showcase.component';
 import { layoutSettings, layoutShowcase } from './type';
 import { ShowcaseContainer } from '../../../components';
 
+// @ts-ignore
 export const LayoutScreen = ({ navigation }): React.ReactElement => {
 
   const renderItem = (props: LayoutProps): LayoutElement => (
