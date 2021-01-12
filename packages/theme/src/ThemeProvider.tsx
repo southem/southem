@@ -1,39 +1,46 @@
-/* tslint:disable */
-'use strict';
-import React, { Component, Children } from 'react';
-import PropTypes from 'prop-types';
-import Theme from './Theme';
+import React from 'react';
+import {AppTheme, TypeTheme, ThemeContextType } from './type';
+import { ThemeContext } from './Service';
+import { LayoutProvider } from './LayoutProvider';
 
-interface ComponentProps {
-  children: React.ReactNode;
-  theme: String;
+export interface ThemeProviderProps {
+  children?: React.ReactNode;
+  theme?: TypeTheme;
 }
 
-export type ThemeProviderProps = ComponentProps;
-export type ThemeProviderElement = React.ReactElement<ThemeProviderProps>;
+export const ThemeProvider = (props: ThemeProviderProps) => {
+  const { children } = props;
 
-export class ThemeProvider extends Component<ThemeProviderProps> {
-  static propTypes = {
-    children: PropTypes.element.isRequired,
-    theme: PropTypes.string,
+  const [theme, setTheme] = React.useState<TypeTheme>(props.theme);
+  const isDarkMode = (): boolean => {
+    return theme === AppTheme.Dark;
   };
 
-  static defaultProps = {
-    theme: 'default',
+  // @ts-ignore
+  const applicationProviderConfig: ThemeProviderProps = {
+    // @ts-ignore
+    theme,
   };
 
-  static childContextTypes = {
-    themeName: PropTypes.string,
-    themeStyle: PropTypes.object,
+  const themeContextProviderConfig: ThemeContextType = {
+    theme,
+    setTheme: setTheme,
+    isDarkMode: isDarkMode,
   };
 
-  getChildContext() {
-    const themeName = this.props.theme;
-    const themeStyle = Theme.getTheme(themeName);
-    return { themeName, themeStyle };
-  }
+  return (
+    <ThemeContext.Provider value={themeContextProviderConfig}>
+      <LayoutProvider {...applicationProviderConfig}>
+        {children}
+      </LayoutProvider>
+    </ThemeContext.Provider>
+  );
+};
 
-  render() {
-    return Children.toArray(this.props.children);
-  }
-}
+export const useTheme = () => {
+  return React.useContext(ThemeContext);
+};
+
+/**
+ * <ToastProvider>{children}</ToastProvider>
+ * */

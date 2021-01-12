@@ -58,9 +58,9 @@ RUN sudo npm install --global --unsafe-perm react-native-cli \
 
 WORKDIR /app
 
+EXPOSE 8081
 EXPOSE 19000
 EXPOSE 19001
 EXPOSE 19002
-EXPOSE 8081
 
 CMD sleep infinity

@@ -3,7 +3,15 @@ import {
   Frame,
   Point,
   Size,
+  MeasureElement,
+  View,
 } from '@southem/ui';
+import {
+  fireEvent,
+  render,
+  RenderAPI,
+  waitForElement,
+} from 'react-native-testing-library';
 
 describe('@measure: frame class instance checks', () => {
 
@@ -77,4 +85,22 @@ describe('@measure: frame class instance checks', () => {
     expect(Frame.zero().equals(null)).toBeFalsy();
   });
 
+});
+
+describe('@measure: component checks', () => {
+  it('should render element passed to `anchor` prop', async () => {
+    const onMeasure = (frame: Frame): void => {
+      const { x, y } = frame.origin;
+      const { width, height } = frame.size;
+    };
+
+    const component = render(
+      <MeasureElement onMeasure={onMeasure}>
+        <View />
+      </MeasureElement>,
+    );
+
+    const options = await waitForElement(() => component.queryAllByType(View));
+    expect(options.length).toEqual(1);
+  });
 });

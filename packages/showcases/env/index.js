@@ -1,3 +1,5 @@
 module.exports = {
   ENV: 'dev',
+  REACT_NATIVE_PACKAGER_HOSTNAME: '192.168.1.90',
+  EXPO_DEVTOOLS_LISTEN_ADDRESS: '0.0.0.0'
 };

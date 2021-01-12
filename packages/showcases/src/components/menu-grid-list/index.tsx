@@ -16,15 +16,16 @@ export const MenuGridList = (props: MenuGridListProps): ListElement => {
     <Card
       style={styles.item}
       onPress={() => props.onItemPress(info.index)}>
-      {info.item.icon({ width: 64, height: 64, alignSelf: 'center' })}
-      <Text
-        style={styles.itemTitle}
-        category='s2'>
-        {info.item.title}
-      </Text>
+      <React.Fragment>
+        {info.item.icon(styles.icon)}
+        <Text
+          style={styles.itemTitle}
+          category='s2'>
+          {info.item.title}
+        </Text>
+      </React.Fragment>
     </Card>
   );
-
 
   return (
     <List
@@ -55,5 +56,11 @@ const styles = StyleSheet.create({
   itemTitle: {
     alignSelf: 'center',
     marginTop: 8,
+  },
+  icon: {
+    width: 64,
+    height: 64,
+    textAlign: 'center',
+    alignSelf: 'center',
   },
 });

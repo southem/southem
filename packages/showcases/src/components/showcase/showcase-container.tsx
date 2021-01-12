@@ -4,7 +4,7 @@ import { Divider, TopNavigation, TopNavigationAction } from '@southem/ui';
 import { SafeAreaLayout, SafeAreaLayoutProps } from '../safe-area-layout';
 import { Showcase } from './showcase';
 import { ShowcaseSettings } from './showcase-settings';
-import { Theme, ThemeContext } from '../../services/theme.service';
+import { TypeTheme, useTheme } from '@southem/theme';
 import { ComponentShowcase, ComponentShowcaseSetting } from '../../model/showcase.model';
 import { ArrowIosBackIcon } from '../icons';
 
@@ -15,14 +15,14 @@ interface ShowcaseContainerProps extends SafeAreaLayoutProps {
   onBackPress?: () => void;
 }
 
-const themes: Theme[] = ['light', 'dark'];
+const themes: TypeTheme[] = ['light', 'dark'];
 
 export const ShowcaseContainer = (props: ShowcaseContainerProps): React.ReactElement => {
 
   const { showcase, settings, renderItem, children, onBackPress, ...showcaseProps } = props;
 
   const [showcaseSettings, setShowcaseSettings] = React.useState({});
-  const themeContext = React.useContext(ThemeContext);
+  const themeContext = useTheme();
 
   const onSelectSetting = (selectedSettings: { [prop: string]: any }): void => {
     setShowcaseSettings({ ...settings, ...selectedSettings });

@@ -6,6 +6,7 @@ export * from './Menu';
 export * from './Modal';
 export * from './Popover';
 export * from './OverflowMenu';
+export * from './StatusBar';
 
 /**
 export { default as Loader } from './Loader';

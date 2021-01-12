@@ -200,12 +200,11 @@ export class Popover extends React.Component<PopoverProps, State> {
   };
 
   public render(): React.ReactElement {
-    const { children } = this.props;
     return (
       <MeasureElement
         force={this.state.forceMeasure}
         onMeasure={this.onChildMeasure}>
-        {renderNode(children, true)}
+        {this.props.anchor && this.props.anchor()}
       </MeasureElement>
     );
   }

@@ -10,17 +10,23 @@ export type StatusBarProps = RNStatusBarProps;
 
 class StatusBarComponent extends React.Component<StatusBarProps> {
 
-  static styledComponentName: string = 'StatusBar';
+  static displayName: string = 'StatusBar';
 
   public render(): React.ReactElement<ViewProps> {
     const { ...statusBarProps } = this.props;
 
     return (
       <RNStatusBar
+        translucent
         {...statusBarProps}
       />
     );
   }
 }
 
-export const StatusBar = withThemes('StatusBar')(StatusBarComponent);
+const mapPropToStyles = [
+  'backgroundColor',
+  'barStyle',
+];
+
+export const StatusBar = withThemes('StatusBar', mapPropToStyles)(StatusBarComponent);

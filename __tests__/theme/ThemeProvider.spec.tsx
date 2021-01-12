@@ -17,6 +17,9 @@ const defaultTheme = {
       fontWeight: '500',
       margin: 2,
     },
+    'ui.Text[status=primary]': {
+      color: 'rgb(255, 255, 255)',
+    },
   },
   'component.Text': {
     color: '#fff',
@@ -36,6 +39,7 @@ it('renders correctly', () => {
     <ThemeProvider theme={'default'}>
       <View>
         <Text>Welcome</Text>
+        <Text status={'primary'}>Primary</Text>
         <View>
           <CustomText>Component Text</CustomText>
         </View>

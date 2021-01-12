@@ -47,14 +47,20 @@ export interface CardProps extends TouchableOpacityProps {
 
 export type CardElement = React.ReactElement<CardProps>;
 
-const renderFooter = (component, defaultProps, style: StyleType): React.ReactElement =>
+const renderFooter = (component, defaultProps, style?: StyleType): React.ReactElement =>
   renderNode(Footer, component, {
     ...defaultProps,
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
   });
 
-const renderHeader = (component, defaultProps, style: StyleType): React.ReactElement =>
+const renderHeader = (component, defaultProps, style?: StyleType): React.ReactElement =>
   renderNode(Header, component, {
+    ...defaultProps,
+    style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
+  });
+
+const renderBody = (component, defaultProps, style?: StyleType): React.ReactElement =>
+  renderNode(Body, component, {
     ...defaultProps,
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
   });
@@ -120,9 +126,7 @@ class CardComponent extends PureComponent<CardProps> {
         {accent && renderStatusAccent(accent, {})}
         {header && renderHeader(header, {}, StyleSheet.flatten([styles.transparent, headerStyle]))}
         {header && <Divider/>}
-        {children && renderNode(Body, children, {
-          style: StyleSheet.flatten([]),
-        })}
+        {children && renderBody(children, {})}
         {footer && <Divider/>}
         {footer && renderFooter(footer, {}, StyleSheet.flatten([footerStyle]))}
       </TouchableOpacity>

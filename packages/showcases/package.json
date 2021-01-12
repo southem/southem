@@ -2,6 +2,15 @@
   "name": "@southem/showcases",
   "version": "0.0.1",
   "private": true,
+  "homepage": "https://github.com/southem/southem/tree/master/packages/showcases#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/southem/southem.git",
+    "directory": "packages/showcases"
+  },
+  "bugs": {
+    "url": "https://github.com/southem/southem/issues"
+  },
   "workspaces": {
     "nohoist": [
       "*",
@@ -30,6 +39,7 @@
     "awesome-debounce-promise": "^2.1.0",
     "expo": "^37.0.0",
     "expo-analytics": "^1.0.15",
+    "expo-device": "^2.2.1",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -41,6 +51,7 @@
     "react-native-safe-area-context": "^1.0.2",
     "react-native-screens": "^2.7.0",
     "react-native-svg": "^12.1.0",
+    "react-native-tab-view": "^2.15.0",
     "react-native-web": "^0.12.2"
   },
   "devDependencies": {

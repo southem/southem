@@ -1,7 +1,7 @@
 import React from 'react';
 import { ImageStyle } from 'react-native';
 import { IconElement, IconProps } from '@southem/ui';
-import { ThemeContext } from '../../services/theme.service';
+import { useTheme } from '@southem/theme';
 
 export interface ThemedIconProps extends Omit<IconProps, 'name'> {
   light: (style: ImageStyle) => IconElement;
@@ -10,7 +10,7 @@ export interface ThemedIconProps extends Omit<IconProps, 'name'> {
 
 export const ThemedIcon = (props: ThemedIconProps): React.ReactElement => {
 
-  const themeContext = React.useContext(ThemeContext);
+  const themeContext = useTheme();
   alert(themeContext);
   const { light, dark, ...iconProps } = props;
 

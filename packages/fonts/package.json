@@ -4,10 +4,11 @@
   "version": "0.0.1",
   "author": "Southem <contact@southem.com>",
   "license": "MIT",
-  "homepage": "https://github.com/southem/southem#readme",
+  "homepage": "https://github.com/southem/southem/tree/master/packages/fonts#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/southem/southem.git"
+    "url": "git+https://github.com/southem/southem.git",
+    "directory": "packages/fonts"
   },
   "bugs": {
     "url": "https://github.com/southem/southem/issues"

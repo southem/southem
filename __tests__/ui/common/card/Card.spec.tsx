@@ -8,6 +8,7 @@ import {
 import {
   render,
   fireEvent,
+  shallow,
   RenderAPI,
 } from 'react-native-testing-library';
 import { ReactTestInstance } from 'react-test-renderer';
@@ -102,6 +103,9 @@ describe('@card: component checks', () => {
 
     expect(bodyTextElement).toBeTruthy();
     expect(bodyTextElement.props.children).toBe(bodyText);
+
+    const {output} = shallow(element.getByText(bodyText));
+    expect(output).toMatchSnapshot();
   });
 
   it(' footer renders properly', () => {

@@ -1,8 +1,11 @@
 import React from 'react';
 import {enableScreens} from 'react-native-screens';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {darkTheme, lightTheme} from '@southem/ui';
-import Theme, {ThemeProvider, ThemeProviderProps} from '@southem/theme';
+import {darkTheme, lightTheme, StatusBar } from '@southem/ui';
+import Theme, {
+  ThemeProvider,
+  TypeTheme,
+} from '@southem/theme';
 import {
   FiraSans_Thin,
   FiraSans_Thin_Italic,
@@ -25,13 +28,6 @@ import {
 } from '@southem/fonts';
 import { AppStorage } from '../services/app-storage.service';
 import {
-  Theme as TypeTheme,
-  AppTheme,
-  ThemeContext,
-  ThemeContextType,
-} from '../services/theme.service';
-import {
-  StatusBar,
   SplashImage,
   LoadingAnimationProps,
 } from '../components';
@@ -42,7 +38,6 @@ enableScreens();
 
 Theme.registerTheme('dark', darkTheme);
 Theme.registerTheme('light', lightTheme);
-
 
 const defaultConfig: { theme: TypeTheme } = {
   theme: 'dark',
@@ -78,32 +73,14 @@ const loadingTasks: Task[] = [
 
 // @ts-ignore
 const App = (props): React.ReactElement => {
-
-  const [theme, setTheme] = React.useState<AppTheme>(AppTheme.Dark);
-  const isDarkMode = (): boolean => {
-    return theme === AppTheme.Dark;
-  };
-  // @ts-ignore
-  const applicationProviderConfig: ThemeProviderProps = {
-    theme,
-  };
-
-  const themeContextProviderConfig: ThemeContextType = {
-    theme,
-    setTheme: setTheme,
-    isDarkMode: isDarkMode,
-  };
-
   return (
     <React.Fragment>
-      <ThemeContext.Provider value={themeContextProviderConfig}>
-        <ThemeProvider {...applicationProviderConfig}>
-          <SafeAreaProvider>
-            <StatusBar />
-            <AppNavigator />
-          </SafeAreaProvider>
-        </ThemeProvider>
-      </ThemeContext.Provider>
+      <ThemeProvider>
+        <SafeAreaProvider>
+          <StatusBar />
+          <AppNavigator />
+        </SafeAreaProvider>
+      </ThemeProvider>
     </React.Fragment>
   );
 };

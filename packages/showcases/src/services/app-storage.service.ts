@@ -1,19 +1,19 @@
 import { AsyncStorage, YellowBox } from 'react-native';
-import { Theme } from './theme.service';
+import { TypeTheme } from './theme.service';
 
 const THEME_KEY: string = 'theme';
 
 
 export class AppStorage {
 
-  static getTheme = (fallback?: Theme): Promise<Theme> => {
+  static getTheme = (fallback?: TypeTheme): Promise<TypeTheme> => {
     // @ts-ignore
     return AsyncStorage.getItem(THEME_KEY).then((theme: Theme) => {
       return theme || fallback;
     });
   };
 
-  static setTheme = (theme: Theme): Promise<void> => {
+  static setTheme = (theme: TypeTheme): Promise<void> => {
     return AsyncStorage.setItem(THEME_KEY, theme);
   };
 }

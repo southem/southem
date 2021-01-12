@@ -7,15 +7,15 @@ import {
   OverflowMenu,
   MenuItemProps,
 } from '@southem/ui';
+import { TypeTheme } from '@southem/theme';
 import { ColorPaletteIcon, SettingsIcon, TrashIcon } from '../icons';
 import { ComponentShowcaseSetting } from '../../model/showcase.model';
-import { Theme } from '../../services/theme.service';
 import { AppReloadService } from '../../services/app-reload.service';
 
 export interface ShowcaseSettingsProps extends ViewProps {
-  themes?: Theme[];
+  themes?: TypeTheme[];
   settings?: ComponentShowcaseSetting[];
-  onThemeSelect?: (theme: Theme) => void;
+  onThemeSelect?: (theme: TypeTheme) => void;
   onSettingSelect?: (setting: { [prop: string]: any }) => void;
   onReset: () => void;
 }
@@ -36,6 +36,7 @@ export const ShowcaseSettings = (props: ShowcaseSettingsProps): React.ReactEleme
   };
 
   const onThemeSelect = (index: number): void => {
+    // @ts-ignore
     props.onThemeSelect(props.themes[index]);
     setThemesMenuVisible(false);
   };
@@ -45,8 +46,10 @@ export const ShowcaseSettings = (props: ShowcaseSettingsProps): React.ReactEleme
   };
 
   const onSettingSelect = (index: number): void => {
+    // @ts-ignore
     const { [index]: setting } = props.settings;
 
+    // @ts-ignore
     props.onSettingSelect({
       [setting.propertyName]: setting.value,
     });
@@ -55,6 +58,7 @@ export const ShowcaseSettings = (props: ShowcaseSettingsProps): React.ReactEleme
   };
 
   const createThemesMenuItems = (): MenuItemProps[] => {
+    // @ts-ignore
     return props.themes && props.themes.map(createThemeMenuItem);
   };
 
@@ -95,7 +99,7 @@ export const ShowcaseSettings = (props: ShowcaseSettingsProps): React.ReactEleme
         data={createThemesMenuItems()}
         onBackdropPress={toggleThemesMenu}>
         <Button
-          size='tiny'
+          size='mini'
           icon={ColorPaletteIcon}
           disabled={!props.themes}
           onPress={toggleThemesMenu}>
@@ -108,7 +112,7 @@ export const ShowcaseSettings = (props: ShowcaseSettingsProps): React.ReactEleme
         data={createSettingsMenuItems()}
         onBackdropPress={toggleSettingsMenu}>
         <Button
-          size='tiny'
+          size='mini'
           icon={SettingsIcon}
           disabled={!props.settings}
           onPress={toggleSettingsMenu}>
@@ -116,7 +120,7 @@ export const ShowcaseSettings = (props: ShowcaseSettingsProps): React.ReactEleme
         </Button>
       </OverflowMenu>
       <Button
-        size='tiny'
+        size='mini'
         status='danger'
         icon={TrashIcon}
         disabled={!props.settings}
