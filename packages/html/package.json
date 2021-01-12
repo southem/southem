@@ -24,7 +24,7 @@
     "access": "public"
   },
   "dependencies": {
-    "lodash": "^4.6.1",
+    "lodash": "^4.17.19",
     "color": "^3.1.2",
     "react-native-vector-icons": "^6.6.0",
     "react-native-render-html": "^4.2.0",
