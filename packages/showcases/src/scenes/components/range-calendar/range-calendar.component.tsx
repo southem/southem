@@ -1,9 +1,10 @@
 import React from 'react';
-import { RangeCalendarElement, RangeCalendarProps } from '@ui-kitten/components';
+import { RangeCalendarElement, RangeCalendarProps } from '@southem/ui';
 import { RangeCalendarShowcase } from './range-calendar-showcase.component';
 import { calendarShowcase } from './type';
-import { ShowcaseContainer } from '../../../components/showcase-container.component';
+import { ShowcaseContainer } from '../../../components';
 
+// @ts-ignore
 export const RangeCalendarScreen = ({ navigation }): React.ReactElement => {
 
   const renderItem = (props: RangeCalendarProps): RangeCalendarElement => (

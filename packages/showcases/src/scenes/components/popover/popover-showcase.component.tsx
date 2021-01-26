@@ -6,7 +6,7 @@ import {
   PopoverProps,
   Text,
   TextElement,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 export const PopoverShowcase = (props: PopoverProps): PopoverElement => {
 
@@ -28,6 +28,7 @@ export const PopoverShowcase = (props: PopoverProps): PopoverElement => {
     <Popover
       {...props}
       visible={visible}
+      // @ts-ignore
       content={renderPopoverContent()}
       onBackdropPress={togglePopover}>
       <Button onPress={togglePopover}>

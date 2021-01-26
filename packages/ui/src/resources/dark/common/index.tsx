@@ -10,9 +10,11 @@ import _icon from './_icon';
 import _image from './_image';
 import _input from './_input';
 import _list from './_list';
+import _radio from './_radio';
 import _subtitle from './_subtitle';
 import _text from './_text';
 import _title from './_title';
+import _view from './_view';
 
 export default {
   ..._activityIndicator,
@@ -26,7 +28,9 @@ export default {
   ..._image,
   ..._input,
   ..._list,
+  ..._radio,
   ..._subtitle,
   ..._text,
   ..._title,
+  ..._view,
 };

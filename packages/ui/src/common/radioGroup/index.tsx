@@ -7,7 +7,6 @@ import { withThemes } from '@southem/theme';
 import {
   ChildrenWithProps,
   Overwrite,
-  StyleType,
   StyledComponentProps,
 } from '../../devsupport';
 import {

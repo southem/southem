@@ -1,4 +1,4 @@
-import { white, black } from '../../colors';
+import { black } from '../../colors';
 import palette from '../_palette';
 // @ts-ignore
 import { getPlatformElevation } from '../../getPlatformElevation';
@@ -9,7 +9,7 @@ export default {
     overflow: 'hidden',
 
     Header: {
-      backgroundColor: 'black',
+      backgroundColor: black,
     },
     Body: {
       flex: 1,

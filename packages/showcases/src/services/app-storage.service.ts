@@ -1,8 +1,7 @@
 import { AsyncStorage, YellowBox } from 'react-native';
-import { TypeTheme } from './theme.service';
+import { TypeTheme } from '../../../theme';
 
 const THEME_KEY: string = 'theme';
-
 
 export class AppStorage {
 

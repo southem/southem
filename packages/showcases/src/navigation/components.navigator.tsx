@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { ButtonScreen } from '../scenes/components/button/button.component';
+import { RadioScreen } from '../scenes/components/radio/radio.component';
 
 /**
 import { ComponentsScreen } from '../scenes/components/components.component';
@@ -38,7 +38,7 @@ const Stack = createStackNavigator();
 
 export const ComponentsNavigator = (): React.ReactElement => (
   <Stack.Navigator headerMode='none'>
-    <Stack.Screen name='Button' component={ButtonScreen}/>
+    <Stack.Screen name='Radio' component={RadioScreen}/>
     {
       /**
       <Stack.Screen name='Components' component={ComponentsScreen}/>

@@ -111,7 +111,7 @@ export class Menu extends React.Component<MenuProps> {
 
   private get data(): any[] {
     // @ts-ignore
-    return React.Children.toArray(this.props.children || []);
+    return React.Children.toArray(this.props.data || this.props.children);
   }
 
   private get shouldRenderDividers(): boolean {
@@ -149,8 +149,11 @@ export class Menu extends React.Component<MenuProps> {
   };
 
   public render(): ListElement {
-    const { appearance, ...listProps } = this.props;
-
+    const {
+      // @ts-ignore
+      data,
+      ...listProps
+    } = this.props;
     return (
       <List
         ItemSeparatorComponent={this.shouldRenderDividers && Divider}

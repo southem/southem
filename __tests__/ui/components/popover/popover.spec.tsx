@@ -8,6 +8,7 @@ import {
 import {
   fireEvent,
   render,
+  shallow,
   RenderAPI,
   waitForElement,
 } from 'react-native-testing-library';
@@ -50,7 +51,7 @@ describe('@popover: component checks', () => {
    */
   const touchables = {
     findToggleButton: (api: RenderAPI) => api.queryByTestId('@popover/toggle-button'),
-    findBackdropTouchable: (api: RenderAPI) => api.queryAllByType(TouchableOpacity)[1],
+    findBackdropTouchable: (api: RenderAPI) => api.UNSAFE_queryAllByType(TouchableOpacity)[1],
   };
 
   const TestPopover = React.forwardRef((props: Partial<PopoverProps>, ref: React.Ref<Popover>) => {
@@ -100,7 +101,7 @@ describe('@popover: component checks', () => {
 
 
     fireEvent.press(component.queryByTestId('@popover/toggle-button'));
-    const text = await waitForElement(() => component.queryByText('I love Babel'));
+    const text = await waitForElement(() => component.queryByType(Text));
 
     expect(text).toBeTruthy();
   });
@@ -137,7 +138,7 @@ describe('@popover: component checks', () => {
     );
 
     componentRef.current.show();
-    const text = await waitForElement(() => component.queryByText('I love Babel'));
+    const text = await waitForElement(() => component.queryByType(Text));
 
     expect(text).toBeTruthy();
   });

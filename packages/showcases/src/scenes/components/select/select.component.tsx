@@ -1,9 +1,10 @@
 import React from 'react';
-import { SelectElement, SelectProps } from '@ui-kitten/components';
+import { SelectElement, SelectProps } from '@southem/ui';
 import { SelectShowcase } from './select-showcase.component';
 import { selectSettings, selectShowcase } from './type';
-import { ShowcaseContainer } from '../../../components/showcase-container.component';
+import { ShowcaseContainer } from '../../../components';
 
+// @ts-ignore
 export const SelectScreen = ({ navigation }): React.ReactElement => {
 
   const renderItem = (props: SelectProps): SelectElement => (

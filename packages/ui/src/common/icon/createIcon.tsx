@@ -1,23 +1,61 @@
 /* eslint-disable */
-import { withThemes } from '@southem/theme';
-import { connectAnimation } from '@southem/animation';
-import createIconFromName from './createIconFromName';
+import {
+  createIconSetFromIcoMoon,
+  createIconSetFromFontello,
+} from 'react-native-vector-icons';
+import ZocialIcon from 'react-native-vector-icons/Zocial';
+import OcticonIcon from 'react-native-vector-icons/Octicons';
+import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
+import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Ionicon from 'react-native-vector-icons/Ionicons';
+import FoundationIcon from 'react-native-vector-icons/Foundation';
+import EvilIcon from 'react-native-vector-icons/EvilIcons';
+import EntypoIcon from 'react-native-vector-icons/Entypo';
+import FAIcon from 'react-native-vector-icons/FontAwesome';
+import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons';
+import FeatherIcon from 'react-native-vector-icons/Feather';
+import createConfig from './createConfig';
+import icoMoonConfig from './selection.json';
+import fontelloConfig from './config.json';
 
-const mapPropToStyles = [
-  'type',
-  'name',
-  'color',
-  'size',
-];
+const customIcons = {};
 
-/**
- * Create Icon component with wanted font family and styleName (optional).
- * Usage: <Icon name="icon-name" size={20} color="#4F8EF7" />
- * @param fontFamily - font used for icons (icon font)
- * @param componentStyleName
- */
-export default function (fontFamily: string, componentStyleName: string = 'Icon') {
-  const IconComponent = createIconFromName(fontFamily);
-  const AnimatedIcon = connectAnimation(IconComponent);
-  return withThemes(componentStyleName, mapPropToStyles)(AnimatedIcon);
+export const registerCustomIconType = (id, customIcon) => {
+  customIcons[id] = customIcon;
+};
+
+export default function createIcon(fontFamily: string) {
+  switch (fontFamily) {
+    case 'zocial':
+      return ZocialIcon;
+    case 'octicon':
+      return OcticonIcon;
+    case 'material':
+      return MaterialIcon;
+    case 'material-community':
+      return MaterialCommunityIcon;
+    case 'ionicon':
+      return Ionicon;
+    case 'foundation':
+      return FoundationIcon;
+    case 'evilicon':
+      return EvilIcon;
+    case 'entypo':
+      return EntypoIcon;
+    case 'font-awesome':
+      return FAIcon;
+    case 'simple-line-icon':
+      return SimpleLineIcon;
+    case 'feather':
+      return FeatherIcon;
+    case 'moon':
+      return createIconSetFromIcoMoon(createConfig('moon', icoMoonConfig));
+    case 'fontello':
+      return createIconSetFromFontello(createConfig('fontello', fontelloConfig));
+    default:
+      if (customIcons.hasOwnProperty(fontFamily)) {
+        return customIcons[fontFamily];
+      }
+      return MaterialIcon;
+  }
 }

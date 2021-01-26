@@ -16,7 +16,6 @@ import {
   PopoverElement,
   PopoverProps,
 } from '../Popover';
-import { View } from '../../common/view';
 
 type OverflowMenuPopoverProps = Overwrite<PopoverProps, {
   children?: ChildrenWithProps<MenuItemProps>;
@@ -139,7 +138,7 @@ export class OverflowMenu extends React.Component<OverflowMenuProps> {
       <Popover
         {...popoverProps}
         ref={this.popoverRef}
-        style={[styles.popover, style]}>
+        style={[styles.popover, styles.container, style]}>
         {contentElement}
       </Popover>
     );

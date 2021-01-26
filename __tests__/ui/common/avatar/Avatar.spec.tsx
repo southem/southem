@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Image,
   StyleSheet,
-  ImageSourcePropType,
 } from 'react-native';
 import {
   render,
@@ -19,35 +18,36 @@ import {
 
 Theme.registerDefaultTheme(darkTheme);
 
-const Mock = (props?: AvatarProps): React.ReactElement<{}> => {
+const Mock = (props?: Partial<AvatarProps>): React.ReactElement<{}> => {
   return (
     <ThemeProvider
       theme={'default'}>
-      <Avatar {...props} />
+      <Avatar
+        source={{ uri: 'https://i.imgur.com/0y8Ftya.jpg' }}
+        {...props} />
     </ThemeProvider>
   );
 };
 
-const renderComponent = (props?: AvatarProps): RenderAPI => {
+const renderComponent = (props?: Partial<AvatarProps>): RenderAPI => {
   return render(
     <Mock {...props} />,
   );
 };
-
-const iconSource: ImageSourcePropType = { uri: 'https://i.imgur.com/0y8Ftya.jpg' };
 
 describe('@avatar: matches snapshot', () => {
 
   describe('* appearance', () => {
 
     it('* default', () => {
-      const component: RenderAPI = renderComponent({
-        source: iconSource,
-      });
+      const component: RenderAPI = renderComponent();
+
+      const avatar = component.queryByType(Image);
+      expect(avatar).toBeTruthy();
 
       const { output } = shallow(component.getByType(Avatar));
-
       expect(output).toMatchSnapshot();
+      expect(avatar.props.source).toEqual({ uri: 'https://i.imgur.com/0y8Ftya.jpg' });
     });
 
   });
@@ -57,10 +57,7 @@ describe('@avatar: matches snapshot', () => {
 describe('@avatar: component checks', () => {
 
   it('* round shape styled properly', () => {
-    const component: RenderAPI = renderComponent({
-      source: iconSource,
-      shape: 'round',
-    });
+    const component: RenderAPI = renderComponent({ shape: 'round' });
 
     const avatar: ReactTestInstance = component.getByType(Image);
 
@@ -70,23 +67,17 @@ describe('@avatar: component checks', () => {
   });
 
   it('* rounded shape styled properly', () => {
-    const component: RenderAPI = renderComponent({
-      source: iconSource,
-      shape: 'rounded',
-    });
+    const component: RenderAPI = renderComponent({ shape: 'rounded'});
 
     const avatar: ReactTestInstance = component.getByType(Image);
 
     const { borderRadius, height } = StyleSheet.flatten(avatar.props.style);
 
-    expect(borderRadius).toBeLessThan(height);
+    expect(borderRadius).toEqual(height);
   });
 
   it('* square shape', () => {
-    const component: RenderAPI = renderComponent({
-      source: iconSource,
-      shape: 'square',
-    });
+    const component: RenderAPI = renderComponent({ shape: 'square' });
 
     const avatar: ReactTestInstance = component.getByType(Image);
 

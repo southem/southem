@@ -7,19 +7,26 @@ import {
 } from 'react-native';
 import { withThemes } from '@southem/theme';
 import {Icon, IconProps} from '../../common';
-import {renderNode, RenderProp} from '../../devsupport';
+import {
+  renderNode,
+  RenderProp,
+  Overwrite,
+  StyledComponentProps,
+} from '../../devsupport';
 
-interface ComponentProps extends TouchableOpacityProps {
-  icon: RenderProp<Partial<IconProps>>;
+type TopNavigationActionStyledProps = Overwrite<StyledComponentProps, {
+  appearance?: 'default' | 'control' | string;
+}>;
+
+// @ts-ignore
+export interface TopNavigationActionProps extends TouchableOpacityProps, TopNavigationActionStyledProps {
+  icon?: RenderProp<Partial<IconProps>>;
   tintColor: string;
   iconHeight: number;
   iconWidth: number;
-  onPress: (event: GestureResponderEvent) => void;
-  onPressIn: (event: GestureResponderEvent) => void;
-  onPressOut: (event: GestureResponderEvent) => void;
 }
 
-export type TopNavigationActionProps = ComponentProps;
+export type TopNavigationActionElement = React.ReactElement<TopNavigationActionProps>;
 
 /**
  * The `TopNavigationAction` component is a part of the TopNavigation component.

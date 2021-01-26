@@ -9,7 +9,7 @@
       "android"
     ],
     "version": "1.0.0",
-    "sdkVersion": "36.0.0",
+    "sdkVersion": "37.0.0",
     "githubUrl": "https://github.com/southem/southem",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",

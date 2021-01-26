@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Select, SelectElement, SelectProps } from '@ui-kitten/components';
+import { Select, SelectElement, SelectProps } from '@southem/ui';
 
 export const SelectShowcase = (props: SelectProps): SelectElement => {
 

@@ -6,9 +6,9 @@ import {
   ListItemElement,
   ListItemProps,
 } from '@southem/ui';
-import { StarIcon } from '../../../components/icons';
+import { StarIcon } from '../../../components';
 
-const AccessoryElement = (style): React.ReactElement<CheckBoxProps> => {
+const AccessoryElement = (style: any): React.ReactElement<CheckBoxProps> => {
   const [checked, setChecked] = React.useState<boolean>(true);
 
   const onChange = (nextChecked: boolean): void => {
@@ -17,6 +17,7 @@ const AccessoryElement = (style): React.ReactElement<CheckBoxProps> => {
 
   return (
     <CheckBox
+      style={style}
       checked={checked}
       onChange={onChange}
     />
@@ -28,14 +29,14 @@ export const ListItemShowcase = (props?: ListItemProps): ListItemElement => (
 );
 
 export const ListItemIconShowcase = (props?: ListItemProps): ListItemElement => (
-  <ListItem icon={StarIcon} {...props} />
+  <ListItem accessoryLeft={StarIcon} {...props} />
 );
 
 export const ListItemAccessoryShowcase = (props?: ListItemProps): ListItemElement => (
-  <ListItem {...props} accessory={AccessoryElement}/>
+  <ListItem {...props} accessoryLeft={AccessoryElement}/>
 );
 
 export const ListItemIconAccessoryShowcase = (props?: ListItemProps): ListItemElement => (
-  <ListItem {...props} icon={StarIcon}
-            accessory={(style, index) => <AccessoryElement style={style} index={index}/>}/>
+  <ListItem {...props} accessoryLeft={StarIcon}
+            accessoryRight={(style: Object, index: number) => <AccessoryElement style={style} index={index}/>}/>
 );

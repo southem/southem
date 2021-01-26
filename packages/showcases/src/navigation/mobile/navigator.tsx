@@ -5,7 +5,7 @@ import {
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-// import { LayoutsNavigator } from './layouts.navigator';
+// import { LayoutsNavigator } from '../layouts.navigator';
 import { ComponentsNavigator } from '../components.navigator';
 // import { ThemesNavigator } from '../themes.navigator';
 import { HomeBottomNavigation } from '../../scenes/home/home-bottom-navigation.component';

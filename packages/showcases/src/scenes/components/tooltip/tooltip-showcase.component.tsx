@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Tooltip, TooltipElement, TooltipProps } from '@ui-kitten/components';
+import { Button, Tooltip, TooltipElement, TooltipProps } from '@southem/ui';
 
 export const TooltipShowcase = (props: TooltipProps): TooltipElement => {
 

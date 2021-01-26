@@ -5,7 +5,7 @@ import {
   RangeDatepicker,
   RangeDatepickerElement,
   RangeDatepickerProps,
-} from '@ui-kitten/components';
+} from '@southem/ui';
 
 type RangeDatepickerShowcaseProps = Omit<RangeDatepickerProps, 'onSelect'>;
 

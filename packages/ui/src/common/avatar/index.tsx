@@ -5,12 +5,21 @@ import {
   ImageProps,
 } from 'react-native';
 import { withThemes } from '@southem/theme';
-import { SizeType, ShapeType } from '../../devsupport';
+import { SizeType, ShapeType, Overwrite, StyledComponentProps } from '../../devsupport';
 
-export interface AvatarProps extends ImageProps {
+type AvatarStyledProps = Overwrite<StyledComponentProps, {
+  appearance?: 'default' | string;
+}>;
+
+export type AvatarProps<P = ImageProps> = AvatarStyledProps & P & {
   shape?: ShapeType;
   size?: SizeType;
-}
+  /**
+   * We use `any` here to prevent ts complains for most of the libraries that use
+   * React.ComponentType & SomeType to describe static / instance methods for the components.
+   */
+  ImageComponent?: React.ComponentType<P> & any;
+};
 
 export type AvatarElement = React.ReactElement<AvatarProps>;
 
@@ -46,15 +55,17 @@ export type AvatarElement = React.ReactElement<AvatarProps>;
  */
 export class AvatarComponent extends React.Component<AvatarProps> {
   public static displayName = 'Avatar';
-  public static defaultProps = {
+  public static defaultProps: Partial<AvatarProps> = {
+    ImageComponent: Image,
     shape: 'round',
     size: 'medium',
   };
 
   public render(): React.ReactElement<ImageProps> {
+    const { ImageComponent, ...imageProps } = this.props;
     return (
-      <Image
-        {...this.props}
+      <ImageComponent
+        {...imageProps}
       />
     );
   }

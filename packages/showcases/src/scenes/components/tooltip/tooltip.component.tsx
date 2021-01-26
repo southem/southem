@@ -1,9 +1,10 @@
 import React from 'react';
-import { TooltipElement, TooltipProps } from '@ui-kitten/components';
+import { TooltipElement, TooltipProps } from '@southem/ui';
 import { TooltipShowcase } from './tooltip-showcase.component';
 import { tooltipSettings, tooltipShowcase } from './type';
-import { ShowcaseContainer } from '../../../components/showcase-container.component';
+import { ShowcaseContainer } from '../../../components';
 
+// @ts-ignore
 export const TooltipScreen = ({ navigation }): React.ReactElement => {
 
   const renderItem = (props: TooltipProps): TooltipElement => (

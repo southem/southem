@@ -1,5 +1,5 @@
 import React from 'react';
-import { RangeCalendar, RangeCalendarElement, RangeCalendarProps } from '@ui-kitten/components';
+import { RangeCalendar, RangeCalendarElement, RangeCalendarProps } from '@southem/ui';
 
 export const RangeCalendarShowcase = (props: RangeCalendarProps): RangeCalendarElement => {
 

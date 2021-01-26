@@ -3,14 +3,15 @@ import {
   TopNavigationAction,
   TopNavigationActionElement,
   TopNavigationActionProps,
-} from '@ui-kitten/components';
-import { ArrowIosBackIcon, MoreVerticalIcon, StarIcon } from '../../../components/icons';
+} from '@southem/ui';
+import { ArrowIosBackIcon, MoreVerticalIcon, StarIcon } from '../../../components';
 
 type TopNavigationActionShowcaseProps = Omit<TopNavigationActionProps, 'icon'>;
 
 export const BackAction = (props: TopNavigationActionShowcaseProps): TopNavigationActionElement => (
   <TopNavigationAction
     {...props}
+    // @ts-ignore
     icon={ArrowIosBackIcon}
   />
 );
@@ -18,6 +19,7 @@ export const BackAction = (props: TopNavigationActionShowcaseProps): TopNavigati
 export const MenuAction = (props: TopNavigationActionShowcaseProps): TopNavigationActionElement => (
   <TopNavigationAction
     {...props}
+    // @ts-ignore
     icon={MoreVerticalIcon}
   />
 );
@@ -25,6 +27,7 @@ export const MenuAction = (props: TopNavigationActionShowcaseProps): TopNavigati
 export const StarAction = (props: TopNavigationActionShowcaseProps): TopNavigationActionElement => (
   <TopNavigationAction
     {...props}
+    // @ts-ignore
     icon={StarIcon}
   />
 );

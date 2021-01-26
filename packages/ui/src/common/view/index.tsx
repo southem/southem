@@ -2,10 +2,8 @@ import React from 'react';
 import {
   View as RNView,
   ViewProps,
-  ViewStyle,
 } from 'react-native';
 import { withThemes } from '@southem/theme';
-import {connectAnimation} from '@southem/animation';
 
 type ChildElement = React.ReactElement;
 type ChildrenProp = ChildElement | ChildElement[];

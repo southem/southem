@@ -2,7 +2,6 @@
 import React from 'react';
 import {
   GestureResponderEvent,
-  ImageStyle,
   ImageProps,
   StyleProp,
   StyleSheet,
@@ -10,22 +9,17 @@ import {
   TextProps,
   TouchableOpacity,
   TouchableOpacityProps,
-  ViewStyle,
   ViewProps,
 } from 'react-native';
-import { StyleType, withThemes } from '@southem/theme';
-import { View, ViewElementProps } from '../../view';
-import { Text, TextElement } from '../../text';
-import { Icon, IconElement } from '../../icon';
+import { withThemes } from '@southem/theme';
+import { View } from '../../view';
 import {
   Overwrite,
-  renderNode,
   renderTextElement,
   renderIconElement,
   RenderProp,
   StyledComponentProps,
 } from '../../../devsupport';
-import { isValidString } from '../../../tools';
 
 type ListItemStyledProps = Overwrite<StyledComponentProps, {
   appearance?: 'default' | string;
@@ -165,10 +159,6 @@ class ListItemComponent extends React.Component<ListItemProps> {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
   contentContainer: {
     flex: 1,
   },
@@ -180,4 +170,8 @@ const styles = StyleSheet.create({
   },
 });
 
-export const ListItem = withThemes('ListItem')(ListItemComponent);
+const mapPropToStyles = [
+  'titleStyle',
+  'descriptionStyle',
+];
+export const ListItem = withThemes('ListItem', mapPropToStyles)(ListItemComponent);

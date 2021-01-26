@@ -75,7 +75,7 @@ const loadingTasks: Task[] = [
 const App = (props): React.ReactElement => {
   return (
     <React.Fragment>
-      <ThemeProvider>
+      <ThemeProvider theme={'dark'}>
         <SafeAreaProvider>
           <StatusBar />
           <AppNavigator />

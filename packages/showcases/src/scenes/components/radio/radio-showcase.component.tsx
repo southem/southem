@@ -1,8 +1,9 @@
 import React from 'react';
-import { Radio, RadioElement, RadioProps } from '@ui-kitten/components';
+import { Radio, RadioElement, RadioProps } from '@southem/ui';
 
 export const RadioShowcase = (props: RadioProps): RadioElement => {
 
+  // @ts-ignore
   const [checked, setChecked] = React.useState<boolean>(props.checked);
 
   return (

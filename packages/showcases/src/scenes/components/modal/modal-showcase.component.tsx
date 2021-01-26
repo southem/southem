@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Button, Modal, ModalProps, Text } from '@ui-kitten/components';
+import { Button, Modal, ModalProps, Text } from '@southem/ui';
 
 export const ModalShowcase = (props: ModalProps): React.ReactElement => {
 

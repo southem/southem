@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React, { PureComponent } from 'react';
 import {
-  StyleSheet,
   GestureResponderEvent,
   NativeSyntheticEvent,
   StyleProp,
@@ -14,14 +13,12 @@ import { withThemes } from '@southem/theme';
 import {
   Overwrite,
   RenderProp,
-  renderNode,
   renderTextElement,
   StatusType,
   StyledComponentProps,
 } from '../../devsupport';
 import { Touchable as RNTouchableOpacity } from '../touchable';
-import { Text } from '../Text';
-import type { TextProps, TextElement } from '../Text';
+import type { TextProps } from '../Text';
 
 type RadioStyledProps = Overwrite<StyledComponentProps, {
   appearance?: 'default' | string;
@@ -167,7 +164,8 @@ export class Radio extends PureComponent<RadioProps> {
     } = this.props;
 
     return (
-      <RNTouchableOpacity
+      // @ts-ignore
+      <TouchableOpacity
         activeOpacity={1.0}
         disabled={disabled}
         onPress={this.onPress}
@@ -182,7 +180,7 @@ export class Radio extends PureComponent<RadioProps> {
           </View>
         </WrapContent>
         {renderTextElement(children || title, { style: titleStyle })}
-      </RNTouchableOpacity>
+      </TouchableOpacity>
     );
   }
 }

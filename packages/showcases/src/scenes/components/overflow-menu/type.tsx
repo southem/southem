@@ -1,6 +1,5 @@
-import React from 'react';
-import { OverflowMenuItemType } from '@ui-kitten/components';
-import { StarIcon } from '../../../components/icons';
+import { StarIcon } from '../../../components';
+
 import {
   ComponentShowcase,
   ComponentShowcaseItem,
@@ -8,13 +7,13 @@ import {
   ComponentShowcaseSetting,
 } from '../../../model/showcase.model';
 
-const defaultMenuItems: OverflowMenuItemType[] = [
+const defaultMenuItems = [
   { title: 'Item 1' },
   { title: 'Item 2' },
   { title: 'Item 3' },
 ];
 
-const withIconMenuItems: OverflowMenuItemType[] = [
+const withIconMenuItems = [
   {
     title: 'Item 1',
     icon: StarIcon,
@@ -29,7 +28,7 @@ const withIconMenuItems: OverflowMenuItemType[] = [
   },
 ];
 
-const withDisabledItemMenuItems: OverflowMenuItemType[] = [
+const withDisabledItemMenuItems = [
   {
     title: 'Item 1',
     icon: StarIcon,

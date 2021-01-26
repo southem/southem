@@ -1,20 +1,26 @@
 // tslint:disable
-import { black } from '../../colors';
+import { black, transparent } from '../../colors';
 
 export default {
-  List: {},
+  List: {
+    backgroundColor: transparent,
+  },
+
   ListItem: {
     flexDirection: 'row',
     alignItems: 'center',
+    paddingVertical: 5,
+    paddingHorizontal: 5,
 
     View: {
       flex: 1,
     },
+
     Icon: {
       width: 25,
       height: 25,
       marginHorizontal: 12,
-      tintColor: black,
+      color: black,
     },
 
     Title: {
@@ -25,6 +31,10 @@ export default {
       // lineHeight: titleLineHeight,
       // fontWeight: titleFontWeight,
       color: black,
+    },
+
+    titleStyle: {
+      backgroundColor: 'red'
     },
   },
 };

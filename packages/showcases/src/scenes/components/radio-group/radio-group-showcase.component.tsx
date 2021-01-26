@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio, RadioGroup, RadioGroupElement, RadioGroupProps } from '@ui-kitten/components';
+import { Radio, RadioGroup, RadioGroupElement, RadioGroupProps } from '@southem/ui';
 
 export const RadioGroupShowcase = (props: RadioGroupProps): RadioGroupElement => {
 
@@ -9,9 +9,9 @@ export const RadioGroupShowcase = (props: RadioGroupProps): RadioGroupElement =>
     <RadioGroup
       selectedIndex={selectedIndex}
       onChange={setSelectedIndex}>
-      <Radio text='Option 1'/>
-      <Radio text='Option 2'/>
-      <Radio text='Option 3'/>
+      <Radio title='Option 1'/>
+      <Radio title='Option 2'/>
+      <Radio title='Option 3'/>
     </RadioGroup>
   );
 };

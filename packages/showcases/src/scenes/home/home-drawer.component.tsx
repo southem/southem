@@ -30,7 +30,7 @@ export const HomeDrawer = ({ navigation }): DrawerElement => {
         return;
       }
       case 1: {
-        WebBrowserService.openBrowserAsync('https://akveo.github.io/react-native-ui-kitten');
+        WebBrowserService.openBrowserAsync('https://eldorplus.github.io/southem');
         navigation.toggleDrawer();
         return;
       }

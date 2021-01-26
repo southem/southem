@@ -42,7 +42,7 @@ describe('@icon: component checks', () => {
     const renderedComponent: RenderAPI = renderComponent({
       name: 'wifi',
     });
-    const { output } = shallow(renderedComponent.getByType(Icon));
+    const { output } = shallow(renderedComponent.UNSAFE_getByType(Icon));
 
     expect(output).toBeTruthy();
     expect(output).toMatchSnapshot();
@@ -57,8 +57,8 @@ describe('@icon: component checks', () => {
         backgroundColor: 'peru',
       },
     });
-    const { output } = shallow(renderedComponent.getByType(Icon));
-    const componentIcon: ReactTestInstance = renderedComponent.getByType(RNText);
+    const { output } = shallow(renderedComponent.UNSAFE_getByType(Icon));
+    const componentIcon: ReactTestInstance = renderedComponent.UNSAFE_getByType(RNText);
     const styles  = StyleSheet.flatten(componentIcon.props.iconStyle);
 
     expect(styles.backgroundColor).toBe('peru');
@@ -72,8 +72,8 @@ describe('@icon: component checks', () => {
       disabled: true,
     });
 
-    const { output } = shallow(component.getByType(Icon));
-    const { props }: ReactTestInstance = component.getByType(RNText);
+    const { output } = shallow(component.UNSAFE_getByType(Icon));
+    const { props }: ReactTestInstance = component.UNSAFE_getByType(RNText);
 
     expect(props.disabled).toBe(true);
     expect(output).toBeTruthy();
@@ -91,11 +91,11 @@ describe('@icon: component checks', () => {
       },
     });
 
-    const { output } = shallow(component.getByType(Icon));
-    const { props }: ReactTestInstance = component.getByType(RNText);
+    const { output } = shallow(component.UNSAFE_getByType(Icon));
+    const { props }: ReactTestInstance = component.UNSAFE_getByType(RNText);
     const styles  = StyleSheet.flatten(props.disabledStyle);
 
-    fireEvent.press(component.getByType(Icon));
+    fireEvent.press(component.UNSAFE_getByType(Icon));
 
     expect(styles.backgroundColor).toBe('pink');
     expect(props.disabled).toBe(true);
@@ -112,8 +112,8 @@ describe('@icon: component checks', () => {
       },
     });
 
-    const { output } = shallow(component.getByType(Icon));
-    const { props }: ReactTestInstance = component.getByType(RNText);
+    const { output } = shallow(component.UNSAFE_getByType(Icon));
+    const { props }: ReactTestInstance = component.UNSAFE_getByType(RNText);
     const styles  = StyleSheet.flatten(props.containerStyle);
 
     expect(styles.backgroundColor).toBe('blue');
@@ -128,8 +128,8 @@ describe('@icon: component checks', () => {
       reverse: true,
     });
 
-    const { output } = shallow(component.getByType(Icon));
-    const { props }: ReactTestInstance = component.getByType(RNText);
+    const { output } = shallow(component.UNSAFE_getByType(Icon));
+    const { props }: ReactTestInstance = component.UNSAFE_getByType(RNText);
 
     expect(props.reverse).toBe(true);
     expect(props.disabled).toBe(undefined);
@@ -143,7 +143,7 @@ describe('@icon: matches snapshot', () => {
       const component: RenderAPI = renderComponent({
         name: 'wifi',
       });
-      const { output } = shallow(component.getByType(Icon));
+      const { output } = shallow(component.UNSAFE_getByType(Icon));
 
       expect(output).toMatchSnapshot();
     });
@@ -151,7 +151,7 @@ describe('@icon: matches snapshot', () => {
   describe('* appearance', () => {
     it('* empty', () => {
       const component: RenderAPI = renderComponent();
-      const { output } = shallow(component.getByType(Icon));
+      const { output } = shallow(component.UNSAFE_getByType(Icon));
 
       expect(output).toMatchSnapshot();
     });
@@ -161,7 +161,7 @@ describe('@icon: matches snapshot', () => {
         type: 'octicon',
         color: 'red',
       });
-      const { output } = shallow(component.getByType(Icon));
+      const { output } = shallow(component.UNSAFE_getByType(Icon));
 
       expect(output).toMatchSnapshot();
     });
@@ -173,7 +173,7 @@ describe('@icon: matches snapshot', () => {
           lineHeight: 34,
         },
       });
-      const { output } = shallow(component.getByType(Icon));
+      const { output } = shallow(component.UNSAFE_getByType(Icon));
 
       expect(output).toMatchSnapshot();
     });

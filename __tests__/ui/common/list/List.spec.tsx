@@ -30,14 +30,6 @@ Theme.registerDefaultTheme(darkTheme);
 
 describe('@list-item: component checks', () => {
   // @ts-ignore
-  const TestList = (props?: ListProps): React.ReactElement<ThemeProviderProps> => {
-    return (
-      <ThemeProvider
-        theme={'default'}>
-        <List {...props} />
-      </ThemeProvider>
-    );
-  };
   const TestListItem = (props?: ListItemProps): React.ReactElement<ListItemProps> => {
     return (
       <ThemeProvider
@@ -97,6 +89,7 @@ describe('@list-item: component checks', () => {
       const AccessoryLeft = (style: StyleType): React.ReactElement<ImageProps> => {
         return (
           <Image
+            // @ts-ignore
             style={style}
             source={iconSource}
           />
@@ -105,6 +98,7 @@ describe('@list-item: component checks', () => {
       const AccessoryRight = (style: StyleType): React.ReactElement<ImageProps> => {
         return (
           <Image
+            // @ts-ignore
             style={style}
             source={iconSource}
           />

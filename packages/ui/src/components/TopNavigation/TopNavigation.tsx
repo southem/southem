@@ -26,6 +26,7 @@ type AlignmentProp = 'start' | 'center';
 type ActionElement = React.ReactElement<TopNavigationActionProps>;
 type ActionElementProp = ActionElement | ActionElement[];
 
+// @ts-ignore
 export interface TopNavigationProps extends ViewProps, TopNavigationStyledProps {
   title?: RenderProp<TextProps> | React.ReactText;
   titleStyle?: StyleProp<TextStyle>;

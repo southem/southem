@@ -15,61 +15,61 @@ const defaultMenuItems = [
 const withIconMenuItems = [
   {
     title: 'Item 1',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
   },
   {
     title: 'Item 2',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
   },
   {
     title: 'Item 3',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
   },
 ];
 
 const withDisabledItemMenuItems = [
   {
     title: 'Item 1',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
   },
   {
     title: 'Item 2',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
     disabled: true,
   },
   {
     title: 'Item 3',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
   },
 ];
 
 const withGroupsMenuItems = [
   {
     title: 'Item 1',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
   },
   {
     title: 'Item 2',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
     subItems: [
       {
         title: 'Item 21',
-        icon: StarIcon,
+        accessoryLeft: StarIcon,
         disabled: true,
       },
       {
         title: 'Item 22',
-        icon: StarIcon,
+        accessoryLeft: StarIcon,
       },
       {
         title: 'Item 23',
-        icon: StarIcon,
+        accessoryLeft: StarIcon,
       },
     ],
   },
   {
     title: 'Item 3',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
   },
 ];
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TabView, TabViewElement, TabViewProps } from '@ui-kitten/components';
+import { TabView, TabViewElement, TabViewProps } from '@southem/ui';
 
 export const TabViewShowcase = (props: TabViewProps): TabViewElement => {
 

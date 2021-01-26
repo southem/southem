@@ -5,6 +5,7 @@ const findNodeHandle = ReactNative.findNodeHandle;
 
 export const measure = Component => {
     // @ts-ignore
+    // tslint:disable-next-line:class-name
     class measuredComponent extends Component {
         constructor(props, context) {
             super(props, context);
