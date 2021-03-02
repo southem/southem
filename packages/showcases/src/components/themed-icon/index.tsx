@@ -11,7 +11,6 @@ export interface ThemedIconProps extends Omit<IconProps, 'name'> {
 export const ThemedIcon = (props: ThemedIconProps): React.ReactElement => {
 
   const themeContext = useTheme();
-  alert(themeContext);
   const { light, dark, ...iconProps } = props;
 
   return themeContext.isDarkMode() ? dark(iconProps) : light(iconProps);

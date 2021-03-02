@@ -1,4 +1,4 @@
-import { StarIcon } from '../../../components/icons';
+import { StarIcon } from '../../../components';
 import {
   ComponentShowcase,
   ComponentShowcaseItem,
@@ -14,7 +14,7 @@ const defaultTooltip: ComponentShowcaseItem = {
 const iconTooltip: ComponentShowcaseItem = {
   title: 'With Icon',
   props: {
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
   },
 };
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Layout, Tab, Text } from '@ui-kitten/components';
+import { Layout, Tab, Text } from '@southem/ui';
 import {
   ComponentShowcase,
   ComponentShowcaseItem,
   ComponentShowcaseSection,
 } from '../../../model/showcase.model';
-import { StarIcon } from '../../../components/icons';
+import { StarIcon } from '../../../components';
 
 const titleBottomNavigation: ComponentShowcaseItem = {
   props: {

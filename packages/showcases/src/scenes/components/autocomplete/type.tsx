@@ -1,6 +1,6 @@
-import { AutocompleteOption } from '@southem/ui';
+import { AutocompleteProps } from '@southem/ui';
 import { CustomOptionsAutocompleteItem } from './autocomplete-examples';
-import { StarIcon } from '../../../components/icons';
+import { StarIcon } from '../../../components';
 import {
   ComponentShowcase,
   ComponentShowcaseItem,
@@ -10,13 +10,19 @@ import {
 
 // https://facebook.github.io/react-native/movies.json
 
-export interface AutocompleteShowcaseOption extends AutocompleteOption {
+export interface DataProps {
   id: number;
   title: string;
   releaseYear: number;
 }
 
-const defaultData: AutocompleteShowcaseOption[] = [
+export interface AutocompletePropsCustom extends AutocompleteProps {
+  data?: DataProps[];
+  // @ts-ignore
+  renderItem?: ({title: string, releaseYear: number}) => any;
+}
+
+const defaultData: DataProps[] = [
   { id: 1, title: 'Star Wars', releaseYear: 1977 },
   { id: 2, title: 'Back to the Future', releaseYear: 1985 },
   { id: 3, title: 'The Matrix', releaseYear: 1999 },
@@ -68,7 +74,7 @@ const iconAutocomplete: ComponentShowcaseItem = {
   title: 'Icon',
   props: {
     ...defaultAutocomplete.props,
-    icon: StarIcon,
+    accessoryRight: StarIcon,
   },
 };
 
@@ -101,8 +107,8 @@ const accessoriesSection: ComponentShowcaseSection = {
   items: [
     iconAutocomplete,
     labelAutocomplete,
-    // captionAutocomplete,
-    // captionIconAutocomplete,
+    captionAutocomplete,
+    captionIconAutocomplete,
   ],
 };
 

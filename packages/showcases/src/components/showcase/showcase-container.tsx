@@ -33,8 +33,8 @@ export const ShowcaseContainer = (props: ShowcaseContainerProps): React.ReactEle
   };
 
   const renderBackAction = (): React.ReactElement => (
-    // @ts-ignore
     <TopNavigationAction
+      // @ts-ignore
       icon={ArrowIosBackIcon}
       onPress={onBackPress}
     />
@@ -46,7 +46,7 @@ export const ShowcaseContainer = (props: ShowcaseContainerProps): React.ReactEle
       insets='top'>
       <TopNavigation
         title={showcase.title}
-        leftControl={renderBackAction()}
+        accessoryLeft={renderBackAction}
       />
       <Divider/>
       <ShowcaseSettings

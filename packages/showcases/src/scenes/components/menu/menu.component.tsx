@@ -1,13 +1,13 @@
 import React from 'react';
-import { MenuElement, MenuProps } from '@southem/ui';
+import { MenuElement } from '@southem/ui';
 import { MenuShowcase } from './menu-showcase.component';
-import { menuSettings, menuShowcase } from './type';
 import { ShowcaseContainer } from '../../../components';
+import { menuSettings, menuShowcase, MenuShowcaseProps } from './type';
 
 // @ts-ignore
 export const MenuScreen = ({ navigation }): React.ReactElement => {
 
-  const renderItem = (props: MenuProps): MenuElement => (
+  const renderItem = (props: MenuShowcaseProps): MenuElement => (
     <MenuShowcase {...props} />
   );
 

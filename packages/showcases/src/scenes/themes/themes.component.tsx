@@ -13,7 +13,7 @@ import { SafeAreaLayout } from '../../components';
 import { ThemesService } from './themes.service';
 import { ThemeItem } from './type';
 import { appThemes } from '../../app/app-theming';
-import { MenuIcon } from '../../components/icons';
+import { MenuIcon } from '../../components';
 import { RestartAppModal } from './restart-app-modal.component';
 
 export const ThemesScreen = ({ navigation }): React.ReactElement => {
@@ -23,10 +23,6 @@ export const ThemesScreen = ({ navigation }): React.ReactElement => {
   const themes: ThemeItem[] = ThemesService.createThemeListItems(
     appThemes,
   );
-
-  const onSwitchCheckedChange = (checked: boolean): void => {
-    setRestartModalVisible(true);
-  };
 
   const onItemPress = (info: ListRenderItemInfo<ThemeItem>): void => {
     // themeContext.setCurrentTheme(info.item.name);
@@ -66,30 +62,19 @@ export const ThemesScreen = ({ navigation }): React.ReactElement => {
     />
   );
 
-  const renderFooter = (): React.ReactElement => (
-    <Switch
-      style={styles.switch}
-      // @ts-ignore
-      title='Design System'
-      checked={evaSwitchChecked}
-      onChange={onEvaSwitchCheckedChange}
-    />
-  );
-
   return (
     <SafeAreaLayout
       style={styles.safeArea}
       insets='top'>
       <TopNavigation
-        title='Kitten Tricks'
-        leftControl={renderDrawerAction()}
+        title='Southem UI'
+        accessoryLeft={renderDrawerAction()}
       />
       <Divider/>
       <List
         contentContainerStyle={styles.container}
         data={themes}
         renderItem={renderItem}
-        ListFooterComponent={renderFooter}
       />
       <RestartAppModal
         visible={restartModalVisible}

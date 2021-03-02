@@ -1,7 +1,14 @@
 import React from 'react';
-import { StyleSheet, BackHandler, NativeEventSubscription, Platform } from 'react-native';
-import { RenderProp, Overwrite } from '../../devsupport';
-import { platform } from '../../tools'
+import {
+  StyleSheet,
+  BackHandler,
+  NativeEventSubscription,
+} from 'react-native';
+import {
+  RenderProp,
+  Overwrite,
+} from '../../devsupport';
+import { platform } from '../../tools';
 import {
   Frame,
   MeasureElement,
@@ -142,8 +149,11 @@ export class Popover extends React.Component<PopoverProps, State> {
   }
 
   public componentDidMount(): void {
-    if(platform('android')) {
-      this.hardwareBackSubscription = BackHandler.addEventListener('hardwareBackPress', this.onHardwareBackPress);
+    if (platform('android')) {
+      this.hardwareBackSubscription = BackHandler.addEventListener(
+        'hardwareBackPress',
+        this.onHardwareBackPress,
+      );
     }
   }
 

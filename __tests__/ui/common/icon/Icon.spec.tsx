@@ -121,7 +121,7 @@ describe('@icon: component checks', () => {
     expect(output).toBeTruthy();
     expect(output).toMatchSnapshot();
   });
-  it('should apply reverse styles', () => {
+  it('* should apply reverse styles', () => {
     const component: RenderAPI = renderComponent({
       name: '3d-rotation',
       type: 'octicon',

@@ -1,6 +1,61 @@
 import React from 'react';
 import { ImageStyle } from 'react-native';
-import { Icon, IconElement } from '@southem/ui';
+import {
+  ThemedIcon,
+} from '../../components';
+import {
+  AssetAutocompleteIcon,
+  AssetAutocompleteDarkIcon,
+  AssetAvatarIcon,
+  AssetAvatarDarkIcon,
+  AssetBottomNavigationIcon,
+  AssetBottomNavigationDarkIcon,
+  AssetButtonIcon,
+  AssetButtonDarkIcon,
+  AssetButtonGroupIcon,
+  AssetButtonGroupDarkIcon,
+  AssetCalendarIcon,
+  AssetCalendarDarkIcon,
+  AssetCardIcon,
+  AssetCardDarkIcon,
+  AssetCheckBoxIcon,
+  AssetCheckBoxDarkIcon,
+  AssetDatepickerIcon,
+  AssetDatepickerDarkIcon,
+  AssetDrawerIcon,
+  AssetDrawerDarkIcon,
+  AssetIconIcon,
+  AssetIconDarkIcon,
+  AssetInputIcon,
+  AssetInputDarkIcon,
+  AssetListIcon,
+  AssetListDarkIcon,
+  AssetOverflowMenuIcon,
+  AssetOverflowMenuDarkIcon,
+  AssetMenuIcon,
+  AssetMenuDarkIcon,
+  AssetModalIcon,
+  AssetModalDarkIcon,
+  AssetPopoverIcon,
+  AssetPopoverDarkIcon,
+  AssetRadioIcon,
+  AssetRadioDarkIcon,
+  AssetSelectIcon,
+  AssetSelectDarkIcon,
+  AssetSpinnerIcon,
+  AssetSpinnerDarkIcon,
+  AssetTabViewIcon,
+  AssetTabViewDarkIcon,
+  AssetTextIcon,
+  AssetTextDarkIcon,
+  AssetToggleIcon,
+  AssetToggleDarkIcon,
+  AssetTooltipIcon,
+  AssetTooltipDarkIcon,
+  AssetTopNavigationIcon,
+  AssetTopNavigationDarkIcon,
+} from '../../assets/icons';
+
 import { MenuItem } from '../../model/menu-item.model';
 
 export interface ComponentData extends MenuItem {
@@ -12,203 +67,290 @@ export const data: ComponentData[] = [
     title: 'Autocomplete',
     route: 'Autocomplete',
     icon: (style: ImageStyle) => {
-      return <Icon style={style} size={48} name='autocomplete'/>;
+      return React.createElement(ThemedIcon, {
+        ...style, light: AssetAutocompleteIcon,
+        dark: AssetAutocompleteDarkIcon,
+      });
     },
   },
   {
     title: 'Avatar',
     route: 'Avatar',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} type='material-community' name='face-profile'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetAvatarIcon, dark: AssetAvatarDarkIcon },
+      );
     },
   },
   {
     title: 'BottomNavigation',
     route: 'BottomNavigation',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='bottom-navigation'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetBottomNavigationIcon, dark: AssetBottomNavigationDarkIcon },
+      );
     },
   },
   {
     title: 'Button',
     route: 'Button',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='button'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetButtonIcon, dark: AssetButtonDarkIcon },
+      );
     },
   },
   {
     title: 'ButtonGroup',
     route: 'ButtonGroup',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='button-group'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetButtonGroupIcon, dark: AssetButtonGroupDarkIcon },
+      );
     },
   },
   {
     title: 'Calendar',
     route: 'Calendar',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='calendar'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetCalendarIcon, dark: AssetCalendarDarkIcon },
+      );
     },
   },
   {
     title: 'Card',
     route: 'Card',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='card'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetCardIcon, dark: AssetCardDarkIcon },
+      );
     },
   },
   {
     title: 'CheckBox',
     route: 'CheckBox',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='check-box'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetCheckBoxIcon, dark: AssetCheckBoxDarkIcon },
+      );
     },
   },
   {
     title: 'Datepicker',
     route: 'Datepicker',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='datepicker-dark'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetDatepickerIcon, dark: AssetDatepickerDarkIcon },
+      );
     },
   },
   {
     title: 'Drawer',
     route: 'Drawer',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='drawer'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetDrawerIcon, dark: AssetDrawerDarkIcon },
+      );
     },
   },
   {
     title: 'Icon',
     route: 'Icon',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='icon'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetIconIcon, dark: AssetIconDarkIcon },
+      );
     },
   },
   {
     title: 'Input',
     route: 'Input',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='input'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetInputIcon, dark: AssetInputDarkIcon },
+      );
     },
   },
   {
     title: 'Layout',
     route: 'Layout',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='modal'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetModalIcon, dark: AssetModalDarkIcon },
+      );
     },
   },
   {
     title: 'List',
     route: 'List',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='list'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetListIcon, dark: AssetListDarkIcon },
+      );
     },
   },
   {
     title: 'Menu',
     route: 'Menu',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='menu'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetMenuIcon, dark: AssetMenuDarkIcon },
+      );
     },
   },
   {
     title: 'Modal',
     route: 'Modal',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='modal'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetModalIcon, dark: AssetModalDarkIcon },
+      );
     },
   },
   {
     title: 'OverflowMenu',
     route: 'OverflowMenu',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='overflow-menu'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetOverflowMenuIcon, dark: AssetOverflowMenuDarkIcon },
+      );
     },
   },
   {
     title: 'Popover',
     route: 'Popover',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='popover'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetPopoverIcon, dark: AssetPopoverDarkIcon },
+      );
     },
   },
   {
     title: 'Radio',
     route: 'Radio',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='radio'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetRadioIcon, dark: AssetRadioDarkIcon },
+      );
     },
   },
   {
     title: 'RadioGroup',
     route: 'RadioGroup',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='radio'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetRadioIcon, dark: AssetRadioDarkIcon },
+      );
     },
   },
   {
     title: 'RangeCalendar',
     route: 'RangeCalendar',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='calendar'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetCalendarIcon, dark: AssetCalendarDarkIcon },
+      );
     },
   },
   {
     title: 'RangeDatepicker',
     route: 'RangeDatepicker',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='datepicker'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetDatepickerIcon, dark: AssetDatepickerDarkIcon },
+      );
     },
   },
   {
     title: 'Select',
     route: 'Select',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='select'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetSelectIcon, dark: AssetSelectDarkIcon },
+      );
     },
   },
   {
     title: 'Spinner',
     route: 'Spinner',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='spinner'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetSpinnerIcon, dark: AssetSpinnerDarkIcon },
+      );
     },
   },
   {
     title: 'TabView',
     route: 'TabView',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='tab-view'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetTabViewIcon, dark: AssetTabViewDarkIcon },
+      );
     },
   },
   {
     title: 'Text',
     route: 'Text',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='format-color-text'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetTextIcon, dark: AssetTextDarkIcon },
+      );
     },
   },
   {
     title: 'Toggle',
     route: 'Toggle',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='toggle-switch'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetToggleIcon, dark: AssetToggleDarkIcon },
+      );
     },
   },
   {
     title: 'Tooltip',
     route: 'Tooltip',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='tooltip'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetTooltipIcon, dark: AssetTooltipDarkIcon },
+      );
     },
   },
   {
     title: 'TopNavigation',
     route: 'TopNavigation',
-    icon: (style: ImageStyle): IconElement => {
-      return <Icon style={style} size={48} name='top-navigation'/>;
+    icon: (style: ImageStyle) => {
+      return React.createElement(
+        ThemedIcon,
+        { ...style, light: AssetTopNavigationIcon, dark: AssetTopNavigationDarkIcon },
+      );
     },
   },
 ];

@@ -1,3 +1,5 @@
+import { ImageStyle } from 'react-native';
+import { IconElement, OverflowMenuProps } from '@southem/ui';
 import { StarIcon } from '../../../components';
 
 import {
@@ -7,40 +9,50 @@ import {
   ComponentShowcaseSetting,
 } from '../../../model/showcase.model';
 
-const defaultMenuItems = [
+export interface OverflowMenuItemType {
+  title: string;
+  accessoryLeft?: (style: ImageStyle) => IconElement;
+  disabled?: boolean;
+}
+
+export interface OverflowMenuPropsCustom extends OverflowMenuProps {
+  data: OverflowMenuItemType[];
+}
+
+const defaultMenuItems: OverflowMenuItemType[] = [
   { title: 'Item 1' },
   { title: 'Item 2' },
   { title: 'Item 3' },
 ];
 
-const withIconMenuItems = [
+const withIconMenuItems: OverflowMenuItemType[] = [
   {
     title: 'Item 1',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
   },
   {
     title: 'Item 2',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
   },
   {
     title: 'Item 3',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
   },
 ];
 
-const withDisabledItemMenuItems = [
+const withDisabledItemMenuItems: OverflowMenuItemType[] = [
   {
     title: 'Item 1',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
   },
   {
     title: 'Item 2',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
     disabled: true,
   },
   {
     title: 'Item 3',
-    icon: StarIcon,
+    accessoryLeft: StarIcon,
   },
 ];
 

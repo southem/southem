@@ -5,6 +5,7 @@ import {
   View,
   ViewProps,
   ViewStyle,
+  Dimensions,
 } from 'react-native';
 import {
   Frame,
@@ -88,6 +89,7 @@ export class Modal extends React.PureComponent<ModalProps, State> {
   };
 
   public componentDidMount(): void {
+    Dimensions.addEventListener('change', this.onDimensionChange);
     if (!this.modalId && this.props.visible) {
       this.show();
       return;
@@ -111,7 +113,14 @@ export class Modal extends React.PureComponent<ModalProps, State> {
   }
 
   public componentWillUnmount(): void {
+    Dimensions.removeEventListener('change', this.onDimensionChange);
     this.hide();
+  }
+
+  private onDimensionChange = (): void => {
+    if(this.props.visible) {
+      ModalService.update(this.modalId, this.renderMeasuringContentElement());
+    }
   }
 
   private onContentMeasure = (contentFrame: Frame): void => {

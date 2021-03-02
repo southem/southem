@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   GestureResponderEvent,
-  ImageProps,
   NativeSyntheticEvent,
   StyleSheet,
   TargetedEvent,
@@ -13,12 +12,12 @@ import {
   PropsService,
   RenderProp,
   renderTextElement,
-  renderNode,
+  renderIconElement,
   Overwrite,
   StyleType,
   StyledComponentProps,
 } from '../../devsupport';
-import { Icon, TextProps, Touchable } from '../../common';
+import { ImageProps, TextProps, Touchable } from '../../common';
 import { MenuItemDescriptor } from './menu.service';
 
 type MenuItemStyledProps = Overwrite<StyledComponentProps, {
@@ -136,9 +135,9 @@ export class MenuItem extends React.Component<MenuItemProps> {
         onPressIn={this.onPressIn}
         onPressOut={this.onPressOut}>
         <View style={[StyleSheet.absoluteFill, styles.indicator]}/>
-        {renderNode(Icon, accessoryLeft, { style: styles.icon })}
+        {renderIconElement(accessoryLeft, { style: styles.icon })}
         {renderTextElement(title, { style: styles.title })}
-        {renderNode(Icon, accessoryRight, { style: styles.icon })}
+        {renderIconElement(accessoryRight, { style: styles.icon })}
       </Touchable>
     );
   }

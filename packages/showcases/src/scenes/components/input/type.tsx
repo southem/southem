@@ -4,7 +4,7 @@ import {
   ComponentShowcaseSection,
   ComponentShowcaseSetting,
 } from '../../../model/showcase.model';
-import { StarIcon } from '../../../components/icons';
+import { StarIcon } from '../../../components';
 
 const defaultInput: ComponentShowcaseItem = {
   title: 'Default',
@@ -21,7 +21,7 @@ const disabledInput: ComponentShowcaseItem = {
 const iconInput: ComponentShowcaseItem = {
   title: 'Icon',
   props: {
-    icon: StarIcon,
+    accessoryRight: StarIcon,
   },
 };
 

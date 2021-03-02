@@ -1,19 +1,17 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import {
   Button,
-  ListItem,
   Text,
   TextElement,
+  Layout,
 } from '@southem/ui';
 
-export const CardDefaultHeader = () => (
-  <View style={styles.headerTextContainer}>
-    <ListItem
-      title='Title'
-      description='Description'
-    />
-  </View>
+export const CardDefaultHeader = (): ReactElement => (
+  <Layout style={styles.headerTextContainer}>
+    <Text category='h6'>Title</Text>
+    <Text category='s1'>Description</Text>
+  </Layout>
 );
 
 export const CardCustomHeader = () => (
@@ -30,7 +28,7 @@ export const CardCustomHeader = () => (
   </React.Fragment>
 );
 
-export const CardFooter = () => (
+export const CardFooter = (): ReactElement => (
   <View style={styles.footerContainer}>
     <Button
       style={styles.footerControl}
@@ -74,6 +72,6 @@ const styles = StyleSheet.create({
   },
   footerControl: {
     width: '20%',
-    marginHorizontal: 12,
+    marginHorizontal: 4,
   },
 });

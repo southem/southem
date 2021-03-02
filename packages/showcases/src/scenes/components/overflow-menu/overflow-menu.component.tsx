@@ -1,13 +1,17 @@
 import React from 'react';
-import { OverflowMenuElement, OverflowMenuProps } from '@southem/ui';
+import { OverflowMenuElement } from '@southem/ui';
 import { OverflowMenuShowcase } from './overflow-menu-showcase.component';
-import { overflowMenuSettings, overflowMenuShowcase } from './type';
 import { ShowcaseContainer } from '../../../components';
+import {
+  overflowMenuSettings,
+  overflowMenuShowcase,
+  OverflowMenuPropsCustom,
+} from './type';
 
 // @ts-ignore
 export const OverflowMenuScreen = ({ navigation }): React.ReactElement => {
 
-  const renderItem = (props: OverflowMenuProps): OverflowMenuElement => (
+  const renderItem = (props: OverflowMenuPropsCustom): OverflowMenuElement => (
     <OverflowMenuShowcase {...props} />
   );
 
@@ -20,4 +24,3 @@ export const OverflowMenuScreen = ({ navigation }): React.ReactElement => {
     />
   );
 };
-

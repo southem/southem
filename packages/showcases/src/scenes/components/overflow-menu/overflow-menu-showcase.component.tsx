@@ -1,45 +1,46 @@
 import React from 'react';
 import {
   Button,
+  ButtonElement,
+  // @ts-ignore
+  IndexPath,
   MenuItem,
   OverflowMenu,
   OverflowMenuElement,
-  OverflowMenuProps,
 } from '@southem/ui';
+import { OverflowMenuPropsCustom } from './type';
 
-export const OverflowMenuShowcase = (props: OverflowMenuProps): OverflowMenuElement => {
-
+export const OverflowMenuShowcase = (props: OverflowMenuPropsCustom): OverflowMenuElement => {
   const [visible, setVisible] = React.useState<boolean>(false);
-  // @ts-ignore
-  const [selectedIndex, setSelectedIndex] = React.useState<number>(null);
+  const [selectedIndex, setSelectedIndex] = React.useState<IndexPath>(null);
 
   const toggleMenu = (): void => {
     setVisible(!visible);
   };
 
-  const onSelect = (index: number): void => {
+  const onSelect = (index: IndexPath): void => {
     setSelectedIndex(index);
     toggleMenu();
   };
 
-  const renderToggleButton = () => (
-    <Button onPress={toggleMenu}>
-      TOGGLE MENU
-    </Button>
+  const renderButton = (): ButtonElement => (
+    <Button onPress={toggleMenu}>TOGGLE MENU</Button>
   );
 
+  // @ts-ignore
+  const renderData = props.data.map((el, index) => (
+    <MenuItem key={index} {...el} />
+  ));
+
   return (
-    // @ts-ignore
     <OverflowMenu
       {...props}
-      anchor={renderToggleButton}
       visible={visible}
       selectedIndex={selectedIndex}
       onSelect={onSelect}
-      onBackdropPress={toggleMenu}>
-      <MenuItem title='Users'/>
-      <MenuItem title='Orders'/>
-      <MenuItem title='Transactions'/>
+      onBackdropPress={toggleMenu}
+      anchor={renderButton}>
+      {renderData}
     </OverflowMenu>
   );
 };

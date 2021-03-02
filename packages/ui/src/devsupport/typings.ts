@@ -80,9 +80,28 @@ export type ShapeType =
   | string;
 
 export type InputSizeType =
-  |'small'
+  | 'small'
   | 'medium'
   | 'large'
+  | string;
+
+export type IconType =
+  | 'antdesign'
+  | 'entypo'
+  | 'evilicon'
+  | 'feather'
+  | 'font-awesome'
+  | 'font-awesome-5'
+  | 'fontisto'
+  | 'foundation'
+  | 'ionicon'
+  | 'material'
+  | 'material-community'
+  | 'octicon'
+  | 'simple-line-icon'
+  | 'zocial'
+  | 'moon'
+  | 'fontello'
   | string;
 
 export type TextCategoryType =
@@ -102,6 +121,7 @@ export type TextCategoryType =
   | string;
 
 export interface StyledComponentProps {
+  key?: number;
   style: StyleType;
   appearance?: string;
 }

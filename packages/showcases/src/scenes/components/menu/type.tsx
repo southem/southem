@@ -1,4 +1,6 @@
-import { StarIcon } from '../../../components/icons';
+import { ImageStyle } from 'react-native';
+import { IconElement, MenuProps } from '@southem/ui';
+import { StarIcon } from '../../../components';
 import {
   ComponentShowcase,
   ComponentShowcaseItem,
@@ -6,13 +8,27 @@ import {
   ComponentShowcaseSetting,
 } from '../../../model/showcase.model';
 
-const defaultMenuItems = [
+interface MenuType {
+  title: string;
+  accessoryLeft?: (style: ImageStyle) => IconElement;
+  disabled?: boolean;
+}
+
+export interface MenuShowcaseProps extends MenuProps {
+  data: MenuGroupType[];
+}
+
+export interface MenuGroupType extends MenuType {
+  subItems?: MenuType[];
+}
+
+const defaultMenuItems: MenuType[] = [
   { title: 'Item 1' },
   { title: 'Item 2' },
   { title: 'Item 3' },
 ];
 
-const withIconMenuItems = [
+const withIconMenuItems: MenuType[] = [
   {
     title: 'Item 1',
     accessoryLeft: StarIcon,
@@ -27,7 +43,7 @@ const withIconMenuItems = [
   },
 ];
 
-const withDisabledItemMenuItems = [
+const withDisabledItemMenuItems: MenuType[] = [
   {
     title: 'Item 1',
     accessoryLeft: StarIcon,
@@ -43,7 +59,7 @@ const withDisabledItemMenuItems = [
   },
 ];
 
-const withGroupsMenuItems = [
+const withGroupsMenuItems: MenuGroupType[] = [
   {
     title: 'Item 1',
     accessoryLeft: StarIcon,

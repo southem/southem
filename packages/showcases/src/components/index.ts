@@ -1,5 +1,6 @@
 export * from './brand-bottom-navigation';
 export * from './icons';
+export * from './layout-grid-list';
 export * from './menu-grid-list';
 export * from './renderer';
 export * from './showcase';

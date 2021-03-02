@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { DrawerElement, DrawerProps } from '@southem/ui';
+import { ButtonProps, DrawerElement } from '@southem/ui';
 import { DrawerShowcase } from './drawer-showcase.component';
 import { drawerShowcase } from './type';
 import { ShowcaseContainer } from '../../../components';
@@ -8,7 +8,7 @@ import { ShowcaseContainer } from '../../../components';
 // @ts-ignore
 export const DrawerScreen = ({ navigation }): React.ReactElement => {
 
-  const renderItem = (props: DrawerProps): DrawerElement => (
+  const renderItem = (props: ButtonProps): DrawerElement => (
     // @ts-ignore
     <DrawerShowcase
       {...props}

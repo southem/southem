@@ -210,6 +210,7 @@ class ButtonComponent extends PureComponent<ButtonProps> {
         })}
 
         {!loading && !!(children || title) && renderTextElement(
+          // @ts-ignore
           children || title,
           titleProps,
           StyleSheet.flatten([

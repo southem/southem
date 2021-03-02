@@ -1,11 +1,12 @@
-import { Linking, Platform } from 'react-native';
+import { Linking } from 'react-native';
 // @ts-ignore
 import SafariView from 'react-native-safari-view';
+import { platform } from '../utils/device';
 
 export class WebBrowserService {
 
   static openBrowserAsync = (url: string): Promise<any> => {
-    if (Platform.OS === 'ios') {
+    if (platform('ios')) {
       return WebBrowserService.openInAppUrl(url).catch(() => WebBrowserService.openUrl(url));
     } else {
       return WebBrowserService.openUrl(url);

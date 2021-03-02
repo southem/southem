@@ -24,8 +24,8 @@ export const LayoutsScreen = (props): React.ReactElement => {
       style={styles.safeArea}
       insets='top'>
       <TopNavigation
-        title='Southem Tricks'
-        leftControl={renderDrawerAction()}
+        title='Southem UI'
+        accessoryLeft={renderDrawerAction}
       />
       <Divider/>
       <MenuGridList

@@ -1,9 +1,16 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Divider, TopNavigation, TopNavigationAction } from '@southem/ui';
-import { SafeAreaLayout, MenuGridList } from '../../components';
-import { MenuIcon } from '../../components/icons';
-import { data } from './data';
+import {
+  Divider,
+  TopNavigation,
+  TopNavigationAction,
+} from '@southem/ui';
+import {
+  SafeAreaLayout,
+  MenuGridList,
+  MenuIcon,
+} from '../../../components';
+import { data } from '../data';
 
 // @ts-ignore
 export const ComponentsScreen = ({ navigation }): React.ReactElement => {
@@ -25,10 +32,10 @@ export const ComponentsScreen = ({ navigation }): React.ReactElement => {
       style={styles.safeArea}
       insets='top'>
       <TopNavigation
-        title='Southem Tricks'
-        leftControl={renderDrawerAction()}
+        title='Southem UI'
+        accessoryLeft={renderDrawerAction}
       />
-      <Divider />
+      <Divider/>
       <MenuGridList
         data={data}
         onItemPress={onItemPress}

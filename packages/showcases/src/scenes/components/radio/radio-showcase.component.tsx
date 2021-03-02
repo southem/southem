@@ -1,8 +1,11 @@
 import React from 'react';
-import { Radio, RadioElement, RadioProps } from '@southem/ui';
+import {
+  Radio,
+  RadioElement,
+  RadioProps,
+} from '@southem/ui';
 
 export const RadioShowcase = (props: RadioProps): RadioElement => {
-
   // @ts-ignore
   const [checked, setChecked] = React.useState<boolean>(props.checked);
 
@@ -10,7 +13,8 @@ export const RadioShowcase = (props: RadioProps): RadioElement => {
     <Radio
       {...props}
       checked={checked}
-      onChange={setChecked}
-    />
+      onChange={setChecked}>
+      {props.children}
+    </Radio>
   );
 };

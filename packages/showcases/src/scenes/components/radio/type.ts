@@ -38,7 +38,7 @@ const disabledUncheckedRadio: ComponentShowcaseItem = {
 const rightTextRadio: ComponentShowcaseItem = {
   title: 'Right Text',
   props: {
-    title: 'Place your text',
+    children: 'Place your text',
   },
 };
 
@@ -46,7 +46,7 @@ const leftTextRadio: ComponentShowcaseItem = {
   title: 'Left Text',
   props: {
     style: { flexDirection: 'row-reverse' },
-    title: 'Place your text',
+    children: 'Place your text',
   },
 };
 
@@ -54,7 +54,7 @@ const textDisabledRadio: ComponentShowcaseItem = {
   title: 'Text Disabled',
   props: {
     disabled: true,
-    title: 'Place your text',
+    children: 'Place your text',
   },
 };
 
@@ -105,6 +105,10 @@ export const radioSettings: ComponentShowcaseSetting[] = [
   {
     propertyName: 'status',
     value: 'danger',
+  },
+  {
+    propertyName: 'status',
+    value: 'control',
   },
   {
     propertyName: 'status',

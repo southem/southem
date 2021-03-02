@@ -1,12 +1,13 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { withThemes } from '@southem/theme';
 import { platform } from '../../tools';
 import createIcon from './createIcon';
+import { IconType } from '../../devsupport';
 
 type WrappedElementProps = any;
 export type IconProps<T = WrappedElementProps> = T & {
   name: string;
-  type?: string;
+  type?: IconType;
   color?: string;
   size?: string;
 };
@@ -21,10 +22,10 @@ const mapPropToStyles = [
 
 // @ts-ignore
 @withThemes('Icon', mapPropToStyles)
-class Icon extends PureComponent<IconProps> {
+class Icon extends Component<IconProps> {
   public static displayName = 'Icon';
-  public static defaultProps = {
-    type: 'material',
+  public static defaultProps: Partial<IconProps> = {
+    // type: 'material',
     size: 24,
   };
 

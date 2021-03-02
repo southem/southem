@@ -1,13 +1,19 @@
 /* eslint-disable */
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import {
-  Text,
-  Icon,
-} from '../../common';
-import { StyleType, ChildrenProp } from '../typings';
+import { Text, TextProps, TextElement } from '../../common/text';
+import { Icon, IconProps, IconElement } from '../../common/icon';
+import {StyleType} from '../typings';
 
-export const renderNode = (Component, content, defaultProps?): React.ReactElement => {
+export type RenderNodeType =
+  | undefined
+  | boolean
+  | string
+  | number
+  | Function
+  | React.ReactElement;
+
+export const renderNode = (Component, content: RenderNodeType, defaultProps?): React.ReactElement => {
   if (content == null || content === false) {
     return null;
   }
@@ -28,13 +34,21 @@ export const renderNode = (Component, content, defaultProps?): React.ReactElemen
   return <Component {...defaultProps} {...content} />;
 };
 
-export const renderTextElement = (component, defaultProps?, style?: StyleType): React.ReactElement =>
+export const renderTextElement = (
+  component: RenderNodeType,
+  defaultProps?: TextProps,
+  style?: StyleType,
+): TextElement =>
   renderNode(Text, component, {
     ...defaultProps,
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
   });
 
-export const renderIconElement = (component, defaultProps?, style?: StyleType): React.ReactElement =>
+export const renderIconElement = (
+  component: RenderNodeType,
+  defaultProps?: IconProps,
+  style?: StyleType,
+): IconElement =>
   renderNode(Icon, component, {
     ...defaultProps,
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),

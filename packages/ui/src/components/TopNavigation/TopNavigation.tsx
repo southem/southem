@@ -33,8 +33,8 @@ export interface TopNavigationProps extends ViewProps, TopNavigationStyledProps 
   subtitle?: RenderProp<TextProps> | React.ReactText;
   subtitleStyle?: StyleProp<TextStyle>;
   alignment?: AlignmentProp;
-  leftControl?: ActionElement;
-  rightControls?: ActionElementProp;
+  accessoryLeft?: RenderProp<ActionElement>;
+  accessoryRight?: RenderProp<ActionElementProp>;
 }
 
 export type TopNavigationElement = React.ReactElement<TopNavigationProps>;
@@ -42,6 +42,12 @@ export type TopNavigationElement = React.ReactElement<TopNavigationProps>;
 const LeftControlContainer = withThemes('LeftControlContainer')(View);
 const RightControlsContainer = withThemes('RightControlsContainer')(View);
 const TitleContainer = withThemes('TitleContainer')(View);
+const renderAction = (element, defaultProps?, style?): ActionElement =>
+  renderNode(TopNavigationAction, element, {
+    ...defaultProps,
+    style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
+  });
+/**
 const renderAction = (content, defaultProps?, style?): ActionElement[] =>
   React.Children.map(content, (element: ActionElement, index: number): ActionElement =>
     renderNode(TopNavigationAction, element, {
@@ -50,6 +56,7 @@ const renderAction = (content, defaultProps?, style?): ActionElement[] =>
       style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),
     }),
   );
+**/
 const renderText = (title, defaultProps?, style?): TextElement =>
   renderNode(Title, title, {
     ...defaultProps,
@@ -74,7 +81,7 @@ const renderSubText = (subtitle, defaultProps?, style?): TextElement =>
  * @property {string} alignment - Determines the alignment of the component.
  * Can be `center` or `start`.
  *
- * @property {React.ReactElement<TopNavigationActionProps>} leftControl - Determines the left control
+ * @property {React.ReactElement<TopNavigationActionProps>} accessoryLeft - Determines the left control
  * of the component.
  *
  * @property {React.ReactElement<TopNavigationActionProps>[]} rightControls - Determines the right controls
@@ -143,7 +150,7 @@ const renderSubText = (subtitle, defaultProps?, style?): TextElement =>
  *   return (
  *     <TopNavigation
  *       title='Title'
- *       leftControl={this.renderLeftControl()}
+ *       accessoryLeft={this.renderLeftControl()}
  *     />
  *   );
  * };
@@ -177,31 +184,78 @@ export class TopNavigation extends React.Component<TopNavigationProps> {
     alignment: 'center',
   };
 
+  private getAlignmentDependentStyles = (alignment: AlignmentProp) => {
+    if (alignment === 'center') {
+      return {
+        container: styles.containerCentered,
+        titleContainer: styles.titleContainerCentered,
+      };
+    }
+
+    return {
+      rightControlsContainer: styles.rightControlsContainerStart,
+    };
+  };
+
   public render(): React.ReactNode {
     const {
       style,
-      leftControl,
-      rightControls,
       title,
       titleStyle,
       subtitle,
       subtitleStyle,
-      ...restProps
+      alignment,
+      accessoryLeft,
+      accessoryRight,
+      ...viewProps
     } = this.props;
 
+    const alignmentStyles = this.getAlignmentDependentStyles(alignment);
+
     return (
-      <View style={style} {...restProps}>
+      <View style={[styles.container, alignmentStyles.container, style]} {...viewProps}>
         <LeftControlContainer>
-          {renderAction(leftControl)}
+          {renderAction(accessoryLeft)}
         </LeftControlContainer>
         <TitleContainer>
           {renderText(title, {style: titleStyle})}
           {renderSubText(subtitle, {style: subtitleStyle})}
         </TitleContainer>
         <RightControlsContainer>
-          {renderAction(rightControls)}
+          {renderAction(accessoryRight)}
         </RightControlsContainer>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  containerCentered: {
+    justifyContent: 'space-between',
+  },
+  titleContainerCentered: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  titleContainer: {
+    flexDirection: 'row',
+    flex: 1,
+  },
+  leftControlContainer: {
+    flexDirection: 'row',
+    zIndex: 1,
+  },
+  rightControlsContainer: {
+    flexDirection: 'row',
+    zIndex: 1,
+  },
+  rightControlsContainerStart: {
+    flex: 0,
+    justifyContent: 'flex-end',
+  },
+});

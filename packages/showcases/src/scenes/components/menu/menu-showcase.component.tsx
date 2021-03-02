@@ -1,42 +1,45 @@
 import React from 'react';
-import { Menu, MenuGroup, MenuItem, MenuItemProps, MenuElement, MenuProps } from '@southem/ui';
+import {
+  Menu,
+  MenuGroup,
+  MenuItem,
+  MenuElement,
+  // @ts-ignore
+  IndexPath,
+} from '@southem/ui';
+import { MenuShowcaseProps } from './type';
 
-export const MenuShowcase = (props: MenuProps): MenuElement => {
+export const MenuShowcase = (props: MenuShowcaseProps): MenuElement => {
 
   const [selectedIndex, setSelectedIndex] = React.useState(null);
+
+  const onSelect = (index: IndexPath): void => {
+    setSelectedIndex(index.row);
+  };
+
   // @ts-ignore
-  const {data, ...restProps} = props;
-
-  const onSelect = (index: number): void => {
-    // @ts-ignore
-    setSelectedIndex(index);
-  };
-
-  const renderContent = (): React.ReactElement[] => {
-    return data && data.map((menu: MenuItemProps, index: number) => {
-      // @ts-ignore
-      const { subItems } = menu;
-      if (subItems !== undefined) {
-        return (
-          <MenuGroup key={`g-menu-${index}`} {...menu}>
-            {
-              subItems.map((submenu: MenuItemProps, subIndex: number) => (<MenuItem
-                key={`sub-menu-${subIndex}`} {...submenu} />))
-            }
-          </MenuGroup>
-        );
-      }
-      return (<MenuItem key={`menu-${index}`} {...menu} />);
-    });
-  };
+  const renderData: MenuElement[] = props.data.map((el, index) => (
+    el.subItems ? (
+      <MenuGroup key={index}>
+        {el.subItems.map((
+          // tslint:disable-next-line:no-shadowed-variable
+          el,
+          // tslint:disable-next-line:no-shadowed-variable
+          index,
+        ) => (
+          <MenuItem key={index} {...el} />
+        ))}
+      </MenuGroup>
+    ) : <MenuItem key={index} {...el} />
+  ));
 
   return (
-    // @ts-ignore
     <Menu
-      {...restProps}
+      {...props}
+      // @ts-ignore
       selectedIndex={selectedIndex}
       onSelect={onSelect}>
-      {renderContent()}
+      {renderData}
     </Menu>
   );
 };

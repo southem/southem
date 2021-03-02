@@ -3,18 +3,21 @@ import { StyleSheet } from 'react-native';
 import {
   Autocomplete,
   AutocompleteElement,
-  AutocompleteOption,
-  AutocompleteProps,
+  AutocompleteItem,
 } from '@southem/ui';
+import { AutocompletePropsCustom } from './type';
 
-export const AutocompleteShowcase = (props: AutocompleteProps): AutocompleteElement => {
+
+export const AutocompleteShowcase = (props: AutocompletePropsCustom): AutocompleteElement => {
 
   const [value, setValue] = React.useState(props.value);
   const [data, setData] = React.useState(props.data);
 
-  const onSelect = ({ title }: AutocompleteOption): void => {
-    setValue(title);
+  const onSelect = (index: number): void => {
+    setValue(props.data[index].title);
   };
+
+  const RenderComponent = props.renderItem;
 
   const onChangeText = (query: string): void => {
     const visibleData = props.data.filter((item) => {
@@ -25,15 +28,19 @@ export const AutocompleteShowcase = (props: AutocompleteProps): AutocompleteElem
     setData(visibleData);
   };
 
+  const renderOption = (item, index): React.ReactElement => (
+    <AutocompleteItem key={index} title={item.title} />
+  );
+
   return (
     <Autocomplete
       {...props}
       style={styles.autocomplete}
       value={value}
-      data={data}
       onChangeText={onChangeText}
-      onSelect={onSelect}
-    />
+      onSelect={onSelect}>
+      {data.map(RenderComponent || renderOption)}
+    </Autocomplete>
   );
 };
 

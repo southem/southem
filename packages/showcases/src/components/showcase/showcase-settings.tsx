@@ -2,7 +2,10 @@ import React from 'react';
 import {I18nManager, StyleSheet, ViewProps} from 'react-native';
 import {
   Button,
+  ButtonElement,
   CheckBox,
+  // @ts-ignore
+  IndexPath,
   Layout,
   OverflowMenu,
   MenuItem,
@@ -25,16 +28,25 @@ export const ShowcaseSettings = (props: ShowcaseSettingsProps): React.ReactEleme
   const [themesMenuVisible, setThemesMenuVisible] = React.useState<boolean>(false);
   const [settingsMenuVisible, setSettingsMenuVisible] = React.useState<boolean>(false);
 
-  const createSettingMenuItem = (setting: ComponentShowcaseSetting): React.ReactElement => {
-    const title = setting.description || `${setting.propertyName}: ${setting.value}`;
-    return (<MenuItem key={'@settings'} title={title}/>);
-  };
+  const createSettingMenuItem = (setting: ComponentShowcaseSetting, index: number): React.ReactElement => (
+    <MenuItem
+      // @ts-ignore
+      key={`@settings-${index}`}
+      title={setting.description || `${setting.propertyName}: ${setting.value}`}
+    />
+  );
 
-  const createThemeMenuItem = (title: string): React.ReactElement => (<MenuItem key={'@theme'} title={title}/>);
+  const createThemeMenuItem = (title: string, index: number): React.ReactElement => (
+    <MenuItem
+      // @ts-ignore
+      key={`@theme-${index}`}
+      title={title}
+    />
+  );
 
-  const onThemeSelect = (index: number): void => {
+  const onThemeSelect = (index: IndexPath): void => {
     // @ts-ignore
-    props.onThemeSelect(props.themes[index]);
+    props.onThemeSelect(props.themes[index.row]);
     setThemesMenuVisible(false);
   };
 
@@ -42,9 +54,9 @@ export const ShowcaseSettings = (props: ShowcaseSettingsProps): React.ReactEleme
     props.onReset();
   };
 
-  const onSettingSelect = (index: number): void => {
+  const onSettingSelect = (index: IndexPath): void => {
     // @ts-ignore
-    const {[index]: setting} = props.settings;
+    const {[index.row]: setting} = props.settings;
 
     // @ts-ignore
     props.onSettingSelect({
@@ -81,40 +93,54 @@ export const ShowcaseSettings = (props: ShowcaseSettingsProps): React.ReactEleme
   const renderRTLToggle = (): React.ReactElement => (
     <CheckBox
       checked={I18nManager.isRTL}
-      onChange={toggleRtl}
-      text='RTL'
-    />
+      onChange={toggleRtl}>
+      RTL
+    </CheckBox>
+  );
+
+  const renderButtonThemes = (): ButtonElement => (
+    <Button
+      size='mini'
+      accessoryLeft={ColorPaletteIcon}
+      disabled={!props.themes}
+      onPress={toggleThemesMenu}>
+      THEMES
+    </Button>
+  );
+
+  const renderButtonSettings = (): ButtonElement => (
+    <Button
+      size='mini'
+      accessoryLeft={SettingsIcon}
+      disabled={!props.settings}
+      onPress={toggleSettingsMenu}>
+      SETTINGS
+    </Button>
   );
 
   return (
-    <Layout
-      style={[styles.container, props.style]}
-      level='1'>
+    <Layout style={styles.container} level='1'>
       <OverflowMenu
         visible={themesMenuVisible}
-        anchor={() => <Button size='mini' icon={ColorPaletteIcon} disabled={!props.themes} title='Themes'
-                              onPress={toggleThemesMenu}/>}
-        // @ts-ignore
         onSelect={onThemeSelect}
-        onBackdropPress={toggleThemesMenu}>
+        onBackdropPress={toggleThemesMenu}
+        anchor={renderButtonThemes}>
         {createThemesMenuItems()}
       </OverflowMenu>
       <OverflowMenu
         visible={settingsMenuVisible}
-        // @ts-ignore
         onSelect={onSettingSelect}
-        anchor={() => <Button size='mini' title='Settings' icon={SettingsIcon}
-                              disabled={!props.settings} onPress={toggleSettingsMenu}/>}
-        onBackdropPress={toggleSettingsMenu}>
+        onBackdropPress={toggleSettingsMenu}
+        anchor={renderButtonSettings}>
         {createSettingsMenuItems()}
       </OverflowMenu>
       <Button
         size='mini'
         status='danger'
-        icon={TrashIcon}
+        accessoryLeft={TrashIcon}
         disabled={!props.settings}
         onPress={onResetButtonPress}>
-        Reset
+        RESET
       </Button>
       {__DEV__ && renderRTLToggle()}
     </Layout>

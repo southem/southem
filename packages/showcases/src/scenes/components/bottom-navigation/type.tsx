@@ -1,12 +1,19 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
 import { BottomNavigationTab } from '@southem/ui';
-import { StarIcon } from '../../../components/icons';
+import { StarIcon } from '../../../components';
 import {
   ComponentShowcase,
   ComponentShowcaseItem,
   ComponentShowcaseSection,
   ComponentShowcaseSetting,
 } from '../../../model/showcase.model';
+
+const styles = StyleSheet.create({
+  customIcons: {
+    marginTop: 10,
+  },
+});
 
 const titleBottomNavigation: ComponentShowcaseItem = {
   props: {
@@ -35,11 +42,11 @@ const iconTitleBottomNavigation: ComponentShowcaseItem = {
   props: {
     children: [
       // @ts-ignore
-      <BottomNavigationTab icon={StarIcon} title='Tab 1'/>,
+      <BottomNavigationTab style={styles.customIcons}  icon={StarIcon} title='Tab 1'/>,
       // @ts-ignore
-      <BottomNavigationTab icon={StarIcon} title='Tab 2'/>,
+      <BottomNavigationTab style={styles.customIcons} icon={StarIcon} title='Tab 2'/>,
       // @ts-ignore
-      <BottomNavigationTab icon={StarIcon} title='Tab 3'/>,
+      <BottomNavigationTab style={styles.customIcons} icon={StarIcon} title='Tab 3'/>,
     ],
   },
 };
