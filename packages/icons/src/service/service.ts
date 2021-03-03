@@ -7,6 +7,7 @@ import {
   IconPack,
   IconProvider,
 } from './type';
+import { IconProps } from '../type';
 
 function throwPackNotFoundError(name: string) {
   const docRoot: string = 'https://eldorplus.github.io/southem-ui/docs';
@@ -37,8 +38,6 @@ export interface RegisteredIcon<T> {
   type: string;
   icon: IconProvider<T>;
 }
-
-type IconProps = any;
 
 /**
  * This service allows to register multiple icon types to use them later within

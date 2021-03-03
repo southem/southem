@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 import { withThemes } from '@southem/theme';
 import { platform } from '@southem/tools';
-import createIcon from './createIcon';
-import { IconType } from '../type';
-
-type WrappedElementProps = any;
-export type IconProps<T = WrappedElementProps> = T & {
-  name: string;
-  type?: IconType;
-  color?: string;
-  size?: string;
-};
-export type IconElement<T = WrappedElementProps> = React.ReactElement<IconProps<T>>;
+import { IconProps } from '../type';
+import {
+  IconRegistryService,
+  RegisteredIcon,
+} from '../service';
 
 const mapPropToStyles = [
   'name',
@@ -25,7 +19,7 @@ const mapPropToStyles = [
 export class Icon extends Component<IconProps> {
   public static displayName = 'Icon';
   public static defaultProps: Partial<IconProps> = {
-    // type: 'material',
+    type: 'material',
     size: 24,
   };
 
@@ -38,10 +32,8 @@ export class Icon extends Component<IconProps> {
     }
 
     // @ts-ignore
-    const DefaultIcon = createIcon(type | 'material');
-    return (<DefaultIcon {...{
-      name,
-      ...iconProps,
-    }} />);
+    const registeredIcon: RegisteredIcon<T> = IconRegistryService.getIcon(name, type);
+    // @ts-ignore
+    return registeredIcon.icon.toReactElement(iconProps as T);
   }
 }

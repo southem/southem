@@ -13,9 +13,9 @@
     "githubUrl": "https://github.com/southem/southem",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
-    "icon": "src/assets/images/icon.png",
+    "icon": "src/assets/images/icon-app.png",
     "splash": {
-      "image": "src/assets/images/splash.png",
+      "image": "src/assets/images/image-splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -48,7 +48,7 @@
       ]
     },
     "androidStatusBar": {
-      "barStyle": "light-content",
+      "barStyle": "dark-content",
       "backgroundColor": "#F7F9FC"
     },
     "entryPoint": "node_modules/expo/AppEntry.js"

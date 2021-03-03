@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type IconType =
   | 'antdesign'
   | 'entypo'
@@ -16,3 +18,14 @@ export type IconType =
   | 'moon'
   | 'fontello'
   | string;
+
+export type WrappedElementProps = any;
+export type IconProps<T = WrappedElementProps> = T & {
+  name: string;
+  type?: IconType;
+  color?: string;
+  size?: string;
+};
+
+export type IconElement<T = WrappedElementProps> = React.ReactElement<IconProps<T>>;
+export type IconComponent = React.ComponentType<IconProps>;

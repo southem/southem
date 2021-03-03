@@ -9,6 +9,7 @@ import {
   fireEvent,
   RenderAPI,
 } from 'react-native-testing-library';
+import { ReactTestInstance } from 'react-test-renderer';
 import Theme, {
   ThemeProvider,
   ThemeProviderProps,
@@ -19,17 +20,21 @@ import {
 import {
   Icon,
   IconProps,
+  IconRegistry,
+  SouthemIconsPack,
 } from '@southem/icons';
-import {ReactTestInstance} from 'react-test-renderer';
 
 Theme.registerDefaultTheme(darkTheme);
 
 const IconMock = (props?: IconProps): React.ReactElement<ThemeProviderProps> => {
   return (
-    <ThemeProvider
-      theme={'default'}>
-      <Icon {...props} />
-    </ThemeProvider>
+    <>
+      <IconRegistry icons={SouthemIconsPack}/>
+      <ThemeProvider
+        theme={'default'}>
+        <Icon {...props} />
+      </ThemeProvider>
+    </>
   );
 };
 

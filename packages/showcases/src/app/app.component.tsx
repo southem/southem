@@ -26,7 +26,9 @@ import {
   FiraSans_Black,
   FiraSans_Black_Italic,
 } from '@southem/fonts';
+import { IconRegistry, SouthemIconsPack } from '@southem/icons';
 import { AppStorage } from '../services/app-storage.service';
+import { AppIconsPack } from './app-icons-pack';
 import {
   SplashImage,
   LoadingAnimationProps,
@@ -66,6 +68,8 @@ const loadingTasks: Task[] = [
     'Fira Sans Extra Bold Italic': FiraSans_Extra_Bold_Italic,
     'Fira Sans Black': FiraSans_Black,
     'Fira Sans Black Italic': FiraSans_Black_Italic,
+    'opensans-regular': require('../assets/fonts/opensans-regular.ttf'),
+    'roboto-regular': require('../assets/fonts/roboto-regular.ttf'),
   }),
   // @ts-ignore
   () => AppStorage.getTheme(defaultConfig.theme).then(result => ['theme', result]),
@@ -75,6 +79,7 @@ const loadingTasks: Task[] = [
 const App = (props): React.ReactElement => {
   return (
     <React.Fragment>
+      <IconRegistry icons={[...SouthemIconsPack, AppIconsPack]}/>
       <ThemeProvider theme={'dark'}>
         <SafeAreaProvider>
           <StatusBar />

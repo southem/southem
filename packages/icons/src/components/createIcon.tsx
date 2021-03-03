@@ -17,9 +17,9 @@ import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIc
 import OcticonIcon from 'react-native-vector-icons/Octicons';
 import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons';
 import ZocialIcon from 'react-native-vector-icons/Zocial';
-import createConfig from './createConfig';
-import icoMoonConfig from './selection.json';
-import fontelloConfig from './config.json';
+import createConfig from '../service/config';
+import icoMoonConfig from '../icons/moon/selection.json';
+import fontelloConfig from '../icons/fontello/config.json';
 
 const customIcons = {};
 
