@@ -94,7 +94,7 @@ const Splash = ({ loading }: LoadingAnimationProps): React.ReactElement => (
   // @ts-ignore
   <SplashImage
     loading={loading}
-    source={require('../assets/images/splash.png')}
+    source={require('../assets/images/image-splash.png')}
   />
 );
 

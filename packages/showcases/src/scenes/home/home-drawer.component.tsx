@@ -44,7 +44,7 @@ export const HomeDrawer = ({ navigation }): DrawerElement => {
         <View style={styles.profileContainer}>
           <Avatar
             size='big'
-            source={require('../../assets/images/icon.png')}
+            source={require('../../assets/images/icon-app.png')}
           />
           <Text style={styles.profileName} category='h6'>
             Southem UI

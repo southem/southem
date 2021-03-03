@@ -11,6 +11,7 @@ const frameworkModules = {
   '@southem/html': path.resolve(__dirname, '../html'),
   '@southem/icons': path.resolve(__dirname, '../icons'),
   '@southem/theme': path.resolve(__dirname, '../theme'),
+  '@southem/tools': path.resolve(__dirname, '../tools'),
   '@southem/ui': path.resolve(__dirname, '../ui'),
 };
 
