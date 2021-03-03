@@ -1,4 +1,4 @@
-import { normalize } from '../../../tools';
+import { normalize } from '@southem/tools';
 import { transparent } from '../../colors';
 import palette from '../_palette';
 

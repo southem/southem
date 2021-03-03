@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { normalize } from '../tools';
+import { normalize } from '@southem/tools';
 import { black } from './colors';
 
 interface IShadowOffset {

@@ -1,6 +1,5 @@
 /* tslint:disable */
 import {
-  NativeModules,
   Dimensions,
   Platform,
   StatusBar,
@@ -8,6 +7,7 @@ import {
   PixelRatio,
 } from 'react-native';
 import { get } from 'lodash';
+import DeviceInfo from 'react-native-device-info';
 
 import {
   IPHONE_X_LONG_SIDE,
@@ -42,9 +42,7 @@ export function isAndroidRTL() {
 }
 
 export function isTablet(): boolean {
-  return platform('ios')
-    ? NativeModules.RNDeviceInfo.isTablet
-    : NativeModules.RNDeviceInfo.isTablet;
+  return DeviceInfo.isTablet();
 }
 
 export function isIphoneX(): boolean {

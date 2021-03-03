@@ -1,4 +1,4 @@
-import { normalize } from '../../tools';
+import { normalize } from '@southem/tools';
 
 export const actionButtonSize = 56;
 export const iconSize = 24;

@@ -1,4 +1,4 @@
-import { isValidString } from '@southem/ui';
+import { isValidString } from '@southem/tools';
 
 describe('@validation: service checks', () => {
 

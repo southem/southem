@@ -1,9 +1,9 @@
 /* eslint-disable */
 import React, {PureComponent} from 'react';
+import { Icon } from '@southem/icons';
 import { View, ViewProps } from 'react-native';
 import { withThemes } from '@southem/theme';
 import { StyleType } from '../../../devsupport';
-import { Icon } from '../../icon';
 
 interface KnobProps {
   // size: ControlSize | number;

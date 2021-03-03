@@ -1,8 +1,8 @@
 /* eslint-disable */
+import { normalize } from '@southem/tools';
 import {typography} from '../../typography';
 import palette from '../_palette';
 import {fontSizeBody} from '../../spacing';
-import { normalize } from '../../../tools';
 
 export default {
   Message: {},

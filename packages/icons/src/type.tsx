@@ -1,0 +1,18 @@
+export type IconType =
+  | 'antdesign'
+  | 'entypo'
+  | 'evilicon'
+  | 'feather'
+  | 'font-awesome'
+  | 'font-awesome-5'
+  | 'fontisto'
+  | 'foundation'
+  | 'ionicon'
+  | 'material'
+  | 'material-community'
+  | 'octicon'
+  | 'simple-line-icon'
+  | 'zocial'
+  | 'moon'
+  | 'fontello'
+  | string;

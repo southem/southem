@@ -1,4 +1,4 @@
-import { normalize } from '../../tools';
+import { normalize } from '@southem/tools';
 import { fontWeight } from './_font-weight';
 
 export default {

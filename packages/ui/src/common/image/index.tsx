@@ -11,7 +11,7 @@ import {
   isNumber,
 } from 'lodash';
 import { withThemes } from '@southem/theme';
-import { isAndroid } from '../../tools';
+import { isAndroid } from '@southem/tools';
 
 // A valid source is either an object with an uri key or a number (from a `require` call)
 const isValidSource = (source: ImageLoadEventData) => isNumber(source) || (isObject(source) && source.uri);

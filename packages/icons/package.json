@@ -1,14 +1,14 @@
 {
-  "name": "@southem/ui",
+  "name": "@southem/icons",
   "description": "Customizable set of components for React Native applications",
   "version": "0.0.1",
   "author": "Southem <contact@southem.com>",
   "license": "MIT",
-  "homepage": "https://github.com/southem/southem/tree/master/packages/ui#readme",
+  "homepage": "https://github.com/southem/southem/tree/master/packages/icons#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/southem/southem.git",
-    "directory": "packages/ui"
+    "directory": "packages/icons"
   },
   "bugs": {
     "url": "https://github.com/southem/southem/issues"
@@ -17,30 +17,17 @@
     "react-native",
     "southem",
     "kit",
-    "ui"
+    "icons"
   ],
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "color": "^3.1.2",
-    "events": "^3.1.0",
-    "lodash": "^4.17.19",
-    "moment": "^2.27.0"
+    "react-native-vector-icons": "^6.6.0"
   },
   "peerDependencies": {
     "@southem/animation": "0.0.1",
-    "@southem/icons": "0.0.1",
     "@southem/theme": "0.0.1",
-    "@southem/tools": "0.0.1",
     "react-native-svg": "^12.1.0"
-  },
-  "rnpm": {
-    "assets": [
-      "assets/fonts"
-    ],
-    "commands": {
-      "postlink": "node ./node_modules/@southem/ui/scripts/link.js"
-    }
   }
 }

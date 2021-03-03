@@ -1,4 +1,4 @@
-import { normalize } from '../tools';
+import { normalize } from '@southem/tools';
 import { black, transparent } from './colors';
 
 interface IShadowOffset {

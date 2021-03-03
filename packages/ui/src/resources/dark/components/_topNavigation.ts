@@ -4,7 +4,7 @@ import {
     ifIphoneX,
     normalize,
     getStatusBarHeight,
-} from '../../../tools';
+} from '@southem/tools';
 import palette from '../_palette';
 
 export default {

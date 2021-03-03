@@ -11,6 +11,7 @@ import {
   GestureResponderEvent,
 } from 'react-native';
 import { withThemes } from '@southem/theme';
+import { Icon, IconProps } from '@southem/icons';
 import {
   ButtonType,
   Overwrite,
@@ -22,7 +23,6 @@ import {
   StyledComponentProps,
 } from '../../devsupport';
 import { TextProps } from '../text';
-import { Icon, IconProps } from '../icon';
 import { ActivityIndicator, ActivityProps } from '../activityIndicator';
 
 type ButtonStyledProps = Overwrite<StyledComponentProps, {

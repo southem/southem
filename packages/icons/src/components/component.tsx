@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { withThemes } from '@southem/theme';
-import { platform } from '../../tools';
+import { platform } from '@southem/tools';
 import createIcon from './createIcon';
-import { IconType } from '../../devsupport';
+import { IconType } from '../type';
 
 type WrappedElementProps = any;
 export type IconProps<T = WrappedElementProps> = T & {
@@ -22,7 +22,7 @@ const mapPropToStyles = [
 
 // @ts-ignore
 @withThemes('Icon', mapPropToStyles)
-class Icon extends Component<IconProps> {
+export class Icon extends Component<IconProps> {
   public static displayName = 'Icon';
   public static defaultProps: Partial<IconProps> = {
     // type: 'material',
@@ -31,7 +31,7 @@ class Icon extends Component<IconProps> {
 
   public render() {
     // tslint:disable-next-line:prefer-const
-    let {name, type, ...attributes} = this.props;
+    let {name, type, ...iconProps} = this.props;
 
     if (type === 'ionicon') {
       name = platform('android') ? `md-${name}` : `ios-${name}`;
@@ -41,12 +41,7 @@ class Icon extends Component<IconProps> {
     const DefaultIcon = createIcon(type | 'material');
     return (<DefaultIcon {...{
       name,
-      ...attributes,
+      ...iconProps,
     }} />);
   }
 }
-
-export {
-  Icon,
-  createIcon,
-};

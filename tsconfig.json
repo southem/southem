@@ -13,18 +13,35 @@
     "declaration": true,
     "skipLibCheck": true,
     "paths": {
-      "@southem/ui/*": [
-        "./packages/ui",
-        "./packages/ui/src/*"
+      "@southem/animation/*": [
+        "./packages/animation",
+        "./packages/animation/src/*"
+      ],
+      "@southem/fonts/*": [
+        "./packages/fonts",
+        "./packages/fonts/src/*"
+      ],
+      "@southem/html/*": [
+        "./packages/html",
+        "./packages/html/src/*"
+      ],
+      "@southem/icons/*": [
+        "./packages/icons",
+        "./packages/icons/src/*"
       ],
       "@southem/theme/*": [
         "./packages/theme",
         "./packages/theme/src/*"
       ],
-      "@southem/animation/*": [
-        "./packages/animation",
-        "./packages/animation/src/*"
+      "@southem/tools/*": [
+        "./packages/tools",
+        "./packages/tools/src/*"
       ],
+      "@southem/ui/*": [
+        "./packages/ui",
+        "./packages/ui/src/*"
+      ],
+
       "@pg/*": [
         "./packages/showcases/*"
       ]

@@ -14,6 +14,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import { withThemes } from '@southem/theme';
+import { Icon } from '@southem/icons';
 import {
   StatusType,
   SizeType,
@@ -24,7 +25,6 @@ import {
   StyledComponentProps,
 } from '../../devsupport';
 import { TextProps } from '../text';
-import { Icon } from '../icon';
 import InputContainer from './InputContainer';
 import WrapIcon from './WrapIcon';
 import TextInput from './TextInput';

@@ -5,7 +5,6 @@ import {
   ActivityIndicatorProps,
   ActivityIndicator as RNActivityIndicator,
 } from 'react-native';
-// import PropTypes from 'prop-types';
 import { withThemes } from '@southem/theme';
 
 const mapPropToStyles = [

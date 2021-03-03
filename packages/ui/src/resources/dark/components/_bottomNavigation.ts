@@ -1,5 +1,5 @@
 import palette from '../_palette';
-import { normalize } from '../../../tools';
+import { normalize } from '@southem/tools';
 
 export default {
   BottomNavigation: {

@@ -1,4 +1,4 @@
-import { normalize } from '../../../tools';
+import { normalize } from '@southem/tools';
 import { black, transparent, white } from '../../colors';
 import { fontSizeButton } from '../../spacing';
 import palette from '../_palette';

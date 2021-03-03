@@ -16,7 +16,6 @@ import {
 type ChildElement = React.ReactText | TextElement;
 
 interface ComponentProps extends RNTextProps {
-  key?: number;
   style?: StyleProp<TextStyle>;
   category?: TextCategoryType;
   status?: StatusType;

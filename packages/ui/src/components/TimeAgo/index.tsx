@@ -1,9 +1,12 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import moment from 'moment';
-import { Timer } from '../../tools';
+import {
+  Timer,
+  shallowEqual,
+  blacklist,
+} from '@southem/tools';
 import { Text } from '../../common';
-import { shallowEqual, blacklist } from '../../tools';
 
 export class TimeAgo extends Component {
     props: {

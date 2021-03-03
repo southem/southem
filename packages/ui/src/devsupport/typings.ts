@@ -85,25 +85,6 @@ export type InputSizeType =
   | 'large'
   | string;
 
-export type IconType =
-  | 'antdesign'
-  | 'entypo'
-  | 'evilicon'
-  | 'feather'
-  | 'font-awesome'
-  | 'font-awesome-5'
-  | 'fontisto'
-  | 'foundation'
-  | 'ionicon'
-  | 'material'
-  | 'material-community'
-  | 'octicon'
-  | 'simple-line-icon'
-  | 'zocial'
-  | 'moon'
-  | 'fontello'
-  | string;
-
 export type TextCategoryType =
   | 'h1'
   | 'h2'

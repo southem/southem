@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { throttle, isEmpty } from 'lodash';
 import { StyleType, withThemes } from '@southem/theme';
-import { platform } from '../../tools';
+import { platform } from '@southem/tools';
 import { renderNode } from '../../devsupport';
 import {
   ListItemProps,

@@ -45,12 +45,6 @@ export {
 } from './divider';
 
 export {
-  Icon,
-  IconProps,
-  IconElement,
-} from './icon';
-
-export {
   Image,
   ImageProps,
   ImageElement,

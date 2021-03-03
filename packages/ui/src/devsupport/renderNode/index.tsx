@@ -1,8 +1,8 @@
 /* eslint-disable */
 import React from 'react';
 import { StyleSheet } from 'react-native';
+import { Icon, IconProps, IconElement } from '@southem/icons';
 import { Text, TextProps, TextElement } from '../../common/text';
-import { Icon, IconProps, IconElement } from '../../common/icon';
 import {StyleType} from '../typings';
 
 export type RenderNodeType =

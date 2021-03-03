@@ -8,7 +8,7 @@ import {
   RenderProp,
   Overwrite,
 } from '../../devsupport';
-import { platform } from '../../tools';
+import { platform } from '@southem/tools';
 import {
   Frame,
   MeasureElement,

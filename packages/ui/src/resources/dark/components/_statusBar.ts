@@ -1,4 +1,4 @@
-import { getStatusBarHeight } from '../../../tools';
+import { getStatusBarHeight } from '@southem/tools';
 
 export default {
   StatusBar: {

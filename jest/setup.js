@@ -1,3 +1,5 @@
+import mockRNDeviceInfo from 'react-native-device-info/jest/react-native-device-info-mock'
+
 jest.mock('react-native-background-timer', () => {
   return {
     runBackgroundTimer: jest.fn(),
@@ -8,3 +10,5 @@ jest.mock('react-native-background-timer', () => {
     clearTimeout: jest.fn()
   };
 });
+
+jest.mock('react-native-device-info', () => mockRNDeviceInfo)

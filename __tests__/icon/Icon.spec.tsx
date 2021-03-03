@@ -15,9 +15,11 @@ import Theme, {
 } from '@southem/theme';
 import {
   darkTheme,
+} from '@southem/ui';
+import {
   Icon,
   IconProps,
-} from '@southem/ui';
+} from '@southem/icons';
 import {ReactTestInstance} from 'react-test-renderer';
 
 Theme.registerDefaultTheme(darkTheme);

@@ -1,0 +1,30 @@
+{
+  "name": "@southem/tools",
+  "description": "Customizable set of components for React Native applications",
+  "version": "0.0.1",
+  "author": "Southem <contact@southem.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/southem/southem/tree/master/packages/tools#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/southem/southem.git",
+    "directory": "packages/tools"
+  },
+  "bugs": {
+    "url": "https://github.com/southem/southem/issues"
+  },
+  "keywords": [
+    "react-native",
+    "southem",
+    "kit",
+    "tools"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "react-native-cross-platform-responsive-dimensions": "^0.9.1",
+    "react-native-device-info": "^8.0.2",
+    "react-native-background-timer": "^2.4.1"
+  }
+}

@@ -1,9 +1,9 @@
 /* eslint-disable */
 import React from 'react';
-import {StyleSheet, ViewProps} from 'react-native';
-import {withThemes} from '@southem/theme';
-import {blacklist} from '../../tools';
-import {Icon} from '../icon';
+import { StyleSheet, ViewProps } from 'react-native';
+import { withThemes } from '@southem/theme';
+import { blacklist } from '@southem/tools';
+import { Icon } from '@southem/icons';
 
 interface ComponentProps {
   checked?: boolean;

@@ -11,7 +11,7 @@ import {
   TouchableWithoutFeedback, ViewProps,
 } from 'react-native';
 // Dont set theming in this component
-import {isAndroid} from '../../tools';
+import {isAndroid} from '@southem/tools';
 
 // tslint:disable-next-line:no-empty-interface
 export interface TouchableProps extends TouchableOpacityProps {

@@ -8,7 +8,7 @@ import EvilIcon from 'react-native-vector-icons/EvilIcons';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 // @ts-ignore
-import createIcon from '@southem/ui/src/common/icon/createIcon';
+import createIcon from '@southem/icons/src/components/createIcon';
 
 describe('Render Helpers', () => {
   it('should return correct icon type', () => {

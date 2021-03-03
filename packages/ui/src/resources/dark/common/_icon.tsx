@@ -1,5 +1,5 @@
+import { normalize } from '@southem/tools';
 import palette from '../_palette';
-import { normalize } from '../../../tools';
 
 export default {
   Icon: {
