@@ -145,9 +145,6 @@ export class MenuItem extends React.Component<MenuItemProps> {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
   },
   title: {
     flex: 1,

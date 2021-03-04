@@ -25,6 +25,7 @@ export const Tabs = (): React.ReactElement => (
       name='Appointments'
       component={View}
       options={{
+        // @ts-ignore
         tabBarIcon: 'calendar-clock',
       }}
     />
@@ -33,6 +34,7 @@ export const Tabs = (): React.ReactElement => (
       name='Patients'
       component={View}
       options={{
+        // @ts-ignore
         tabBarIcon: 'account-multiple',
       }}
     />
@@ -40,6 +42,7 @@ export const Tabs = (): React.ReactElement => (
       name='Departments'
       component={View}
       options={{
+        // @ts-ignore
         tabBarIcon: 'layers',
       }}
     />
@@ -47,6 +50,7 @@ export const Tabs = (): React.ReactElement => (
       name='Reports'
       component={View}
       options={{
+        // @ts-ignore
         tabBarIcon: 'book-open',
       }}
     />

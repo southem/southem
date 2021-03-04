@@ -1,6 +1,6 @@
 import React from 'react';
 import { ImageStyle } from 'react-native';
-import { IconElement, IconProps } from '@southem/ui';
+import { IconElement, IconProps } from '@southem/icons';
 import { useTheme } from '@southem/theme';
 
 export interface ThemedIconProps extends Omit<IconProps, 'name'> {

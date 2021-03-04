@@ -3,75 +3,75 @@ import { ImageStyle } from 'react-native';
 import { Icon, IconElement } from '@southem/icons';
 
 export const ArrowIosBackIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='arrow-ios-back'/>
+  <Icon {...style} name='arrow-back'/>
 );
 
 export const ArrowIosForwardIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='arrow-ios-forward'/>
+  <Icon {...style} name='arrow-forward'/>
 );
 
 export const BookIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='book'/>
+  <Icon {...style} name='book'/>
 );
 
 export const BookmarkIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='bookmark'/>
+  <Icon type={'ionicon'} {...style} name='bookmark'/>
 );
 
 export const BookmarkOutlineIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='bookmark-outline'/>
+  <Icon type={'ionicon'} {...style} name='bookmark-outline'/>
 );
 
 export const ColorPaletteIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='color-palette-outline'/>
+  <Icon type={'ionicon'} {...style} name='color-palette'/>
 );
 
 export const CloseIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='close'/>
+  <Icon type={'ionicon'} {...style} name='close-outline'/>
 );
 
 export const GithubIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='github'/>
+  <Icon type={'octicon'} {...style} name='logo-github'/>
 );
 
 export const GridIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='grid-outline'/>
+  <Icon type={'ionicon'} {...style} name='grid-outline'/>
 );
 
 export const LayoutIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='layout-outline'/>
+  <Icon type={'material'} {...style} name='layout-outline'/>
 );
 
 export const ListIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='list'/>
+  <Icon {...style} name='list'/>
 );
 
 export const MenuIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='menu'/>
+  <Icon {...style} name='menu'/>
 );
 
 export const MoreVerticalIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='more-vertical'/>
+  <Icon {...style} name='more-vertical'/>
 );
 
 export const SearchIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='search'/>
+  <Icon {...style} name='search'/>
 );
 
 export const SettingsIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='settings'/>
+  <Icon {...style} name='settings'/>
 );
 
 export const StarIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='star'/>
+  <Icon type={'octicon'} {...style} name='star'/>
 );
 
 export const StarOutlineIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='star-outline'/>
+  <Icon type={'octicon'} {...style} name='star-outline'/>
 );
 
 export const TrashIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'app'} {...style} name='trash'/>
+  <Icon {...style} name='delete'/>
 );
 
 export const AssetAuthIcon = (style: ImageStyle): IconElement => (

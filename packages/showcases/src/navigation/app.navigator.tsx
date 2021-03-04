@@ -10,7 +10,7 @@ const navigatorTheme = {
   colors: {
     ...DefaultTheme.colors,
     // prevent layout blinking when performing navigation
-    background: 'transparent',
+    background: 'white',
   },
 };
 

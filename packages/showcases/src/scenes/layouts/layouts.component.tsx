@@ -15,8 +15,7 @@ export const LayoutsScreen = (props): React.ReactElement => {
     <TopNavigationAction
       // @ts-ignore
       icon={MenuIcon}
-      onPress={props.navigation.toggleDrawer}
-    />
+      onPress={props.navigation.toggleDrawer}/>
   );
 
   return (

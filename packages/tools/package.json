@@ -23,6 +23,7 @@
     "access": "public"
   },
   "dependencies": {
+    "events": "^3.1.0",
     "react-native-cross-platform-responsive-dimensions": "^0.9.1",
     "react-native-device-info": "^8.0.2",
     "react-native-background-timer": "^2.4.1"

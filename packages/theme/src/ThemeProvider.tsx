@@ -40,7 +40,3 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
 export const useTheme = () => {
   return React.useContext(ThemeContext);
 };
-
-/**
- * <ToastProvider>{children}</ToastProvider>
- * */

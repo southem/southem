@@ -33,7 +33,7 @@ export class ScrollDriver extends DriverBase {
         horizontal: false,
         nativeScrollEventThrottle: 20,
         onScroll: (value) => {
-        }
+        },
     }) {
         super();
 

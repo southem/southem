@@ -7,10 +7,12 @@ import {
   Menu,
   MenuItem ,
   Divider,
-  Icon,
   Button,
   StatusBar,
 } from '@southem/ui';
+import {
+  Icon,
+} from '@southem/icons';
 
 const width = 120;
 const CustomIcon = ({ name, onPress }) => {

@@ -5,7 +5,7 @@ import { DataProps } from './type';
 
 export const CustomOptionsAutocompleteItem = ({ title, releaseYear, id }: DataProps): any => (
   <AutocompleteItem style={styles.wrapper} key={id}>
-    <Avatar size='small' source={require('../../../assets/images/icon.png')}/>
+    <Avatar size='small' source={require('../../../assets/images/icon-app.png')}/>
     <View style={{ marginHorizontal: 8 }}>
       <Text>{title}</Text>
       <Text appearance='hint' category='p2'>

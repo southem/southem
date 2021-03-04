@@ -1,6 +1,7 @@
 import React from 'react';
 import { ImageStyle } from 'react-native';
-import { Icon, IconProps, Input } from '@southem/ui';
+import { Input } from '@southem/ui';
+import { Icon, IconProps } from '@southem/icons';
 
 const DEFAULT_ICON: string = 'star';
 
@@ -21,13 +22,13 @@ export const IconShowcase = (props: IconProps): React.ReactElement => {
 
   const onInputBlur = (): void => {
     // @ts-ignore
-    iconRef.current.startAnimation();
+    // iconRef.current.startAnimation();
     setCurrentIcon(inputValue.length > 0 ? inputValue : DEFAULT_ICON);
   };
 
   const startAnimation = (): void => {
     // @ts-ignore
-    iconRef.current.startAnimation();
+    // iconRef.current.startAnimation();
   };
 
   const renderIcon = (style: ImageStyle): React.ReactElement => (

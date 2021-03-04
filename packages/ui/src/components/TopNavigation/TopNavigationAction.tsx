@@ -6,7 +6,7 @@ import {
     TouchableOpacityProps,
 } from 'react-native';
 import { withThemes } from '@southem/theme';
-import {Icon, IconProps} from '../../common';
+import { Icon, IconProps } from '@southem/icons';
 import {
   renderNode,
   RenderProp,
@@ -21,9 +21,9 @@ type TopNavigationActionStyledProps = Overwrite<StyledComponentProps, {
 // @ts-ignore
 export interface TopNavigationActionProps extends TouchableOpacityProps, TopNavigationActionStyledProps {
   icon?: RenderProp<Partial<IconProps>>;
-  tintColor: string;
-  iconHeight: number;
-  iconWidth: number;
+  tintColor?: string;
+  iconHeight?: number;
+  iconWidth?: number;
 }
 
 export type TopNavigationActionElement = React.ReactElement<TopNavigationActionProps>;
