@@ -111,34 +111,29 @@ export interface SpacingSizes {
 
 export type SpacingSize = keyof SpacingSizes;
 
-export interface FontFamilies {
-  heading: string;
-  mono: string;
-  text: string;
+export type Font = {
+  fontFamily: string;
+  fontWeight?:
+    | 'normal'
+    | 'bold'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900';
+};
+
+export interface Fonts {
+  light: Font;
+  regular: Font;
+  bold: Font;
+  medium: Font;
+  thin: Font;
 }
-
-export type FontFamily = keyof FontFamilies;
-
-export type RNFontWeight =
-  | 'normal'
-  | 'bold'
-  | '100'
-  | '200'
-  | '300'
-  | '400'
-  | '500'
-  | '600'
-  | '700'
-  | '800'
-  | '900';
-
-export interface FontWeights {
-  light?: RNFontWeight;
-  normal?: RNFontWeight;
-  bold?: RNFontWeight;
-}
-
-export type FontWeight = keyof FontWeights | RNFontWeight;
 
 export interface TextColors extends PrimitiveStyle {
   muted: string;
@@ -196,7 +191,7 @@ export interface FillColorProps {
 }
 
 export interface FillColors {
-  neutral: FillColorProps;
+  default: FillColorProps;
   blue: FillColorProps;
   red: FillColorProps;
   orange: FillColorProps;
@@ -235,8 +230,7 @@ export interface StylesTheme {
   spacing: SpacingSizes;
 
   // Typography
-  fontFamilies: FontFamilies;
-  fontWeights: FontWeights;
+  fonts: Fonts;
 
   headingSizes: HeadingSizes;
   paragraphSizes: ParagraphSizes;

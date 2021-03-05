@@ -1,6 +1,6 @@
 // Blue colors
+export const lightblue = 'rgb(206,236,255)';
 export const powderblue = 'rgb(176,224,230)';
-export const lightblue = 'rgb(173,216,230)';
 export const lightskyblue = 'rgb(135,206,250)';
 export const skyblue = 'rgb(135,206,235)';
 export const deepskyblue = 'rgb(0,191,255)';

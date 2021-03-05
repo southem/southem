@@ -8,7 +8,7 @@ import {
   orange,
   darkviolet,
 } from '../../colors';
-import type { BackgroundColors } from "../../types";
+import type { BackgroundColors } from '../../types';
 
 export const darkBackground: BackgroundColors = {
   default: Color(black).alpha(0.38).rgb().toString(),
