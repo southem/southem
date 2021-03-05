@@ -4,6 +4,7 @@ import {
   red,
   cornflowerblue,
   black,
+  white,
   limegreen,
   darkturquoise,
   orange,
@@ -23,7 +24,8 @@ export default {
   backgroundColor: Color(black).alpha(.12).toString(),
   borderColor: Color(black).alpha(.12).toString(),
   disabledColor: Color(black).alpha(.38).toString(),
-  disabledTextColor: Color(black).alpha(.26).toString(),
+  disabled: Color(white).alpha(0.38).rgb().string(),
+  disabledTextColor: Color(black).alpha(.26).rgb().toString(),
   activeIcon: Color(black).alpha(.54).toString(),
   inactiveIcon: Color(black).alpha(.38).toString(),
 };

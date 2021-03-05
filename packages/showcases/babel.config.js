@@ -10,6 +10,7 @@ const frameworkModules = {
   '@southem/fonts': path.resolve(__dirname, '../fonts'),
   '@southem/html': path.resolve(__dirname, '../html'),
   '@southem/icons': path.resolve(__dirname, '../icons'),
+  '@southem/styles': path.resolve(__dirname, '../styles'),
   '@southem/theme': path.resolve(__dirname, '../theme'),
   '@southem/tools': path.resolve(__dirname, '../tools'),
   '@southem/ui': path.resolve(__dirname, '../ui'),

@@ -5,6 +5,7 @@ const frameworkModules = [
   path.resolve(__dirname, '../fonts'),
   path.resolve(__dirname, '../html'),
   path.resolve(__dirname, '../icons'),
+  path.resolve(__dirname, '../styles'),
   path.resolve(__dirname, '../theme'),
   path.resolve(__dirname, '../tools'),
   path.resolve(__dirname, '../ui'),

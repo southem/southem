@@ -29,6 +29,10 @@
         "./packages/icons",
         "./packages/icons/src/*"
       ],
+      "@southem/styles/*": [
+        "./packages/styles",
+        "./packages/styles/src/*"
+      ],
       "@southem/theme/*": [
         "./packages/theme",
         "./packages/theme/src/*"

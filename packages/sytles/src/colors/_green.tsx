@@ -1,0 +1,20 @@
+// Green colors
+export const lawngreen = 'rgb(124,252,0)';
+export const chartreuse = 'rgb(127,255,0)';
+export const limegreen = 'rgb(50,205,50)';
+export const lime = 'rgb(0.255.0)';
+export const forestgreen = 'rgb(34,139,34)';
+export const green = 'rgb(0,128,0)';
+export const darkgreen = 'rgb(0,100,0)';
+export const greenyellow = 'rgb(173,255,47)';
+export const yellowgreen = 'rgb(154,205,50)';
+export const springgreen = 'rgb(0,255,127)';
+export const mediumspringgreen = 'rgb(0,250,154)';
+export const lightgreen = 'rgb(144,238,144)';
+export const palegreen = 'rgb(152,251,152)';
+export const darkseagreen = 'rgb(143,188,143)';
+export const mediumseagreen = 'rgb(60,179,113)';
+export const seagreen = 'rgb(46,139,87)';
+export const olive = 'rgb(128,128,0)';
+export const darkolivegreen = 'rgb(85,107,47)';
+export const olivedrab = 'rgb(107,142,35)';

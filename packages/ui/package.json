@@ -30,6 +30,7 @@
   "peerDependencies": {
     "@southem/animation": "0.0.1",
     "@southem/icons": "0.0.1",
+    "@southem/styles": "0.0.1",
     "@southem/theme": "0.0.1",
     "@southem/tools": "0.0.1",
     "react-native-svg": "^12.1.0"
