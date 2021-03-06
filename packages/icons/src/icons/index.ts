@@ -13,6 +13,7 @@ import { MaterialCommunityIconsPack } from './material-community';
 import { MoonIconsPack } from './moon';
 import { OcticonsIconsPack } from './octicon';
 import { SimpleLineIconsPack } from './simple-line-icon';
+import { SouthemPack } from './southem';
 import { ZocialIconsPack } from './zocial';
 
 export const SouthemIconsPack = [
@@ -31,5 +32,6 @@ export const SouthemIconsPack = [
   MoonIconsPack,
   OcticonsIconsPack,
   SimpleLineIconsPack,
+  SouthemPack,
   ZocialIconsPack,
 ];

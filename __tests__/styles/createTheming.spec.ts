@@ -24,4 +24,25 @@ describe('createTheming', () => {
     };
   });
 
+  it('override styles with hook', () => {
+    const PropsChecker = props => {
+      const style = useStyles({
+        colors: undefined,
+        fills: undefined,
+        fonts: undefined,
+        layout: undefined,
+        size: undefined,
+        spacing: undefined,
+        elevations: [{
+          elevation: 1,
+          shadowColor: 'black',
+        }],
+      });
+
+      expect(typeof style).toBe('object');
+      expect(style).toEqual(defaultStyle);
+      return null;
+    };
+  });
+
 });

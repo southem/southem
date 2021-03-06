@@ -14,8 +14,7 @@ export default function createStyling<Object>(
   const useStyles = (overrides?: StylesTheme): StylesTheme => {
     const styles = React.useContext(StyleContext);
     return React.useMemo(
-      () =>
-        styles && overrides ? deepmerge(styles, overrides) : styles || overrides,
+      () => deepmerge(styles, overrides || {}),
       [styles, overrides],
     );
   };
