@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { TextStyle, ViewStyle } from 'react-native';
 
 export interface PrimitiveStyle {
@@ -219,6 +220,18 @@ export interface ContainerShapes {
   square: ViewStyle;
 }
 
+export interface Sizes {
+  textSizes: TextSizes;
+  headingSizes: HeadingSizes;
+  paragraphSizes: ParagraphSizes;
+  // Controls - Buttons, Pickers, Inputs etc.
+  controlPaddings: ControlSizes;
+  controlHeights: ControlSizes;
+  controlBorderRadius: ControlSizes;
+
+  // Containers
+  containerShapes: ContainerShapes;
+}
 
 export interface StylesTheme {
   // Colors
@@ -227,23 +240,15 @@ export interface StylesTheme {
 
   // Layout
   layout: Layout;
+
   spacing: SpacingSizes;
 
   // Typography
   fonts: Fonts;
 
-  headingSizes: HeadingSizes;
-  paragraphSizes: ParagraphSizes;
-  textSizes: TextSizes;
+  // Sizes
+  size: Sizes;
 
   // Elevations
   elevations: Elevations;
-
-  // Controls - Buttons, Pickers, Inputs etc.
-  controlPaddings: ControlSizes;
-  controlHeights: ControlSizes;
-  controlBorderRadius: ControlSizes;
-
-  // Containers
-  containerShapes: ContainerShapes;
 }

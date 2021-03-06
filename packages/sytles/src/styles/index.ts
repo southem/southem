@@ -16,7 +16,7 @@ import {
 import {
   text,
   darkText,
-  lightText
+  lightText,
 } from './text';
 
 export default {
@@ -38,5 +38,5 @@ export default {
   // text
   text,
   darkText,
-  lightText
-}
+  lightText,
+};

@@ -132,5 +132,5 @@ export default {
   headingSizes,
   paragraphSizes,
   textSizes,
-  containerShapes
-}
+  containerShapes,
+};
