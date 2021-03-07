@@ -110,8 +110,7 @@ export class Menu extends React.Component<MenuProps> {
   private service: MenuService = new MenuService();
 
   private get data(): any[] {
-    // @ts-ignore
-    return React.Children.toArray(this.props.data || this.props.children);
+    return React.Children.toArray(this.props.children || []);
   }
 
   private get shouldRenderDividers(): boolean {
@@ -132,13 +131,19 @@ export class Menu extends React.Component<MenuProps> {
 
   private cloneItemWithProps = (element: React.ReactElement, props: MenuItemProps): React.ReactElement => {
     const nestedElements = React.Children.map(element.props.children, (el: MenuItemElement, index: number) => {
-      const descriptor = this.service.createDescriptorForNestedElement(el, props.descriptor, index);
+      const descriptor = this.service.createDescriptorForNestedElement(props.descriptor, index);
       const selected: boolean = this.isItemSelected(descriptor);
 
       return this.cloneItemWithProps(el, { ...props, selected, descriptor });
     });
 
-    return React.cloneElement(element, { ...props, ...element.props }, nestedElements);
+    const onPress = (event, descriptor) => {
+      element.props.onPress && element.props.onPress();
+      props.onPress(event, descriptor);
+    };
+
+    return React.cloneElement(element, { ...element.props, ...props, onPress }, nestedElements);
+
   };
 
   private renderItem = (info: ListRenderItemInfo<MenuItemElement>): React.ReactElement => {
@@ -149,11 +154,7 @@ export class Menu extends React.Component<MenuProps> {
   };
 
   public render(): ListElement {
-    const {
-      // @ts-ignore
-      data,
-      ...listProps
-    } = this.props;
+    const { appearance, ...listProps } = this.props;
     return (
       <List
         ItemSeparatorComponent={this.shouldRenderDividers && Divider}

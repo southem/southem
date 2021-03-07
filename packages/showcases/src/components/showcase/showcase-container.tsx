@@ -35,7 +35,7 @@ export const ShowcaseContainer = (props: ShowcaseContainerProps): React.ReactEle
   const renderBackAction = (): React.ReactElement => (
     <TopNavigationAction
       // @ts-ignore
-      icon={ArrowIosBackIcon}
+      icon={ArrowIosBackIcon({ color: 'white' })}
       onPress={onBackPress}
     />
   );
@@ -46,6 +46,7 @@ export const ShowcaseContainer = (props: ShowcaseContainerProps): React.ReactEle
       insets='top'>
       <TopNavigation
         title={showcase.title}
+        titleStyle={styles.title}
         accessoryLeft={renderBackAction}
       />
       <Divider/>
@@ -72,5 +73,8 @@ export const ShowcaseContainer = (props: ShowcaseContainerProps): React.ReactEle
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  title: {
+    color: 'white',
   },
 });

@@ -1,14 +1,14 @@
 {
-  "name": "@southem/sytles",
+  "name": "@southem/styles",
   "description": "Styles set of components for React Native applications",
   "version": "0.0.1",
   "author": "Southem <contact@southem.com>",
   "license": "MIT",
-  "homepage": "https://github.com/southem/southem/tree/master/packages/sytles#readme",
+  "homepage": "https://github.com/southem/southem/tree/master/packages/styles#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/southem/southem.git",
-    "directory": "packages/sytles"
+    "directory": "packages/styles"
   },
   "bugs": {
     "url": "https://github.com/southem/southem/issues"

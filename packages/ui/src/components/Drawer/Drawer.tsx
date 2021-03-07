@@ -21,9 +21,16 @@ type DrawerStyledProps = Overwrite<StyledComponentProps, {
 export interface DrawerProps extends MenuProps, DrawerStyledProps {
   header?: RenderProp<ViewProps>;
   footer?: RenderProp<ViewProps>;
+  headerStyle?: RenderProp<StyleType>;
+  footerStyle?: RenderProp<StyleType>;
 }
 
 export type DrawerElement = React.ReactElement<DrawerProps>;
+
+const mapPropToStyles = [
+  'headerStyle',
+  'footerStyle'
+];
 
 /**
  * Navigation panel which slides from the side of the screen.
@@ -71,7 +78,7 @@ export type DrawerElement = React.ReactElement<DrawerProps>;
  * import React from 'react';
  * import { NavigationContainer } from '@react-navigation/native';
  * import { createDrawerNavigator } from '@react-navigation/drawer';
- * import { Drawer, DrawerItem, Layout, Text, IndexPath } from '@ui-kitten/components';
+ * import { Drawer, DrawerItem, Layout, Text, IndexPath } from '@southem/ui';
  *
  * const { Navigator, Screen } = createDrawerNavigator();
  *
@@ -116,7 +123,7 @@ export type DrawerElement = React.ReactElement<DrawerProps>;
  * @overview-example DrawerAccessories
  * Drawer may be configured with header and footer,
  * and items may contain inner views configured with `accessoryLeft` and `accessoryRight` properties.
- * Within Eva, item accessories are expected to be images or [svg icons](guides/icon-packages).
+ * Within Southem, item accessories are expected to be images or [svg icons](guides/icon-packages).
  *
  * @overview-example DrawerGroups
  * And be grouped within `DrawerGroup` component.
@@ -124,10 +131,10 @@ export type DrawerElement = React.ReactElement<DrawerProps>;
  * @overview-example DrawerStyling
  * Drawer and it's inner views can be styled by passing them as function components.
  * ```
- * import { DrawerItem, Text } from '@ui-kitten/components';
+ * import { DrawerItem, Text } from '@southem/ui';
  *
  * <DrawerItem
- *   title={evaProps => <Text {...evaProps}>USERS</Text>}>
+ *   title={props => <Text {...props}>USERS</Text>}>
  * </DrawerItem>
  * ```
  *
@@ -135,46 +142,22 @@ export type DrawerElement = React.ReactElement<DrawerProps>;
  * In most cases this is redundant, if [custom theme is configured](guides/branding).
  */
 // @ts-ignore
-@withThemes('Drawer')
+@withThemes('Drawer', mapPropToStyles)
 export class Drawer extends React.Component<DrawerProps> {
 
-  /**
-  private getComponentStyle = (source: StyleType) => {
-    const {
-      headerPaddingHorizontal,
-      headerPaddingVertical,
-      footerPaddingHorizontal,
-      footerPaddingVertical,
-      ...containerParameters
-    } = source;
-
-    return {
-      container: containerParameters,
-      header: {
-        paddingHorizontal: headerPaddingHorizontal,
-        paddingVertical: headerPaddingVertical,
-      },
-      footer: {
-        paddingHorizontal: footerPaddingHorizontal,
-        paddingVertical: footerPaddingVertical,
-      },
-    };
-  };
-  **/
-
   public render(): React.ReactFragment {
-    const { style, header, footer, ...menuProps } = this.props;
+    const { style, header, footer, headerStyle, footerStyle, ...menuProps } = this.props;
 
     return (
       <React.Fragment>
-        {renderNode(View, header)}
+        {renderNode(View, header, { style: headerStyle })}
         <Menu
           style={[style]}
           showsVerticalScrollIndicator={false}
           bounces={false}
           {...menuProps}
         />
-        {renderNode(View, footer)}
+        {renderNode(View, footer, { style: footerStyle })}
       </React.Fragment>
     );
   }

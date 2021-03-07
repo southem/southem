@@ -97,10 +97,11 @@ export class MenuGroup extends React.Component<MenuGroupProps, State> {
     return { appearance: 'grouped' };
   }
 
-  private onPress = (): void => {
+  private onPress = (descriptor: MenuItemDescriptor, event: GestureResponderEvent): void => {
     if (this.hasSubmenu) {
       const expandValue: number = this.expandAnimationValue > 0 ? 0 : this.state.submenuHeight;
       this.createExpandAnimation(expandValue).start();
+      this.props.onPress && this.props.onPress(descriptor, event);
     }
   };
 
@@ -125,7 +126,7 @@ export class MenuGroup extends React.Component<MenuGroupProps, State> {
 
     return (
       <Animated.View style={{ transform: [{ rotate: this.expandToRotateInterpolation }] }}>
-        <Icon type={'southem'} name={'chevron-down-single'} {...styleProps} color={style.tintColor}/>
+        <Icon type={'octicon'} name={'chevron-down'} {...styleProps} color={style.tintColor}/>
       </Animated.View>
     );
   };

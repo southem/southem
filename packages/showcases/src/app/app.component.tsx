@@ -29,6 +29,7 @@ import {
 import { IconRegistry, SouthemIconsPack } from '@southem/icons';
 import { AppStorage } from '../services/app-storage.service';
 import { AppIconsPack } from './app-icons-pack';
+import { appDarkTheme, appLightTheme } from './app-theming';
 import {
   SplashImage,
   LoadingAnimationProps,
@@ -38,8 +39,8 @@ import { AppNavigator } from '../navigation/app.navigator';
 
 enableScreens();
 
-Theme.registerTheme('dark', darkTheme);
-Theme.registerTheme('light', lightTheme);
+Theme.registerTheme('dark', [darkTheme, appDarkTheme]);
+Theme.registerTheme('light', [lightTheme, appLightTheme]);
 
 const defaultConfig: { theme: TypeTheme } = {
   theme: 'dark',
