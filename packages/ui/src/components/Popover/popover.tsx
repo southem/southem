@@ -150,10 +150,7 @@ export class Popover extends React.Component<PopoverProps, State> {
 
   public componentDidMount(): void {
     if (platform('android')) {
-      this.hardwareBackSubscription = BackHandler.addEventListener(
-        'hardwareBackPress',
-        this.onHardwareBackPress,
-      );
+      this.hardwareBackSubscription = BackHandler.addEventListener('hardwareBackPress', this.onHardwareBackPress);
     }
   }
 
@@ -195,7 +192,6 @@ export class Popover extends React.Component<PopoverProps, State> {
   };
 
   private renderContentElement = (): React.ReactElement => {
-    // @ts-ignore
     const contentElement: React.ReactElement = this.props.children;
     const fullWidthStyle = { width: this.state.childFrame.size.width };
 

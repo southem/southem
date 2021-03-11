@@ -41,6 +41,7 @@ describe('@button: matches snapshot', () => {
   describe('* interaction', () => {
     it('* stateless', () => {
       const component: RenderAPI = renderComponent();
+      // @ts-ignore
       const {output} = shallow(component.getByType(Button));
 
       expect(output).toMatchSnapshot();
@@ -64,6 +65,7 @@ describe('@button: matches snapshot', () => {
 
     it('* empty', () => {
       const component: RenderAPI = renderComponent();
+      // @ts-ignore
       const {output} = shallow(component.getByType(Button));
 
       expect(output).toMatchSnapshot();
@@ -74,6 +76,7 @@ describe('@button: matches snapshot', () => {
       const component: RenderAPI = renderComponent({
         accessoryLeft: icon,
       });
+      // @ts-ignore
       const {output} = shallow(component.getByType(Button));
 
       expect(output).toMatchSnapshot();
@@ -84,6 +87,7 @@ describe('@button: matches snapshot', () => {
       const component: RenderAPI = renderComponent({
         children: text,
       });
+      // @ts-ignore
       const {output} = shallow(component.getByType(Button));
 
       expect(output).toMatchSnapshot();
@@ -95,6 +99,7 @@ describe('@button: matches snapshot', () => {
         accessoryLeft: icon,
         title: text,
       });
+      // @ts-ignore
       const { output } = shallow(component.getByType(Button));
 
       expect(output).toMatchSnapshot();
@@ -106,6 +111,7 @@ describe('@button: matches snapshot', () => {
         accessoryLeft: icon,
         children: text,
       });
+      // @ts-ignore
       const {output} = shallow(component.getByType(Button));
 
       expect(output).toMatchSnapshot();
@@ -122,6 +128,7 @@ describe('@button: matches snapshot', () => {
           lineHeight: 34,
         },
       });
+      // @ts-ignore
       const {output} = shallow(component.getByType(Button));
 
       expect(output).toMatchSnapshot();

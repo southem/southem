@@ -19,7 +19,6 @@ import {
   StatusType,
   SizeType,
   RenderProp,
-  renderTextElement,
   renderNode,
   Overwrite,
   StyledComponentProps,
@@ -31,7 +30,7 @@ import TextInput from './TextInput';
 import { Message, Label } from './Message';
 
 type InputStyledProps = Overwrite<StyledComponentProps, {
-  appearance?: 'default' | string;
+  appearance?: 'default' | 'borderline' | 'underline' | string;
 }>;
 
 // @ts-ignore
@@ -66,10 +65,100 @@ const mapPropToStyles = [
   'underlineColorAndroid',
 ];
 
+/**
+ * Inputs let users enter and edit text.
+ *
+ * @extends React.Component
+ *
+ * @property {string} value - A value displayed in input field.
+ *
+ * @property {(string) => void} onChangeText - Called when the value should be changed.
+ *
+ * @property {() => void} onFocus - Called when input field becomes focused.
+ *
+ * @property {() => void} onBlur - Called when input field looses focus.
+ *
+ * @property {string} placeholder - A string to be displayed when there is no value.
+ *
+ * @property {boolean} disabled - Whether input field is disabled.
+ * This property overrides `editable` property of TextInput.
+ *
+ * @property {ReactText | (TextProps) => ReactElement} label - String, number or a function component
+ * to render above the input field.
+ * If it is a function, expected to return a Text.
+ *
+ * @property {ReactText | (TextProps) => ReactElement} caption - String, number or a function component
+ * to render below the input field.
+ * If it is a function, expected to return a Text.
+ *
+ * @property {(ImageProps) => ReactElement} accessoryLeft - Function component
+ * to render to start of the text.
+ * Expected to return an Image.
+ *
+ * @property {(ImageProps) => ReactElement} accessoryRight - Function component
+ * to render to end of the text.
+ * Expected to return an Image.
+ *
+ * @property {(ImageProps) => ReactElement} captionIcon - Function component
+ * to render to start of the *caption*.
+ * Expected to return an Image.
+ *
+ * @property {string} status - Status of the component.
+ * Can be `basic`, `primary`, `success`, `info`, `warning`, `danger` or `control`.
+ * Defaults to *basic*.
+ * Useful for giving user a hint on the input validity.
+ * Use *control* status when needed to display within a contrast container.
+ *
+ * @property {string} size - Size of the component.
+ * Can be `small`, `medium` or `large`.
+ * Defaults to *medium*.
+ *
+ * @property {StyleProp<TextStyle>} textStyle - Customizes the style of the text field.
+ *
+ * @property {TextInputProps} ...TextInputProps - Any props applied to TextInput component.
+ *
+ * @overview-example InputSimpleUsage
+ *
+ * @overview-example InputStates
+ * Input can be disabled with `disabled` property.
+ *
+ * @overview-example InputStatus
+ * Or marked with `status` property, which is useful within forms validation.
+ * An extra status is `control`, which is designed to be used on high-contrast backgrounds.
+ *
+ * @overview-example InputAccessories
+ * Input may contain labels, captions and inner views by configuring `accessoryLeft` or `accessoryRight` properties.
+ * Within Eva, Input accessories are expected to be images or [svg icons](guides/icon-packages).
+ *
+ * @overview-example InputSize
+ * To resize Input, a `size` property may be used.
+ *
+ * @overview-example InputStyling
+ * Input and it's inner views can be styled by passing them as function components.
+ * ```
+ * import { Input, Text } from '@southem/ui';
+ *
+ * <Input
+ *   textStyle={{ ... }}
+ *   label={props => <Text {...props}>Label</Text>}
+ *   caption={props => <Text {...props}>Caption</Text>}
+ * />
+ * ```
+ *
+ * @overview-example InputTheming
+ * In most cases this is redundant, if [custom theme is configured](guides/branding).
+ */
 // @ts-ignore
 @withThemes('Input', mapPropToStyles)
 export class Input extends React.Component<InputProps> {
   static displayName = 'TextInput';
+  public static defaultProps = {
+    appearance: 'borderline',
+    underlineColorAndroid: 'transparent',
+    autoCapitalize: 'none',
+    autoCorrect: false,
+    maxLength: 32,
+  };
 
   // @ts-ignore
   private input = React.createRef<TextInput>();
@@ -178,7 +267,7 @@ export class Input extends React.Component<InputProps> {
 
     return (
       <View style={StyleSheet.flatten([style, containerStyle])}>
-        {renderTextElement(label, { style: labelStyle, ...labelProps })}
+        {renderNode(Label, label, { style: labelStyle, ...labelProps })}
         <InputContainer
           style={StyleSheet.flatten([
             inputContainerStyle,
@@ -193,17 +282,12 @@ export class Input extends React.Component<InputProps> {
             </WrapIcon>
           )}
           <InputComponent
-            testID='RNInputText'
-            autoCapitalize={'none'}
-            autoCorrect={false}
-            underlineColorAndroid={'transparent'}
+            forwardedRef={this.input}
             editable={!disabled}
             onFocus={this.onTextFieldFocus}
             onBlur={this.onTextFieldBlur}
-            maxLength={32}
-            {...attributes}
-            forwardedRef={this.input}
             style={StyleSheet.flatten([inputStyle, { color }])}
+            {...attributes}
           />
           <IconMaterial
             type={'material-community'}

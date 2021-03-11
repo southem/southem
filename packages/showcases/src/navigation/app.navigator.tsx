@@ -1,5 +1,6 @@
 import React from 'react';
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import { ModalPanel } from '@southem/ui';
 import { HomeNavigator } from './home.navigator';
 import { navigationRef } from './navigation.service';
 /*
@@ -17,6 +18,8 @@ const navigatorTheme = {
 export const AppNavigator = (): React.ReactElement => (
   // @ts-ignore
   <NavigationContainer theme={navigatorTheme} ref={navigationRef}>
-    <HomeNavigator />
+    <ModalPanel>
+      <HomeNavigator />
+    </ModalPanel>
   </NavigationContainer>
 );

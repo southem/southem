@@ -7,9 +7,7 @@ import {
   View,
 } from '@southem/ui';
 import {
-  fireEvent,
   render,
-  RenderAPI,
   waitForElement,
 } from 'react-native-testing-library';
 
@@ -100,7 +98,7 @@ describe('@measure: component checks', () => {
       </MeasureElement>,
     );
 
-    const options = await waitForElement(() => component.queryAllByType(View));
+    const options = await waitForElement(() => component.UNSAFE_queryAllByType(View));
     expect(options.length).toEqual(1);
   });
 });
