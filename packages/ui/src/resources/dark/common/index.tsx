@@ -9,6 +9,7 @@ import _divider from './_divider';
 import _icon from './_icon';
 import _image from './_image';
 import _input from './_input';
+import _layout from './_layout';
 import _list from './_list';
 import _radio from './_radio';
 import _subtitle from './_subtitle';
@@ -27,6 +28,7 @@ export default {
   ..._icon,
   ..._image,
   ..._input,
+  ..._layout,
   ..._list,
   ..._radio,
   ..._subtitle,
