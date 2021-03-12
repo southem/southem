@@ -82,6 +82,7 @@ export default function shadow(elevation: number | Animated.Value = 0): IGetPlat
         opacity = 0.35;
     }
 
+    // tslint:disable-next-line:no-shadowed-variable
     function ifIos(elevation): IGetPlatformElevation {
       return {
         shadowColor: color,
@@ -92,9 +93,10 @@ export default function shadow(elevation: number | Animated.Value = 0): IGetPlat
         shadowOpacity: opacity,
         shadowRadius: radius,
         zIndex: normalize(elevation),
-      }
+      };
     }
 
+    // tslint:disable-next-line:no-shadowed-variable
     function ifAndroid(elevation): IGetPlatformElevation {
       return {
         elevation: normalize(elevation),
@@ -104,7 +106,7 @@ export default function shadow(elevation: number | Animated.Value = 0): IGetPlat
           height,
         },
         shadowOpacity: opacity,
-        shadowRadius: radius
+        shadowRadius: radius,
       };
     }
 
