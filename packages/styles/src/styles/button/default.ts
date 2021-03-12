@@ -19,5 +19,5 @@ export const button: ButtonColorsWithText = {
 
   info: palette.blue.darkest,
   success:  palette.green.darkest,
-  warning: palette.orange.darkest
+  warning: palette.orange.darkest,
 };

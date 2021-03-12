@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, ImageRequireSource } from 'react-native';
 
 /**
- * https://akveo.github.io/react-native-ui-kitten/docs/guides/icon-packages#3rd-party-icon-packages
+ * https://eldorplus.github.io/southem-ui/docs/guides/icon-packages#3rd-party-icon-packages
  */
 const IconProvider = (source: ImageRequireSource) => ({
   toReactElement: ({ ...style }) => (

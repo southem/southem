@@ -74,7 +74,7 @@ const fontConfig = {
 };
 
 export default function configureFonts(
-  config?: { [platform in PlatformOSType | 'default']?: Fonts }
+  config?: { [platform in PlatformOSType | 'default']?: Fonts },
 ): Fonts {
   return Platform.select({...fontConfig, ...config}) as Fonts;
 }

@@ -37,117 +37,91 @@ export interface BottomNavigationProps extends ViewProps, BottomNavigationStyled
 export type BottomNavigationElement = React.ReactElement<BottomNavigationProps>;
 
 /**
- * BottomNavigation component is designed to be a Bottom Tab Bar.
- * Can be used for navigation.
+ * A bar with tabs styled by Southem.
+ * BottomNavigation should contain BottomNavigationTab components to provide a usable navigation component.
  *
  * @extends React.Component
  *
- * @property {number} selectedIndex - Determines index of the selected tab.
+ * @property {ReactElement<TabProps> | ReactElement<TabProps>[]} children - Tabs to be rendered within the bar.
  *
- * @property {React.ReactElement<TabProps> | React.ReactElement<TabProps>[]} children -
- * Determines tabs of the Bottom Navigation.
+ * @property {number} selectedIndex - Index of currently selected tab.
  *
- * @property {StyleProp<ViewStyle>} indicatorStyle - Determines styles of the indicator.
+ * @property {(number) => void} onSelect - Called when tab is pressed.
  *
- * @property {(index: number) => void} onSelect - Triggered on select value.
+ * @property {string} appearance - Appearance of the component.
+ * Can be `default` or `noIndicator`.
  *
- * @property ViewProps
+ * @property {StyleProp<ViewStyle>} indicatorStyle - Styles of the indicator.
  *
- * @property StyledComponentProps
+ * @property {ViewProps} ...ViewProps - Any props applied to View component.
  *
- * @example Simple usage example
+ * @overview-example BottomNavigationSimpleUsage
+ * In basic examples, tabs are wrapped within `BottomNavigation`.
+ *
+ * @overview-example Using with React Navigation
+ * BottomNavigation can also be [configured with React Navigation](guides/configure-navigation)
+ * to provide a navigational component.
  *
  * ```
  * import React from 'react';
- * import { BottomNavigation, BottomNavigationTab } from '@ui/common';
+ * import { NavigationContainer } from '@react-navigation/native';
+ * import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+ * import { BottomNavigation, BottomNavigationTab, Layout, Text } from '@southem/ui';
  *
- * export class BottomNavigationShowcase extends React.Component {
+ * const { Navigator, Screen } = createBottomTabNavigator();
  *
- *   public state = {
- *     selectedIndex: 0,
- *   };
+ * const UsersScreen = () => (
+ *   <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+ *     <Text category='h1'>USERS</Text>
+ *   </Layout>
+ * );
  *
- *   private onTabSelect = (selectedIndex: number) => {
- *     this.setState({ selectedIndex });
- *   };
+ * const OrdersScreen = () => (
+ *   <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+ *     <Text category='h1'>ORDERS</Text>
+ *   </Layout>
+ * );
  *
- *   public render(): React.ReactNode {
- *     return (
- *       <BottomNavigation
- *          selectedIndex={this.state.selectedIndex}
- *          onSelect={this.onTabSelect}
- *          <BottomNavigationTab title='Tab 1/>
- *          <BottomNavigationTab title='Tab 2/>
- *          <BottomNavigationTab title='Tab 3/>
- *       </BottomNavigation>
- *     );
- *   }
- * }
+ * const BottomTabBar = ({ navigation, state }) => (
+ *   <BottomNavigation
+ *     selectedIndex={state.index}
+ *     onSelect={index => navigation.navigate(state.routeNames[index])}>
+ *     <BottomNavigationTab title='USERS'/>
+ *     <BottomNavigationTab title='ORDERS'/>
+ *   </BottomNavigation>
+ * );
+ *
+ * const TabNavigator = () => (
+ *   <Navigator tabBar={props => <BottomTabBar {...props} />}>
+ *     <Screen name='Users' component={UsersScreen}/>
+ *     <Screen name='Orders' component={OrdersScreen}/>
+ *   </Navigator>
+ * );
+ *
+ * export const AppNavigator = () => (
+ *   <NavigationContainer>
+ *     <TabNavigator/>
+ *   </NavigationContainer>
+ * );
  * ```
  *
- * @example Inline styling example
+ * @overview-example BottomNavigationAccessories
+ * Tabs also may contain [icons](guides/icon-packages) to provide a better user interfaces.
  *
+ * @overview-example BottomNavigationTabStyling
+ * Tabs and it's inner views can be styled by passing them as function components.
  * ```
- * import React, { ReactElement } from 'react';
- * import { BottomNavigation, BottomNavigationProps, BottomNavigationTab } from '@ui/common';
+ * import { BottomNavigationTab, Text } from '@southem/ui';
  *
- * export const BottomNavigationShowcase = (props?: BottomNavigationProps): ReactElement<BottomNavigationProps> => {
- *   return (
- *     <BottomNavigation
- *        style={styles.bottomBar}
- *        indicatorStyle={styles.indicator}>
- *        <BottomNavigationTab title='Tab 1/>
- *        <BottomNavigationTab title='Tab 2/>
- *        <BottomNavigationTab title='Tab 3/>
- *     </BottomNavigation>
- *   );
- * };
+ * <BottomNavigationTab
+ *   title={evaProps => <Text {...evaProps}>USERS</Text>}
+ * />
  * ```
+ * @overview-example BottomNavigationTabTheming
+ * In most cases this is redundant, if [custom theme is configured](guides/branding).
  *
- * @example With React Navigation API and usage example
- *
- * ```
- * import React, { ReactElement } from 'react';
- * import {
- *   BottomNavigation,
- *   BottomNavigationTab,
- *   BottomNavigationProps,
- * } from '@ui/common';
- * import {
- *   createBottomTabNavigator,
- *   NavigationContainer,
- *   NavigationContainerProps,
- *   NavigationRoute,
- * } from 'react-navigation';
- *
- * type CommonNavigationProps = NavigationProps & NavigationContainerProps;
- *
- * export const TabNavigatorScreen: NavigationContainer = createBottomTabNavigator({
- *   ...screens,
- * }, {
- *   initialRouteName: 'Screen1',
- *   tabBarComponent: BottomNavigationShowcase,
- * });
- *
- * export const BottomNavigationShowcase = (props?: BottomNavigationProps): ReactElement<BottomNavigationProps> {
- *
- *  const onTabSelect = (selectedIndex: number) => {
- *    const { [index]: selectedRoute } = props.navigation.state.routes;
- *
- *    navigation.navigate(selectedRoute.routeName);
- *  };
- *
- *  return (
- *    <BottomNavigation
- *      selectedIndex={props.navigation.state.index}
- *      onSelect={onTabSelect}>
- *      <BottomNavigationTab title='Tab 1'/>
- *      <BottomNavigationTab title='Tab 2'/>
- *      <BottomNavigationTab title='Tab 3'/>
- *    </BottomNavigation>
- *   );
- * }
- * ```
+ * @example BottomNavigationWithoutIndicator
+ * To remove indicator, `appearance` property may be used.
  */
 // @ts-ignore
 @withThemes('BottomNavigation')

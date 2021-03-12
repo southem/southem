@@ -27,8 +27,12 @@ function rebuild(done: GulpCompletionCallback): void {
 
 function publish(done: GulpCompletionCallback): void {
   execSync(`yarn publish ${PACKAGES_BUILD_DIR}/animation`, { cwd: ROOT_DIR });
+  execSync(`yarn publish ${PACKAGES_BUILD_DIR}/fonts`, { cwd: ROOT_DIR });
   execSync(`yarn publish ${PACKAGES_BUILD_DIR}/html`, { cwd: ROOT_DIR });
+  execSync(`yarn publish ${PACKAGES_BUILD_DIR}/icons`, { cwd: ROOT_DIR });
+  execSync(`yarn publish ${PACKAGES_BUILD_DIR}/styles`, { cwd: ROOT_DIR });
   execSync(`yarn publish ${PACKAGES_BUILD_DIR}/theme`, { cwd: ROOT_DIR });
+  execSync(`yarn publish ${PACKAGES_BUILD_DIR}/tools`, { cwd: ROOT_DIR });
   execSync(`yarn publish ${PACKAGES_BUILD_DIR}/ui`, { cwd: ROOT_DIR });
   execSync(`yarn publish ${PACKAGES_DIR}/template/javascript`, { cwd: ROOT_DIR });
   execSync(`yarn publish ${PACKAGES_DIR}/template/typescript`, { cwd: ROOT_DIR });

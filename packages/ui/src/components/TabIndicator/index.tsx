@@ -8,6 +8,7 @@ import {
   ViewProps,
 } from 'react-native';
 import {withThemes} from '@southem/theme';
+import { RTLService } from '../../devsupport';
 
 export interface TabIndicatorProps extends ViewProps {
   positions: number;
@@ -92,9 +93,10 @@ export class TabIndicator extends Component<TabIndicatorProps> {
 
     // @ts-ignore
     return Animated.timing(this.contentOffset, {
-      toValue: params.offset,
+      toValue: RTLService.select(params.offset, -params.offset),
       duration: animationDuration,
       easing: Easing.linear,
+      useNativeDriver: true, // Platform.OS !== 'web',
     });
   };
 
@@ -103,16 +105,16 @@ export class TabIndicator extends Component<TabIndicatorProps> {
 
     this.scrollToOffset({
       offset: this.indicatorWidth * this.props.selectedPosition,
+      animated: false,
     });
   };
 
-  private getComponentStyle = (source) => {
-    const {style, positions} = this.props;
+  private getComponentStyle = (style) => {
+    const {positions} = this.props;
 
     const widthPercent: number = 100 / positions;
 
     return {
-      ...source,
       ...StyleSheet.flatten(style),
       width: `${widthPercent}%`,
       transform: [{translateX: this.contentOffset}],
@@ -120,13 +122,14 @@ export class TabIndicator extends Component<TabIndicatorProps> {
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const componentStyle = this.getComponentStyle(this.props.style);
+    const { style, ...viewProps } = this.props;
+    const componentStyle = this.getComponentStyle(style);
 
     return (
       <Animated.View
-        {...this.props}
-        onLayout = {this.onLayout}
+        {...viewProps}
         style = {componentStyle}
+        onLayout = {this.onLayout}
       />
     );
   }

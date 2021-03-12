@@ -111,7 +111,9 @@ export type CheckBoxElement = React.ReactElement<CheckBoxProps>;
  * };
  * ```
  * */
-class CheckBoxComponent extends PureComponent<CheckBoxProps> {
+// @ts-ignore
+@withThemes('CheckBox', mapPropToStyles)
+export class CheckBox extends PureComponent<CheckBoxProps> {
   static displayName = 'CheckBox';
   static defaultProps = {
     children: null,
@@ -208,5 +210,3 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
 });
-
-export const CheckBox = withThemes('CheckBox', mapPropToStyles)(CheckBoxComponent);

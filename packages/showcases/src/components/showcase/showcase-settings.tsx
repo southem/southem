@@ -101,6 +101,7 @@ export const ShowcaseSettings = (props: ShowcaseSettingsProps): React.ReactEleme
   const renderButtonThemes = (): ButtonElement => (
     <Button
       size='mini'
+      // @ts-ignore
       accessoryLeft={ColorPaletteIcon}
       disabled={!props.themes}
       onPress={toggleThemesMenu}>
@@ -111,6 +112,7 @@ export const ShowcaseSettings = (props: ShowcaseSettingsProps): React.ReactEleme
   const renderButtonSettings = (): ButtonElement => (
     <Button
       size='mini'
+      // @ts-ignore
       accessoryLeft={SettingsIcon}
       disabled={!props.settings}
       onPress={toggleSettingsMenu}>
@@ -137,6 +139,7 @@ export const ShowcaseSettings = (props: ShowcaseSettingsProps): React.ReactEleme
       <Button
         size='mini'
         status='danger'
+        // @ts-ignore
         accessoryLeft={TrashIcon}
         disabled={!props.settings}
         onPress={onResetButtonPress}>

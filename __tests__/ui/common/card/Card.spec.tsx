@@ -121,7 +121,9 @@ describe('@card: component checks', () => {
     );
     const element: RenderAPI = render(<TestCard footer={Footer}/>);
 
+    // @ts-ignore
     expect(element.UNSAFE_getAllByType(Button)[0]).toBeTruthy();
+    // @ts-ignore
     expect(element.UNSAFE_getAllByType(Button)[1]).toBeTruthy();
   });
 

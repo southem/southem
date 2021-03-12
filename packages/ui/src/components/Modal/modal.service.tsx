@@ -20,7 +20,7 @@ import {
  *
  * ```
  * import React from 'react';
- * import { Layout, Button, Text, ModalService } from '@ui-kitten/components';
+ * import { Layout, Button, Text, ModalService } from '@southem/ui';
  *
  * export const ModalServiceShowcase = () => {
  *

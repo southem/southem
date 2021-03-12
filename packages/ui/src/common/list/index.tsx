@@ -68,8 +68,8 @@ const Status = {
   IDLE: 'idle',
 };
 
-
 const renderItem = (component: ListRenderItemInfo<ItemType>, defaultProps, style: StyleType): ListItemElement =>
+  // @ts-ignore
   renderNode(ListItem, component, {
     ...defaultProps,
     style: StyleSheet.flatten([style, defaultProps && defaultProps.style]),

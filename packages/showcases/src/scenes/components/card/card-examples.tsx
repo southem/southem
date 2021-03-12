@@ -65,13 +65,15 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   footerContainer: {
-    margin: 8,
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignContent: 'center',
+    paddingHorizontal: 10,
+    paddingVertical: 6,
   },
   footerControl: {
-    width: '20%',
+    width: '30%',
     marginHorizontal: 4,
   },
 });

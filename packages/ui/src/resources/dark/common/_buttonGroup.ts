@@ -2,7 +2,7 @@ import { normalize } from '@southem/tools';
 import { transparent } from '../../colors';
 import palette from '../_palette';
 
-const sizeButton = normalize(42);
+const sizeButton = normalize(40);
 
 export default {
   ButtonGroup: {
@@ -14,7 +14,6 @@ export default {
     borderRadius: 3,
     overflow: 'hidden',
     backgroundColor: '#fff',
-    height: sizeButton,
 
     Button: {
       flex: 1,
@@ -30,22 +29,22 @@ export default {
   },
   'ButtonGroup[size=mini]': {
     minWidth: sizeButton - 16,
-    height: sizeButton - 16,
+    minHeight: sizeButton - 16,
   },
   'ButtonGroup[size=small]': {
     minWidth: sizeButton - 8,
-    height: sizeButton - 8,
+    minHeight: sizeButton - 8,
   },
   'ButtonGroup[size=medium]': {
     minWidth: sizeButton,
-    height: sizeButton,
+    minHeight: sizeButton,
   },
   'ButtonGroup[size=large]': {
     minWidth: sizeButton + 8,
-    height: sizeButton + 8,
+    minHeight: sizeButton + 8,
   },
   'ButtonGroup[size=big]': {
     minWidth: sizeButton + 16,
-    height: sizeButton + 16,
+    minHeight: sizeButton + 16,
   },
 };

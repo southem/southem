@@ -22,7 +22,7 @@ export const ComponentsScreen = ({ navigation }): React.ReactElement => {
   const renderDrawerAction = (): React.ReactElement => (
     <TopNavigationAction
       // @ts-ignore
-      icon={MenuIcon}
+      icon={MenuIcon({ color: 'white' })}
       onPress={navigation.toggleDrawer}
     />
   );
@@ -33,6 +33,7 @@ export const ComponentsScreen = ({ navigation }): React.ReactElement => {
       insets='top'>
       <TopNavigation
         title='Southem UI'
+        titleStyle={styles.title}
         accessoryLeft={renderDrawerAction}
       />
       <Divider/>
@@ -47,6 +48,9 @@ export const ComponentsScreen = ({ navigation }): React.ReactElement => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
+  },
+  title: {
+    color: 'white',
   },
   searchContainer: {
     paddingHorizontal: 16,

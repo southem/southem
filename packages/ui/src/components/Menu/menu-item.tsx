@@ -4,20 +4,22 @@ import {
   NativeSyntheticEvent,
   StyleSheet,
   TargetedEvent,
-  View,
   TouchableOpacityProps,
 } from 'react-native';
 import { withThemes } from '@southem/theme';
 import {
-  PropsService,
   RenderProp,
   renderTextElement,
   renderIconElement,
   Overwrite,
-  StyleType,
   StyledComponentProps,
 } from '../../devsupport';
-import { ImageProps, TextProps, Touchable } from '../../common';
+import {
+  ImageProps,
+  TextProps,
+  Touchable,
+  View,
+} from '../../common';
 import { MenuItemDescriptor } from './menu.service';
 
 type MenuItemStyledProps = Overwrite<StyledComponentProps, {
@@ -64,6 +66,9 @@ export type MenuItemElement = React.ReactElement<MenuItemProps>;
 // @ts-ignore
 @withThemes('MenuItem')
 export class MenuItem extends React.Component<MenuItemProps> {
+  static defaultProps: Partial<MenuItemProps> = {
+    appearance: 'default',
+  };
 
   private onFocus = (event: NativeSyntheticEvent<TargetedEvent>): void => {
     this.props.onFocus && this.props.onFocus(event);
@@ -85,42 +90,6 @@ export class MenuItem extends React.Component<MenuItemProps> {
     this.props.onPressOut && this.props.onPressOut(event);
   };
 
-  /**
-  private getComponentStyle = (style: StyleType) => {
-    const { paddingHorizontal, paddingVertical, paddingLeft, backgroundColor } = style;
-
-    const titleStyles: StyleType = PropsService.allWithPrefix(style, 'title');
-    const indicatorStyles: StyleType = PropsService.allWithPrefix(style, 'indicator');
-    const iconStyles: StyleType = PropsService.allWithPrefix(style, 'icon');
-
-    return {
-      container: {
-        paddingHorizontal: paddingHorizontal,
-        paddingLeft: paddingLeft,
-        paddingVertical: paddingVertical,
-        backgroundColor: backgroundColor,
-      },
-      title: {
-        marginHorizontal: titleStyles.titleMarginHorizontal,
-        fontFamily: titleStyles.titleFontFamily,
-        fontSize: titleStyles.titleFontSize,
-        fontWeight: titleStyles.titleFontWeight,
-        color: titleStyles.titleColor,
-      },
-      indicator: {
-        width: indicatorStyles.indicatorWidth,
-        backgroundColor: indicatorStyles.indicatorBackgroundColor,
-      },
-      icon: {
-        width: iconStyles.iconWidth,
-        height: iconStyles.iconHeight,
-        marginHorizontal: iconStyles.iconMarginHorizontal,
-        tintColor: iconStyles.iconTintColor,
-      },
-    };
-  };
-  **/
-
   public render(): React.ReactNode {
     const { style, title, accessoryLeft, accessoryRight, children, ...touchableProps } = this.props;
 
@@ -128,28 +97,17 @@ export class MenuItem extends React.Component<MenuItemProps> {
       // @ts-ignore
       <Touchable
         {...touchableProps}
-        style={[styles.container, style]}
+        style={style}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
         onPress={this.onPress}
         onPressIn={this.onPressIn}
         onPressOut={this.onPressOut}>
-        <View style={[StyleSheet.absoluteFill, styles.indicator]}/>
-        {renderIconElement(accessoryLeft, { style: styles.icon })}
-        {renderTextElement(title, { style: styles.title })}
-        {renderIconElement(accessoryRight, { style: styles.icon })}
+        <View style={[StyleSheet.absoluteFill]}/>
+        {renderIconElement(accessoryLeft)}
+        {renderTextElement(title)}
+        {renderIconElement(accessoryRight)}
       </Touchable>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-  },
-  title: {
-    flex: 1,
-    textAlign: 'left',
-  },
-  icon: {},
-  indicator: {},
-});

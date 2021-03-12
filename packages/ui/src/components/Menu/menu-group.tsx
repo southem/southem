@@ -6,8 +6,8 @@ import {
   ViewProps,
   ViewStyle,
 } from 'react-native';
+import { Icon } from '@southem/icons';
 import { ChildrenWithProps } from '../../devsupport';
-import { ChevronDown } from '../../shared';
 import {
   Frame,
   MeasureElement,
@@ -97,10 +97,11 @@ export class MenuGroup extends React.Component<MenuGroupProps, State> {
     return { appearance: 'grouped' };
   }
 
-  private onPress = (): void => {
+  private onPress = (descriptor: MenuItemDescriptor, event: GestureResponderEvent): void => {
     if (this.hasSubmenu) {
       const expandValue: number = this.expandAnimationValue > 0 ? 0 : this.state.submenuHeight;
       this.createExpandAnimation(expandValue).start();
+      this.props.onPress && this.props.onPress(descriptor, event);
     }
   };
 
@@ -116,16 +117,16 @@ export class MenuGroup extends React.Component<MenuGroupProps, State> {
     });
   };
 
-  private renderAccessoryIfNeeded = (evaProps: Partial<ImageProps>): React.ReactElement => {
+  private renderAccessoryIfNeeded = (styleProps: Partial<ImageProps>): React.ReactElement => {
     if (!this.hasSubmenu) {
       return null;
     }
 
-    const style = StyleSheet.flatten(evaProps.style);
+    const style = StyleSheet.flatten(styleProps.style);
 
     return (
       <Animated.View style={{ transform: [{ rotate: this.expandToRotateInterpolation }] }}>
-        <ChevronDown {...evaProps} fill={style.tintColor}/>
+        <Icon type={'octicon'} name={'chevron-down'} {...styleProps} color={style.tintColor}/>
       </Animated.View>
     );
   };
@@ -136,32 +137,32 @@ export class MenuGroup extends React.Component<MenuGroupProps, State> {
     });
   };
 
-  private renderGroupedItems = (evaStyle): React.ReactElement<ViewProps> => {
+  private renderGroupedItems = (style): React.ReactElement<ViewProps> => {
     return (
-      <Animated.View style={[styles.submenu, this.submenuStyle, evaStyle]}>
+      <Animated.View style={[styles.submenu, this.submenuStyle, style]}>
         {this.renderItemsWithDefaultProps()}
       </Animated.View>
     );
   };
 
-  private renderMeasuringGroupedItems = (evaStyle): MeasuringElement => {
+  private renderMeasuringGroupedItems = (style): MeasuringElement => {
     return (
       <MeasureElement onMeasure={this.onSubmenuMeasure}>
-        {this.renderGroupedItems(evaStyle)}
+        {this.renderGroupedItems(style)}
       </MeasureElement>
     );
   };
 
-  private renderGroupedItemsIfNeeded = (evaStyle): React.ReactNode => {
+  private renderGroupedItemsIfNeeded = (style): React.ReactNode => {
     if (!this.hasSubmenu) {
       return null;
     }
 
     if (this.shouldMeasureSubmenu) {
-      return this.renderMeasuringGroupedItems(evaStyle);
+      return this.renderMeasuringGroupedItems(style);
     }
 
-    return this.renderGroupedItems(evaStyle);
+    return this.renderGroupedItems(style);
   };
 
   public render(): React.ReactNode {

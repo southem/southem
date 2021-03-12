@@ -62,6 +62,10 @@ export type BottomNavigationTabElement = React.ReactElement<BottomNavigationTabP
 export class BottomNavigationTab extends Component<BottomNavigationTabProps> {
   static displayName = 'BottomNavigationTab';
 
+  static defaultProps: Partial<BottomNavigationTabProps> = {
+    appearance: 'default',
+  };
+
   private onPress = () => {
     if (this.props.onSelect) {
       this.props.onSelect(!this.props.selected);

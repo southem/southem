@@ -7,6 +7,7 @@ export default {
     alignItems: 'center',
     Text: {
       color: palette.default,
+      marginHorizontal: 8,
     },
   },
   'CheckBox[disabled=true]': {

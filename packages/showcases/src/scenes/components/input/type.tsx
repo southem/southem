@@ -75,6 +75,18 @@ export const inputShowcase: ComponentShowcase = {
 
 export const inputSettings: ComponentShowcaseSetting[] = [
   {
+    propertyName: 'appearance',
+    value: 'default',
+  },
+  {
+    propertyName: 'appearance',
+    value: 'underline',
+  },
+  {
+    propertyName: 'appearance',
+    value: 'borderline',
+  },
+  {
     propertyName: 'status',
     value: 'primary',
   },

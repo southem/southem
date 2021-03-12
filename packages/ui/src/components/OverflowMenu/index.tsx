@@ -138,7 +138,7 @@ export class OverflowMenu extends React.Component<OverflowMenuProps> {
       <Popover
         {...popoverProps}
         ref={this.popoverRef}
-        style={[styles.popover, styles.container, style]}>
+        style={[styles.popover, style]}>
         {contentElement}
       </Popover>
     );
@@ -146,10 +146,6 @@ export class OverflowMenu extends React.Component<OverflowMenuProps> {
 }
 
 const styles = StyleSheet.create({
-  container: {},
-  indicator: {
-    // backgroundColor
-  },
   popover: {
     overflow: 'hidden',
   },

@@ -8,7 +8,6 @@ import {
 import {
   fireEvent,
   render,
-  RenderAPI,
 } from 'react-native-testing-library';
 import Theme, { ThemeProvider } from '@southem/theme';
 import {
@@ -16,14 +15,18 @@ import {
   Input,
   InputProps,
 } from '@southem/ui';
+import { IconRegistry, SouthemIconsPack } from '@southem/icons';
 
 Theme.registerDefaultTheme(darkTheme);
 
 const TestInput = React.forwardRef((props: InputProps, ref: React.Ref<Input>) => (
-  <ThemeProvider
-    theme={'default'}>
-    <Input ref={ref} {...props} />
-  </ThemeProvider>
+  <>
+    <IconRegistry icons={SouthemIconsPack}/>
+    <ThemeProvider
+      theme={'default'}>
+      <Input ref={ref} {...props} />
+    </ThemeProvider>
+  </>
 ));
 
 describe('@input: component checks', () => {

@@ -6,10 +6,13 @@ import {
   ViewProps,
   ViewStyle,
 } from 'react-native';
+import { withThemes } from '@southem/theme';
 
 export type PopoverIndicatorProps = ViewProps;
 export type PopoverIndicatorElement = React.ReactElement<PopoverIndicatorProps>;
 
+// @ts-ignore
+@withThemes('PopoverIndicator')
 export class PopoverIndicator extends React.Component<PopoverIndicatorProps> {
 
   private getComponentStyle = (source: StyleProp<ViewStyle>) => {
@@ -33,17 +36,14 @@ export class PopoverIndicator extends React.Component<PopoverIndicatorProps> {
 
   public render(): React.ReactElement<ViewProps> {
     const { style, ...props } = this.props;
-    const sStyle = this.getComponentStyle(style);
+    const styles = this.getComponentStyle(style);
 
     return (
       <View
         {...props}
-        style={[style, styles.container, sStyle.container]}
+        // @ts-ignore
+        style={[style, styles.container]}
       />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {},
-});

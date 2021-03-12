@@ -13,7 +13,7 @@ import {
   waitForElement,
 } from 'react-native-testing-library';
 import Theme, { ThemeProvider } from '@southem/theme';
-import { Frame } from '@southem/ui';
+import { Frame, ModalPanel } from '@southem/ui';
 import {
   darkTheme,
   Popover,
@@ -62,18 +62,20 @@ describe('@popover: component checks', () => {
     };
 
     const AnchorButton = () => (
-      <Button testID='@popover/toggle-button' title='' onPress={togglePopover}/>
+      <Button testID='@popover/toggle-button' title='Button' onPress={togglePopover}/>
     );
 
     return (
       <ThemeProvider theme={'default'}>
-        <Popover
-          ref={ref}
-          visible={visible}
-          anchor={AnchorButton}
-          {...props}>
-          <Text>I love Babel</Text>
-        </Popover>
+        <ModalPanel>
+          <Popover
+            ref={ref}
+            visible={visible}
+            anchor={AnchorButton}
+            {...props}>
+            <Text>I love Babel</Text>
+          </Popover>
+        </ModalPanel>
       </ThemeProvider>
     );
   });
@@ -101,7 +103,7 @@ describe('@popover: component checks', () => {
 
 
     fireEvent.press(component.queryByTestId('@popover/toggle-button'));
-    const text = await waitForElement(() => component.queryByType(Text));
+    const text = await waitForElement(() => component.UNSAFE_queryByType(Text));
 
     expect(text).toBeTruthy();
   });

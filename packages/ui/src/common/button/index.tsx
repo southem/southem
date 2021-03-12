@@ -124,13 +124,15 @@ const mapPropToStyles = [
  *     <Button
  *       style={styles.button}
  *       titleStyle={styles.buttonText}>
- *       BUTTON
+ *       {props => <Text {...props}>BUTTON</Text>}
  *     </Button>
  *   );
  * };
  * ```
  */
-class ButtonComponent extends PureComponent<ButtonProps> {
+// @ts-ignore
+@withThemes('Button', mapPropToStyles)
+export class Button extends PureComponent<ButtonProps> {
   public static displayName: string = 'Button';
   public static defaultProps = {
     title: undefined,
@@ -227,5 +229,3 @@ class ButtonComponent extends PureComponent<ButtonProps> {
     );
   }
 }
-
-export const Button = withThemes('Button', mapPropToStyles)(ButtonComponent);
