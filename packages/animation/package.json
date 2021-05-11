@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "hoist-non-react-statics": "^3.3.2",
-    "lodash": "^4.17.19"
+    "lodash": "^4.17.21"
   },
   "peerDependencies": {
     "@southem/theme": "0.0.1",

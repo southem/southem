@@ -24,7 +24,7 @@
     "access": "public"
   },
   "dependencies": {
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "react-native-render-html": "^4.2.0",
     "htmlparser2": "^4.0.0"
   },
