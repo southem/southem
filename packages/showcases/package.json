@@ -40,7 +40,7 @@
     "expo": "^37.0.0",
     "expo-analytics": "^1.0.15",
     "expo-device": "^2.2.1",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.0.tar.gz",
