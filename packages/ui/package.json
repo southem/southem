@@ -25,7 +25,7 @@
   "dependencies": {
     "color": "^3.1.2",
     "lodash": "^4.17.21",
-    "moment": "^2.27.0"
+    "moment": "^2.29.4"
   },
   "peerDependencies": {
     "@southem/animation": "0.0.1",
