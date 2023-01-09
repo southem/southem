@@ -48,7 +48,7 @@ Sur la machine hote, on va lancer le debugger react-native sur chrome : `http://
 
 Et pour lancer l'application
 
-	$ exp start -s ##your_email##
+	$ exp start -s eldorplus@gmail.com
 	
 Maintenant on est live et prèt à coder et/ou debugger?
 
