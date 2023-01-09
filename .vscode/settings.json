@@ -1,0 +1,22 @@
+{
+    "eslint": {
+        "enable": true,
+        "lintTask": {
+            "enable": true
+        }
+    },
+    "react-native-tools": {
+        "logLevel": "Trace",
+    },
+    "react-native": {
+        "packager": {
+            "port": 19001
+        }
+    },
+    "settings": {
+		"react-native-storybooks": {
+            "port": 7007,
+            "storyRegex": "src/**/*.story.js"
+        },
+	}
+}

@@ -25,8 +25,8 @@
   },
   "dependencies": {
     "lodash": "^4.17.21",
-    "react-native-render-html": "^4.2.0",
-    "htmlparser2": "^4.0.0"
+    "react-native-render-html": "^6.3.4",
+    "htmlparser2": "^8.0.1"
   },
   "peerDependencies": {
     "@southem/animation": "0.0.1",

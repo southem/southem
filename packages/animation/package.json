@@ -27,10 +27,10 @@
   },
   "peerDependencies": {
     "@southem/theme": "0.0.1",
-    "react": "^16.13.1",
-    "react-native": "^0.61.4",
-    "react-native-svg": "^12.1.0",
-    "prop-types": "^15.7.2"
+    "react": "^18.2.0",
+    "react-native": "^0.70.6",
+    "react-native-svg": "^13.6.0",
+    "prop-types": "^15.8.1"
   },
   "rnpm": {
     "assets": [

@@ -25,12 +25,12 @@
   "dependencies": {
     "hoist-non-react-statics": "^3.3.2",
     "lodash": "^4.17.21",
-    "fecha": "4.2.0",
-    "prop-types": "^15.7.2"
+    "fecha": "4.2.3",
+    "prop-types": "^15.8.1"
   },
   "peerDependencies": {
-    "react-native": "^0.61.4",
-    "react-native-svg": "^12.1.0",
-    "prop-types": "^15.7.2"
+    "react-native": "^0.70.6",
+    "react-native-svg": "^13.6.0",
+    "prop-types": "^15.8.1"
   }
 }
