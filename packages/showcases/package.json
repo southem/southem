@@ -20,6 +20,10 @@
   "scripts": {
     "prod": "yarn env -- prod && expo start -c",
     "start": "yarn run env -- dev && expo start -c",
+    "android": "yarn run env -- dev && expo start --android",
+    "ios": "yarn run env -- dev && expo start --ios",
+    "web": "yarn run env -- dev && expo start --web",
+    "eject": "expo eject",
     "build": "expo build",
     "build:android": "expo build:android",
     "build:ios": "expo build:ios",

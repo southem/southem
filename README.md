@@ -29,7 +29,7 @@ On peut y accèder avec la commande :
 On va avoir deux éléments préinstallés et accessible en ligne de commande :
 	
 * React-nactive-cli (create-react-native-app, react-native)
-* exp
+* expo-cli
 
 On va commencer par créer le projet react-native "hello-meetup".
 
@@ -48,7 +48,7 @@ Sur la machine hote, on va lancer le debugger react-native sur chrome : `http://
 
 Et pour lancer l'application
 
-	$ exp start -s eldorplus@gmail.com
+	$ expo start -s eldorplus@gmail.com
 	
 Maintenant on est live et prèt à coder et/ou debugger?
 
@@ -56,8 +56,8 @@ Maintenant on est live et prèt à coder et/ou debugger?
 
 Il faut connecter l'application expo et la ligne de commande expo sur le même compte. Ensuite on publie sur notre compte expo.
 
-	$ exp login
-	$ exp publish
+	$ expo login
+	$ expo publish
 
 # Bonus
 
