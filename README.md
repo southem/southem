@@ -40,11 +40,11 @@ On va commencer par créer le projet react-native "hello-meetup".
 
 Il convient de renseigner l'IP
 
-	$ export env REACT_NATIVE_PACKAGER_HOSTNAME=##MON_IP_LOCAL##
+	$ export env REACT_NATIVE_PACKAGER_HOSTNAME=<<HOST LOCAL IP>>
 	
 Si comme moi, vous avez un Iphone, vous ne pouvez plus scanner de QR code comme c'est proposé pas l'application, pour tester on va envoyer un lien qui va pointer vers l'application expo.
 
-Sur la machine hote, on va lancer le debugger react-native sur chrome : `http://##MON_IP_LOCAL##:19001/debugger-ui/`
+Sur la machine hote, on va lancer le debugger react-native sur chrome : `http://<<HOST LOCAL IP>>:19001/debugger-ui/`
 
 Et pour lancer l'application
 
