@@ -45,7 +45,6 @@ RUN apk update && apk add --no-cache sudo bash git android-tools
 
 # Copy the compiled executable:
 COPY --from=builder /usr/local/bin/watchman* /usr/local/bin/
-#COPY --from=builder /usr/local/lib/python2.7 /usr/local/lib/python2.7/
 # Copy the runtime directories:
 COPY --from=builder /usr/local/var/run/watchman /usr/local/var/run/watchman
 # Copy the documentation:
@@ -54,8 +53,6 @@ COPY --from=builder /usr/local/share/doc/watchman-4.9.0 /usr/local/share/doc/wat
 RUN echo "node ALL=NOPASSWD: /usr/local/bin/npm,/usr/local/bin/yarn" > /etc/sudoers.d/node
 
 USER node
-
-RUN echo "export REACT_NATIVE_PACKAGER_HOSTNAME=$REACT_NATIVE_PACKAGER_HOSTNAME" >> $HOME/.bashrc && source $HOME/.bashrc
 
 # Install eslint typescript expo
 RUN sudo yarn global add eslint typescript react-native-cli create-react-native-app expo-cli @expo/ngrok npm@latest

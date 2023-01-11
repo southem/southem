@@ -45,7 +45,6 @@ RUN apk update && apk add --no-cache sudo bash git android-tools
 
 # Copy the compiled executable:
 COPY --from=builder /usr/local/bin/watchman* /usr/local/bin/
-#COPY --from=builder /usr/local/lib/python2.7 /usr/local/lib/python2.7/
 # Copy the runtime directories:
 COPY --from=builder /usr/local/var/run/watchman /usr/local/var/run/watchman
 # Copy the documentation:
@@ -56,11 +55,9 @@ RUN echo "node ALL=NOPASSWD: /usr/local/bin/npm,/usr/local/bin/yarn" > /etc/sudo
 USER node
 
 # Expo server address = Private ip address
-ENV REACT_NATIVE_PACKAGER_HOSTNAME=${REACT_NATIVE_PACKAGER_HOSTNAME:-192.168.1.7}
+ENV REACT_NATIVE_PACKAGER_HOSTNAME=${REACT_NATIVE_PACKAGER_HOSTNAME:-192.168.1.90}
 ENV EXPO_DEVTOOLS_LISTEN_ADDRESS=${EXPO_DEVTOOLS_LISTEN_ADDRESS:-0.0.0.0}
 #ENV ADB_IP=192.168.1.90
-
-RUN echo "export REACT_NATIVE_PACKAGER_HOSTNAME=$REACT_NATIVE_PACKAGER_HOSTNAME" >> $HOME/.bashrc && source $HOME/.bashrc
 
 # Install eslint typescript expo
 RUN sudo yarn global add eslint typescript react-native-cli create-react-native-app expo-cli @expo/ngrok npm@latest

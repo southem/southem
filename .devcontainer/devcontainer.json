@@ -48,7 +48,6 @@
 		"ms-dotnettools.csharp",
 		"ms-azuretools.vscode-azurefunctions",
 		"ms-vscode.azure-account",
-		"wakatime.vscode-wakatime",
 		"davidanson.vscode-markdownlint",
 		"github.vscode-pull-request-github",
 		"johnpapa.vscode-peacock"
