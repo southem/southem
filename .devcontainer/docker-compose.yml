@@ -4,7 +4,7 @@ services:
   react-native:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./Dockerfile
       target: vscode
     image: io.ghcr.southem.vscode-expo-starter
     #image: io.ghcr.navneetkarnani.vscode-expo-starter
