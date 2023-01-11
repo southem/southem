@@ -37,7 +37,9 @@
 		"eamodio.gitlens",
 		"mhutchie.git-graph",
 		// nice file icons from vscode icons team
-		"vscode-icons-team.vscode-icons"
+		"vscode-icons-team.vscode-icons",
+		"ms-azuretools.vscode-docker",
+		"GitHub.github-vscode-theme"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
