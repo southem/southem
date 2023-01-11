@@ -1,1 +1,33 @@
+version: '3.9'
 
+services:
+  react-native:
+    build: ../.docker/vscode/Dockerfile
+    image: southem/expo-cli
+    container_name: react-native
+    volumes:
+      - code:/home/node/workspace
+      - vs-server:/home/node/.vscode-server
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /var/run/docker.sock:/var/run/docker.sock
+    working_dir: /home/node/workspace
+    ports:
+      - 8081:8081
+      - 19000:19000
+      - 19001:19001
+      - 19002:19002
+      - 19006:19006 # browser
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    #environment:
+      REACT_NATIVE_PACKAGER_HOSTNAME: "${REACT_NATIVE_PACKAGER_HOSTNAME:-host.docker.internal:19000}"
+      EXPO_DEVTOOLS_LISTEN_ADDRESS: 0.0.0.0
+
+volumes:
+  vs-server: {}
+  code:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ":/home/node/workspace"
