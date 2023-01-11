@@ -55,7 +55,7 @@ RUN echo "node ALL=NOPASSWD: /sbin/apk,/usr/local/bin/npm,/usr/local/bin/yarn" >
 USER node
 
 # Install eslint typescript expo
-RUN sudo yarn global add eslint typescript react-native-cli create-react-native-app expo-cli @expo/ngrok npm@latest
+RUN sudo yarn global add eslint typescript react-native-cli create-react-native-app expo-cli eas-cli @expo/ngrok npm@latest
 RUN sudo npm cache clean --force  && sudo yarn cache clean
 
 # Init for VS Code

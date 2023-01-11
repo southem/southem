@@ -1,0 +1,39 @@
+{
+    "project_info": {
+      "project_number": "289776596251",
+      "project_id": "ui.southem.showcases",
+      "storage_bucket": "uui.southem.showcases.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:289776596251:android:af6cb9c81c13145e12cfbe",
+          "android_client_info": {
+            "package_name": "ui.southem.showcases"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "289776596251-i4oo0ep6r0rvk71v1213i3e8no7kcu0u.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSSyADCLdzTBaRTkSurzEMtWGr"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": [
+              {
+                "client_id": "289776596251-i4oo0ep6r0rvk71v1213i3e8no7kcu0u.apps.googleusercontent.com",
+                "client_type": 3
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }

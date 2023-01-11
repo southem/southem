@@ -4,14 +4,14 @@
     "slug": "ui-southem-showcases",
     "description": "UI Southem Documentation Showcases",
     "privacy": "public",
+    "version": "1.0.0",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "1.0.0",
-    "sdkVersion": "39.0.2",
     "githubUrl": "https://github.com/southem/southem",
+    "sdkVersion": "47.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "icon": "src/assets/images/icon-app.png",
@@ -21,7 +21,8 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 15000,
+      "url": "https://u.expo.dev/14f86041-c0c6-4796-8ab9-dcddf6991214"
     },
     "assetBundlePatterns": [
       "src/assets/images/*",
@@ -38,19 +39,44 @@
       "versionCode": 3,
       "package": "ui.southem.showcases",
       "playStoreUrl": "https://play.google.com/store/apps/details?id=ui.southem.showcases",
-      "config": {
-        "googleSignIn": {
-          "apiKey": "AIzaSSyADCLdzTBaRTkSurzEMtWGr",
-          "certificateHash": "E3C2F31E0D060B49616998"
-        }
+      "adaptiveIcon": {
+        "foregroundImage": "src/assets/images/icon-app.png",
+        "backgroundColor": "#FFFFFF"
       },
       "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "NOTIFICATIONS",
         "WAKE_LOCK"
-      ]
+      ],
+      "googleServicesFile": "./google-services.json"
     },
     "androidStatusBar": {
       "barStyle": "dark-content",
       "backgroundColor": "#F7F9FC"
+    },
+    "web": {
+      "favicon": "src/assets/images/icon-app.png"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "src/assets/images/icon-app.png",
+          "color": "#ffffff",
+          "sounds": [
+            "src/assets/notifications/notification.wav"
+          ]
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "69c2b9ad-28d9-47ec-a612-e26a3bc96220"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     },
     "entryPoint": "node_modules/expo/AppEntry.js"
   }

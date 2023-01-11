@@ -32,6 +32,7 @@ const presets = [
 const plugins = [
   ['@babel/plugin-proposal-decorators', { 'legacy': true }],
   ['module-resolver', moduleResolverConfig],
+  "react-native-reanimated/plugin",
 ];
 
 module.exports = function (api) {
