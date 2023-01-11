@@ -62,9 +62,6 @@ ENV EXPO_DEVTOOLS_LISTEN_ADDRESS=${EXPO_DEVTOOLS_LISTEN_ADDRESS:-0.0.0.0}
 
 RUN echo "export REACT_NATIVE_PACKAGER_HOSTNAME=$REACT_NATIVE_PACKAGER_HOSTNAME" >> $HOME/.bashrc && source $HOME/.bashrc
 
-#RUN sudo npm install --global --unsafe-perm react-native-cli create-react-native-app expo-cli \
-#  && sudo npm cache clean --force
-
 # Install eslint typescript expo
 RUN sudo yarn global add eslint typescript react-native-cli create-react-native-app expo-cli @expo/ngrok npm@latest
 RUN sudo npm cache clean --force  && sudo yarn cache clean
