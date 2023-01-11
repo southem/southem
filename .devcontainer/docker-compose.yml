@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   react-native:
-    build: ../.docker/vscode/Dockerfile
+    build: .
     image: southem/expo-cli
     container_name: react-native
     volumes:
@@ -20,9 +20,8 @@ services:
     extra_hosts:
       host.docker.internal: host-gateway
     environment:
-      CODESPACES: true
       REACT_NATIVE_PACKAGER_HOSTNAME: "${REACT_NATIVE_PACKAGER_HOSTNAME:-host.docker.internal:19000}"
-      EXPO_DEVTOOLS_LISTEN_ADDRESS: 0.0.0.0
+      EXPO_DEVTOOLS_LISTEN_ADDRESS: "0.0.0.0"
 
 volumes:
   vs-server: {}
