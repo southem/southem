@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    image: io.ghcr.southem.vscode-expo-starter
+    image: southem/vscode-expo-starter
     #image: io.ghcr.navneetkarnani.vscode-expo-starter
     container_name: react-native
     volumes:
