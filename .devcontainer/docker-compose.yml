@@ -4,13 +4,13 @@ services:
   react-native:
     build:
       context: .
-      #dockerfile: Dockerfile
+      dockerfile: Dockerfile
       target: vscode
-    image: southem/expo-cli
+    image: io.ghcr.southem.vscode-expo-starter
+    #image: io.ghcr.navneetkarnani.vscode-expo-starter
     container_name: react-native
     volumes:
-      - ..:/home/node/workspace:cached  
-      #- code:/home/node/workspace
+      - ..:/home/node/workspace:cached
       - vs-server:/home/node/.vscode-server
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /var/run/docker.sock:/var/run/docker.sock
@@ -30,9 +30,4 @@ services:
 
 volumes:
   vs-server: {}
-#  code:
-#    driver: local
-#    driver_opts:
-#      type: none
-#      o: bind
-#      device: ":/home/node/workspace"
+  code: {}

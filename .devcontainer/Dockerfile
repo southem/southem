@@ -41,7 +41,7 @@ RUN ./autogen.sh \
 FROM node:16.19-alpine
 LABEL maintainer="Patrick LUZOLO"
 
-RUN apk update && apk add --no-cache sudo bash git android-tools
+RUN apk update && apk add --no-cache sudo bash git android-tools docker
 
 # Copy the compiled executable:
 COPY --from=builder /usr/local/bin/watchman* /usr/local/bin/
@@ -50,7 +50,7 @@ COPY --from=builder /usr/local/var/run/watchman /usr/local/var/run/watchman
 # Copy the documentation:
 COPY --from=builder /usr/local/share/doc/watchman-4.9.0 /usr/local/share/doc/watchman-4.9.0
 
-RUN echo "node ALL=NOPASSWD: /usr/local/bin/npm,/usr/local/bin/yarn" > /etc/sudoers.d/node
+RUN echo "node ALL=NOPASSWD: /sbin/apk,/usr/local/bin/npm,/usr/local/bin/yarn" > /etc/sudoers.d/node
 
 USER node
 
