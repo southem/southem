@@ -55,11 +55,19 @@ RUN echo "node ALL=NOPASSWD: /usr/local/bin/npm,/usr/local/bin/yarn" > /etc/sudo
 
 USER node
 
+# Expo server address = Private ip address
+ARG REACT_NATIVE_PACKAGER_HOSTNAME=${REACT_NATIVE_PACKAGER_HOSTNAME}
+#ENV REACT_NATIVE_PACKAGER_HOSTNAME=${REACT_NATIVE_PACKAGER_HOSTNAME}
+ENV EXPO_DEVTOOLS_LISTEN_ADDRESS=0.0.0.0
+#ENV ADB_IP=192.168.1.90
+
+RUN echo "export REACT_NATIVE_PACKAGER_HOSTNAME=$REACT_NATIVE_PACKAGER_HOSTNAME" >> $HOME/.bashrc && source $HOME/.bashrc
+
 #RUN sudo npm install --global --unsafe-perm react-native-cli create-react-native-app expo-cli \
 #  && sudo npm cache clean --force
 
 # Install eslint typescript expo
-RUN sudo yarn global add react-native-cli create-react-native-app expo-cli @expo/ngrok
+RUN sudo yarn global add eslint typescript react-native-cli create-react-native-app expo-cli @expo/ngrok npm@latest
 RUN sudo npm cache clean --force  && sudo yarn cache clean
 
 # Init for VS Code
