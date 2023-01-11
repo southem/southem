@@ -56,7 +56,7 @@ RUN echo "node ALL=NOPASSWD: /usr/local/bin/npm,/usr/local/bin/yarn" > /etc/sudo
 USER node
 
 # Expo server address = Private ip address
-ENV REACT_NATIVE_PACKAGER_HOSTNAME=${REACT_NATIVE_PACKAGER_HOSTNAME:-eldorplus-upgraded-space-goggles-v6r7v6xg4gfx65p.github.dev:443}
+ENV REACT_NATIVE_PACKAGER_HOSTNAME=${REACT_NATIVE_PACKAGER_HOSTNAME:-192.168.1.7}
 ENV EXPO_DEVTOOLS_LISTEN_ADDRESS=${EXPO_DEVTOOLS_LISTEN_ADDRESS:-0.0.0.0}
 #ENV ADB_IP=192.168.1.90
 
