@@ -56,8 +56,7 @@ RUN echo "node ALL=NOPASSWD: /usr/local/bin/npm,/usr/local/bin/yarn" > /etc/sudo
 USER node
 
 # Expo server address = Private ip address
-#ENV REACT_NATIVE_PACKAGER_HOSTNAME=${REACT_NATIVE_PACKAGER_HOSTNAME}
-ENV REACT_NATIVE_PACKAGER_HOSTNAME=${REACT_NATIVE_PACKAGER_HOSTNAME:-host.docker.internal}
+ENV REACT_NATIVE_PACKAGER_HOSTNAME=${REACT_NATIVE_PACKAGER_HOSTNAME:-eldorplus-upgraded-space-goggles-v6r7v6xg4gfx65p.github.dev:443}
 ENV EXPO_DEVTOOLS_LISTEN_ADDRESS=${EXPO_DEVTOOLS_LISTEN_ADDRESS:-0.0.0.0}
 #ENV ADB_IP=192.168.1.90
 
@@ -71,8 +70,8 @@ RUN sudo yarn global add eslint typescript react-native-cli create-react-native-
 RUN sudo npm cache clean --force  && sudo yarn cache clean
 
 # Init for VS Code
-WORKDIR /workspace
-RUN mkdir -p /home/node/.vscode-server 
+RUN mkdir -p /home/node/workspace /home/node/.vscode-server
+WORKDIR /home/node/workspace
 
 EXPOSE 8081
 EXPOSE 19000

@@ -4,11 +4,15 @@
 {
 	"name": "Existing Docker Compose (Extend)",
 
+	//"dockerFile": "customImage.dockerfile",
+	//"image": "southem/expo-cli:latest"
 	// Update the 'dockerComposeFile' list if you have more compose files or use different names.
 	// The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
 	"dockerComposeFile": [
 		"../docker-compose.yml"
 	],
+
+	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
 
 	// The 'service' property is the name of the service for the container that VS Code should
 	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
@@ -16,7 +20,8 @@
 
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
-	"workspaceFolder": "/workspace",
+	"workspaceFolder": "/home/node/workspace",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/home/node/workspace,type=bind,consistency=cached",
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
@@ -39,7 +44,14 @@
 		// nice file icons from vscode icons team
 		"vscode-icons-team.vscode-icons",
 		"ms-azuretools.vscode-docker",
-		"GitHub.github-vscode-theme"
+		"GitHub.github-vscode-theme",
+		"ms-dotnettools.csharp",
+		"ms-azuretools.vscode-azurefunctions",
+		"ms-vscode.azure-account",
+		"wakatime.vscode-wakatime",
+		"davidanson.vscode-markdownlint",
+		"github.vscode-pull-request-github",
+		"johnpapa.vscode-peacock"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
