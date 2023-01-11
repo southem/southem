@@ -17,6 +17,7 @@ services:
       - 19001:19001
       - 19002:19002
       - 19006:19006 # browser
+    tty: true
     extra_hosts:
       host.docker.internal: host-gateway
     environment:
