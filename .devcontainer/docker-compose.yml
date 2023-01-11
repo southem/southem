@@ -18,8 +18,9 @@ services:
       - 19002:19002
       - 19006:19006 # browser
     extra_hosts:
-      - "host.docker.internal:host-gateway"
+      host.docker.internal: host-gateway
     environment:
+      CODESPACES: true
       REACT_NATIVE_PACKAGER_HOSTNAME: "${REACT_NATIVE_PACKAGER_HOSTNAME:-host.docker.internal:19000}"
       EXPO_DEVTOOLS_LISTEN_ADDRESS: 0.0.0.0
 
