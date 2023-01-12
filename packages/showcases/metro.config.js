@@ -29,11 +29,13 @@ const playgroundExtraModules = {
   '@babel/runtime': path.resolve(__dirname, './node_modules/@babel/runtime'),
   '@expo/vector-icons': path.resolve(__dirname, './node_modules/@expo/vector-icons'),
   'expo-font': path.resolve(__dirname, './node_modules/expo-font'),
+  'expo-asset': path.resolve(__dirname, './node_modules/expo-asset'),
   'color': path.resolve(__dirname, './node_modules/color'),
   'css-tree': path.resolve(__dirname, './node_modules/css-tree'),
   'css-select': path.resolve(__dirname, './node_modules/css-select'),
   'react': path.resolve(__dirname, './node_modules/react'),
   'react-native': path.resolve(__dirname, './node_modules/react-native'),
+  'react-native-screens': path.resolve(__dirname, './node_modules/react-native-screens'),
   'prop-types': path.resolve(__dirname, './node_modules/prop-types'),
 };
 
