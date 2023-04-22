@@ -1,17 +1,23 @@
 {
+  "Display": "React Native SouTheme",
   "compilerOptions": {
-    "experimentalDecorators": true,
-    "baseUrl": "./",
-    "outDir": "./dist/tsc-out",
-    "target": "esnext",
-    "moduleResolution": "node",
-    "jsx": "react",
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "sourceMap": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "baseUrl": ".",
     "declaration": true,
-    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "lib": ["esnext", "dom"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": false,
     "paths": {
       "@southem/animation/*": [
         "./packages/animation",
@@ -47,9 +53,14 @@
       ],
 
       "@pg/*": [
-        "./packages/showcases/*"
+        "./showcases/*"
       ]
-    }
+    },
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "target": "esnext"
   },
   "include": [
     "./packages",
@@ -58,7 +69,7 @@
   "exclude": [
     "./packages/template/javascript",
     "./packages/template/typescript",
-    "./packages/showcases",
+    "./showcases",
     "./**/*.spec.ts",
     "./**/*.spec.tsx",
     "./**/*.snap"

@@ -20,12 +20,12 @@ npm-debug.log
 npm-debug.*
 
 # docs
-docs/docs.json
-docs/src/input.json
-docs/src/playground.json
-docs/src/examples.json
-docs/src/assets/playground-build/
-docs/src/assets/examples-build/
+website/docs.json
+website/src/input.json
+website/src/playground.json
+website/src/examples.json
+website/src/assets/playground-build/
+website/src/assets/examples-build/
 
 #config
 config/

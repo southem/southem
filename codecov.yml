@@ -1,0 +1,79 @@
+coverage:
+  status:
+    project:
+      default:
+        target: 78% #overall project/ repo coverage
+      animation:
+        target: 75%
+        flags:
+          - animation
+      fonts:
+        target: 75%
+        flags:
+          - fonts
+      html:
+        target: 75%
+        flags:
+          - html
+      icons:
+        target: 75%
+        flags:
+          - icons
+      styles:
+        target: 75%
+        flags:
+          - styles
+      theme:
+        target: 75%
+        flags:
+          - theme
+      tools:
+        target: 75%
+        flags:
+          - tools
+      ui:
+        target: 75%
+        flags:
+          - ui
+
+# adding Flags to your `layout` configuration to show up in the PR comment
+comment:
+  require_changes: false
+
+# New root YAML section = `flags:`
+# This is where you would define every flag from your
+# uploader, and update when new Flags added
+
+flags:
+  animation:
+    paths: #note, accepts globs, not regexes
+      - packages/animation/
+    carryforward: false
+  fonts:
+    paths: #note, accepts globs, not regexes
+      - packages/fonts/
+    carryforward: true
+  html:
+    paths: #note, accepts globs, not regexes
+      - packages/html/
+    carryforward: false
+  icons:
+    paths: #note, accepts globs, not regexes
+      - packages/icons/
+    carryforward: true
+  styles:
+    paths: #note, accepts globs, not regexes
+      - packages/styles/
+    carryforward: false
+  theme:
+    paths: #note, accepts globs, not regexes
+      - packages/theme/
+    carryforward: true
+  tools:
+    paths: #note, accepts globs, not regexes
+      - packages/tools/
+    carryforward: true
+  ui:
+    paths: #note, accepts globs, not regexes
+      - packages/ui/
+    carryforward: true

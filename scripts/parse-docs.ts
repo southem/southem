@@ -70,7 +70,7 @@ function createDocsInputJson(done: GulpCompletionCallback): void {
 }
 
 function createDocAppJson(done: GulpCompletionCallback): void {
-  glob('packages/showcases/components/**/*.tsx', (error, showcaseFiles: string[]) => {
+  glob('showcases/components/**/*.tsx', (error, showcaseFiles: string[]) => {
     const showcases: DocShowcase[] = createDocAppShowcases(showcaseFiles);
     fs.writeFileSync(`${DOCS_DIR}/src/playground.json`, JSON.stringify(showcases, null, 2));
   });
@@ -85,7 +85,7 @@ function rebuildDocApp(done: GulpCompletionCallback): void {
 }
 
 function copyDocAppBuildToDocs(done: GulpCompletionCallback) {
-  gulp.src(['packages/showcases/web-build/**/*'])
+  gulp.src(['showcases/web-build/**/*'])
     .pipe(gulp.dest('docs/src/assets/playground-build'));
 
   done();

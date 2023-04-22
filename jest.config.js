@@ -13,13 +13,13 @@ module.exports = {
     '<rootDir>/jest/setup.js'
   ],
   modulePathIgnorePatterns: [
-    '<rootDir>/packages/showcases/',
+    '<rootDir>/showcases/',
     '<rootDir>/template/javascript/',
     '<rootDir>/template/typescript/',
   ],
   testPathIgnorePatterns: [
     '<rootDir>/node_modules',
     '<rootDir>/dist',
-    '<rootDir>/docs',
+    '<rootDir>/website',
   ],
 };

@@ -1,4 +1,4 @@
-import { structure as DOCS } from '../docs/src/structure';
+import { structure as DOCS } from '../website/src/structure';
 import { task } from 'gulp';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { isAbsolute, join, resolve, sep } from 'path';
