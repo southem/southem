@@ -5,13 +5,25 @@ const path = require('path');
 const { getDefaultConfig } = require('expo/metro-config');
 
 // Find the workspace root, this can be replaced with `find-yarn-workspace-root`
-const workspaceRoot = path.resolve(__dirname, '..');
+const packages = path.resolve(__dirname, '..', 'packages');
+
+const frameworkModules = [
+  path.resolve(packages, 'animation'),
+  path.resolve(packages, 'fonts'),
+  path.resolve(packages, 'html'),
+  path.resolve(packages, 'icons'),
+  path.resolve(packages, 'styles'),
+  path.resolve(packages, 'theme'),
+  path.resolve(packages, 'tools'),
+  path.resolve(packages, 'ui'),
+];
+
 const projectRoot = __dirname;
 
 const config = getDefaultConfig(projectRoot);
 
 // 1. Watch all files within the monorepo
-config.watchFolders = [workspaceRoot];
+config.watchFolders = [frameworkModules];
 // 2. Let Metro know where to resolve packages, and in what order
 config.resolver.nodeModulesPaths = [path.resolve(projectRoot, 'node_modules')];
 
