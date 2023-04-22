@@ -11,9 +11,8 @@
       "web"
     ],
     "githubUrl": "https://github.com/southem/southem",
-    "sdkVersion": "47.0.0",
     "orientation": "portrait",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
     "icon": "src/assets/images/icon-app.png",
     "splash": {
       "image": "src/assets/images/image-splash.png",
@@ -77,7 +76,6 @@
     },
     "runtimeVersion": {
       "policy": "sdkVersion"
-    },
-    "entryPoint": "node_modules/expo/AppEntry.js"
+    }
   }
 }

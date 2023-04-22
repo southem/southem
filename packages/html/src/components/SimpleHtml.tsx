@@ -9,11 +9,10 @@ import {
   get,
   omit,
 } from 'lodash';
-import HTML from 'react-native-render-html';
-import {
+import HTML, {
   cssStringToObject,
-  cssObjectToString,
-} from 'react-native-render-html/src/HTMLStyles';
+  cssObjectToString
+} from 'react-native-render-html';
 import {
   withThemes,
 } from '@southem/theme';
