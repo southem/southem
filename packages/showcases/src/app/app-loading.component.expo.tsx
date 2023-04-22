@@ -1,5 +1,6 @@
 import React from 'react';
-import { AppLoading as ExpoAppLoading, SplashScreen } from 'expo';
+import * as SplashScreen from 'expo-splash-screen';
+import { default as ExpoAppLoading  } from 'expo-app-loading';
 import * as Font from 'expo-font';
 import { Asset } from 'expo-asset';
 
@@ -20,6 +21,7 @@ export const LoadFontsTask = (fonts: { [key: string]: number }): Promise<TaskRes
 
 export const LoadAssetsTask = (assets: number[]): Promise<TaskResult> => {
   const tasks: Promise<void>[] = assets.map((source: number): Promise<void> => {
+    // @ts-ignore
     return Asset.fromModule(source).downloadAsync();
   });
 
@@ -30,7 +32,7 @@ export const LoadAssetsTask = (assets: number[]): Promise<TaskResult> => {
 /*
  * Prevent splash screen from hiding since it is controllable by AppLoading component.
  */
-SplashScreen.preventAutoHide();
+SplashScreen.preventAutoHideAsync().then(() => null);
 
 /**
  * Loads application configuration and returns content of the application when done.
@@ -53,7 +55,7 @@ export const AppLoading = (props: ApplicationLoaderProps): React.ReactElement =>
 
   const onTasksFinish = (): void => {
     setLoading(false);
-    SplashScreen.hide();
+    SplashScreen.hideAsync().then(() => null);
   };
 
   const saveTaskResult = (result: [string, any] | null): void => {

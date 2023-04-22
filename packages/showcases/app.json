@@ -3,6 +3,7 @@
     "name": "UI Southem Showcases",
     "slug": "ui-southem-showcases",
     "description": "UI Southem Documentation Showcases",
+    "sdkVersion": "48.0.0",
     "privacy": "public",
     "version": "1.0.0",
     "platforms": [
