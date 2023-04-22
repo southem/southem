@@ -76,6 +76,7 @@
     "@types/react": "^18.0.37",
     "@types/react-native": "^0.71.6",
     "babel-preset-expo": "^9.3.2",
+    "jest-expo": "^48.0.2",
     "typescript": "^5.0.4"
   },
   "expo-yarn-workspaces": {

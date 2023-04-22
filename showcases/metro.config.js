@@ -1,5 +1,6 @@
 const path = require('path');
 
+
 // Learn more https://docs.expo.io/guides/customizing-metro
 const { getDefaultConfig } = require('expo/metro-config');
 
@@ -26,34 +27,38 @@ config.resolver.blacklistRE = [
 module.exports = config;
 
 /**
+const node_modules = path.resolve(__dirname, '..', 'node_modules');
+const packages = path.resolve(__dirname, '..', 'packages');
+
 const frameworkModules = [
-  path.resolve(__dirname, '../animation'),
-  path.resolve(__dirname, '../fonts'),
-  path.resolve(__dirname, '../html'),
-  path.resolve(__dirname, '../icons'),
-  path.resolve(__dirname, '../styles'),
-  path.resolve(__dirname, '../theme'),
-  path.resolve(__dirname, '../tools'),
-  path.resolve(__dirname, '../ui'),
+  path.resolve(packages, 'animation'),
+  path.resolve(packages, 'fonts'),
+  path.resolve(packages, 'html'),
+  path.resolve(packages, 'icons'),
+  path.resolve(packages, 'styles'),
+  path.resolve(packages, 'theme'),
+  path.resolve(packages, 'tools'),
+  path.resolve(packages, 'ui'),
 ];
 
 const moduleDependencies = [
   // @southem/ui
-  path.resolve(__dirname, '../../node_modules/hoist-non-react-statics'),
-  path.resolve(__dirname, '../../node_modules/lodash'),
-  path.resolve(__dirname, '../../node_modules/fecha'),
+  path.resolve(node_modules, 'hoist-non-react-statics'),
+  path.resolve(node_modules, 'lodash'),
+  path.resolve(node_modules, 'fecha'),
 
   // external
-  path.resolve(__dirname, '../../node_modules/moment'),
-  path.resolve(__dirname, '../../node_modules/react-native-background-timer'),
-  path.resolve(__dirname, '../../node_modules/react-native-svg'),
-  path.resolve(__dirname, '../../node_modules/react-is'),
-  path.resolve(__dirname, '../../node_modules/source-map'),
+  path.resolve(node_modules, 'moment'),
+  path.resolve(node_modules, 'react-native-background-timer'),
+  path.resolve(node_modules, 'react-native-svg'),
+  path.resolve(node_modules, 'react-is'),
+  path.resolve(node_modules, 'source-map'),
 ];
 
 const playgroundExtraModules = {
   '@babel/runtime': path.resolve(__dirname, './node_modules/@babel/runtime'),
   '@expo/vector-icons': path.resolve(__dirname, './node_modules/@expo/vector-icons'),
+  'expo': path.resolve(__dirname, './node_modules/expo'),
   'expo-font': path.resolve(__dirname, './node_modules/expo-font'),
   'expo-asset': path.resolve(__dirname, './node_modules/expo-asset'),
   'color': path.resolve(__dirname, './node_modules/color'),

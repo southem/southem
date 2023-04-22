@@ -18,24 +18,14 @@ const playgroundExtraModules = {
   '@expo/vector-icons': path.resolve(node_modules, '@expo/vector-icons'),
 };
 
-const babelLoaderRules = {
-  test: /\.(js|jsx|ts|tsx)$/,
-  loader: 'babel-loader',
-  exclude: /node_modules/,
-};
-
 module.exports = async function (env, argv) {
   const config = await createExpoWebpackConfigAsync(env, argv);
 
-  config.module.rules = [
-    ...config.module.rules,
-    babelLoaderRules,
-  ];
-
   config.module.rules.push({
     test: /\.(js|jsx|ts|tsx)$/,
-    loader: 'babel-loader',
+    include: /(packages|showcases)\/.+/,
     exclude: /node_modules/,
+    use: 'babel-loader',
   });
 
   config.resolve.alias = {
