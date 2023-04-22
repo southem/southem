@@ -5,7 +5,7 @@ import { PixelRatio } from 'react-native';
  * https://stackoverflow.com/questions/34837342/font-size-on-iphone-6s-plus
  * https://reactnative.dev/docs/pixelratio
  */
-import { DeviceNative, PIXELRATIO } from './device.native';
+import { DeviceNative } from './device';
 
 // based on iPhone 11's scale
 // tslint:disable-next-line:max-line-length

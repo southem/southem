@@ -9,8 +9,11 @@ export class AppInfoService {
   };
 
   static getBuildNumber = (): string => {
+    // @ts-ignore
     return Platform.select({
+      // @ts-ignore
       ios: Constants.manifest.ios.buildNumber,
+      // @ts-ignore
       android: Constants.manifest.android.versionCode,
     });
   };

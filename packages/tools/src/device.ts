@@ -4,45 +4,81 @@ import {
   Platform,
   StatusBar,
   I18nManager,
-  PixelRatio,
+  NativeModules,
+  AccessibilityInfo,
+  AccessibilityChangeEvent
 } from 'react-native';
 import { get } from 'lodash';
-import DeviceInfo from 'react-native-device-info';
 
 import {
   IPHONE_X_LONG_SIDE,
   IPHONE_XR_LONG_SIDE,
 } from './const';
 
+export enum orientations {
+  PORTRAIT = 'portrait',
+  LANDSCAPE = 'landscape'
+}
+
+let statusBarHeight: number;
+
 // @ts-ignore
-const { OS, isPad, isTVOS } = Platform;
-const { width, height } = Dimensions.get('window');
+const { isPad, isTVOS } = Platform;
+const { width: windowWidth, height: windowHeight } = Dimensions.get('window');
+const {
+  height: screenHeight,
+  width: screenWidth
+} = Dimensions.get('screen');
 const xDimensionsMatch = (
-  (height === IPHONE_X_LONG_SIDE) || (width === IPHONE_X_LONG_SIDE)
+  (windowHeight === IPHONE_X_LONG_SIDE) || (windowWidth === IPHONE_X_LONG_SIDE)
 );
 
 const xrDimensionsMatch = (
-  (height === IPHONE_XR_LONG_SIDE) || (width === IPHONE_XR_LONG_SIDE)
+  (windowHeight === IPHONE_XR_LONG_SIDE) || (windowWidth === IPHONE_XR_LONG_SIDE)
 );
 
-export const DeviceNative = { width, height };
-export const PIXELRATIO = PixelRatio.get();
-
-export function platform(os: string): boolean {
-  return OS === os;
+function setStatusBarHeight() {
+  const {StatusBarManager} = NativeModules;
+  statusBarHeight = StatusBarManager?.HEIGHT || 0; // So there will be a value for any case
+  // statusBarHeight = isIOS ? 20 : StatusBarManager.HEIGHT;
+  // if (isIOS) {
+  //   // override guesstimate height with the actual height from StatusBarManager
+  //   StatusBarManager.getHeight((data: any) => (statusBarHeight = data.height));
+  // }
 }
 
-export function isAndroid() {
+function getOrientation(height: number, width: number) {
+  return width < height ? orientations.PORTRAIT : orientations.LANDSCAPE;
+}
+
+function getAspectRatio() {
+  return screenWidth < screenHeight ? screenHeight / screenWidth : screenWidth / screenHeight;
+}
+
+export const DeviceNative = {
+  width: windowWidth,
+  height: windowHeight
+}
+
+export function platform(os: string): boolean {
+  return Platform.OS === os;
+}
+
+export function isAndroid(): boolean {
   return platform('android');
 }
 
-export function isAndroidRTL() {
+export function isAndroidRTL(): boolean {
   return platform('android') &&
     I18nManager.isRTL;
 }
 
+const isWeb: boolean = platform('web');
+
 export function isTablet(): boolean {
-  return DeviceInfo.isTablet();
+  return 'isPad' in Platform && Platform.isPad || (
+    getAspectRatio() < 1.6 && Math.max(screenWidth, screenHeight) >= 900
+  );
 }
 
 export function isIphoneX(): boolean {
