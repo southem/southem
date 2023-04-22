@@ -3,21 +3,21 @@ const path = require('path');
 /**
  * UI Southem modules aliases (needed for Jest resolver)
  */
-const ROOT_PATH = './';
+const packages = path.resolve(__dirname, 'packages');
 
 const moduleInternalAliases = {
-  '@southem/animation': path.resolve(ROOT_PATH, './packages/animation'),
-  '@southem/fonts': path.resolve(ROOT_PATH, './packages/fonts'),
-  '@southem/html': path.resolve(ROOT_PATH, './packages/html'),
-  '@southem/icons': path.resolve(__dirname, './packages/icons'),
-  '@southem/styles': path.resolve(__dirname, './packages/styles'),
-  '@southem/theme': path.resolve(ROOT_PATH, './packages/theme'),
-  '@southem/tools': path.resolve(ROOT_PATH, './packages/tools'),
-  '@southem/ui': path.resolve(ROOT_PATH, './packages/ui'),
+  '@southem/animation': path.resolve(packages, 'animation'),
+  '@southem/fonts': path.resolve(packages, 'fonts'),
+  '@southem/html': path.resolve(packages, 'html'),
+  '@southem/icons': path.resolve(packages, 'icons'),
+  '@southem/styles': path.resolve(packages, 'styles'),
+  '@southem/theme': path.resolve(packages, 'theme'),
+  '@southem/tools': path.resolve(packages, 'tools'),
+  '@southem/ui': path.resolve(packages, 'ui'),
 };
 
 const moduleResolverConfig = {
-  root: path.resolve(ROOT_PATH),
+  root: path.resolve('.'),
   alias: {
     ...moduleInternalAliases,
   },

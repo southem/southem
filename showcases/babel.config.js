@@ -1,23 +1,26 @@
 const path = require('path');
 
+const packages = path.resolve(__dirname, '..', 'packages');
+
 const moduleInternalAliases = {
-  '@expo/vector-icons': path.resolve(__dirname, './node_modules/@expo/vector-icons'),
-  'expo-font': path.resolve(__dirname, './node_modules/expo-font'),
+  '@expo/vector-icons': path.resolve(__dirname, 'node_modules', '@expo/vector-icons'),
+  'expo-font': path.resolve(__dirname, 'node_modules', 'expo-font'),
 };
 
 const frameworkModules = {
-  '@southem/animation': path.resolve(__dirname, '../animation'),
-  '@southem/fonts': path.resolve(__dirname, '../fonts'),
-  '@southem/html': path.resolve(__dirname, '../html'),
-  '@southem/icons': path.resolve(__dirname, '../icons'),
-  '@southem/styles': path.resolve(__dirname, '../styles'),
-  '@southem/theme': path.resolve(__dirname, '../theme'),
-  '@southem/tools': path.resolve(__dirname, '../tools'),
-  '@southem/ui': path.resolve(__dirname, '../ui'),
+  '@southem/animation': path.resolve(packages, 'animation'),
+  '@southem/fonts': path.resolve(packages, 'fonts'),
+  '@southem/html': path.resolve(packages, 'html'),
+  '@southem/icons': path.resolve(packages, 'icons'),
+  '@southem/styles': path.resolve(packages, 'styles'),
+  '@southem/theme': path.resolve(packages, 'theme'),
+  '@southem/tools': path.resolve(packages, 'tools'),
+  '@southem/ui': path.resolve(packages, 'ui'),
 };
 
 const moduleResolverConfig = {
-  root: path.resolve('./'),
+  root: path.resolve('.'),
+  extensions: ['.js', '.ios.js', '.android.js', '.json', '.tsx', '.ts'],
   alias: {
     ...moduleInternalAliases,
     ...frameworkModules,

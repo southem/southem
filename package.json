@@ -1,7 +1,7 @@
 {
   "name": "southem",
   "displayName": "React Native UI Toolkit",
-  "version": "0.0.1",
+  "version": "1.2.0",
   "private": true,
   "license": "MIT",
   "author": "Southem <contact@southem.com>",
@@ -103,8 +103,14 @@
       "PR: Deprecation: :loudspeaker:": ":loudspeaker: Deprecation"
     },
     "scopes": {
-      "base": "@rneui/base",
-      "themed": "@rneui/themed",
+      "animation": "@southem/animation",
+      "fonts": "@southem/fonts",
+      "html": "@southem/html",
+      "icons": "@southem/icons",
+      "styles": "@southem/styles",
+      "theme": "@southem/theme",
+      "tools": "@southem/tools",
+      "ui": "@southem/ui",
       "website/docs": "Docs"
     }
   }
