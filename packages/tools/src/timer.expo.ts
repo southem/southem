@@ -90,6 +90,7 @@ class BackgroundTimer {
       interval: false,
       timeout,
     };
+    // @ts-ignore
     setTimeout(timeoutId, timeout);
     return timeoutId;
   }
@@ -109,6 +110,7 @@ class BackgroundTimer {
       interval: true,
       timeout,
     };
+    // @ts-ignore
     setTimeout(intervalId, timeout);
     return intervalId;
   }

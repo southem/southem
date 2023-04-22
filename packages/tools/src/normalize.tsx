@@ -5,11 +5,11 @@ import { PixelRatio } from 'react-native';
  * https://stackoverflow.com/questions/34837342/font-size-on-iphone-6s-plus
  * https://reactnative.dev/docs/pixelratio
  */
-import { DEVICE, PIXELRATIO } from './device';
+import { DeviceNative, PIXELRATIO } from './device.native';
 
 // based on iPhone 11's scale
 // tslint:disable-next-line:max-line-length
-const [shortDimension, longDimension] =  DEVICE.width < DEVICE.height ? [DEVICE.width, DEVICE.height] : [DEVICE.height, DEVICE.width];
+const [shortDimension, longDimension] =  DeviceNative.width < DeviceNative.height ? [DeviceNative.width, DeviceNative.height] : [DeviceNative.height, DeviceNative.width];
 
 const guidelineBaseWidth = shortDimension / 360;
 const guidelineBaseHeight = longDimension / 680;

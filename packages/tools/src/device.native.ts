@@ -1,6 +1,5 @@
 /* tslint:disable */
 import {
-  NativeModules,
   Dimensions,
   Platform,
   StatusBar,
@@ -26,7 +25,7 @@ const xrDimensionsMatch = (
   (height === IPHONE_XR_LONG_SIDE) || (width === IPHONE_XR_LONG_SIDE)
 );
 
-export const DEVICE = { width, height };
+export const DeviceNative = { width, height };
 export const PIXELRATIO = PixelRatio.get();
 
 export function platform(os: string): boolean {

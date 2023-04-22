@@ -20,7 +20,7 @@ const frameworkModules = {
 
 const moduleResolverConfig = {
   root: path.resolve('.'),
-  extensions: ['.js', '.ios.js', '.android.js', '.json', '.tsx', '.ts'],
+  // extensions: ['.js', '.ios.js', '.android.js', '.json', '.tsx', '.ts'],
   alias: {
     ...moduleInternalAliases,
     ...frameworkModules,
