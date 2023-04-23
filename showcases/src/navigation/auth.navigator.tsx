@@ -26,7 +26,7 @@ const AuthMenuNavigator = (): React.ReactElement => (
 );
 
 export const AuthNavigator = (): React.ReactElement => (
-  <Stack.Navigator headerMode='none'>
+  <Stack.Navigator options={{ headerShown: false }}>
     <Stack.Screen name='Auth' component={AuthMenuNavigator}/>
     <Stack.Screen name='SignIn1' component={SignIn1Screen}/>
     <Stack.Screen name='SignIn2' component={SignIn2Screen}/>

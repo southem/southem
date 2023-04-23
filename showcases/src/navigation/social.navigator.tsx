@@ -30,7 +30,7 @@ const SocialMenuNavigator = (): React.ReactElement => (
 );
 
 export const SocialNavigator = (): React.ReactElement => (
-  <Stack.Navigator headerMode='none'>
+  <Stack.Navigator options={{ headerShown: false }}>
     <Stack.Screen name='Social' component={SocialMenuNavigator}/>
     <Stack.Screen name='Feed1' component={Feed1Screen}/>
     <Stack.Screen name='Feed2' component={Feed2Screen}/>

@@ -23,7 +23,7 @@ const ArticlesMenuNavigator = (): React.ReactElement => (
 );
 
 export const ArticlesNavigator = (): React.ReactElement => (
-  <Stack.Navigator headerMode='none'>
+  <Stack.Navigator options={{ headerShown: false }}>
     <Stack.Screen name='Articles' component={ArticlesMenuNavigator}/>
     <Stack.Screen name='Article1' component={Article1Screen}/>
     <Stack.Screen name='Article2' component={Article2Screen}/>

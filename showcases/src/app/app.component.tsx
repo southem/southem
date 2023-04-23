@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Font from 'expo-font';
 import {enableScreens} from 'react-native-screens';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {darkTheme, lightTheme, StatusBar } from '@southem/ui';
@@ -6,6 +7,15 @@ import Theme, {
   ThemeProvider,
   TypeTheme,
 } from '@southem/theme';
+import {
+  Entypo,
+  EvilIcons,
+  Feather,
+  FontAwesome,
+  Ionicons,
+  MaterialIcons,
+  Octicons,
+} from '@expo/vector-icons';
 import {
   FiraSans_Thin,
   FiraSans_Thin_Italic,
@@ -46,9 +56,21 @@ const defaultConfig: { theme: TypeTheme } = {
   theme: 'dark',
 };
 
+const preloadFonts: Record<string, Font.FontSource> = {
+  ...Entypo.font,
+  ...EvilIcons.font,
+  ...Feather.font,
+  ...FontAwesome.font,
+  ...Ionicons.font,
+  ...MaterialIcons.font,
+  ...Octicons.font,
+};
+
 const loadingTasks: Task[] = [
   // Should be used it when running Expo.
   // In Bare RN Project this is configured by react-native.config.js
+  // @ts-ignore
+  () => LoadFontsTask(preloadFonts),
   // @ts-ignore
   () => LoadFontsTask({
     'Fira Sans': FiraSans_Regular,

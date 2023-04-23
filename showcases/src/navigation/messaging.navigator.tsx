@@ -21,7 +21,7 @@ const MessagingMenuNavigator = (): React.ReactElement => (
 );
 
 export const MessagingNavigator = (): React.ReactElement => (
-  <Stack.Navigator headerMode='none'>
+  <Stack.Navigator options={{ headerShown: false }}>
     <Stack.Screen name='Messaging' component={MessagingMenuNavigator}/>
     <Stack.Screen name='Chat1' component={Chat1Screen}/>
     <Stack.Screen name='Chat2' component={Chat2Screen}/>
