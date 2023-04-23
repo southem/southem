@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { TypeTheme } from '../../../theme';
+import { TypeTheme } from '@southem/theme';
 
 const THEME_KEY: string = 'theme';
 

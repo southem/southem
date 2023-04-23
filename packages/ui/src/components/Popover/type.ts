@@ -3,7 +3,7 @@ import {
   StyleProp,
   StyleSheet,
 } from 'react-native';
-import { Frame } from '../../components';
+import { Frame } from '../Measure';
 import { RTLService } from '../../devsupport';
 
 export interface Offset {

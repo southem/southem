@@ -33,6 +33,7 @@ const isOneOfRootRoutes = (currentRoute: RouteProp<any, any>): boolean => {
 // @ts-ignore
 const TabBarVisibleOnRootScreenOptions = ({ route }): BottomTabNavigationOptions => {
   const currentRoute = route.state && route.state.routes[route.state.index];
+  // @ts-ignore
   return { tabBarVisible: currentRoute && isOneOfRootRoutes(currentRoute) };
 };
 
@@ -49,6 +50,7 @@ const HomeTabsNavigator = (): React.ReactElement => (
 
 export const MobileNavigator = (): React.ReactElement => (
   <Drawer.Navigator
+    // @ts-ignore
     screenOptions={{ gestureEnabled: false }}
     drawerContent={props => <HomeDrawer {...props}/>}
   >

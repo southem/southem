@@ -1,4 +1,4 @@
-import { ThemeType } from '@ui-kitten/components';
+import { ThemeType } from '@southem/components';
 import { Theme } from '../../services/theme.service';
 
 export interface ThemeItem {

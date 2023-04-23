@@ -1,11 +1,7 @@
 import React from 'react';
-import * as SplashScreen from 'expo-splash-screen';
-import { default as ExpoAppLoading  } from 'expo-app-loading';
-import * as Font from 'expo-font';
-import { Asset } from 'expo-asset';
 
 type TaskResult = [string, any];
-type Task = () => Promise<TaskResult | null>;
+export type Task = () => Promise<TaskResult | null>;
 
 export interface ApplicationLoaderProps {
   tasks?: Task[];
@@ -14,25 +10,33 @@ export interface ApplicationLoaderProps {
   children: (config: any) => React.ReactElement;
 }
 
+// @ts-ignore
 export const LoadFontsTask = (fonts: { [key: string]: number }): Promise<TaskResult> => {
+  const message: string = [
+    'There is no need to use this task in Bare RN Project.',
+    'Use `react-native.config.js',
+    'Documentation: https://github.com/react-native-community/cli/blob/master/docs/configuration.md',
+  ].join('\n');
+
+  console.warn(message);
+
   // @ts-ignore
-  return Font.loadAsync(fonts).then(() => null);
+  return Promise.resolve(null);
 };
 
+// @ts-ignore
 export const LoadAssetsTask = (assets: number[]): Promise<TaskResult> => {
-  const tasks: Promise<void>[] = assets.map((source: number): Promise<void> => {
-    // @ts-ignore
-    return Asset.fromModule(source).downloadAsync();
-  });
+  const message: string = [
+    'There is no need to use this task in Bare RN Project.',
+    'Use `react-native.config.js',
+    'Documentation: https://github.com/react-native-community/cli/blob/master/docs/configuration.md',
+  ].join('\n');
+
+  console.warn(message);
 
   // @ts-ignore
-  return Promise.all(tasks).then(() => null);
+  return Promise.resolve(null);
 };
-
-/*
- * Prevent splash screen from hiding since it is controllable by AppLoading component.
- */
-SplashScreen.preventAutoHideAsync().then(() => null);
 
 /**
  * Loads application configuration and returns content of the application when done.
@@ -55,8 +59,13 @@ export const AppLoading = (props: ApplicationLoaderProps): React.ReactElement =>
 
   const onTasksFinish = (): void => {
     setLoading(false);
-    SplashScreen.hideAsync().then(() => null);
   };
+
+  React.useEffect(() => {
+    if (loading) {
+      startTasks().then(onTasksFinish);
+    }
+  }, [loading]);
 
   const saveTaskResult = (result: [string, any] | null): void => {
     if (result) {
@@ -68,24 +77,16 @@ export const AppLoading = (props: ApplicationLoaderProps): React.ReactElement =>
     return task().then(saveTaskResult);
   };
 
-  const startTasks = (): Promise<any> => {
+  const startTasks = async (): Promise<any> => {
     if (props.tasks) {
       return Promise.all(props.tasks.map(createRunnableTask));
     }
     return Promise.resolve();
   };
 
-  const renderLoadingElement = (): React.ReactElement => (
-    <ExpoAppLoading
-      startAsync={startTasks}
-      onFinish={onTasksFinish}
-      autoHideSplash={false}
-    />
-  );
-
   return (
     <React.Fragment>
-      {loading ? renderLoadingElement() : props.children(loadingResult)}
+      {!loading && props.children(loadingResult)}
       {props.placeholder && props.placeholder({ loading })}
     </React.Fragment>
   );

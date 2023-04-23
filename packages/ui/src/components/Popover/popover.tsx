@@ -32,6 +32,7 @@ type PopoverModalProps = Overwrite<ModalProps, {
   children?: React.ReactElement;
 }>;
 
+// @ts-ignore
 export interface PopoverProps extends PopoverViewProps, PopoverModalProps {
   anchor: RenderProp;
   fullWidth?: boolean;
@@ -192,6 +193,7 @@ export class Popover extends React.Component<PopoverProps, State> {
   };
 
   private renderContentElement = (): React.ReactElement => {
+    // @ts-ignore
     const contentElement: React.ReactElement = this.props.children;
     const fullWidthStyle = { width: this.state.childFrame.size.width };
 

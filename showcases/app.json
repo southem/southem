@@ -79,6 +79,12 @@
           "savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
           "isAccessMediaLocationEnabled": true
         }
+      ],
+      [
+        "expo-updates",
+        {
+          "username": "account-username"
+        }
       ]
     ],
     "extra": {

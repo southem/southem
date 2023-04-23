@@ -115,11 +115,11 @@ interface Settings {
 }
 
 export function select(settings: Settings) {
-  if (settings.iPhoneX && isIphoneX) {
+  if (settings.iPhoneX && isIphoneX()) {
     return settings.iPhoneX;
   }
 
-  if (settings.iPhoneXR && isIphoneXR) {
+  if (settings.iPhoneXR && isIphoneXR()) {
     return settings.iPhoneXR;
   }
 

@@ -9,7 +9,8 @@ import {
 import { Text } from '../../common';
 
 export class TimeAgo extends Component {
-    props: {
+    // @ts-ignore
+  props: {
         time: string,
         interval?: number,
         hideAgo?: boolean,
