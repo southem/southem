@@ -87,3 +87,7 @@ Une interface hébergé dans un container Docker pour gérer son Docker.
 - [react-native-elements](https://github.com/react-native-elements/react-native-elements)
 - [kittenTricks](https://github.com/akveo/kittenTricks)
 - [showtime-frontend](https://github.com/showtime-xyz/showtime-frontend)
+- [bottom-tabs](https://github.com/react-navigation/react-navigation/tree/main/packages/bottom-tabs)
+- [react-native-paper](https://github.com/callstack/react-native-paper)
+- [universal-app-starter](https://github.com/sabaturgay/universal-app-starter)
+- [react-native-elements](https://github.com/react-native-elements/react-native-elements)

@@ -74,7 +74,7 @@ class Prompt extends Component {
         this.setState({ value: this.props.defaultValue });
     }
 
-    componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
         const { visible, defaultValue } = nextProps;
 
         if(visible !== this.props.visible && visible) {

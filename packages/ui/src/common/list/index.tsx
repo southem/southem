@@ -121,7 +121,7 @@ class ListComponent extends React.Component<ListProps, StateList> {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.loading !== this.props.loading) {
       this.setLoading(nextProps.loading);
     }
@@ -168,6 +168,7 @@ class ListComponent extends React.Component<ListProps, StateList> {
   };
 
   // eslint-disable-next-line consistent-return
+  // @ts-ignore
   private createOnLoadMore = () => {
     const { onLoadMore, data } = this.props;
     const { status } = this.state;

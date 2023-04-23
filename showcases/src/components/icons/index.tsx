@@ -39,7 +39,7 @@ export const GridIcon = (style: ImageStyle): IconElement => (
 );
 
 export const LayoutIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'material'} {...style} name='layout-outline'/>
+  <Icon type={'material'} {...style} name='dashboard'/>
 );
 
 export const ListIcon = (style: ImageStyle): IconElement => (
@@ -63,11 +63,11 @@ export const SettingsIcon = (style: ImageStyle): IconElement => (
 );
 
 export const StarIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'octicon'} {...style} name='star'/>
+  <Icon type={'octicon'} {...style} name='star-fill'/>
 );
 
 export const StarOutlineIcon = (style: ImageStyle): IconElement => (
-  <Icon type={'octicon'} {...style} name='star-outline'/>
+  <Icon type={'octicon'} {...style} name='star'/>
 );
 
 export const TrashIcon = (style: ImageStyle): IconElement => (

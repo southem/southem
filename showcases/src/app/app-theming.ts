@@ -13,3 +13,8 @@ export const appDarkTheme = {
 
 export const appLightTheme = {
 };
+
+export const appThemes = {
+  light: appLightTheme,
+  dark: appDarkTheme,
+};

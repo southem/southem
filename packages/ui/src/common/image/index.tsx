@@ -14,6 +14,7 @@ import { withThemes } from '@southem/theme';
 import { isAndroid } from '@southem/tools';
 
 // A valid source is either an object with an uri key or a number (from a `require` call)
+// @ts-ignore
 const isValidSource = (source: ImageLoadEventData) => isNumber(source) || (isObject(source) && source.uri);
 
 interface StateImage {
@@ -33,6 +34,7 @@ export type ImageElement = React.ReactElement<ImageProps>;
 let externalPropsTransformer = null;
 
 class ImageComponent extends PureComponent<ImageProps, StateImage> {
+  // @ts-ignore
   state: StateImage;
   nativeComponent: any;
   static displayName = 'Image';
@@ -67,7 +69,7 @@ class ImageComponent extends PureComponent<ImageProps, StateImage> {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps !== this.props) {
       this.setState({
         transformedProps: this.createTransformedProps(nextProps),

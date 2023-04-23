@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlexStyle, View, ViewProps } from 'react-native';
-import { EdgeInsets, SafeAreaConsumer } from 'react-native-safe-area-context';
+import { EdgeInsets, SafeAreaView } from 'react-native-safe-area-context';
 import { withThemes } from '@southem/theme';
 
 interface InsetProvider {
@@ -42,7 +42,7 @@ export class SafeAreaLayout extends React.Component<SafeAreaLayoutProps> {
   public render(): React.ReactElement<ViewProps> {
     return (
       // @ts-ignore
-      <SafeAreaConsumer>{this.renderComponent}</SafeAreaConsumer>
+      <SafeAreaView>{this.renderComponent}</SafeAreaView>
     );
   }
 

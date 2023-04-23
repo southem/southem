@@ -67,7 +67,7 @@ export default class MultiSwitch extends Component {
         });
     }
 
-    componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.value !== this.props.value) {
             this.toggleItem(nextProps.value);
         }

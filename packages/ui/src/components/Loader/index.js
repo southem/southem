@@ -53,7 +53,7 @@ class Loader extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
         if (this.props.animate !== nextProps.animate) {
             this.animating();
         }

@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, ViewProps} from 'react-native';
-import {withThemes} from '@southem/theme';
+import { View, ViewProps } from 'react-native';
+import {withThemes, useTheme} from '@southem/theme';
 import {
   Overwrite,
   RenderProp,
@@ -29,7 +29,7 @@ export type DrawerElement = React.ReactElement<DrawerProps>;
 
 const mapPropToStyles = [
   'headerStyle',
-  'footerStyle'
+  'footerStyle',
 ];
 
 /**
@@ -144,10 +144,10 @@ const mapPropToStyles = [
 // @ts-ignore
 @withThemes('Drawer', mapPropToStyles)
 export class Drawer extends React.Component<DrawerProps> {
-
   public render(): React.ReactFragment {
     const { style, header, footer, headerStyle, footerStyle, ...menuProps } = this.props;
 
+    // @ts-ignore
     return (
       <React.Fragment>
         {renderNode(View, header, { style: headerStyle })}

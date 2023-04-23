@@ -206,7 +206,7 @@ class Share extends Component {
         });
     }
 
-    componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
         // show prop changed to true from false
         if (!this.props.show && nextProps.show) {
             this.animateOpen();

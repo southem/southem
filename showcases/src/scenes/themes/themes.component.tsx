@@ -3,21 +3,21 @@ import { ListRenderItemInfo, StyleSheet } from 'react-native';
 import {
   Divider,
   List,
-  Switch,
   TopNavigation,
   TopNavigationAction,
 } from '@southem/ui';
 import { ThemeCard } from './theme-card.component';
 import { SafeAreaLayout } from '../../components';
-// import { ThemeContextValue, Theming } from '../../services/theme.service';
+import { ThemeContextValue, Theming } from '../../services/theme.service';
 import { ThemesService } from './themes.service';
 import { ThemeItem } from './type';
 import { appThemes } from '../../app/app-theming';
 import { MenuIcon } from '../../components';
 import { RestartAppModal } from './restart-app-modal.component';
 
+// @ts-ignore
 export const ThemesScreen = ({ navigation }): React.ReactElement => {
-  // const themeContext: ThemeContextValue = React.useContext(Theming.ThemeContext);
+  const themeContext: ThemeContextValue = React.useContext(Theming.ThemeContext);
   const [restartModalVisible, setRestartModalVisible] = React.useState<boolean>(false);
 
   const themes: ThemeItem[] = ThemesService.createThemeListItems(
@@ -25,15 +25,15 @@ export const ThemesScreen = ({ navigation }): React.ReactElement => {
   );
 
   const onItemPress = (info: ListRenderItemInfo<ThemeItem>): void => {
-    // themeContext.setCurrentTheme(info.item.name);
+    themeContext.setCurrentTheme(info.item.name);
   };
 
   const isActiveTheme = (theme: ThemeItem): boolean => {
-    // return themeContext.currentTheme === theme.name;
+    return themeContext.currentTheme === theme.name;
   };
 
   const shouldDisableItem = (theme: ThemeItem): boolean => {
-    // return themeContext.currentTheme === theme.name;
+    return themeContext.currentTheme === theme.name;
   };
 
   const createThemeNameForItem = (theme: ThemeItem): string => {
@@ -68,6 +68,7 @@ export const ThemesScreen = ({ navigation }): React.ReactElement => {
       insets='top'>
       <TopNavigation
         title='Southem UI'
+        // @ts-ignore
         accessoryLeft={renderDrawerAction()}
       />
       <Divider/>

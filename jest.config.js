@@ -22,4 +22,7 @@ module.exports = {
     '<rootDir>/dist',
     '<rootDir>/website',
   ],
+  transform: {
+    '\\.[jt]sx?$': 'babel-jest',
+  }
 };

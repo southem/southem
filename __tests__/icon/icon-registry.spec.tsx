@@ -4,6 +4,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
+// @ts-ignore
 import React from 'react';
 import { View } from 'react-native';
 import { IconRegistryService, IconProvider } from '@southem/icons';

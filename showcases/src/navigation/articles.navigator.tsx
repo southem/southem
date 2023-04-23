@@ -23,6 +23,7 @@ const ArticlesMenuNavigator = (): React.ReactElement => (
 );
 
 export const ArticlesNavigator = (): React.ReactElement => (
+  // @ts-ignore
   <Stack.Navigator options={{ headerShown: false }}>
     <Stack.Screen name='Articles' component={ArticlesMenuNavigator}/>
     <Stack.Screen name='Article1' component={Article1Screen}/>

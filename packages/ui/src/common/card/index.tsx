@@ -30,6 +30,7 @@ import {
 type FooterProp = React.ReactElement;
 export type CardFooterElement = FooterProp;
 
+// @ts-ignore
 type CardStyledProps = Overwrite<StyledComponentProps, {
   appearance?: 'filled' | 'outline' | string;
 }>;

@@ -33,7 +33,8 @@
       "supportsTablet": true,
       "bundleIdentifier": "ui.southem.showcases",
       "appStoreUrl": "https://itunes.apple.com/us/app/ui-southem-showcases/id1246173236",
-      "buildNumber": "3"
+      "buildNumber": "3",
+      "userInterfaceStyle": "automatic"
     },
     "android": {
       "versionCode": 3,

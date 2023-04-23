@@ -41,6 +41,7 @@ import {
 } from './elements';
 import { Ul, Ol, Li, Bullet, Number } from './elements/list';
 
+// @ts-ignore
 export interface HtmlProps extends ViewProps {
   body: string;
   style?: StyleProp<ViewProps>;
@@ -91,7 +92,7 @@ class HtmlComponent extends PureComponent<HtmlProps, State> {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.refreshData(nextProps, this.props);
   }
 

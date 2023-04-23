@@ -114,7 +114,7 @@ export type BottomNavigationElement = React.ReactElement<BottomNavigationProps>;
  * import { BottomNavigationTab, Text } from '@southem/ui';
  *
  * <BottomNavigationTab
- *   title={evaProps => <Text {...evaProps}>USERS</Text>}
+ *   title={restProps => <Text {...restProps}>USERS</Text>}
  * />
  * ```
  * @overview-example BottomNavigationTabTheming

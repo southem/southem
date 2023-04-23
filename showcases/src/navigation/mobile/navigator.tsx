@@ -7,7 +7,7 @@ import {
 import { createDrawerNavigator } from '@react-navigation/drawer';
 // import { LayoutsNavigator } from '../layouts.navigator';
 import { ComponentsNavigator } from '../components.navigator';
-// import { ThemesNavigator } from '../themes.navigator';
+import { ThemesNavigator } from '../themes.navigator';
 import { HomeBottomNavigation } from '../../scenes/home/home-bottom-navigation.component';
 import { HomeDrawer } from '../../scenes/home/home-drawer.component';
 import { LibrariesScreen } from '../../scenes/libraries/libraries.component';
@@ -39,12 +39,13 @@ const TabBarVisibleOnRootScreenOptions = ({ route }): BottomTabNavigationOptions
 
 const HomeTabsNavigator = (): React.ReactElement => (
   <BottomTab.Navigator
-    screenOptions={TabBarVisibleOnRootScreenOptions}
+    // @ts-ignore
+    tscreenOptions={TabBarVisibleOnRootScreenOptions}
     initialRouteName={initialTabRoute}
     tabBar={props => <HomeBottomNavigation {...props} />}>
     { /** <BottomTab.Screen name='Layouts' component={LayoutsNavigator}/> **/ }
     <BottomTab.Screen name='Components' component={ComponentsNavigator}/>
-    { /** <BottomTab.Screen name='Themes' component={ThemesNavigator}/> **/ }
+    <BottomTab.Screen name='Themes' component={ThemesNavigator}/>
   </BottomTab.Navigator>
 );
 

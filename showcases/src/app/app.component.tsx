@@ -8,13 +8,20 @@ import Theme, {
   TypeTheme,
 } from '@southem/theme';
 import {
+  AntDesign,
   Entypo,
   EvilIcons,
   Feather,
   FontAwesome,
+  FontAwesome5,
+  Fontisto,
+  Foundation,
   Ionicons,
   MaterialIcons,
+  MaterialCommunityIcons,
   Octicons,
+  SimpleLineIcons,
+  Zocial,
 } from '@expo/vector-icons';
 import {
   FiraSans_Thin,
@@ -57,13 +64,20 @@ const defaultConfig: { theme: TypeTheme } = {
 };
 
 const preloadFonts: Record<string, Font.FontSource> = {
+  ...AntDesign.font,
   ...Entypo.font,
   ...EvilIcons.font,
   ...Feather.font,
   ...FontAwesome.font,
+  ...FontAwesome5.font,
+  ...Fontisto.font,
+  ...Foundation.font,
   ...Ionicons.font,
   ...MaterialIcons.font,
+  ...MaterialCommunityIcons.font,
   ...Octicons.font,
+  ...SimpleLineIcons.font,
+  ...Zocial.font,
 };
 
 const loadingTasks: Task[] = [

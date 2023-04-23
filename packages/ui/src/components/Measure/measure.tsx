@@ -14,7 +14,7 @@ export interface MeasureElementProps<P = any> {
 export type MeasuringElement<P = any> = React.ReactElement;
 
 /**
- * Measures child element size and it's screen position asynchronously.
+ * Measures child element size, and it's screen position asynchronously.
  * Returns measure result in `onMeasure` callback.
  *
  * Usage:

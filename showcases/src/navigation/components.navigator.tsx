@@ -34,6 +34,7 @@ import { TopNavigationScreen } from '../scenes/components/top-navigation/top-nav
 const Stack = createStackNavigator();
 
 export const ComponentsNavigator = (): React.ReactElement => (
+  // @ts-ignore
   <Stack.Navigator options={{ headerShown: false }}>
     <Stack.Screen name='Components' component={ComponentsScreen}/>
     <Stack.Screen name='Avatar' component={AvatarScreen}/>

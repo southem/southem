@@ -16,7 +16,7 @@ export class RenderIcon implements IconProvider<IconProps> {
     const Icon: IconComponent = this.content;
     const name: string = this.name;
     const { style, ...iconProps } = props;
-    // @ts-ignore - UI Kitten components pass here `tintColor`
+    // @ts-ignore - UI Southem components pass here `tintColor`
     const fillColor: string = StyleSheet.flatten(style || {}).tintColor;
 
     // @ts-ignore

@@ -1,3 +1,4 @@
+// @ts-ignore
 import React from 'react';
 import {
   Text as RNText,
@@ -29,6 +30,7 @@ Theme.registerDefaultTheme(darkTheme);
 const IconMock = (props?: IconProps): React.ReactElement<ThemeProviderProps> => {
   return (
     <>
+      { /* @ts-ignore **/ }
       <IconRegistry icons={SouthemIconsPack}/>
       <ThemeProvider
         theme={'default'}>
