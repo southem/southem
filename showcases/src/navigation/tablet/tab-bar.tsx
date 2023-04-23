@@ -15,6 +15,8 @@ import {
 } from '@southem/icons';
 
 const width = 120;
+
+// @ts-ignore
 const CustomIcon = ({ name, onPress }) => {
   return (
     <Button onPress={() => onPress}>

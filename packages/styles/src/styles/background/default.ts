@@ -1,5 +1,4 @@
 import Color from 'color';
-import type { BackgroundColors } from "../../types";
 import {
   red,
   dodgerblue,
@@ -9,6 +8,7 @@ import {
   orange,
   darkviolet,
 } from '../../colors';
+import type { BackgroundColors } from '../../types';
 
 export const background: BackgroundColors = {
   default: Color(black).alpha(.87).rgb().toString(),

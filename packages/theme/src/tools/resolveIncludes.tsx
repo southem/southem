@@ -23,7 +23,7 @@ function includeSymbolMergeHandler(objVal, srcVal) {
       [...newObjVal[INCLUDE], ...srcVal[INCLUDE]] : srcVal[INCLUDE];
   }
 
-  // if objVal doesn't exists create new from source
+  // if objVal doesn't exist create new from source
   if (isUndefined(newObjVal) && isPlainObject(srcVal)) {
     // Copy symbol fix.
     // { ...srcVal } copies symbol wrong, it adds symbol value to the property defined just after it

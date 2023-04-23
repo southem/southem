@@ -79,7 +79,7 @@ const loadingTasks: Task[] = [
 // @ts-ignore
 const App = (props): React.ReactElement => {
   return (
-    <React.Fragment>
+    <>
       <IconRegistry icons={[...SouthemIconsPack, AppIconsPack]}/>
       <ThemeProvider theme={'dark'}>
         <SafeAreaProvider>
@@ -87,7 +87,7 @@ const App = (props): React.ReactElement => {
           <AppNavigator />
         </SafeAreaProvider>
       </ThemeProvider>
-    </React.Fragment>
+    </>
   );
 };
 

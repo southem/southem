@@ -5,7 +5,7 @@ import * as Font from 'expo-font';
 import { Asset } from 'expo-asset';
 
 type TaskResult = [string, any];
-type Task = () => Promise<TaskResult | null>;
+export type Task = () => Promise<TaskResult | null>;
 
 export interface ApplicationLoaderProps {
   tasks?: Task[];

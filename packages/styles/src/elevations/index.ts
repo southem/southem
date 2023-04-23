@@ -7,5 +7,5 @@ export const elevations: Elevations = [
   shadow(2),
   shadow(3),
   shadow(4),
-  shadow(5)
+  shadow(5),
 ];
