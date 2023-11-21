@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Font from 'expo-font';
-import { AppearanceProvider } from 'react-native-appearance';
+// import { AppearanceProvider } from 'react-native-appearance';
 import { enableScreens } from 'react-native-screens';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { darkTheme, lightTheme, StatusBar } from '@southem/ui';
@@ -121,7 +121,7 @@ const App: React.FC<{ theme: ThemeType }> = ({ theme }): React.ReactElement => {
   return (
     <React.Fragment>
       <IconRegistry icons={[...SouthemIconsPack, AppIconsPack]}/>
-      <AppearanceProvider>
+      <>
         <ThemeProvider theme={currentTheme}>
           <Theming.ThemeContext.Provider value={themeContext}>
             <SafeAreaProvider>
@@ -130,7 +130,7 @@ const App: React.FC<{ theme: ThemeType }> = ({ theme }): React.ReactElement => {
             </SafeAreaProvider>
           </Theming.ThemeContext.Provider>
         </ThemeProvider>
-      </AppearanceProvider>
+      </>
     </React.Fragment>
   );
 };

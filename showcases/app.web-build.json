@@ -4,7 +4,7 @@
     "slug": "@southem/showcases",
     "description": "A demo app for React Native Southeme UI Library",
     "privacy": "public",
-    "sdkVersion": "34.0.0",
+    "sdkVersion": "49.0.0",
     "platforms": ["web"],
     "version": "1.1.0",
     "primaryColor": "#cccccc",

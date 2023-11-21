@@ -23,7 +23,7 @@
     "access": "public"
   },
   "dependencies": {
-    "react-native-vector-icons": "^9.2.0"
+    "react-native-vector-icons": "^10.0.2"
   },
   "peerDependencies": {
     "@southem/animation": "0.0.1",

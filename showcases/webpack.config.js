@@ -11,10 +11,7 @@ const playgroundExtraModules = {
   'react': path.resolve(node_modules, 'react'),
   'react-native': path.resolve(node_modules, 'react-native'),
   'react-native-web': path.resolve(node_modules, 'react-native-web'),
-  'react-native-reanimated': path.resolve(
-    node_modules,
-    'react-native-reanimated'
-  ),
+  'react-native-reanimated': path.resolve(node_modules, 'react-native-reanimated'),
   '@expo/vector-icons': path.resolve(node_modules, '@expo/vector-icons'),
 };
 

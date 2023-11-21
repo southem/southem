@@ -1,5 +1,9 @@
 import React from 'react';
-import { Appearance, AppearancePreferences, ColorSchemeName } from 'react-native-appearance';
+// @ts-ignore
+import {Appearance, useColorScheme } from 'react-native';
+// @ts-ignore
+import type { AppearancePreferences, ColorSchemeName } from 'react-native/Libraries/Utilities/Appearance';
+// import { ColorSchemeName } from 'react-native-appearance';
 import { AppStorage } from './app-storage.service';
 
 export type ThemeType = 'light' | 'dark';
@@ -89,8 +93,10 @@ export class Theming {
     return themeContext.createTheme(upstreamTheme);
   };
 
+  // static colorScheme = useColorScheme();
   private static createAppearanceTheme = (
-    appearance: ColorSchemeName,
+    // @ts-ignore
+    appearance: useColorScheme,
     preferredTheme: ThemeType): ThemeType => {
     if (appearance === 'no-preference') {
       return preferredTheme;
