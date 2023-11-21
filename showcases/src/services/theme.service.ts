@@ -2,18 +2,18 @@ import React from 'react';
 import { Appearance, AppearancePreferences, ColorSchemeName } from 'react-native-appearance';
 import { AppStorage } from './app-storage.service';
 
-export type Theme = 'light' | 'dark';
+export type ThemeType = 'light' | 'dark';
 
 
 export interface ThemeContextValue {
   /**
    * Should return the name of current theme
    */
-  currentTheme: Theme;
+  currentTheme: ThemeType;
   /**
    * Should switch theme globally
    */
-  setCurrentTheme: (theme: Theme) => void;
+  setCurrentTheme: (theme: ThemeType) => void;
   /**
    * Should return true if current theme is dark or dark mode enabled
    */
@@ -21,7 +21,7 @@ export interface ThemeContextValue {
   /**
    * Should create a theme based on current
    */
-  createTheme: (upstreamTheme: Theme) => any;
+  createTheme: (upstreamTheme: ThemeType) => any;
 }
 
 export class Theming {
@@ -46,13 +46,13 @@ export class Theming {
    * - value to be set in `ThemeContext.Provider`
    * - and theme to be set in `ApplicationProvider`.
    */
-  static useTheming = (themes: Record<Theme, any>, theme: Theme): [ThemeContextValue, any] => {
+  static useTheming = (themes: Record<ThemeType, any>, theme: ThemeType): [ThemeContextValue, any] => {
 
-    const [currentTheme, setCurrentTheme] = React.useState<Theme>(theme);
+    const [currentTheme, setCurrentTheme] = React.useState<ThemeType>(theme);
 
     React.useEffect(() => {
       const subscription = Appearance.addChangeListener((preferences: AppearancePreferences): void => {
-        const appearanceTheme: Theme = Theming.createAppearanceTheme(
+        const appearanceTheme: ThemeType = Theming.createAppearanceTheme(
           preferences.colorScheme,
           theme,
         );
@@ -66,7 +66,7 @@ export class Theming {
       return currentTheme === 'dark';
     };
 
-    const createTheme = (upstreamTheme: Theme): any => {
+    const createTheme = (upstreamTheme: ThemeType): any => {
       return { ...themes[currentTheme], ...themes[upstreamTheme][currentTheme] };
     };
 
@@ -74,7 +74,7 @@ export class Theming {
       currentTheme,
       setCurrentTheme: (nextTheme) => {
         // @ts-ignore
-        AppStorage.setTheme(nextTheme);
+        AppStorage.setTheme(nextTheme).then(() => null);
         setCurrentTheme(nextTheme);
       },
       isDarkMode,
@@ -84,13 +84,14 @@ export class Theming {
     return [themeContext, themes[currentTheme]];
   };
 
-  static useTheme = (upstreamTheme: Theme): any => {
+  static useTheme = (upstreamTheme: ThemeType): any => {
     const themeContext: ThemeContextValue = React.useContext(Theming.ThemeContext);
     return themeContext.createTheme(upstreamTheme);
   };
 
-  private static createAppearanceTheme = (appearance: ColorSchemeName,
-                                          preferredTheme: Theme): Theme => {
+  private static createAppearanceTheme = (
+    appearance: ColorSchemeName,
+    preferredTheme: ThemeType): ThemeType => {
     if (appearance === 'no-preference') {
       return preferredTheme;
     }

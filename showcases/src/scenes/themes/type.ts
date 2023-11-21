@@ -1,8 +1,7 @@
-import { ThemeType } from '@southem/components';
+import { ThemeType } from '@southem/theme';
 import { Theme } from '../../services/theme.service';
 
 export interface ThemeItem {
-  mapping: string;
   name: Theme;
   theme: ThemeType;
 }

@@ -1,8 +1,9 @@
 import React from 'react';
 import * as Font from 'expo-font';
-import {enableScreens} from 'react-native-screens';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {darkTheme, lightTheme, StatusBar } from '@southem/ui';
+import { AppearanceProvider } from 'react-native-appearance';
+import { enableScreens } from 'react-native-screens';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { darkTheme, lightTheme, StatusBar } from '@southem/ui';
 import Theme, {
   ThemeProvider,
   TypeTheme,
@@ -46,13 +47,14 @@ import {
 import { IconRegistry, SouthemIconsPack } from '@southem/icons';
 import { AppStorage } from '../services/app-storage.service';
 import { AppIconsPack } from './app-icons-pack';
-import { appDarkTheme, appLightTheme } from './app-theming';
+import { appDarkTheme, appLightTheme, appThemes } from './app-theming';
 import {
   SplashImage,
   LoadingAnimationProps,
 } from '../components';
 import { AppLoading, LoadFontsTask, Task } from './app-loading.component';
 import { AppNavigator } from '../navigation/app.navigator';
+import { ThemeType, Theming} from '../services/theme.service';
 
 enableScreens();
 
@@ -113,17 +115,23 @@ const loadingTasks: Task[] = [
 ];
 
 // @ts-ignore
-const App = (props): React.ReactElement => {
+const App: React.FC<{ theme: ThemeType }> = ({ theme }): React.ReactElement => {
+  const [themeContext, currentTheme] = Theming.useTheming(appThemes, theme);
+
   return (
-    <>
+    <React.Fragment>
       <IconRegistry icons={[...SouthemIconsPack, AppIconsPack]}/>
-      <ThemeProvider theme={'dark'}>
-        <SafeAreaProvider>
-          <StatusBar />
-          <AppNavigator />
-        </SafeAreaProvider>
-      </ThemeProvider>
-    </>
+      <AppearanceProvider>
+        <ThemeProvider theme={currentTheme}>
+          <Theming.ThemeContext.Provider value={themeContext}>
+            <SafeAreaProvider>
+              <StatusBar />
+              <AppNavigator />
+            </SafeAreaProvider>
+          </Theming.ThemeContext.Provider>
+        </ThemeProvider>
+      </AppearanceProvider>
+    </React.Fragment>
   );
 };
 
